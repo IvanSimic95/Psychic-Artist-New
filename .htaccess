@@ -2,6 +2,10 @@
 Header set Connection keep-alive
 </ifModule>
 
+Access-Control-Allow-Origin "https://psychic-artist.com"
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+Header always set Access-Control-Allow-Headers "My-First-Header,My-Second-Header,Authorization, content-type, csrf-token"
+
 Redirect 301 /soulmate https://masterwang.shop/soulmate
 Redirect 301 /twin-flame https://masterwang.shop/twin-flame-drawing
 Redirect 301 /future-spouse/ https://masterwang.shop/future-spouse-drawing
