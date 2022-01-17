@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Wizard World';
+	font-weight: 400;
+	font-style: normal;
+	src: url(../../../fonts/wizardwold.woff);
+}
+
+@font-face {
+	font-family: 'Enchanted Land';
+	font-weight: 400;
+	font-style: normal;
+	src: url(../../../fonts/enchantedland.woff);
+}
+
+@font-face {
+	font-family: 'Lato Semibold';
+	font-weight: 400;
+	font-style: normal;
+	src: url(https://soul-manifestation.com/fonts/lato-semibold.woff);
+}
+
+@font-face {
+	font-family: 'Futurica';
+	font-weight: 400;
+	font-style: normal;
+	src: url(https://soul-manifestation.com/fonts/Futurica.ttf);
+}
+
+@font-face {
+	font-family: 'Futurica Medium';
+	font-weight: 400;
+	font-style: normal;
+	src: url(https://soul-manifestation.com/fonts/a-futuricamedium.woff);
+}
+
