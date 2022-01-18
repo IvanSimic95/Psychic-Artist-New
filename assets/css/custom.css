@@ -1,0 +1,115 @@
+html {
+    text-rendering: optimizeLegibility;
+    }
+    .dropup, .dropend, .dropdown, .dropstart {
+
+        margin-right: 20px;
+    }
+    #top > nav > div > ul > li:nth-child(2){
+
+        margin-right: 0px;
+    }
+   
+    .navbar>.container{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row !important;
+        -ms-flex-wrap: inherit;
+        flex-overflow: none;
+        flex-wrap: inherit;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+.navbar-light{
+background-color:transparent;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color:#fff;
+}
+
+.navbar-light .navbar-nav .nav-link{
+color:#fff;
+}
+.dark-wrapper {
+background: linear-gradient(180deg,#09042d 58.92%,#3620c2 184.79%);
+}
+.img-landing-banner, .img-showcase-banner {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    overflow: hidden;
+    -webkit-transform: translateY(-3rem);
+    -ms-transform: translateY(-3rem);
+    transform: translateY(-3rem);
+    margin-bottom: 1rem!important;
+    -webkit-transition: -webkit-transform .4s ease;
+    transition: -webkit-transform .4s ease;
+    -o-transition: transform .4s ease;
+    transition: transform .4s ease;
+    transition: transform .4s ease, -webkit-transform .4s ease;
+    position: relative;
+    -webkit-box-shadow: var(--falcon-box-shadow-lg);
+    box-shadow: var(--falcon-box-shadow-lg);
+    display: block;
+}
+
+.img-landing-banner:hover, .img-landing-banner:focus, .img-showcase-banner:hover, .img-showcase-banner:focus {
+    -webkit-transform: translateY(-5rem);
+    -ms-transform: translateY(-5rem);
+    transform: translateY(-5rem);
+}
+.img-landing-banner:after, .img-showcase-banner:after {
+content: none!important;
+}
+
+.bg-dark {
+    background-color: rgb(9, 4, 45)!important;
+}
+
+.navbar-dark, .navbar-nav, .nav-link, .navbar-dark, .navbar-nav, .nav-link:hover, .navbar-dark, .navbar-nav, .nav-link:focus {
+    color: #fff!important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-toggler-humburger-icon
+    {
+        border-radius: 8px;
+        background: linear-gradient(45deg,#d130eb,#4a30eb 90%,#2b216c);
+    }
+  }
+
+@media only screen and (max-width: 763px) {
+    .navbar-toggler-humburger-icon
+    {
+        width: 10%;
+    margin: 0!important;
+    }
+    .navbar-brand
+    {
+        width: 70%;
+    margin: 0!important;
+    }
+
+    .navbar>.container {
+        justify-content: stretch;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    #top > nav > div > ul
+    {
+    display:none;
+    }
+  
+  }
+  @media only screen and (min-width: 351px) {
+    #top > nav > div > ul
+    {
+    display:flex;
+    }
+  
+  }
