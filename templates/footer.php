@@ -1,4 +1,5 @@
 <?php debug_backtrace() || include_once $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php'; ?>
+<?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
 <?php // include_once $_SERVER['DOCUMENT_ROOT'].'/templates/chat.php'; ?>
 </main>
 <footer class="footer bg-dark pt-1">

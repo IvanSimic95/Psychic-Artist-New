@@ -89,5 +89,5 @@
         </ul>
     </div>
 </nav>
-<?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/phone-navbar.php'; ?>
+
 <?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar-side.php'; ?>
