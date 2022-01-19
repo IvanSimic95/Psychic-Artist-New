@@ -1,9 +1,26 @@
 <?php
 debug_backtrace() || include_once $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
+
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
-file_put_contents($_SERVER['DOCUMENT_ROOT'].'/templates/vars.php', '<?php return ' . var_export($v, true) . ';');
+#file_put_contents($_SERVER['DOCUMENT_ROOT'].'/templates/vars.php', '<?php return ' . var_export($v, true) . ';');  //Code for saving variables to vars.php
+
+
+//Check if server is localhost or guru and save DB info
+$domain = $_SERVER['SERVER_NAME'];
+if($domain == "pa.test"){
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$db = "pa";
+}else{
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$db = "pa";
+}
+
 
 //Error Reporting - None
 #error_reporting(0); //Disable Error Reporting
@@ -17,9 +34,35 @@ ini_set('display_errors', TRUE);
 ini_set("log_errors", TRUE); //Log errors to file
 ini_set("error_log", $_SERVER['DOCUMENT_ROOT']."/logs/php-error.log");//Path to php error log
 
+//Check for session and start if none exists
+if (session_status() === PHP_SESSION_NONE) {session_start();}
+
+//Disable notifications in menu
+$notificationsOn = "no";
+
+//SESSION DATA FOR TESTING ONLY, REMOVE LATER
+$_SESSION['id'] = "1";
+$_SESSION['name'] = "Ivan Simic";
+$_SESSION['email'] = "email@isimic.com";
+$_SESSION['orders'] = "14";
+$_SESSION['weekly'] = "1643100349";
+//SESSION DATA FOR TESTING ONLY, REMOVE LATER
 
 
-
+//Check if user logged in, if yes save variables
+if(isset($_SESSION['id'])){
+$userId = $_SESSION['id'];
+$userName = $_SESSION['name'];
+$userEmail = $_SESSION['email'];
+$userOrders = $_SESSION['orders'];
+$userWeekly = $_SESSION['weekly'];
+}else{ //If not logged in make those variables empty
+$userId = "";
+$userName = "";
+$userEmail = "";
+$userOrders = "0";
+$userWeekly = "0";
+} 
 
 
 
@@ -35,16 +78,19 @@ $GLOBALS['ERROR'] = "<b>PHP Error:</b> <i>[$errno]</i> <b>$errstr</b><br> Error 
 // Set user-defined error handler function
 set_error_handler("myError");
 
-//Connect to Database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "pa";
-try {$conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
-	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	} catch(PDOException $e) {
-	  echo "Connection failed: " . $e->getMessage();
-	}
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+$conn->query('set character_set_client=utf8');
+$conn->query('set character_set_connection=utf8');
+$conn->query('set character_set_results=utf8');
+$conn->query('set character_set_server=utf8');
+$conn->set_charset('utf8mb4');
+
+
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+  }
 
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

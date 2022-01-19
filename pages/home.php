@@ -1,113 +1,110 @@
-<?php
-$p = array (
-    'title' => 'Psychic Artist',
-    'description' => 'Test Description',
-    'logo' => '/assets/img/icons/spot-illustrations/falcon.png',
-    'price' => '29.99',
-    'reviews' => '149',
-    'avg-rating' => '4.7',
-    'url' => 'https://pa.test/soulmate',
-  );
-
-require_once $_SERVER['DOCUMENT_ROOT'].'/templates/schema.php';
-?>
-
-
-<div class="container-fluid" data-layout="container">
+<div class="container-fluid" data-layout="container" style="padding:0!important;">
     <section class="py-0 overflow-hidden light" id="banner">
 
 
         <!--/.bg-holder-->
 
-        <div class="container">
-            <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
-                <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a
-                        class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!"><span class="me-2"
-                            role="img" aria-label="Gift">🎁</span>Find Your Soulmate</a>
-                    <h1 class="text-white fw-bold">The Power to Unite Souls</h1>
-                    <p class="lead text-white opacity-75">With the power of Falcon, you can now focus only on
-                        functionaries
-                        for your digital products, while leaving the UI design on us!</p><a
-                        class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">Start
-                        building
-                        with the falcon<svg class="svg-inline--fa fa-play fa-w-14 ms-2"
-                            data-fa-transform="shrink-6 down-1" aria-hidden="true" focusable="false" data-prefix="fas"
-                            data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                            data-fa-i2svg="" style="transform-origin: 0.4375em 0.5625em;">
-                            <g transform="translate(224 256)">
-                                <g transform="translate(0, 32)  scale(0.625, 0.625)  rotate(0 0 0)">
-                                    <path fill="currentColor"
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                                        transform="translate(-224 -256)"></path>
-                                </g>
-                            </g>
-                        </svg>
-                        <!-- <span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span> Font Awesome fontawesome.com --></a>
-                </div>
-                <div class="col-xl-8 mt-4 mt-xl-0 text-center"><a class="img-landing-banner rounded"
-                        href="/soulmate/"><img class="img-fluid" src="/assets/img/products/soulmate.png" alt=""></a>
-                </div>
-            </div>
+    <div class="container">
 
-            <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
+        <!-- Product #1 - Soulmate Drawing -->
+        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
+                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start order-2 order-lg-1">
+                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p1-title']; ?></h1>
+            <!--<div class="d-flex py-2">
+                    
+            <span class="badge bg-light text-dark pricing-badge">         
+            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
+            $<?php echo $v['p1-price']; ?>
+            </span></span>
 
-                <div class="col-xl-8 mt-4 mt-xl-0 text-center"><a class="img-landing-banner rounded"
-                        href="/soulmate/"><img class="img-fluid" src="/assets/img/products/soulmate.png" alt=""></a>
+            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
+            <span class="my-rating1 align-middle"></span>
+            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p1-reviews']; ?>)</span>
+            </span>
+            
+                    </div>-->
+                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p1-short-description']; ?></p>
+                    <div class="d-grid gap-2">
+                        <a href="<?php echo $v['p1-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
+                        <?php echo $v['p1-button']; ?> <i class="fas fa-chevron-right"></i>
+                    </a></div>
                 </div>
-                <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a
-                        class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!"><span class="me-2"
-                            role="img" aria-label="Gift">🎁</span>Find Your Soulmate</a>
-                    <h1 class="text-white fw-bold">The Power to Unite Souls</h1>
-                    <p class="lead text-white opacity-75">With the power of Falcon, you can now focus only on
-                        functionaries
-                        for your digital products, while leaving the UI design on us!</p><a
-                        class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">Start
-                        building
-                        with the falcon<svg class="svg-inline--fa fa-play fa-w-14 ms-2"
-                            data-fa-transform="shrink-6 down-1" aria-hidden="true" focusable="false" data-prefix="fas"
-                            data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                            data-fa-i2svg="" style="transform-origin: 0.4375em 0.5625em;">
-                            <g transform="translate(224 256)">
-                                <g transform="translate(0, 32)  scale(0.625, 0.625)  rotate(0 0 0)">
-                                    <path fill="currentColor"
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                                        transform="translate(-224 -256)"></path>
-                                </g>
-                            </g>
-                        </svg>
-                        <!-- <span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span> Font Awesome fontawesome.com --></a>
+                <div class="col-xl-6 mt-4 mt-xl-0 text-center order-first order-lg-2">
+                <a class="img-landing-banner rounded"
+                        href="<?php echo $v['p1-url']; ?>"><img class="img-fluid" src="<?php echo $v['p1-image']; ?>" alt=""></a>
                 </div>
-
-            </div>
-
-            <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
-            <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a
-                    class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!"><span class="me-2"
-                        role="img" aria-label="Gift">🎁</span>Find Your Soulmate</a>
-                <h1 class="text-white fw-bold">The Power to Unite Souls</h1>
-                <p class="lead text-white opacity-75">With the power of Falcon, you can now focus only on functionaries
-                    for your digital products, while leaving the UI design on us!</p><a
-                    class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">Start building
-                    with the falcon<svg class="svg-inline--fa fa-play fa-w-14 ms-2" data-fa-transform="shrink-6 down-1"
-                        aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" role="img"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
-                        style="transform-origin: 0.4375em 0.5625em;">
-                        <g transform="translate(224 256)">
-                            <g transform="translate(0, 32)  scale(0.625, 0.625)  rotate(0 0 0)">
-                                <path fill="currentColor"
-                                    d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                                    transform="translate(-224 -256)"></path>
-                            </g>
-                        </g>
-                    </svg>
-                    <!-- <span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span> Font Awesome fontawesome.com --></a>
-            </div>
-            <div class="col-xl-8 mt-4 mt-xl-0 text-center"><a class="img-landing-banner rounded"
-                    href="/soulmate/"><img class="img-fluid" src="/assets/img/products/soulmate.png"
-                        alt=""></a></div>
         </div>
 
+
+     
+
+        <!-- Product #2 - Twin Flame Drawing -->
+        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
+        <div class="col-xl-6 mt-4 mt-xl-0 text-center">
+                <a class="img-landing-banner rounded"
+                        href="<?php echo $v['p2-url']; ?>"><img class="img-fluid" src="<?php echo $v['p2-image']; ?>" alt=""></a>
+                </div>
+                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start">
+                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p2-title']; ?></h1>
+            <!--<div class="d-flex py-2">
+                    
+            <span class="badge bg-light text-dark pricing-badge">         
+            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
+            $<?php echo $v['p2-price']; ?>
+            </span></span>
+
+            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
+            <span class="my-rating2 align-middle"></span>
+            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p2-reviews']; ?>)</span>
+            </span>
+            
+                    </div>-->
+                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p2-short-description']; ?></p>
+                    <div class="d-grid gap-2">
+                        <a href="<?php echo $v['p2-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
+                        <?php echo $v['p2-button']; ?> <i class="fas fa-chevron-right"></i>
+                    </a></div>
         </div>
+                
+        </div>
+
+
+        <!-- Product #3 - Future Spouse Drawing -->
+        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
+                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start order-2 order-lg-1">
+                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p3-title']; ?></h1>
+           <!-- <div class="d-flex py-2">
+                    
+            <span class="badge bg-light text-dark pricing-badge">         
+            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
+            $<?php echo $v['p3-price']; ?>
+            </span></span>
+
+            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
+            <span class="my-rating1 align-middle"></span>
+            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p3-reviews']; ?>)</span>
+            </span>
+            
+                    </div>-->
+                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p3-short-description']; ?></p>
+                    <div class="d-grid gap-2">
+                        <a href="<?php echo $v['p3-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
+                        <?php echo $v['p3-button']; ?> <i class="fas fa-chevron-right"></i>
+                    </a></div>
+                </div>
+                <div class="col-xl-6 mt-4 mt-xl-0 text-center order-first order-lg-2">
+                <a class="img-landing-banner rounded"
+                        href="<?php echo $v['p3-url']; ?>"><img class="img-fluid" src="<?php echo $v['p3-image']; ?>" alt=""></a>
+                </div>
+        </div>
+
+
+        </div>
+
+
+
+
+
         <!-- end of .container-->
 
     </section>

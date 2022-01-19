@@ -8,7 +8,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
     <!-- ===============================================-->
     <main class="main" id="top">
       <div class="container" data-layout="container">
-        <div class="row flex-center min-vh-100 py-6 text-center">
+        <div class="row flex-center min-vh-80 py-6 text-center">
           <div class="col-sm-10 col-md-10 col-lg-8 col-xxl-8 min-vh-90">
             <div class="card py-6">
             <div class="card-body p-4 p-sm-5">

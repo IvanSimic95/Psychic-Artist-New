@@ -55,7 +55,8 @@ $title = $v['home-title'] ?? $v['website-title'] ?? 'Psychic Artist';
   </head>
 
   <body class="dark-wrapper">
+    
   <main class="main" id="top">
-      
+  
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar.php'; ?>     
       
