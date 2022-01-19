@@ -16,9 +16,9 @@ if($domain == "pa.test"){
 	$db = "pa";
 }else{
 	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$db = "pa";
+	$username = "psychic_newpanel";
+	$password = "Jepang123Iva";
+	$db = "psychic_newpanel";
 }
 
 
