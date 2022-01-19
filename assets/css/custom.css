@@ -30,25 +30,19 @@ box-shadow:none!important;
         justify-content: space-between;
     }
 .navbar-light{
-background-color:transparent;
+background-color:#fff!important;
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-    color:#fff;
+    color:#748194;
 }
 
 .navbar-light .navbar-nav .nav-link{
-color:#fff;
+color:#748194;
 }
-.dark-wrapper {
-background: linear-gradient(180deg,#09042d 58.92%,#3620c2 184.79%);
+body {
+background: #edf2f9;
 }
 
-.main {
-    background-image: url(/assets/img/footer-cover.svg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    }
     .dropdown-menu {
         font-size: 1rem;
     }
@@ -94,18 +88,24 @@ content: none!important;
 }
 
 .bg-dark {
-    background-color: rgb(9, 4, 45)!important;
+    background-color: #373f50!important;
+}
+
+.bg-dark-two {
+    background-color: #2b3445!important;
 }
 
 .navbar-top{
     font-size:1rem!important;
 }
-
-.navbar-dark{
-    color: #fff!important;
+.topbar {
+    background: linear-gradient(90deg,#d130eb,#4a30eb 80%,#2b216c);
+    color: #fff;
+    padding: 10px;
 }
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff!important;
+.topbar a {
+    transition: all 0.5s ease;
+    color:#fff;
 }
 .text-600 {
     color: #748194!important;
@@ -113,6 +113,26 @@ content: none!important;
 .pricing-badge
 {
 display:inline;
+}
+
+.navbar-vertical
+{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(94, 110, 130);
+    text-align: start;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    font-family: "Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    box-sizing: border-box;
+    overflow: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: .5rem .625rem 0 1rem !important;
+    width: 14.5rem !important;
 }
 
 .open-product
@@ -126,6 +146,12 @@ display:inline;
     {
         border-radius: 8px;
         background: linear-gradient(45deg,#d130eb,#4a30eb 90%,#2b216c);
+    }
+  }
+
+  @media only screen and (max-width: 1080px) {
+    .topbar .left a {
+        font-size: 0;
     }
   }
 

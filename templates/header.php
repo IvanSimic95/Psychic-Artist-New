@@ -40,6 +40,7 @@ $title = $v['home-title'] ?? $v['website-title'] ?? 'Psychic Artist';
     <meta name="theme-color" content="#ffffff">
     <script src="/assets/js/config.js"></script>
     <script src="/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/next-sidebar.css">
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
@@ -54,9 +55,9 @@ $title = $v['home-title'] ?? $v['website-title'] ?? 'Psychic Artist';
     <link href="/assets/css/custom.css" rel="stylesheet" >
   </head>
 
-  <body class="dark-wrapper">
+  <body>
     
   <main class="main" id="top">
   
-      <?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar.php'; ?>     
+      <?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; ?>     
       
