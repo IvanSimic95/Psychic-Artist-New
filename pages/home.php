@@ -1,140 +1,156 @@
 <div class="container-fluid" data-layout="container" style="padding:0!important;">
-    <section class="py-0 overflow-hidden light" id="banner">
+        <section class="py-0 overflow-hidden light" id="banner">
+                <div class="container">
+                <style>
+
+ .al-services-header h2 {
+     color:#576975;
+     font-size:34px;
+}
+ .al-services-header p {
+     color:#82919a;
+     font-size:20px;
+     font-weight:300;
+}
+ .al-service-box {
+     background:#fff;
+     border-radius:4px;
+     margin-top:30px;
+     transition:all .4s;
+}
+ .al-service-box:hover {
+     box-shadow:0 0 35px rgba(0,0,0,.05);
+}
+ .al-service-box:hover .btn {
+     background:#9c27b0;
+     color:#fff;
+}
+ .al-service-icon {
+     background:rgba(248, 248, 255, 0.85);
+     border-radius:100%;
+     display:inline-block;
+     padding:10px;
+     width:90px;
+     height:90px;
+     font-size:50px;
+     color:#9c27b0!important;
+}
+ .al-service-icon i {
+     color:#9c27b0;
+     display:inline-block;
+     font-size:62px;
+}
+ .al-service-box h3 {
+     color:#576975;
+     font-size:26px;
+     font-weight:500;
+}
+ .al-service-box p {
+     color: #9caeb9;
+     font-size:18px;
+     font-weight:300;
+}
+ .al-service-box .btn {
+     border-color:#9c27b0;
+     color:#9c27b0;
+}
+.al-service-box .btn:focus
+{
+    box-shadow:none;
+}
+ .al-service-box .btn:hover {
+     background:#9c27b0;
+     color:#fff;
+}
+
+</style>
 
 
-        <!--/.bg-holder-->
-
+<section class="al-services p-5">
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="al-services-header text-center">
 
-        <!-- Product #1 - Soulmate Drawing -->
-        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
-                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start order-2 order-lg-1">
-                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p1-title']; ?></h1>
-            <!--<div class="d-flex py-2">
+
+
+<div class="row mb-3">
+            <div class="col">
+              <div class="card shadow border">
+               <h4 class="p-4 text-primary fw-bold mb-0">Services</h4>
+                </div>
+          </div>
+
+
+
+
+                    <h2></h2>
                     
-            <span class="badge bg-light text-dark pricing-badge">         
-            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
-            $<?php echo $v['p1-price']; ?>
-            </span></span>
-
-            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
-            <span class="my-rating1 align-middle"></span>
-            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p1-reviews']; ?>)</span>
-            </span>
-            
-                    </div>-->
-                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p1-short-description']; ?></p>
-                    <div class="d-grid gap-2">
-                        <a href="<?php echo $v['p1-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
-                        <?php echo $v['p1-button']; ?> <i class="fas fa-chevron-right"></i>
-                    </a></div>
                 </div>
-                <div class="col-xl-6 mt-4 mt-xl-0 text-center order-first order-lg-2">
-                <a class="img-landing-banner rounded"
-                        href="<?php echo $v['p1-url']; ?>"><img class="img-fluid" src="<?php echo $v['p1-image']; ?>" alt=""></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-code" aria-hidden="true"></i></span>
+                    <h3 class="mt-3"> Design/Dev</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
                 </div>
-        </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-bolt" aria-hidden="true"></i>
+                    </span>
 
-
-     
-
-        <!-- Product #2 - Twin Flame Drawing -->
-        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
-        <div class="col-xl-6 mt-4 mt-xl-0 text-center">
-                <a class="img-landing-banner rounded"
-                        href="<?php echo $v['p2-url']; ?>"><img class="img-fluid" src="<?php echo $v['p2-image']; ?>" alt=""></a>
+                    <h3 class="mt-3"> Branding</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
                 </div>
-                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start">
-                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p2-title']; ?></h1>
-            <!--<div class="d-flex py-2">
-                    
-            <span class="badge bg-light text-dark pricing-badge">         
-            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
-            $<?php echo $v['p2-price']; ?>
-            </span></span>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-signal" aria-hidden="true"></i></span>
 
-            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
-            <span class="my-rating2 align-middle"></span>
-            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p2-reviews']; ?>)</span>
-            </span>
-            
-                    </div>-->
-                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p2-short-description']; ?></p>
-                    <div class="d-grid gap-2">
-                        <a href="<?php echo $v['p2-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
-                        <?php echo $v['p2-button']; ?> <i class="fas fa-chevron-right"></i>
-                    </a></div>
-        </div>
-                
-        </div>
-
-
-        <!-- Product #3 - Future Spouse Drawing -->
-        <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
-                <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start order-2 order-lg-1">
-                    <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p3-title']; ?></h1>
-           <!-- <div class="d-flex py-2">
-                    
-            <span class="badge bg-light text-dark pricing-badge">         
-            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
-            $<?php echo $v['p3-price']; ?>
-            </span></span>
-
-            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
-            <span class="my-rating1 align-middle"></span>
-            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p3-reviews']; ?>)</span>
-            </span>
-            
-                    </div>-->
-                    <p class="lead text-white opacity-75 text-justify"><?php echo $v['p3-short-description']; ?></p>
-                    <div class="d-grid gap-2">
-                        <a href="<?php echo $v['p3-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">
-                        <?php echo $v['p3-button']; ?> <i class="fas fa-chevron-right"></i>
-                    </a></div>
+                    <h3 class="mt-3"> SEO</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
                 </div>
-                <div class="col-xl-6 mt-4 mt-xl-0 text-center order-first order-lg-2">
-                <a class="img-landing-banner rounded"
-                        href="<?php echo $v['p3-url']; ?>"><img class="img-fluid" src="<?php echo $v['p3-image']; ?>" alt=""></a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-android" aria-hidden="true"></i></span>
+
+                    <h3 class="mt-3"> App Dev</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
                 </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-pencil" aria-hidden="true"></i></span>
+
+                    <h3 class="mt-3"> Content</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="al-service-box pt-5 pb-4 px-5 text-center">
+                    <span class="al-service-icon"> <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </span>
+
+                    <h3 class="mt-3"> PPC</h3>
+                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur. </p>
+                    <a href="#" class="btn btn-outline-primary mt-3">More info</a>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
+<!-- End Elegant services section using bootstrap 5 -->
 
 
-        </div>
-
-
-
-
-
-        <!-- end of .container-->
-
-    </section>
-
-
-
-
-
-
-    <!--
-<section class="py-3 bg-light shadow-sm">
-
-    <div class="container">
-        <div class="row flex-center">
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="40"
-                    src="../assets/img/logos/b&amp;w/6.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="45"
-                    src="../assets/img/logos/b&amp;w/11.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="30"
-                    src="../assets/img/logos/b&amp;w/2.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="30"
-                    src="../assets/img/logos/b&amp;w/4.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="35"
-                    src="../assets/img/logos/b&amp;w/1.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="40"
-                    src="../assets/img/logos/b&amp;w/10.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="40"
-                    src="../assets/img/logos/b&amp;w/12.png" alt=""></div>
-        </div>
-    </div>-->
-    <!-- end of .container-->
-
-    </section>
+                </div>
+        </section>
+</div>

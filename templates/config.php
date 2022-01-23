@@ -1,6 +1,7 @@
 <?php
 debug_backtrace() || include_once $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
+$customJS = $customCSS = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';

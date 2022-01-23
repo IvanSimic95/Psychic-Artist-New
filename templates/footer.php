@@ -1,7 +1,8 @@
 <?php debug_backtrace() || include_once $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php'; ?>
-<?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
+
 <?php // include_once $_SERVER['DOCUMENT_ROOT'].'/templates/chat.php'; ?>
 </main>
+<?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
 <footer class="footer bg-dark pt-1">
 
       <section class="bg-dark pt-4 pb-4 light">
@@ -67,17 +68,60 @@
     
     <script src="/vendors/popper/popper.min.js"></script>
     <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script src="/vendors/anchorjs/anchor.min.js"></script>
     <script src="/vendors/is/is.min.js"></script>
-    <script src="/vendors/fontawesome/all.min.js"></script>
+    <script src="/assets/js/all.min.js"></script>
+    <script src="/assets/js/theme.js"></script>
     <script src="/vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="/vendors/list.js/list.min.js"></script>
-    <script src="/assets/js/theme.js"></script>
     <link href="vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet" />
     <script src="/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+    <script src="/vendors/lightgallery.js/dist/lightgallery.min.js"></script>
+    <script src="/vendors/lightgallery.js/dist/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="/vendors/lightgallery.js/dist/plugins/video/lg-video.min.js"></script>
+    <script src="/vendors/lightgallery.js/dist/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="/assets/js/type-it.js"></script>
+    <script src="/assets/js/verimail.jquery.js"></script>
 
+    <?php echo $customCSS; ?>
+    <?php echo $customJS; ?>
+    <script>
+      
+  $.fn.extend({
+    toggleText: function(a, b){
+        return this.text(this.text() == b ? a : b);
+    }
+});
 
+$('.sidebar-toggle').click(showSidebar);
+
+function showSidebar(){
+  $('.sidebar').toggleClass("show-sidebar"); //Display Sidebar
+  $('.open-sidebar-menu').toggleClass("active"); //Put Active Class in phone menu sidebar toggle
+  $('html').toggleClass("body-no-scroll"); //Remove scrolling
+  $('.insert-backdrop').toggleClass("modal-backdrop show"); //Add backdrop to darken the rest of website
+  $('.sidebar-toggle > .phone-menu-icon > svg').toggleClass("fa-times"); //Switch toggle menu icon to X
+  $('.sidebar-toggle > .phone-menu-icon > svg').toggleClass("fa-bars"); //Switch toggle menu icon to X
+
+  $('.sidebar-toggle > .phone-menu-icon > .phone-menu-text').toggleText('Menu', 'Close'); //Switch toggle menu text
+}
+
+$('.insert-backdrop').click(backdropClick);
+
+function backdropClick(){
+  $('.sidebar').removeClass("show-sidebar"); //Hide Sidebar
+  $('.open-sidebar-menu').toggleClass("active"); //Put Active Class in phone menu sidebar toggle
+  $('html').toggleClass("body-no-scroll"); //Remove scrolling
+  $('.insert-backdrop').toggleClass("modal-backdrop show"); //Add backdrop to darken the rest of website
+  $('.sidebar-toggle > .phone-menu-icon > svg').toggleClass("fa-times"); //Switch toggle menu icon to X
+  $('.sidebar-toggle > .phone-menu-icon > svg').toggleClass("fa-bars"); //Switch toggle menu icon to X
+
+  $('.sidebar-toggle > .phone-menu-icon > .phone-menu-text').toggleText('Menu', 'Close'); //Switch toggle menu text
+}
+</script>
+ 
     <?php #include_once $_SERVER['DOCUMENT_ROOT'].'/templates/rating/rating-home.php'; ?>
   </body>
 

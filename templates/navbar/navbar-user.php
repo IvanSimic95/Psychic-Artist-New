@@ -4,7 +4,7 @@ if(isset($_SESSION['id'])){
 
 ?>
 
-<li class="nav-item dropdown"><a class="nav-link pe-0" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<li class="nav-item dropdown nav-main-user"><a class="nav-link pe-0" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-2xl">
                   <img style="background-color: white;" class="rounded-circle" src="/assets/img/users/<?php echo $userId; ?>.svg" alt="<?php echo $userName; ?>">
                 </div>
