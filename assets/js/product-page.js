@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
   const instance0 =  new TypeIt(".type-it-zero", {
-    strings: ["<span class='fw-bold'>Ready to meet your soulmate?</span><br>", "<span class='fw-bold pulseNew animated' style=';color:red;'>WARNING: You Will Feel Strong Emotions</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. <br><br><b>Thousands</b> of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your soulmate."],
+    strings: ["<span class='fw-bold'>Ready to meet your soulmate?</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. Thousands of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your soulmate."],
     waitUntilVisible: true,
     lifeLike: true,
     loop: false,
@@ -19,7 +19,7 @@ $(document).ready(function(){
   })
 
   const instance =  new TypeIt(".type-it", {
-    strings: ["Great! All you got to do now is answer 3 questions to provide us with information required to perform this task.<br>", "What should we introduce you as to Psychic Artist?<br>", "After you enter your name & email click the confirm button to save it!"],
+    strings: ["<strong>Great!</strong> All you need to do now is answer 3 easy questions", "<hr>#1 - <b>What is your Name & Email?</b>"],
     waitUntilVisible: true,
     lifeLike: true,
     loop: false,
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 
   const instance3 =  new TypeIt(".type-it-three", {
-    strings: ["Almost There!", "Only 1 step to go! Choose your desired delivery time!"],
+    strings: ["<strong>Almost There</strong>, only 1 more step to go!", "<hr>#3 - <b>What Order Delivery Priority do you wish?</b>"],
     waitUntilVisible: true,
     lifeLike: true,
     loop: false,
@@ -61,7 +61,7 @@ $(document).ready(function(){
   })
 
   const instance4 =  new TypeIt(".type-it-four", {
-    strings: ["Well Done!<br>", "We got all the information we need from you!<br>", "You can continue to payment page by clicking 'Place an Order' Button below."],
+    strings: ["<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Well Done!</strong> We saved your data & prepared an order for you.<br> You can continue to payment page by clicking button below.</div>"],
     waitUntilVisible: true,
     lifeLike: true,
     loop: false,
@@ -82,12 +82,12 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 
   $("#start-form-btn").click(function(){
     $('.type-it-zero').fadeToggle();//Hide Start Message
+    $('.pr-avail-wrap').fadeToggle();//Hide Side badge
     $("#start-form-btn").fadeToggle(); //Hide Start Button
     $("#welcome-form-msg").slideToggle();//Show Welcome message after starting Form
     instance.go(); //Start next part of text
 
 
-    console.log("Removed first message and starting button, added welcome form msg and started instance #1");
   });
 
   $(document).ready(function(){
@@ -102,19 +102,54 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
              }
            else{
 
-            if($("input#email-address").getVerimailStatus() < 0){
+            if($("#userEmail").getVerimailStatus() < 0){
               $("#name-confirm-btn").prop("disabled", true);
+              $("#userEmail").removeClass("is-valid");
+              $("#userEmail").addClass("is-invalid");
           }else{
             $("#name-confirm-btn").prop("disabled", false);
+            $("#userEmail").addClass("is-valid");
+            $("#userEmail").removeClass("is-invalid");
+            
             
           }
-          $("#error").html("");
-          $("#userName").addClass("is-valid");
-          $("#userName").removeClass("is-invalid");
 
+          if($("#userEmail").val().length == 0)
+          {
+            $("#name-confirm-btn").prop("disabled", true);
+            $("#userEmail").removeClass("is-valid");
+            $("#userEmail").addClass("is-invalid");
+          }else   {
+
+
+          $("#name-confirm-btn").prop("disabled", false);
+          $("#userEmail").removeClass("is-invalid");
+          $("#userEmail").addClass("is-valid");
+        }
+
+        $("#name-confirm-btn").prop("disabled", false);
+        $("#error").html("");
+        $("#userName").addClass("is-valid");
+        $("#userName").removeClass("is-invalid");
 
                }
          });
+});
+
+$(document).ready(function(){
+  $('#userEmail').on('keypress keydown keyup',function(){
+
+    if($("#userEmail").getVerimailStatus() < 0){
+      $("#name-confirm-btn").prop("disabled", true);
+      $("#userEmail").removeClass("is-valid");
+      $("#userEmail").addClass("is-invalid");
+  }else{
+    $("#name-confirm-btn").prop("disabled", false);
+    $("#userEmail").removeClass("is-invalid");
+    $("#userEmail").addClass("is-valid");
+}
+});
+
 });
 
 $("#name-confirm-btn").click(function(){
@@ -122,7 +157,7 @@ $("#name-confirm-btn").click(function(){
   
           const userName = $("#userName").val();
            const instance2 =  new TypeIt(".type-it-two", {
-             strings: ["Nice to meet you <span style='text-transform:capitalize';>"+ userName + "</span>!", "Next thing I need from you is your day of birth, please provide it below."],
+             strings: ["Nice to meet you <span style='text-transform:capitalize';>"+ userName + "</span>!", "<hr>#2 - <b>What is your Date of Birth?</b>"],
              waitUntilVisible: true,
              lifeLike: true,
              loop: false,
@@ -182,14 +217,23 @@ $("#dob-confirm-btn").click(function(){
 
 $("#helper-delivery-express").click(function(){
     $("#prio12").prop("checked", true);
+    jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$49.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$499.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$450 (90%)').animate({'opacity': 1}, 400);});	
 });
 
 $("#helper-delivery-fast").click(function(){
     $("#prio24").prop("checked", true);
+    jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$39.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$399.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$360 (90%)').animate({'opacity': 1}, 400);});
 });
 
 $("#helper-delivery-standard").click(function(){
     $("#prio48").prop("checked", true);
+    jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$29.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$299.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$270 (90%)').animate({'opacity': 1}, 400);});
 });
 
 
@@ -202,6 +246,7 @@ $(document).ready(function() {
   $('#delivery-speed').one('click', function(e){
     $('#deliveryCollapse').collapse('hide');
     $("#delivery-form-msg").fadeToggle();
+    $("#form-type-wrapper").fadeToggle();
     $("#final-form-msg").slideToggle();
     $(".btn-submit-form").slideToggle();
     $(".btn-submit-form").addClass("add-to-cart-flash");

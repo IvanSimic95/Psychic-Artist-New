@@ -1,12 +1,6 @@
-<form class="form-order row g-3 needs-validation" name="order_form" action="/order.php" method="get" novalidate>
-<div class="text-placeholder">
-
+<form class="form-order row g-3 needs-validation flex-grow-2" name="order_form" action="/order.php" method="get" novalidate>
+<div id="form-type-wrapper" class="alert alert-info mb-0" role="alert" style="min-height:100px;">
 <span class="type-it-zero" style="min-height:200px;"></span>
-
-
-<button type="button" id="start-form-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1"> Yes, I want my Soulmate Drawing! </button>
-
-
 
 <div id="welcome-form-msg">
 <span class="type-it"></span>
@@ -16,30 +10,46 @@
 <span class="type-it-two"></span>
 </div>
 
-<div id="delivery-form-msg" class="alert alert-warning" role="alert">
+<div id="delivery-form-msg">
 <span class="type-it-three"></span>
 </div>
 
-<div id="final-form-msg" class="alert alert-success" role="alert">
+</div>
+<button type="button" id="start-form-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-5 fw-bold fs-1"> I want my Soulmate! </button>
+
+
+<div id="final-form-msg">
 <span class="type-it-four"></span>
 </div>
 
 
 
 
-    <div class="mb-1 mt-1 userNameWrapper">
-       
-        <input class="form-control" id="userName" type="text" name="userName" placeholder="John Travolta" required />
-        
-        <div id="error" class="mt-2"></div>
 
-        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required />
-        
+
+
+
+
+
+
+    <div class="mb-2 mt-2 userNameWrapper">
+       
+        <div class="form-floating">
+        <input class="form-control mt-4" id="userName" type="text" name="userName" placeholder="Your Full Name" required />
+        <span class="icon-inside"><i class="fas fa-user"></i></span>
+        <label for="userName">Your Full Name</label>
+        </div>
+        <div class="form-floating mt-2">
+        <input class="form-control mt-2" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required />
+        <span class="icon-inside"><i class="fas fa-envelope"></i></span>
+        <label for="userEmail">Your E-mail</label>
+        </div>
+        <div id="error" class="mt-2"></div>
         <div id="errorEmail" class="mt-2"></div>
     </div>
-    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1"> Yes, my Name & Email are Correct!</button>
+    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1" disabled> Confirm!</button>
 
-    <div class="mb-1 mt-1 userDobWrapper">
+    <div class="mb-2 mt-2 userDobWrapper">
     
         <input class="form-control" id="userDob" name="userDob" placeholder="DD/MM/YYYY" required />
         
@@ -47,10 +57,10 @@
         
 
     </div>
-    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1"> Yes, this is my Date of Birth!</button>
+    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1" disabled> Confirm!</button>
 
 
-    <div class="mb-1 mt-1 userDeliveryWrapper">
+    <div class="mb-2 mt-2 userDeliveryWrapper">
     <div class="position-relative">
         <label class="fs-1 fw-bold">Delivery Priority </label> 
         <div class="product-badge product-available mt-n1 dropdown-toggle" data-bs-toggle="collapse" href="#deliveryCollapse" role="button" aria-expanded="false" aria-controls="deliveryCollapse">
@@ -136,5 +146,5 @@
     <div class="mb-1 mt-1"> <input type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
 
 
-</div>
+
 </form>

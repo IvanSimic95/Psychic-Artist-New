@@ -53,9 +53,7 @@ $title = $v['home-title'] ?? $v['website-title'] ?? 'Psychic Artist';
     <link href="/assets/css/user.min.css" rel="stylesheet" >
     <link href="/assets/css/animate.css" rel="stylesheet" >
     <link href="/assets/css/custom.css" rel="stylesheet" >
-
-    <link type="text/css" rel="stylesheet" href="/vendors/lightgallery.js/dist/css/lightgallery-bundle.min.css" />
-
+    <link href="/assets/css/new-menu.css" rel="stylesheet" >
 
   
 

@@ -2,7 +2,7 @@
 
 <?php // include_once $_SERVER['DOCUMENT_ROOT'].'/templates/chat.php'; ?>
 </main>
-<?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
+<?php  //  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
 <footer class="footer bg-dark pt-1">
 
       <section class="bg-dark pt-4 pb-4 light">
@@ -78,10 +78,7 @@
     <script src="/vendors/list.js/list.min.js"></script>
     <link href="vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet" />
     <script src="/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
-    <script src="/vendors/lightgallery.js/dist/lightgallery.min.js"></script>
-    <script src="/vendors/lightgallery.js/dist/plugins/thumbnail/lg-thumbnail.min.js"></script>
-    <script src="/vendors/lightgallery.js/dist/plugins/video/lg-video.min.js"></script>
-    <script src="/vendors/lightgallery.js/dist/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="/assets/js/new-menu.js"></script>
     <script src="/assets/js/type-it.js"></script>
     <script src="/assets/js/verimail.jquery.js"></script>
 
