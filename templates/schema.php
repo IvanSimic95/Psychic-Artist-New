@@ -3,7 +3,7 @@
   "@context": "https://schema.org/",
   "@type": "Product",
   "name": "<?php echo $title; ?>",
-  "image": "<?php echo $logo; ?>",
+  "image": "https://psychic-artist.com<?php echo $image; ?>",
   "sku": "0446310786",
   "description": "<?php echo $description; ?>",
   "mpn": "925872",
