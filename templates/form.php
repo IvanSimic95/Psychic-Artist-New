@@ -1,4 +1,5 @@
-<form class="form-order row g-3 needs-validation flex-grow-2" name="order_form" action="/order.php" method="get" novalidate>
+<div id="form-progressbar" class="mb-2"></div>
+<form class="form-order row g-0 needs-validation flex-grow-2" name="order_form" action="/order/order.php" method="get" novalidate>
 <div id="form-type-wrapper" class="alert alert-info mb-0" role="alert" style="min-height:100px;">
 <span class="type-it-zero" style="min-height:200px;"></span>
 
@@ -15,7 +16,7 @@
 </div>
 
 </div>
-<button type="button" id="start-form-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-5 fw-bold fs-1"> I want my Soulmate! </button>
+<button type="button" id="start-form-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1"> <?php echo $button; ?> </button>
 
 
 <div id="final-form-msg">
@@ -47,17 +48,20 @@
         <div id="error" class="mt-2"></div>
         <div id="errorEmail" class="mt-2"></div>
     </div>
-    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1" disabled> Confirm!</button>
+    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" disabled> Confirm!</button>
 
     <div class="mb-2 mt-2 userDobWrapper">
-    
-        <input class="form-control" id="userDob" name="userDob" placeholder="DD/MM/YYYY" required />
-        
+        <?php if($formDate == "US"){ ?>
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required />
+        <div id="errorDobUS" class="mt-2"></div>
+        <?php }else{ ?>
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required />
         <div id="errorDob" class="mt-2"></div>
+        <?php } ?>
         
 
     </div>
-    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1" disabled> Confirm!</button>
+    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" disabled> Confirm!</button>
 
 
     <div class="mb-2 mt-2 userDeliveryWrapper">
@@ -141,7 +145,7 @@
 </div>
 
     </div>
-    <input class="product" type="hidden" name="product" value="">
+    <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
     <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
     <div class="mb-1 mt-1"> <input type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
 

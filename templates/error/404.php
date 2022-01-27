@@ -1,7 +1,14 @@
 <?php 
-http_response_code(404);
-$pageTitle = "Error 404 - Page Not Found";
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
+
+$title = "Error 404 - Page Not Found";
+$sdescription = "The page you're looking for is not found.";
+$errorPage = "404";
+?>
+<style>
+.breadcrumbs-nav{
+display:none!important;
+}
+</style>
 
     <!-- ===============================================-->
     <!--    Main Content-->
@@ -26,5 +33,3 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
     </main><!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>

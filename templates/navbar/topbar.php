@@ -1,4 +1,4 @@
-<div class="topbar">
+<div class="topbar-gradient topbar">
     <div class="container">
         <div class="row">
             <div class="col-6 left">

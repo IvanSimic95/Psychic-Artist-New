@@ -100,7 +100,7 @@ code, pre {
   letter-spacing: -0.01em;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-SuperTitle {
     font-size: 50px;
     line-height: 70px;
@@ -113,7 +113,7 @@ code, pre {
   color: #32325d;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-PageTitle {
     font-size: 40px;
     line-height: 50px;
@@ -126,7 +126,7 @@ code, pre {
   color: #6772e5;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-PageSubtitle {
     font-size: 40px;
     line-height: 50px;
@@ -139,7 +139,7 @@ code, pre {
   color: #525f7f;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-IntroText {
     font-size: 24px;
     line-height: 36px;
@@ -167,7 +167,7 @@ code, pre {
   letter-spacing: 0.025em;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-UppercaseTitle {
     font-size: 22px;
     line-height: 33px;
@@ -199,7 +199,7 @@ code, pre {
   align-items: center;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-ProductLockup, .common-ProductLockupBack {
     font-size: 28px;
     line-height: 38px;
@@ -214,7 +214,7 @@ code, pre {
   margin-right: 20px;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .common-ProductLockup .icon, .common-ProductLockupBack .icon {
     width: 72px;
     height: 72px;
@@ -491,7 +491,7 @@ code, pre {
   flex-basis: 50%;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .sm-cols {
     flex-direction: row;
   }
@@ -587,7 +587,7 @@ code, pre {
   top: 7px;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .sm-icon-top {
     padding-left: 0;
   }
@@ -825,7 +825,7 @@ code, pre {
   display: none;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalNav .navSection.primary, .globalNav .navSection.secondary {
     display: flex;
   }
@@ -845,7 +845,7 @@ code, pre {
   justify-content: flex-end;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalNav .navSection.mobile {
     display: none;
   }
@@ -878,7 +878,7 @@ code, pre {
   padding: 0 10px;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalNav .rootLink {
     padding: 0 calc(10px + (100vw - 670px) * .040541);
   }
@@ -950,7 +950,7 @@ code, pre {
   display: none;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalNav .dropdownRoot {
     display: block;
   }
@@ -1578,7 +1578,7 @@ a.globalFooterCard:after, div.globalFooterCard:after {
   transition: opacity 0.15s;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   a.globalFooterCard, div.globalFooterCard {
     flex-basis: 1%;
     padding-left: 100px;
@@ -1612,7 +1612,7 @@ a.globalFooterCard img, a.globalFooterCard svg, div.globalFooterCard img, div.gl
   top: calc(50% - 65px);
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   a.globalFooterCard img, a.globalFooterCard svg, div.globalFooterCard img, div.globalFooterCard svg {
     left: -50px;
   }
@@ -1688,7 +1688,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   border-bottom: 2px solid rgba(207, 215, 223, 0.25);
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterCTA .container-lg {
     display: flex;
     align-items: center;
@@ -1712,7 +1712,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   display: block;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterCTA .common-ButtonGroup {
     justify-content: flex-end;
   }
@@ -1824,7 +1824,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   justify-content: space-between;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterNav .siteNav {
     flex-wrap: nowrap;
   }
@@ -1839,7 +1839,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   margin-bottom: 20px;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterNav .siteNav .column {
     flex-basis: auto !important;
     margin-right: 40px;
@@ -1997,7 +1997,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   background: #f6f9fc;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterNav .countryPicker {
     flex-direction: row;
   }
@@ -2017,7 +2017,7 @@ a.globalFooterCard.card-radar, div.globalFooterCard.card-radar {
   flex-direction: column;
 }
 
-@media (min-width: 670px) {
+@media (min-width: 1200px) {
   .globalFooterNav .sidebar {
     border-radius: 0 5px 5px 0;
   }

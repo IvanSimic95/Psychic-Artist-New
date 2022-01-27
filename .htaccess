@@ -17,7 +17,7 @@ Options -Indexes
 
 
 # Redirects for all Legal Pages
-RedirectPermanent /tos /legal/tos
+RedirectPermanent /tos /legal/terms-of-service
 RedirectPermanent /privacy /legal/privacy-policy
 RedirectPermanent /dmca /legal/dmca
 RedirectPermanent /refund /legal/refund

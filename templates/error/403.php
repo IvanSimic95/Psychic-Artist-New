@@ -1,7 +1,7 @@
 <?php 
 http_response_code(403);
 $pageTitle = "Error 403 - Access to this page is forbidden!";
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
+include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
 
     <!-- ===============================================-->
     <!--    Main Content-->
@@ -27,4 +27,4 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>

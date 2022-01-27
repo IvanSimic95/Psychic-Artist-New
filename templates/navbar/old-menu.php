@@ -44,6 +44,6 @@
                 </li>
             </ul>
         </div>
-        <ul class="navbar-nav navbar-nav-icons flex-row"> <?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar-notification.php'; ?> <?php  include_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar-user.php'; ?> </ul>
+        <ul class="navbar-nav navbar-nav-icons flex-row"> <?php  include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar-notification.php'; ?> <?php  include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar-user.php'; ?> </ul>
     </div>
 </nav>

@@ -1,5 +1,5 @@
 {
     "require": {
-        "filp/whoops": "^2.14"
+        "pusher/pusher-php-server": "^7.0"
     }
 }

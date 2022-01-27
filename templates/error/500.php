@@ -1,7 +1,7 @@
 <?php 
 http_response_code(404);
 $pageTitle = "Error 500 - Internal Server Error";
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
+include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
 
 ?>
 
@@ -30,4 +30,4 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php';
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>

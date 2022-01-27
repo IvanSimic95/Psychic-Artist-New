@@ -1,13 +1,11 @@
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "<?php echo $p['title']; ?>",
-  "image": "<?php echo $p['logo']; ?>",
+  "name": "<?php echo $title; ?>",
+  "image": "<?php echo $logo; ?>",
   "sku": "0446310786",
-  "description": "<?php echo $p['description']; ?>",
+  "description": "<?php echo $description; ?>",
   "mpn": "925872",
   "brand": {
         "@type": "Brand",
@@ -15,14 +13,14 @@
       },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "<?php echo $p['avg-rating']; ?>",
-    "reviewCount": "<?php echo $p['reviews']; ?>"
+    "ratingValue": "<?php echo $avgrating; ?>",
+    "reviewCount": "<?php echo $reviews; ?>"
   },
   "offers": {
     "@type": "Offer",
-    "url": "<?php echo $p['url']; ?>",
+    "url": "<?php echo $url; ?>",
     "priceCurrency": "USD",
-    "price": "<?php echo $p['price']; ?>",
+    "price": "<?php echo $price; ?>",
     "priceValidUntil": "2022-01-25",
     "itemCondition": "http://schema.org/UsedCondition",
     "availability": "http://schema.org/InStock",

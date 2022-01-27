@@ -41,3 +41,8 @@ Thumbs.db
 # ZiON ignored files #
 node_modules
 temp
+
+# Variable file
+/logs/*
+/templates/vars.php
+/logs/php-error.log

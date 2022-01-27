@@ -1,6 +1,15 @@
 html {
     text-rendering: optimizeLegibility;
     }
+    a {
+      text-decoration: none;
+      color: #748194;
+
+  }
+  a:hover {
+    text-decoration: none;
+    color:#F60067;
+}
     .dropup, .dropend, .dropdown, .dropstart {
 
         margin-right: 20px;
@@ -14,7 +23,35 @@ html {
         bottom: 0;
         width: 100%;
       }
+    .footerv2{
+    background-image: url(/assets/img/v2/main_footer_bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
+  .vr{
+    display: inline-block;
+    align-self: stretch;
+    width: 1px;
+    min-height: 1em;
+    background-color: currentColor;
+    opacity: .25;
+  }
+ 
+  .price-side{
+    border-left: 1px solid #d8e2ef;
+    padding-left: 10px;
+    font-size: 1.2rem !important;
+  }
+  @media screen and (max-width: 400px){
+    .price-side{
+      border-left: none;
+      padding-left: 0;
+      font-size: 1rem !important;
+    }
+
+  }
 
       .product-navbar{
         color:#5e6e82;
@@ -319,8 +356,9 @@ background: linear-gradient(to right bottom, #9e66c6, #6027e1)!important;
 }
 
 .main {
-background: linear-gradient(150deg, #e6d3f9 0%, #e6d3f9 50%, #cea0f1 50%, #cea0f1 100%)!important;
-background-color: transparent!important;
+
+
+background-color: #2c2e43;
 }
 
 
@@ -438,7 +476,8 @@ padding-left:0!important;
 padding:0!important;
 }
 .breadcrumb{
-  font-size: 0.8125rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .breadcrumb-item{
 padding:0!important;
@@ -1039,7 +1078,8 @@ h6 {
     flex-grow: 0;
   }
 
-  .fa-star{
+  .fa-star,
+  .fa-star-half{
     color: #fea569;
     font-size: 16px;
 }
@@ -1155,10 +1195,18 @@ content: none!important;
 .navbar-top{
     font-size:1rem!important;
 }
-.topbar {
-  background: linear-gradient(90deg,#d130eb,#4a30eb 80%,#2b216c);
-        color: #fff!important;
-        padding: 10px;
+.topbar-gradient {
+background: linear-gradient(90deg, #FF4969 0%, #FC9D44 78%);
+color: #fff!important;
+padding: 10px;
+        
+}
+.topbar-image {
+  background-image: url(/assets/img/v2/mega_footer_bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
 }
 .topbar a {
     transition: all 0.5s ease;
@@ -1245,16 +1293,156 @@ display:inline;
 
 
   .product-title{
-    color: #F60067;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-color: transparent;
-    background-image: linear-gradient(90deg, #F60067 0%, #00A5D9 78%);
+
+    
     font-weight: bold;
     letter-spacing: 0px;
     font-size: 32px;
 }
+.btn-link:hover{
+text-decoration:none;
+}
 
+
+.breadcrumb-item
+.breadcrumb-item > .dropdown-toggle,
+.breadcrumb-dropdown,
+.breadcrumb-item > .btn-group > .dropdown-toggle-split{
+padding:0!important;
+font-size:inherit!important;
+}
+.breadcrumb-item > .btn-group > .btn-link{
+ color: #748194;
+ font-weight: inherit;
+ font-family:Open Sans;
+  
+    }
+.breadcrumb-item a,
+.breadcrumb-dropdown{
+text-transform: capitalize;
+color: #748194;
+border-bottom: 1px solid transparent;
+
+  }
+  .breadcrumb-item a:hover,
+  .breadcrumb-item > .btn-link:hover{
+  text-transform: capitalize;
+  border-bottom: 1px solid currentColor;
+  color: #F60067;
+}
+
+.breadcrumb-item.active > .btn-group > .btn-link{
+  text-transform: capitalize;
+  border-bottom: transparent;
+  color: #F60067;
+}
+.breadcrumb-item.active > .btn-group > .dropdown-menu > a{
+  text-transform: capitalize;
+  color: #748194;
+  border-bottom: 1px solid transparent;
+}
+
+.breadcrumb-item.active > .btn-group > .dropdown-menu > a.active{
+  color: #fff;
+}
+
+.breadcrumb-item .dropdown-item:hover{
+border:none;
+}
+.breadcrumb-item.active a{
+font-weight:bold;
+color: #F60067;
+}
+
+.breadcrumbs-dropdown-menu > .dropdown-item.active{
+background-color: #F60067;
+color:#fff;
+font-weight:bold;
+}
+
+
+.icon::before {
+  display: none;
+  color:black;
+}
+
+.icon-solid::before,
+.icon-regular::before,
+.icon-light::before {
+  font-family: "Font Awesome 5 Pro";
+}
+
+.icon-brand::before {
+  font-family: "Font Awesome 5 Brands";
+}
+
+.icon-duotone::before {
+  font-family: "Font Awesome 5 Duotone";
+}
+
+/* defining the right weight for each style */
+.icon-solid::before, .icon-duotone::before {
+  font-weight: 900;
+}
+
+.icon-regular::before {
+  font-weight: 400;
+}
+
+.icon-light::before {
+  font-weight: 300;
+}
+
+.icon-brand::before {
+  font-weight: 400;
+}
+
+
+.dropdown-item-legal::before {
+  font-family: "Font Awesome 5 Pro"; 
+  font-weight: 900; 
+  content: "\f0e3";
+  
+}
+
+.dropdown-item-shop::before {
+  font-family: "Font Awesome 5 Pro"; 
+  font-weight: 900; 
+  content: "\f291";
+  
+}
+
+.dropdown-item-support::before {
+  font-family: "Font Awesome 5 Pro"; 
+  font-weight: 900; 
+  content: "\f1cd";
+  
+}
+
+.dropdown-item-soulmate::before,
+.dropdown-item-twin-flame::before,
+.dropdown-item-future-spouse::before,
+.dropdown-item-past-life::before {
+  font-family: "Font Awesome 5 Pro"; 
+  font-weight: 900; 
+  content: "\f005";
+  
+  
+}
+
+.dropdown-item{
+  padding: 0.75rem 2rem;
+  
+}
+
+
+.text-grad-1{
+color: #F60067;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-color: transparent;
+background-image: linear-gradient(90deg, #FF4969 0%, #FC9D44 78%);
+}
   @media only screen and (max-width: 1080px) {
     .topbar .left a {
         font-size: 0;
@@ -1265,17 +1453,15 @@ display:inline;
     .product-header-rating{
         justify-content: center !important;
     }
+    .phone-title{
+     display:none!important;
+  }
  
 .breadcrumb-light .breadcrumb-item>a{
   padding: 0!important;
   }
 
   .product-title{
-    color: #F60067;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-color: transparent;
-    background-image: linear-gradient(90deg, #F60067 0%, #00A5D9 78%);
     font-weight: bold;
     letter-spacing: -2px;
     font-size: 22px;
@@ -1328,3 +1514,162 @@ display:inline;
   
   }
 
+/* gt3-theme/bubble*/
+.bubbles_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none
+}
+
+@-webkit-keyframes animateBubble {
+  0% {
+      margin-top: 20%
+  }
+
+  to {
+      margin-top: -30%
+  }
+}
+
+@-moz-keyframes animateBubble {
+  0% {
+      margin-top: 20%
+  }
+
+  to {
+      margin-top: -30%
+  }
+}
+
+@keyframes animateBubble {
+  0% {
+      margin-top: 20%
+  }
+
+  to {
+      margin-top: -30%
+  }
+}
+
+@-webkit-keyframes sideWays {
+  0% {
+      margin-left: 0
+  }
+
+  to {
+      margin-left: 25px
+  }
+}
+
+@-moz-keyframes sideWays {
+  0% {
+      margin-left: 0
+  }
+
+  to {
+      margin-left: 25px
+  }
+}
+
+@keyframes sideWays {
+  0% {
+      margin-left: 0
+  }
+
+  to {
+      margin-left: 25px
+  }
+}
+
+.x1 {
+  -webkit-animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 6%;
+  top: 45%;
+  background: #ffb739
+}
+
+.x2 {
+  -webkit-animation: animateBubble 10s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: animateBubble 10s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  left: 5%;
+  top: 80%;
+  background: #fc4fdd
+}
+
+.x3 {
+  -webkit-animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 10%;
+  top: 40%;
+  background: #5ed5cb
+}
+
+.x4 {
+  -webkit-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  left: 20%;
+  top: 0;
+  background: #3de4a3
+}
+
+.x5 {
+  -webkit-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  left: 30%;
+  top: 50%;
+  background: #fc4fb1
+}
+
+.x6 {
+  -webkit-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 50%;
+  top: 0;
+  background: #2c4aff
+}
+
+.x7 {
+  -webkit-animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 65%;
+  top: 70%;
+  background: #ffb739
+}
+
+.x8 {
+  -webkit-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  left: 80%;
+  top: 10%;
+  background: #8f3de4
+}
+
+.x9 {
+  -webkit-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  left: 90%;
+  top: 50%;
+  background: #fff339
+}
+
+.x10 {
+  -webkit-animation: animateBubble 16s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 16s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 80%;
+  top: 80%;
+  background: #fc4f4f
+}
+
+.bubble {
+  border-radius: 50%;
+  box-shadow: none;
+  height: 5px;
+  position: absolute;
+  width: 5px
+}

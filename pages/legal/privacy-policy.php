@@ -1,302 +1,174 @@
-<div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:50px!important;">
+<?php
+$title = "Privacy Policy"; 
+$sdescription = "A privacy policy is a statement or legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.";
+?>
+<div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
         <div class="container">
 
 
 <div class="card mb-3">
-            <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);"></div>
+            <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(/assets/img/icons/spot-illustrations/corner-4.png);"></div>
             <!--/.bg-holder-->
             <div class="card-body position-relative">
               <div class="row">
-                <div class="col-lg-8">
-                  <h3>Privacy policy</h3>
-                  <p class="mb-0">A privacy policy is a statement or legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.</p>
+                <div class="col-lg-12">
+                  <h3><?php echo $title; ?></h3>
+                  <p class="mb-0"><?php echo $sdescription; ?></p>
                 </div>
               </div>
             </div>
           </div>
           <div class="row g-0">
-          <div class="col-lg-4 ps-lg-2">
+       
+            <div class="col-lg-8">
+              <div class="card mb-3">
+                <div class="card-header bg-light">
+                  <h5 class="mb-0">Privacy Policy</h5>
+                </div>
+                  <div class="card-body">
+                
+                  <h6 class="text-primary" id="0">Welcome </h6>
+<p class=" mb-0">Welcome to https://psychic-artist.com (the "Site"). We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies with respect to those users of the Site ("Visitors") who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by Psychic Drawings (collectively, "Services") ("Authorized Customers").</p>
+<hr class="my-4" />
+
+<h6 class="text-primary" id="1">“Personally Identifiable Information”</h6>
+<p class="mb-0 ">refers to any information that identifies or can be used to identify, contact, or locate the person to whom such information pertains, including, but not limited to, name, address, phone number, fax number, email address, financial profiles, social security number, and credit card information. Personally Identifiable Information does not include information that is collected anonymously (that is, without identification of the individual user) or demographic information not connected to an identified individual.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="2">What Personally Identifiable Information is collected?</h6>
+<p class="mb-0 ">We may collect basic user profile information from all of our Visitors. We collect the following additional information from our Authorized Customers: the names, addresses, phone numbers and email addresses of Authorized Customers, the nature and size of the business, and the nature and size of the advertising inventory that the Authorized Customer intends to purchase or sell.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="collecting">What organizations are collecting the information?</h6>
+<p class="mb-0 ">In addition to our direct collection of information, our third party service vendors (such as credit card companies, clearinghouses and banks) who may provide such services as credit, insurance, and escrow services may collect this information from our Visitors and Authorized Customers. We do not control how these third parties use such information, but we do ask them to disclose how they use personal information provided to them from Visitors and Authorized Customers. Some of these third parties may be intermediaries that act solely as links in the distribution chain, and do not store, retain, or use the information given to them.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="4">How does the Site use Personally Identifiable Information?</h6>
+<p class="mb-0 ">We use Personally Identifiable Information to customize the Site, to make appropriate service offerings, and to fulfill buying and selling requests on the Site. We may email Visitors and Authorized Customers about research or purchase and selling opportunities on the Site or information related to the subject matter of the Site. We may also use Personally Identifiable Information to contact Visitors and Authorized Customers in response to specific inquiries, or to provide requested information.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="5">With whom may the information may be shared?</h6>
+<p class="mb-0 ">Personally Identifiable Information about Authorized Customers may be shared with other Authorized Customers who wish to evaluate potential transactions with other Authorized Customers. We may share aggregated information about our Visitors, including the demographics of our Visitors and Authorized Customers, with our affiliated agencies and third party vendors. We also offer the opportunity to “opt out” of receiving information or being contacted by us or by any agency acting on our behalf.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="6">How is Personally Identifiable Information stored?</h6>
+<p class="mb-0 ">Personally Identifiable Information collected by Psychic Artist is securely stored and is not accessible to third parties or employees of Psychic Artist except for use as indicated above.</p>
+
+
+<p class="mb-0 ">What choices are available to Visitors regarding collection, use and distribution of the information?</p>
+
+
+<p class="mb-0 ">Visitors and Authorized Customers may opt out of receiving unsolicited information from or being contacted by us and/or our vendors and affiliated agencies by responding to emails as instructed, or by contacting us at</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="7">Cookies</h6>
+<p class="mb-0 ">A cookie is a string of information that a website stores on a visitor’s computer, and that the visitor’s browser provides to the website each time the visitor returns.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="8">Are Cookies Used on the Site?</h6>
+<p class="mb-0 ">Cookies are used for a variety of reasons. We use Cookies to obtain information about the preferences of our Visitors and the services they select. We also use Cookies for security purposes to protect our Authorized Customers. For example, if an Authorized Customer is logged on and the site is unused for more than 10 minutes, we will automatically log the Authorized Customer off. Visitors who do not wish to have cookies placed on their computers should set their browsers to refuse cookies before using https://psychic-artist.com and https://psychic-artist.com, with the drawback that certain features of website may not function properly without the aid of cookies.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="9">Cookies used by our service providers</h6>
+<p class="mb-0 ">Our service providers use cookies and those cookies may be stored on your computer when you visit our website. You can find more details about which cookies are used in our cookies info page.</p>
+
+
+<p class="mt-3 text-primary">How does Psychic Artist use login information?</p>
+
+
+<p class="mb-0 ">Psychic Artist uses login information, including, but not limited to, IP addresses, ISPs, and browser types, to analyze trends, administer the Site, track a user’s movement and use, and gather broad demographic information.</p>
+
+
+<p class="mt-3 text-primary">What partners or service providers have access to Personally Identifiable Information from Visitors and/or Authorized Customers on the Site?</p>
+
+
+<p class="mb-0 ">Psychic Artist has entered into and will continue to enter into partnerships and other affiliations with a number of vendors. Such vendors may have access to certain Personally Identifiable Information on a need to know the basis for evaluating Authorized Customers for service eligibility. Our privacy policy does not cover their collection or use of this information. Disclosure of Personally Identifiable Information to comply with the law. We will disclose Personally Identifiable Information in order to comply with a court order or subpoena or a request from a law enforcement agency to release information. We will also disclose Personally Identifiable Information when reasonably necessary to protect the safety of our Visitors and Authorized Customers.</p>
+
+
+<p class="mt-3 text-primary">How does the Site keep Personally Identifiable Information secure?</p>
+
+
+<p class="mb-0 ">All of our employees are familiar with our security policy and practices. The Personally Identifiable Information of our Visitors and Authorized Customers is only accessible to a limited number of qualified employees who are given a password in order to gain access to the information. We audit our security systems and processes on a regular basis. Sensitive information, such as credit card numbers or social security numbers, is protected by encryption protocols, in place to protect information sent over the Internet. While we take commercially reasonable measures to maintain a secure site, electronic communications and databases are subject to errors, tampering, and break-ins, and we cannot guarantee or warrant that such events will not take place and we will not be liable to Visitors or Authorized Customers for any such occurrences.</p>
+
+
+<p class="mt-3 text-primary">How can Visitors correct any inaccuracies in Personally Identifiable Information?</p>
+
+
+<p class="mb-0 ">Visitors and Authorized Customers may contact us to update Personally Identifiable Information about them or to correct any inaccuracies by emailing us at test@test.com</p>
+
+
+<p class="mt-3 text-primary">Can a Visitor delete or deactivate Personally Identifiable Information collected by the Site?</p>
+
+
+<p class="mb-0 ">We provide Visitors and Authorized Customers with a mechanism to delete/deactivate Personally Identifiable Information from the Site’s database by contacting. However, because of backups and records of deletions, it may be impossible to delete a Visitor’s entry without retaining some residual information. An individual who requests to have Personally Identifiable Information deactivated will have this information functionally deleted, and we will not sell, transfer, or use Personally Identifiable Information relating to that individual in any way moving forward.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="10">Your rights</h6>
+<p class="mb-0 ">These are summarized rights that you have under data protection law</p>
+
+
+<p class="mb-0 ">The right to access<br>The right to rectification<br>The right to erasure<br>The right to restrict processing<br>The right to object to processing<br>The right to data portability<br>The right to complain to a supervisory authority<br>The right to withdraw consent</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="11">What happens if the Privacy Policy Changes?</h6>
+<p class="mb-0 ">We will let our Visitors and Authorized Customers know about changes to our privacy policy by posting such changes on the Site. However, if we are changing our privacy policy in a manner that might cause disclosure of Personally Identifiable Information that a Visitor or Authorized Customer has previously requested not be disclosed, we will contact such Visitor or Authorized Customer to allow such Visitor or Authorized Customer to prevent such disclosure.</p>
+
+
+
+<hr class="my-4" />
+<h6 class="text-primary" id="12">Links:</h6>
+<p class="mb-0 ">https://psychic-artist.com and https://psychic-artist.com contains links to other websites. Please note that when you click on one of these links, you are moving to another website. We encourage you to read the privacy statements of these linked sites as their privacy policies may differ from ours.</p>
+
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-4 pe-lg-2 d-none d-sm-none d-md-none d-lg-block">
               <div class="sticky-sidebar">
                 <div class="card sticky-top">
                   
                   <div class="card-body">
 
                   <div id="terms-sidebar" class="list-group">
-<a class="list-group-item list-group-item-action" href="#account">Account</a>
-<a class="list-group-item list-group-item-action" href="#subscriptions">Subscriptions</a>
-<a class="list-group-item list-group-item-action" href="#termination">Termination</a>
-<a class="list-group-item list-group-item-action" href="#rules">Rules and abuse</a>
-<a class="list-group-item list-group-item-action" href="#liability">Liability</a>
-<a class="list-group-item list-group-item-action" href="#rights">Rights</a>
-<a class="list-group-item list-group-item-action" href="#instructions">Instructions</a>
+<a class="list-group-item list-group-item-action" href="#0">Welcome</a>
+<a class="list-group-item list-group-item-action" href="#1">“Personal Information”</a>
+<a class="list-group-item list-group-item-action" href="#2">What Information is collected?</a>
+<a class="list-group-item list-group-item-action" href="#3">Who is collecting?</a>
+<a class="list-group-item list-group-item-action" href="#4">How do we use info?</a>
+<a class="list-group-item list-group-item-action" href="#5">Who do we share info with?</a>
+<a class="list-group-item list-group-item-action" href="#6">How is Information stored?</a>
+<a class="list-group-item list-group-item-action" href="#7">Cookies</a>
+<a class="list-group-item list-group-item-action" href="#8">Are Cookies Used on the Site?</a>
+<a class="list-group-item list-group-item-action" href="#9">Cookies used by our service providers</a>
+<a class="list-group-item list-group-item-action" href="#10">Your rights</a>
+<a class="list-group-item list-group-item-action" href="#11">What happens if the Privacy Policy Changes?</a>
+<a class="list-group-item list-group-item-action" href="#12">Links:</a>
+
+
                   </div>
 
         
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 pe-lg-2">
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="account">Account</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="text-primary">Eligibility </h6>
-                  <p class="fs-0 mb-0 fw-semi-bold">In order to use the Service, you must:</p>
-                  <ol type="1">
-                    <li>be a business or a consumer able to enter into valid contracts;</li>
-                    <li>complete the signup process;</li>
-                    <li>agree to the Terms; and</li>
-                    <li>provide true, complete, and up to date contact information.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Accepting these Terms</h6>
-                  <p class="mb-0 ps-3">These Terms apply from when you sign up for the Service. Clicking the ‘Get started’ or ‘Sign up with Google’ button on the Sign up page means that you’ve officially “signed” the Terms and a binding contract will come into existence on the basis of the Terms (“Agreement”). If you sign up for the Service on behalf of a company or other entity, you represent and warrant that you have the authority to accept these Terms on their behalf.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Closing your account</h6>
-                  <p class="mb-0 ps-3">You or we may terminate this Agreement at any time and for any reason by giving notice in writing (including email) to the other party. You need to clear the unpaid invoices (if any exists) before terminating this Agreement. Once terminated, we may permanently delete your account and all the data associated with it, including your Content from our Website.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Changes</h6>
-                  <p class="mb-0 ps-3">We may change any of the Terms by posting revised Terms of Use on our Website and sending an email to the last email address you gave us or a message to your account area of the Service (“Dashboard”). Unless you terminate your account within seven (7) days of that email, the new Terms will be effective immediately and apply to any continued or new use of the Service. We may change the Website, the Service, or any features of the Service at any time.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Account and password</h6>
-                  <p class="mb-0 ps-3">You’re responsible for keeping your account name and password confidential. You’re also responsible for any use of your account, whether or not you authorized the use. You must immediately notify us of any unauthorized use of your accounts. We’re not responsible for any losses due to stolen or hacked passwords. We don’t have access to your current password, and for security reasons, we may only reset your password.</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="subscriptions">Subscriptions and payment </h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="text-primary">Free service</h6>
-                  <p class="mb-0 ps-3">We may make certain Services available to you free of charge, up to certain limits as described on the Website (“Free Services”). Usage of the Services in excess of those limits requires a payment. We may terminate your access to the Free Services at any time without prior notice and will have no liability in respect of such termination. Without limiting the scope of clause 15, Free Services are provided without any warranty.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Paid service</h6>
-                  <ol type="1">
-                    <li>If you use our Services and cross the limits of the Free Services we provide, the ‘Paid service’ section applies for you</li>
-                    <li>The “Invoice Payment” are the fees payable for your invoice, as specified to you when you use our Service beyond the free usage limit. You shall pay for the Invoice Payment to us for the term of your paid usage.</li>
-                    <li>You won’t be charged for using our services until your usage crosses the free usage limit. At the end of each month (considering you have used beyond our free usage limit), we will generate an invoice containing your usage information, and the due amount for that month.</li>
-                    <li>Invoice Fees are payable in the currency specified when you sign up for the Service and are exclusive of value added tax (or other applicable sales tax), which shall be added at the appropriate rate.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Credit cards</h6>
-                  <p class="mb-0 ps-3">As long as you’re a paid user or have an outstanding balance with us, you will provide us with valid credit card information and authorize us to deduct the monthly invoice charges against that credit card (considering you have used beyond our free usage limit). We do not save card information that you provided, rather we use Stripe. You must replace the information for any credit card that expires with information for a different valid credit card. You can add multiple credit cards in our service, but only the card that you mark as Primary will be used to charge you for using paid services. </p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Refunds</h6>
-                  <p class="mb-0 ps-3">You won’t be entitled to a refund from us. As a postpaid service, it’s invalid. But if your invoice has inappropriate information due to any software bug or any other reason, we will refund the extra amount we charged within 14 working days after the discovery. You need to let us know about the extra amount charged from you.</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="termination">Termination</h5>
-                </div>
-                <div class="card-body">
-                  <p class="mb-0 ps-3">Either you or we may terminate this Agreement upon written notice to the other party of a material breach, or if the other party becomes the subject of a petition in insolvency proceedings, bankruptcy, receivership, liquidation or assignment for the benefit of its creditors.</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="rules">Rules and abuse</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="text-primary">General rules</h6>
-                  <p class="fs-0 mb-0 fw-semi-bold">You promise to follow these rules:</p>
-                  <ol type="1">
-                    <li>You won’t send Spam! By "spam", we mean the definition provided by Spamhaus;</li>
-                    <li>You won’t use purchased, rented, or third-party lists of email addresses;</li>
-                    <li>You won’t violate our <a href="#!">Acceptable use policy</a>, which is part of this Agreement;</li>
-                    <li>If you violate any of these rules, then we may suspend or terminate your account;</li>
-                    <li>You will comply with all applicable data protection legislation, including the EU General Data Protection Regulation; and</li>
-                    <li>ou may only use our bandwidth for your use of the Service.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">You shall:</p>
-                  <ol type="1">
-                    <li>provide us with all necessary cooperation in relation to the Service and all necessary access to such information as may be required by us in order to provide you with the Service;</li>
-                    <li>comply with all applicable laws and regulations with respect to your Content and activities under these Terms;</li>
-                    <li>obtain and shall maintain all necessary licenses, consents, and permissions necessary for us, our contractors and agents to perform our obligations under these Terms, including without limitation the Service;</li>
-                    <li>ensure that your Amazon Web Services (“AWS”) account complies with the requirements specified by us on our website from time to time; and</li>
-                    <li>be solely responsible for maintaining your AWS account necessary for the provision of the Service.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Reporting abuse</h6>
-                  <p class="mb-0 ps-3"> If you think anyone is violating any of these Terms, please <a href="mailto:support@themewagon.com">notify us</a> immediately. If you received spam you think came from a falcon user, we want to <a href="mailto:support@themewagon.com">hear about it</a>. If you think anyone has posted material that violates any copyrights, then you may<a href="mailto:support@themewagon.com"> notify us</a>.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">SES and third-party providers</h6>
-                  <ol type="1">
-                    <li>As a condition of using the Service, you shall enable us to access your AWS account. Subject to the terms of these Terms, you acknowledge and agree that access to AWS, the AWS Simple Email Service (SES) and the AWS Simple Notification Service (SNS) is not provided to you under these Terms, and is subject to a separate agreement between you and Amazon Web Services.</li>
-                    <li>falcon facilitates integration with a number of third party services which you can use in relation to your account or your Contents (“Third Party Service”), although we make no warranty as to any ongoing support for any third party service. We make no representation or commitment and shall have no liability or obligation whatsoever in relation to the content or use of, or correspondence with, any Third Party Service. Any contract entered into and any transaction completed by means of your use of the Service with any Third Party Service is between you and the relevant third party, and not us. We recommend that you refer to the third party’s website terms and conditions and privacy policy prior to using the relevant Third Party Service.</li>
-                    <li>You acknowledge that the AWS or an operator of a Third Party Service may render ineffective or impair the sending, receipt of viewing of any Content (for example, by breaking links in the Content or removing images from the Content). For the avoidance of doubt, you acknowledge that we shall have no liability to you in respect of any such action. </li>
-                    <li>If at any time you cease to have a current SES account in good standing, you will be unable to use the Service. Your obligation to pay for any unpaid invoice fees will remain unaffected.</li>
-                  </ol>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="liability">Liability</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="text-primary">Indemnity</h6>
-                  <p class="mb-0 ps-3">You shall defend, indemnify and hold us harmless against claims, actions, proceedings, losses, damages, expenses and costs (including without limitation court costs and reasonable legal fees) arising out of or in connection with your use of the Service (or us taking any action in relation to the Service at your direction), including any claim or action from a recipient of any Content sent by means of the Service.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Our responsibility for loss or damage if you are a business</h6>
-                  <p class="fs-0 mb-0 fw-semi-bold">Our responsibility for loss or damage if you are a business</p>
-                  <ol type="1">
-                    <li>arising under or in connection with these Terms;</li>
-                    <li>in respect of any use made by you of the Service; and</li>
-                    <li>in respect of any representation, statement or tortious act or omission (including negligence) arising under or in connection with these Terms.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Except as expressly and specifically provided in these Terms:</p>
-                  <ol type="1">
-                    <li>you assume sole responsibility for results obtained from your use of the Service, and for conclusions drawn from such use. We shall have no liability for any damage caused by errors or omissions in any information, instructions or scripts provided to us by you in connection with the Service, or any actions taken by us at your direction;</li>
-                    <li>all warranties, representations, conditions and all other terms of any kind whatsoever implied by statute or common law are, to the fullest extent permitted by applicable law, excluded from these Terms; and</li>
-                    <li>the Service is provided to you on an “as is” basis.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Nothing in these Terms excludes our liability:</p>
-                  <ol type="1">
-                    <li>for death or personal injury caused by our negligence; or</li>
-                    <li>for fraud or fraudulent misrepresentation.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Subject to section 15.3 above: We shall not be liable whether in tort (including for negligence or breach of statutory duty), contract, misrepresentation, restitution or otherwise for any:</p>
-                  <ol type="1">
-                    <li>loss of profits,</li>
-                    <li>loss of business,</li>
-                    <li>depletion of goodwill and/or similar losses,</li>
-                    <li>loss or corruption of data or information,</li>
-                    <li>pure economic loss, or</li>
-                    <li>special, indirect or consequential loss, costs, damages, charges or expenses however arising under these Terms;</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Our responsibility for loss or damage if you are a consumer</p>
-                  <ol type="1">
-                    <li>We are responsible to you for foreseeable loss and damage caused by us. If we fail to comply with these terms, we are responsible for loss or damage you suffer that is a foreseeable result of our breaking this contract or our failing to use reasonable care and skill, but we are not responsible for any loss or damage that is not foreseeable. Loss or damage is foreseeable if either it is obvious that it will happen or if, at the time the contract was made, both we and you knew it might happen, for example, if you discussed it with us during the sales process.</li>
-                    <li>We do not exclude or limit in any way our liability to you where it would be unlawful to do so. This includes liability for death or personal injury caused by our negligence or the negligence of our employees, agents or subcontractors; for fraud or fraudulent misrepresentation; for breach of your legal consumer rights in relation to the Service.</li>
-                    <li>We are not liable for business losses. If you are a consumer we only supply our services to you for domestic and private use. If you use our service for any commercial, business or resale purpose our liability to you will be limited as set out in Clause 15.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Force majeur</p>
-                  <p class="mb-0 ps-3">We won’t be held liable for any delays or failure in performance of any part of the Service, from any cause beyond our control. This includes, but is not limited to, changes to law or regulations, embargoes, fires, earthquakes, floods, strikes, power blackouts, unusually severe weather conditions, and acts of hackers or third-party internet service providers.</p>
-                  <hr class="my-4" />
-                  <p class="fs-0 mb-0 fw-semi-bold">Data processing term</p>
-                  <p class="mb-0 ps-3"> To the extent that you are a business and we process personal data on your behalf in providing the Services, the <a href="#!">Data processing terms</a> shall apply and are incorporated into these Terms.</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="rights">Rights</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="text-primary">Proprietary rights owned by us</h6>
-                  <p class="mb-0 ps-3">Subject to the limited rights expressly granted in these Terms, we reserve all our rights in and to the Services, including all of our related intellectual property rights (including patents, trademarks, trade secrets, and copyrights). No rights are granted to you under these Terms other than as expressly set forth in these Terms. You will respect our proprietary rights. “falcon” and the “falcon” logo are trademarks belonging to ThemeWagon, Inc. You are not authorized by us to use our trademarks or brand assets without prior permission.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Proprietary rights owned by you</h6>
-                  <p class="mb-0 ps-3">ou represent and warrant that you either own or have permission to use all of your Content. You retain ownership of your Content. By using the Service you grant us and our agents and subcontractors a license to use your Content in order for us to provide, and ensure proper operation of the Service. You acknowledge and agree that we will have the right to use your Content in an anonymized way (which does not identify you or the recipient) for the purposes of increasing our spam identification techniques.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Privacy Policy</h6>
-                  <p class="mb-0 ps-3">We may use and disclose your information according to our Privacy Policy. Our Privacy Policy is treated as part of these Terms</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Waiver</h6>
-                  <p class="mb-0 ps-3">Even if we delay in enforcing these terms, we can still enforce them later. If we do not insist immediately that you do anything you are required to do under these terms, or if we delay in taking steps against you in respect of your breaking them, that will not mean that you do not have to do those things and it will not prevent us from taking steps against you at a later date.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Survival</h6>
-                  <p class="mb-0 ps-3">Any of these terms that expressly or by implication is intended to continue or come into force on or after termination of this Agreement shall continue in full force and effect. Without limitation, clauses 14 Indemnity, 15 Our responsibility for loss or damage Suffered by you if you are a business, 16 Our responsibility for loss or damage suffered by you if you are a consumer, 18 Data processing terms, 28 Third party rights,29 If you are a business – governing law and jurisdiction, and 30 Which laws apply to this contract and where you may bring legal proceedings if you are a consumer shall continue in full force and effect notwithstanding the termination of this Agreement.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Severance</h6>
-                  <ol type="1">
-                    <li>If any provision (or part of a provision) of these Terms is found by any court or administrative body of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions shall remain in force.</li>
-                    <li>If any invalid, unenforceable or illegal provision would be valid, enforceable or legal if some part of it were deleted, the provision shall apply with whatever modification is necessary to give effect to the commercial intention of the parties.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Entire agreement</h6>
-                  <ol type="1">
-                    <li>These Terms and any documents referred to in them constitute the whole agreement between the parties and supersede any previous arrangement, understanding or agreement between them relating to the subject matter they cover</li>
-                    <li>Each of the parties acknowledges and agrees that in entering into these Terms it does not rely on any undertaking, promise, assurance, statement, representation, warranty or understanding (whether in writing or not) of any person (whether party to these Terms or not) relating to the subject matter of these Terms, other than as expressly set out in these Terms.</li>
-                  </ol>
-                  <h6 class="text-primary">Assignment</h6>
-                  <ol type="1">
-                    <li>You shall not, without our prior written consent of us, assign, transfer, charge, sub-contract or deal in any other manner with all or any of our rights or obligations under these Terms.</li>
-                    <li>We may at any time assign, transfer, charge, sub-contract or deal in any other manner with all or any of our rights or obligations under these Terms.</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">No partnership or agency</h6>
-                  <p class="mb-0 ps-3">Nothing in these Terms is intended to or shall operate to create a partnership between the parties, or authorize either party to act as agent for the other, and neither party shall have the authority to act in the name or on behalf of or otherwise to bind the other in any way (including, but not limited to, the making of any representation or warranty, the assumption of any obligation or liability and the exercise of any right or power).</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Third party rights</h6>
-                  <p class="mb-0 ps-3">These Terms do not confer any rights on any person or party other than you and us.</p>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">If you are a business – Governing Law and Jurisdiction</h6>
-                  <ol type="1">
-                    <li>These Terms and any disputes or claims arising out of or in connection with them or their subject matter or formation (including non-contractual disputes or claims) are governed by, and construed in accordance with, the laws of the USA.</li>
-                    <li>The parties irrevocably agree that the courts of the USA have exclusive jurisdiction to settle any dispute or claim that arises out of or in connection with these Terms or its subject matter or formation (including non-contractual disputes or claims).</li>
-                  </ol>
-                  <hr class="my-4" />
-                  <h6 class="text-primary">Which laws apply to this contract and where you may bring legal proceedings if you are a consumer?</h6>
-                  <p class="mb-0 ps-3">These Terms are governed by USA law and you can bring legal proceedings in respect of the products in the USA courts. As a consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident. Nothing in these terms and conditions, including this clause 30, affects your rights as a consumer to rely on such mandatory provisions of local law.</p>
-                  <p class="pt-2">Thank you for taking the time to read these Terms.</p>
-                  <p>Last update: 04 Nov 2020</p>
-                </div>
-              </div>
-              <div class="card mb-3 mb-lg-0">
-                <div class="card-header bg-light">
-                  <h5 class="mb-0" id="instructions"> Instructions</h5>
-                </div>
-                <div class="card-body">
-                  <h6 class="mb-3 text-primary">Instructions for Processing: </h6>
-                  <table class="table table-striped table-bordered">
-                    <tbody>
-                      <tr class="bg-300">
-                        <td><strong>Description</strong></td>
-                        <td><strong>Details</strong></td>
-                      </tr>
-                      <tr>
-                        <td>Subject matter of the processing </td>
-                        <td>Providing the Customer with bulk email sending via the Falcon platform.</td>
-                      </tr>
-                      <tr>
-                        <td>Duration of the processing </td>
-                        <td>For the duration of the Agreement</td>
-                      </tr>
-                      <tr>
-                        <td>Nature and purposes of the processing</td>
-                        <td>Sending campaigns through the Falcon platform storing email addresses provided through one of our forms or integrations. Storing data on recipient behavior, whether they click, open, unsubscribe, bounce when a campaign is sent. Actioning on the Customer’s behalf any ‘unsubscribe’ requests from recipients of messages sent using the Service.</td>
-                      </tr>
-                      <tr>
-                        <td>Type of Personal Data </td>
-                        <td>Email address, Customer IP Address, First Name, Last Name, Timezone and any other personal data provided through a custom field.</td>
-                      </tr>
-                      <tr>
-                        <td>Categories of Data Subject</td>
-                        <td>Recipients of the emails as specified when creating a campaign</td>
-                      </tr>
-                      <tr>
-                        <td>Plan for return and destruction of the data once the Customer wants to destroy them UNLESS there is a requirement under EU or applicable EU Member State law to preserve that type of data</td>
-                        <td>Campaign data (Sent, Delivered, Fails, Bounces, Opens, Clicks, Revenues, Sells, Complaints, Unsubscribes), Customer data (email addresses, first name, last name, timezone, and any associated custom fields) will be held forever until the request to terminate The customer data is received.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p>IN WITNESS WHEREOF, this Addendum is entered into and becomes a binding part of the Agreement with effect from the last date of execution below.</p>
-                  <div class="row">
-                    <div class="col-6">
-                      <p><strong>Falcon</strong><br /></p>
-                      <p><strong>Signature _____________________________</strong><br /></p>
-                      <p><strong>Name: John Doe</strong><br /></p>
-                      <p><strong>Title: CEO</strong><br /></p>
-                      <p><strong>Date Signed: </strong></p>
-                    </div>
-                    <div class="col-6">
-                      <p><strong>Customer: </strong><br /></p>
-                      <p><strong>Signature _____________________________</strong><br /></p>
-                      <p><strong>Name: </strong><br /></p>
-                      <p><strong>Title: </strong><br /></p>
-                      <p><strong>Date Signed: </strong></p>
-                    </div>
-                  </div>
-                  <p>Last update: 04 Nov 2020</p>
                 </div>
               </div>
             </div>
