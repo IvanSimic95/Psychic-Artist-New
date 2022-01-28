@@ -180,11 +180,11 @@ echo '
                         <img src="/assets/img/placeholder.png" data-src="https://avatars.dicebear.com/api/adventurer/' . $row["review_name"]. '.svg" class="lazyload review-avatar avatar rounded" alt="' . $row["review_name"]. 'Avatar">
                         <div class="flex-fill ms-1 text-truncate">
                             <h6 class="mb-0 fs-1 fw-semibold"><span>' . $row["review_name"]. '</span></h6>
-                            <span class="text-muted">' .$time. '</span>
+                            ' .$ratingStars. '
                         </div>
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
-                            ' .$ratingStars. '
+                            <span class="text-muted">' .$time. '</span>
                               <!--  <i class="fa fa-star text-warning fs--1"></i>
                                 <i class="fa fa-star text-warning fs--1"></i>
                                 <i class="fa fa-star text-warning fs--1"></i>
