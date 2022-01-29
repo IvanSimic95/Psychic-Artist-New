@@ -1470,13 +1470,8 @@ background-image: linear-gradient(90deg, #FF4969 0%, #FC9D44 78%);
   }
 
 
-  .product-container{
-    padding: 0!important;
-    }
 @media only screen and (max-width: 763px) {
-    .product-container{
-    padding: 0 15px 0 15px!important;
-    }
+
     .navbar-toggler-humburger-icon
     {
         width: 10%;

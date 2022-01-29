@@ -43,9 +43,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/templates/schema.php';
 
 ?>
 
-<div class="container product-container container-bg" data-layout="container">
+<div class="container product-container container-bg p-0 p-sm-2 p-md-3 p-xl-4" data-layout="container">
 
-    <section class="py-4 light" id="banner">
+    <section class="p-0 light" id="banner">
         <!-- PRODUCT START -->
         <div class="card mb-3 rounded-3">
             <div class="card-body rounded-3" style="padding:0!important;">
