@@ -10,13 +10,30 @@ $row = $result->fetch_array(MYSQLI_NUM);
 
 $title = $row[1];
 $shorttitle = $row[2];
-$subtitle = $row[3];
-$description = $row[4];
-$sdescription = $row[5];
-$image = $row[6];
-$price = $row[7];
-$url = $row[8];
-$button = $row[9];
+$codename = $row[3];
+$subtitle = $row[4];
+$description = $row[5];
+$sdescription = $row[6];
+$image = $row[7];
+$price = $row[8];
+$url = $row[9];
+$button = $row[10];
+$sales = $row[11];
+
+$sql2 = "SELECT * FROM orders WHERE order_product = '" . $codename . "'";
+$result2 = $conn->query($sql2);
+$countsales = $result2->num_rows; //Count orders with this product
+
+$sales = $sales + $countsales; //Combine orders from DB with fake value from product in DB
+//$sales = number_format($sales);
+
+$fsales = time();
+$fsales = $fsales / 30;
+$fsales = round($fsales);
+
+$fsales = substr($fsales, 6);
+
+$sales = $sales + $fsales;
 
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
 
@@ -120,7 +137,7 @@ else { ?>
                                 
                                 <span style="float:left;">
                                 <i class="fas fa-star align-middle mb-0 mt-n1 mr-2"></i> Rating: </span>
-                                <p class="h4">
+                                <p class="h4 mb-0">
                                
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
@@ -135,13 +152,13 @@ else { ?>
                                   <?php
 }?>
 
-                                  </h4>
+                                    </p>
                                 </div>
 
                                 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales">
                                     <span style="float:left;">
                                     <i class="fas fa-shopping-cart align-middle mb-0 mt-n1 mr-2"></i> Sales: </span>
-                                    <p class="h4">7</h4>
+                                    <div class="h4 mb-0" data-countup='{"endValue":<?php echo $sales; ?>, "separator":" "}'>0</div>
                                 </div>
 
                                
@@ -149,7 +166,7 @@ else { ?>
                                 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-reviews">
                                     <span style="float:left;">
                                     <i class="fas fa-comments align-middle mb-0 mt-n1 mr-2"></i> Reviews: </span>
-                                    <p class="h4"><?php echo $reviews; ?></h4>
+                                    <div class="h4 mb-0" data-countup='{"endValue":<?php echo $reviews; ?>, "separator":" "}'>0</div>
                                 </div>
 
 

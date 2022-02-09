@@ -5,3 +5,51 @@ Stack trace:
 #2 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
 #3 {main}
   thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 247
+[09-Feb-2022 01:52:58 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:116
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 116
+[09-Feb-2022 01:53:10 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:10 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:11 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:19 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:20 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:21 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 01:53:43 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in C:\laragon\www\PA\templates\shop\productV1.php:115
+Stack trace:
+#0 C:\laragon\www\PA\pages\shop\soulmate.php(3): require_once()
+#1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
