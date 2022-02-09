@@ -122,9 +122,9 @@ if($domain == "pa.test"){
 	$db = "pa";
 }else{
 	$servername = "localhost";
-	$username = "psychic_newpanel";
+	$username = "psychic_newuser";
 	$password = "Jepang123Iva";
-	$db = "psychic_newpanel";
+	$db = "psychic_web";
 }
 
 
