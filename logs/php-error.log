@@ -58,3 +58,6 @@ Stack trace:
 #0 C:\laragon\www\PA\order\order.php(91): mysqli->query('INSERT INTO ord...')
 #1 {main}
   thrown in C:\laragon\www\PA\order\order.php on line 91
+[09-Feb-2022 12:02:46 UTC] PHP Fatal error:  Cannot redeclare time_ago() (previously declared in C:\laragon\www\PA\templates\config.php:31) in C:\laragon\www\PA\templates\config.php on line 31
+[09-Feb-2022 12:05:12 UTC] PHP Fatal error:  Cannot redeclare formLog() (previously declared in C:\laragon\www\PA\templates\config.php:98) in C:\laragon\www\PA\templates\config.php on line 98
+[09-Feb-2022 12:05:13 UTC] PHP Fatal error:  Cannot redeclare formLog() (previously declared in C:\laragon\www\PA\templates\config.php:98) in C:\laragon\www\PA\templates\config.php on line 98

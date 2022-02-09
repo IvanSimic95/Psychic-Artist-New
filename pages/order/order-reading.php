@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 
 $logArray = array();
 $errorDisplay = "";
@@ -7,41 +7,38 @@ $logArray['1'] = date("d-m-Y H:i:s");
 $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
 
-
-isset($_GET['userName'])    ? $user_name=$_GET['userName']     : $errorDisplay .= " Missing User Name /";
-isset($_GET['userEmail'])   ? $user_email=$_GET['userEmail']    : $errorDisplay .= " Missing User Email /";
-
-isset($_GET['userDob']) OR isset($_GET['userDobUS']) ? $dob = "Yes"   : $errorDisplay .= " Missing User Date of Birth (Both US and EU Fields) /";
-if(isset($_GET['userDob']))$user_dob = $_GET['userDob'];
-if(isset($_GET['userDobUS']))$user_dob = $_GET['userDobUS'];
-
-
-$today = date("d-m-Y");
-$diff = date_diff(date_create($user_dob), date_create($today));
-$user_age = $diff->format('%Y');
-
-isset($_GET['product'])  ? $order_product = $_GET['product']   : $errorDisplay .= " Missing Product ID /";
-isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $errorDisplay .= " Missing Order Priority /";
-
-isset($_GET['cookie_id']) ? $cookie_id = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
-isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
+if(isset($_GET['skip'])){ 
+    if($_GET['skip']=="yes"){ 
+    $_SESSION['funnel_page'] = "future-baby";
+    header('Location: /offer/future-baby.php');
+    die();
+    }
+}
+  
+$_SESSION['funnel_page'] = "future-baby";
 
 
+$cookie_id = $_GET['cookie_id'];
 
-$order_date = date('Y-m-d H:i:s');
+$user_name = $_SESSION['orderName'];
+$user_email = $_SESSION['orderEmail'];
+$user_age = $_SESSION['orderAge'];
+
+// set parameters and execute
+if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
+if(isset($_GET['love'])) {$love = $_GET['love'];}else{$love = "";}
+if(isset($_GET['career'])) {$career = $_GET['career'];}else{$career = "";}
+if(isset($_GET['health'])) {$health = $_GET['health'];}else{$health = "";}
+
+$order_product = $general . " " .  $love . " " . $career . " " . $health;
+$order_priority = "24";
+
+$landing = $_GET['landingpage'];
+
 $partnerGender = "male";
 
-//Full name -> First and Last Name
-$parser = new TheIconic\NameParser\Parser();
-$name = $parser->parse($user_name);
-
-$fName = $name->getFirstname();
-$lName = $name->getLastname();
-
-$_SESSION['orderFName'] = $fName;
-$_SESSION['orderLName'] = $lName;
-
-$_SESSION['orderAge'] = $user_age;
+$fName = $_SESSION['orderFName'];
+$lName = $_SESSION['orderLName'];
 
 //Find User Gender
 function findGender($name) {
@@ -86,14 +83,16 @@ die();
 if($user_name ) {
     
     $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
-                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
-
+    VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
+  
     if ($conn->query($sql) === TRUE) {
     $logArray['9'] = "Success"; 
     } else {
     $logArray['9'] = "Error: " . $sql . "<br>" . $conn->error;; 
     }
 
+    $lastRowInsert = mysqli_insert_id($conn);
+    unset($_SESSION['user_cookie_id']);
     $conn->close();
     formLog($logArray);
 ?>
@@ -139,10 +138,21 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
     return false;
 };
-var prio = getUrlParameter('priority');
-var product = getUrlParameter('product');
+var nr_total = 0;
+if (getUrlParameter('general')) {
+  nr_total++;
+}
+if (getUrlParameter('love')) {
+  nr_total++;
+}
+if (getUrlParameter('career')) {
+  nr_total++;
+}
+if (getUrlParameter('health')) {
+  nr_total++;
+}
 
- window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename=" + product + prio + "&redirect=<?php echo $baseRedirect; ?>";
+ window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6490&product_codename=" + nr_total + "xreadings&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $baseRedirect; ?>";
 </script>
 
 

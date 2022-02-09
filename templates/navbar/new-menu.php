@@ -40,7 +40,7 @@
           <div class="popupContainer">
             <a class="popupCloseButton">Close</a>
             <div class="mobileProducts">
-              <p clas="h4">Products</p>
+              <h4>Products</h4>
               <div class="mobileProductsList">
                 <ul>
                   <li><a class="linkContainer item-payments" href="/shop/soulmate">

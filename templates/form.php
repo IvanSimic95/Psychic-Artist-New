@@ -1,5 +1,5 @@
 <div id="form-progressbar" class="mb-2"></div>
-<form class="form-order row g-0 needs-validation flex-grow-2" name="order_form" action="/order/order.php" method="get" novalidate>
+<form class="form-order row g-0 needs-validation flex-grow-2" name="order_form" action="/order/order" method="get" novalidate>
 <div id="form-type-wrapper" class="alert alert-info mb-0" role="alert" style="min-height:100px;">
 <span class="type-it-zero" style="min-height:200px;"></span>
 

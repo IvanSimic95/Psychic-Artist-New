@@ -1,7 +1,7 @@
 <?php
 ob_start();
 $customJSPreload = $customCSS = "";
-include $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
 
 //Do a check of file from URL, if it doesn't exist switch back to default

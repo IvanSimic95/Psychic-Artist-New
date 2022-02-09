@@ -1,7 +1,7 @@
 <?php
 /* $title          = $v['p'.$productID.'-title']; $shorttitle     = $v['p'.$productID.'-short-title']; $subtitle       = $v['p'.$productID.'-subtitle']; $description    = $v['p'.$productID.'-description']; $sdescription   = $v['p'.$productID.'-short-description']; $image          = $v['p'.$productID.'-image']; $price          = $v['p'.$productID.'-price']; $reviews        = $v['p'.$productID.'-reviews']; $avgrating      = $v['p'.$productID.'-avg-rating']; $url            = $v['p'.$productID.'-url']; $button         = $v['p'.$productID.'-button']; $pimage = $image; include $_SERVER['DOCUMENT_ROOT'].'/templates/schema.php';  */
 
-
+$_SESSION['funnel_page'] = "main";
 
 $sql = "SELECT * FROM products WHERE id = '" . $productID . "'";
 $result = $conn->query($sql);

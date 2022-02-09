@@ -52,7 +52,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link href="/min/g=css" rel="stylesheet">
+    <link href="/min/g=css?v=1.2" rel="stylesheet">
     <link href="/assets/css/custom.css" rel="stylesheet">
 
     <!--CUSTOMCSS-->
