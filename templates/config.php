@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-include $_SERVER['DOCUMENT_ROOT'].'/compressor.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 $customJS = $customCSS = "";
@@ -122,9 +121,9 @@ if($domain == "pa.test"){
 	$db = "pa";
 }else{
 	$servername = "localhost";
-	$username = "psychic_newuser";
+	$username = "psychic_newpanel";
 	$password = "Jepang123Iva";
-	$db = "psychic_web";
+	$db = "psychic_newpanel";
 }
 
 
