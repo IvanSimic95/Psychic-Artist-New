@@ -20,6 +20,10 @@ class ComposerStaticInit2e4740519927ec21cdab0366b5894822
         array (
             'tubalmartin\\CssMin\\' => 19,
         ),
+        'T' => 
+        array (
+            'TheIconic\\NameParser\\' => 21,
+        ),
         'P' => 
         array (
             'Pusher\\' => 7,
@@ -48,6 +52,11 @@ class ComposerStaticInit2e4740519927ec21cdab0366b5894822
         'tubalmartin\\CssMin\\' => 
         array (
             0 => __DIR__ . '/..' . '/tubalmartin/cssmin/src',
+        ),
+        'TheIconic\\NameParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/theiconic/name-parser/src',
+            1 => __DIR__ . '/..' . '/theiconic/name-parser/tests',
         ),
         'Pusher\\' => 
         array (
@@ -446,6 +455,44 @@ class ComposerStaticInit2e4740519927ec21cdab0366b5894822
         'Pusher\\PusherInstance' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInstance.php',
         'Pusher\\PusherInterface' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInterface.php',
         'Pusher\\Webhook' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Webhook.php',
+        'TheIconic\\NameParser\\GermanParserTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/GermanParserTest.php',
+        'TheIconic\\NameParser\\LanguageInterface' => __DIR__ . '/..' . '/theiconic/name-parser/src/LanguageInterface.php',
+        'TheIconic\\NameParser\\Language\\English' => __DIR__ . '/..' . '/theiconic/name-parser/src/Language/English.php',
+        'TheIconic\\NameParser\\Language\\German' => __DIR__ . '/..' . '/theiconic/name-parser/src/Language/German.php',
+        'TheIconic\\NameParser\\Mapper\\AbstractMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/AbstractMapper.php',
+        'TheIconic\\NameParser\\Mapper\\AbstractMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/AbstractMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\FirstnameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/FirstnameMapper.php',
+        'TheIconic\\NameParser\\Mapper\\FirstnameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/FirstnameMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\InitialMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/InitialMapper.php',
+        'TheIconic\\NameParser\\Mapper\\InitialMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/InitialMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\LastnameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/LastnameMapper.php',
+        'TheIconic\\NameParser\\Mapper\\LastnameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/LastnameMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\MiddlenameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/MiddlenameMapper.php',
+        'TheIconic\\NameParser\\Mapper\\MiddlenameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/MiddlenameMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\NicknameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/NicknameMapper.php',
+        'TheIconic\\NameParser\\Mapper\\NicknameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/NicknameMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\SalutationMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/SalutationMapper.php',
+        'TheIconic\\NameParser\\Mapper\\SalutationMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/SalutationMapperTest.php',
+        'TheIconic\\NameParser\\Mapper\\SuffixMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/SuffixMapper.php',
+        'TheIconic\\NameParser\\Mapper\\SuffixMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/SuffixMapperTest.php',
+        'TheIconic\\NameParser\\Name' => __DIR__ . '/..' . '/theiconic/name-parser/src/Name.php',
+        'TheIconic\\NameParser\\NameTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/NameTest.php',
+        'TheIconic\\NameParser\\Parser' => __DIR__ . '/..' . '/theiconic/name-parser/src/Parser.php',
+        'TheIconic\\NameParser\\ParserTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/ParserTest.php',
+        'TheIconic\\NameParser\\Part\\AbstractPart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/AbstractPart.php',
+        'TheIconic\\NameParser\\Part\\AbstractPartTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Part/AbstractPartTest.php',
+        'TheIconic\\NameParser\\Part\\Firstname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Firstname.php',
+        'TheIconic\\NameParser\\Part\\GivenNamePart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/GivenNamePart.php',
+        'TheIconic\\NameParser\\Part\\Initial' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Initial.php',
+        'TheIconic\\NameParser\\Part\\Lastname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Lastname.php',
+        'TheIconic\\NameParser\\Part\\LastnamePrefix' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/LastnamePrefix.php',
+        'TheIconic\\NameParser\\Part\\Middlename' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Middlename.php',
+        'TheIconic\\NameParser\\Part\\NamePart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/NamePart.php',
+        'TheIconic\\NameParser\\Part\\Nickname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Nickname.php',
+        'TheIconic\\NameParser\\Part\\NormalisationTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Part/NormalisationTest.php',
+        'TheIconic\\NameParser\\Part\\PreNormalizedPart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/PreNormalizedPart.php',
+        'TheIconic\\NameParser\\Part\\Salutation' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Salutation.php',
+        'TheIconic\\NameParser\\Part\\Suffix' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Suffix.php',
         'lessc' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
         'lessc_formatter_classic' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',
         'lessc_formatter_compressed' => __DIR__ . '/..' . '/marcusschwarz/lesserphp/lessc.inc.php',

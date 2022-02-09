@@ -367,6 +367,28 @@ $count = $result->num_rows;
 </div>
 
 <?php
-include("templates/product-customjs.php");
+$customJSPreload = '<link rel="preload" href="/assets/js/product.js" as="script">';
 $customCSS = '<link href="/assets/css/product.css" rel="stylesheet">';
+$customJS = <<<EOT
+<script defer="defer" src="/assets/js/product.js"></script>
+<script>
+$(document).ready(function(){
+const instance0 =  new TypeIt(".type-it-zero", {
+strings: ["<span class='fw-bold'>$subtitle</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. Thousands of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your $shorttitle"],
+waitUntilVisible: true,
+lifeLike: true,
+loop: false,
+html: true,
+breakLines: true,
+speed: 5, 
+afterComplete: function (instance) {
+instance.destroy();
+$("#start-form-btn").slideToggle();
+}
+})
+
+instance0.go();
+});
+</script>
+EOT;
 ?>

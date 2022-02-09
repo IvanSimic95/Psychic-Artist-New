@@ -1,7 +1,3 @@
-<?php
-
-$customJS = <<<EOT
-<script type="text/javascript">
 var mysrc = "https://tracking.buygoods.com/track/?a=6490&firstcookie=0&referrer="+encodeURIComponent(document.referrer)+"&product=112&sessid2="+ReadCookie('sessid2');
 
    var newScript = document.createElement('script');
@@ -11,9 +7,7 @@ var mysrc = "https://tracking.buygoods.com/track/?a=6490&firstcookie=0&referrer=
    var s = document.getElementsByTagName('script')[0];
    s.parentNode.insertBefore(newScript, s);
    function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}
-</script>)
 
-<script>
 
 $(document).ready(function(){
   
@@ -39,26 +33,6 @@ $(".product-badge-new").toggleClass("product-badge-hover");
 window.setTimeout(function() {
 $(".product-badge-new").toggleClass("product-badge-hover");
 }, 5000);
-  
-
-
-
-$(".my-rating1").starRating({
-    starSize: 30,
-    strokeWidth: 9,
-    readOnly: true,
-    strokeColor: 'black',
-    initialRating: '$avgrating',
-    starGradient: {
-      start: '#d130eb',
-      end: '#2b216c'
-    }
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
 
     let ias = new InfiniteAjaxScroll('.contents', {
         item: '.item',
@@ -74,19 +48,7 @@ $(document).ready(function(){
     messageElement: "#errorEmail"
     });
   
-    const instance0 =  new TypeIt(".type-it-zero", {
-      strings: ["<span class='fw-bold'>$subtitle</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. Thousands of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your $shorttitle."],
-      waitUntilVisible: true,
-      lifeLike: true,
-      loop: false,
-      html: true,
-      breakLines: true,
-      speed: 5, 
-      afterComplete: function (instance) {
-        instance.destroy();
-        $("#start-form-btn").slideToggle();
-      }
-    })
+
   
     const instance =  new TypeIt(".type-it", {
       strings: ["<strong>Great!</strong> All you need to do now is answer 3 easy questions", "<hr>#1 - <b>What is your Name & Email?</b>"],
@@ -134,7 +96,7 @@ $(document).ready(function(){
       }
     })
   
-    instance0.go();
+    
   
   var scrollSpy = new bootstrap.ScrollSpy(document.body, {
       target: '#product-nav'
@@ -408,8 +370,6 @@ $(document).ready(function(){
                 $("#errorDob").html("You can only enter numbers for your Date of Birth");  
               }
             });
-  
-    
         });
 
         var bar = new ProgressBar.Line("#form-progressbar", {
@@ -423,6 +383,3 @@ $(document).ready(function(){
         });
   
   });
-</script>
-EOT;
-?>

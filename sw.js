@@ -1,28 +1,73 @@
-// we'll version our cache (and learn how to delete caches in
-// some other post)
-const cacheName = 'v1::static';
+//This is the service worker with the Advanced caching
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+const HTML_CACHE = "html";
+const JS_CACHE = "javascript";
+const STYLE_CACHE = "stylesheets";
+const IMAGE_CACHE = "images";
+const FONT_CACHE = "fonts";
 
-self.addEventListener('install', e => {
-  // once the SW is installed, go ahead and fetch the resources
-  // to make this work offline
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll([
-        '/',
-      ]).then(() => self.skipWaiting());
-    })
-  );
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
-// when the browser fetches a url, either response with
-// the cached object or go ahead and fetch the actual url
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    // ensure we check the *right* cache to match against
-    caches.open(cacheName).then(cache => {
-      return cache.match(event.request).then(res => {
-        return res || fetch(event.request)
-      });
-    })
-  );
-});
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'document',
+  new workbox.strategies.NetworkFirst({
+    cacheName: HTML_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 10,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'script',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: JS_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'style',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: STYLE_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'image',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: IMAGE_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'font',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: FONT_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);

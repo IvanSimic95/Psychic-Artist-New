@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'tubalmartin\\CssMin\\' => array($vendorDir . '/tubalmartin/cssmin/src'),
+    'TheIconic\\NameParser\\' => array($vendorDir . '/theiconic/name-parser/src', $vendorDir . '/theiconic/name-parser/tests'),
     'Pusher\\' => array($vendorDir . '/pusher/pusher-php-server/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),

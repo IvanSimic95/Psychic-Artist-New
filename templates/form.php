@@ -147,6 +147,7 @@
     </div>
     <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
     <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+    <input class="landingpage" type="hidden" name="landingpage" value="LP1">
     <div class="mb-1 mt-1"> <input type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
 
 

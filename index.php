@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$customJSPreload = $customCSS = "";
 include $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
 
@@ -12,7 +13,8 @@ if (!file_exists($template)) {
 $buffer=ob_get_contents();
 ob_end_clean();
 
-
+$buffer=str_replace("<!--CUSTOMJSPRELOAD-->",$customJSPreload,$buffer);
+$buffer=str_replace("<!--CUSTOMCSS-->",$customCSS,$buffer);
 $buffer=str_replace("%TITLE%",$title,$buffer);
 $buffer=str_replace("%DESCRIPTION%",$sdescription,$buffer);
 $buffer=str_replace("%LOGO%",$webLogo,$buffer);

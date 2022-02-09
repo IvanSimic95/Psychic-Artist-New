@@ -24,6 +24,43 @@ isset($_GET['product'])  ? $order_product = $_GET['product']   : $errorDisplay .
 isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $errorDisplay .= " Missing Order Priority /";
 
 isset($_GET['cookie_id']) ? $cookie_id = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
+isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
+
+
+
+$order_date = date('Y-m-d H:i:s');
+$partnerGender = "male";
+
+//Full name -> First and Last Name
+$parser = new TheIconic\NameParser\Parser();
+$name = $parser->parse($user_name);
+
+$fName = $name->getFirstname();
+$lName = $name->getLastname();
+
+$_SESSION['orderFName'] = $fName;
+$_SESSION['orderLName'] = $lName;
+
+$_SESSION['orderAge'] = $user_age;
+
+//Find User Gender
+function findGender($name) {
+$apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
+$getGender = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&name=' . urlencode($name)));
+$data = [[
+        "gender" => $getGender->gender,
+        "accuracy"  => $getGender->accuracy
+        ]];
+return $data;
+}
+
+    
+$findGenderFunc = findGender($fName);
+$userGender = $findGenderFunc['0']['gender'];
+$userGenderAcc = $findGenderFunc['0']['accuracy'];
+
+if($userGender=="male"){$partnerGender = "female";}
+if($userGender=="female"){$partnerGender = "male";}
 
 $order_date = date('Y-m-d H:i:s');
 
@@ -47,10 +84,9 @@ die();
 }
 
 if($user_name ) {
- 
-$sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, pick_sex)
-                    VALUES (NULL, '$cookie_id', '$user_age', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', 'male')";
-
+    
+    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
+                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
 
     if ($conn->query($sql) === TRUE) {
     $logArray['9'] = "Success"; 

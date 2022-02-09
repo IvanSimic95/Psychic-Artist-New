@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c4272ba77dee43ff99012cdf09a42272787c9b8f',
+        'reference' => 'd1e1d395cc35cba38536d4df0ef534782e7241d7',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c4272ba77dee43ff99012cdf09a42272787c9b8f',
+            'reference' => 'd1e1d395cc35cba38536d4df0ef534782e7241d7',
             'dev_requirement' => false,
         ),
         'firephp/firephp-core' => array(
@@ -230,6 +230,15 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
+            'dev_requirement' => false,
+        ),
+        'theiconic/name-parser' => array(
+            'pretty_version' => 'v1.2.11',
+            'version' => '1.2.11.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../theiconic/name-parser',
+            'aliases' => array(),
+            'reference' => '9a54a713bf5b2e7fd990828147d42de16bf8a253',
             'dev_requirement' => false,
         ),
         'tubalmartin/cssmin' => array(

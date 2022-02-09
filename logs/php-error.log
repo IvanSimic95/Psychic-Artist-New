@@ -53,3 +53,8 @@ Stack trace:
 #1 C:\laragon\www\PA\index.php(10): include('C:\\laragon\\www\\...')
 #2 {main}
   thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 115
+[09-Feb-2022 05:16:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'buygoods_order_id' at row 1 in C:\laragon\www\PA\order\order.php:91
+Stack trace:
+#0 C:\laragon\www\PA\order\order.php(91): mysqli->query('INSERT INTO ord...')
+#1 {main}
+  thrown in C:\laragon\www\PA\order\order.php on line 91
