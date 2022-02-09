@@ -1,4 +1,6 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+include $_SERVER['DOCUMENT_ROOT'].'/compressor.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 $customJS = $customCSS = "";
@@ -12,6 +14,16 @@ $webTitle = $v['web-title'];
 $webDescription = $v['web-description'];
 $webLogo = $v['web-logo'];
 $webVersion = $v['web-version'];
+
+$firephp = FirePHP::getInstance(true);
+
+//$firephp->fb('Hello World'); /* Defaults to FirePHP::LOG */
+
+//$firephp->fb('Log message'  ,FirePHP::LOG);
+//$firephp->fb('Info message' ,FirePHP::INFO);
+//$firephp->fb('Warn message' ,FirePHP::WARN);
+//$firephp->fb('Error message',FirePHP::ERROR);
+
 
 $title = $webTitle;
 $sdescription = $webDescription;
@@ -115,6 +127,22 @@ if($domain == "pa.test"){
 	$db = "psychic_newpanel";
 }
 
+
+if($domain == "pa.test"){
+  // testing
+  $min_allowDebugFlag = true;
+  $min_errorLogger    = true;
+  $min_enableBuilder  = true;
+  $min_cachePath      = '/tmp';
+  $min_serveOptions['maxAge'] = 0; // see changes immediately
+} else {
+  // production
+  $min_allowDebugFlag = false;
+  $min_errorLogger    = false;
+  $min_enableBuilder  = false;
+  $min_cachePath      = '/tmp';
+  $min_serveOptions['maxAge'] = 86400;
+}
 
 
 //Error Reporting - None

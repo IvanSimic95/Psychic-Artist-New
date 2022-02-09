@@ -1,7 +1,7 @@
 <?php if($path != "/home"){ ?>
 
 <nav class="breadcrumbs-nav bg-light p-2 px-3 rounded-3 <?php if($path == "/home") echo "d-none"; ?>" style="--falcon-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-<div class="container">
+<div class="container p-0 p-sm-2">
 <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
 <?php
@@ -79,7 +79,7 @@ if (array_key_last($crumbs) > 1){ //Start If path has multiple pages/links
         <li class="breadcrumb-item">
         <div class="btn-group">
         <button class="btn btn-link breadcrumb-dropdown dropdown-toggle icon dropdown-item-'.$key.'" type="button" id="'.$key.'MenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> '.$key.'</button>
-        </button>
+       
     
         <div class="dropdown-menu breadcrumbs-dropdown-menu py-0 rounded-3" aria-labelledby="'.$key.'MenuButton">    
         <a class="dropdown-item icon dropdown-item-shop '.$a1.'  rounded-3" href="/shop"> Shop</a>

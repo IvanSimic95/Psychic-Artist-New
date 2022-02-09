@@ -1,4 +1,5 @@
 <?php
+$title = "Frequently Asked Questions";
 
 //SQL Query for fetching FAQ from Database
 $sql = "SELECT * FROM faq ORDER BY id DESC";
@@ -34,7 +35,7 @@ $count = $result->num_rows;
             <?php
             if($result->num_rows != 0) {
                 while($row = $result->fetch_assoc()) {
-                echo '<h6 style="font-weight:bold;color: #2c7be5;"> <i class="far fa-question-circle"></i> '.$row["question"].'</h6><p class="fs--1 mb-0"><i class="fas fa-info-circle"></i> '.$row["answer"].'</p><hr class="my-3">';
+                echo '<h6 style="font-weight:bold;color: #2c7be5;"> <i class="fas fa-question-circle"></i> '.$row["question"].'</h6><p class="fs--1 mb-0"><i class="fas fa-info-circle"></i> '.$row["answer"].'</p><hr class="my-3">';
                 }
                 } else {
                     echo "No FAQ";
@@ -45,9 +46,31 @@ $count = $result->num_rows;
               
               </div>
             <div class="card-footer d-flex align-items-center bg-light">
-              <h5 class="d-inline-block me-3 mb-0 fs--1">Was this information helpful?</h5><button class="btn btn-falcon-default btn-sm">Yes</button><button class="btn btn-falcon-default btn-sm ms-2">No</button>
+              <h5 class="d-inline-block me-3 mb-0 fs--1 help-info">Was this information helpful?</h5><button id="yes" class="btn btn-falcon-default btn-sm">Yes</button><button id="no" class="btn btn-falcon-default btn-sm ms-2">No</button>
             </div>
           </div>
         </div>
     </section>
 </div>
+<?php
+$customJS = <<<EOT
+<script>
+$(document).ready(function(){
+
+$("#yes" ).click(function(){
+$("#yes").hide();
+$("#no").hide();
+$(".help-info").text("Thank you for your opinion!");
+});
+
+$("#no" ).click(function(){
+$("#yes").hide();
+$("#no").hide();
+$(".help-info").text("Thank you for your opinion!");
+});
+
+});
+</script>
+
+EOT;
+?>

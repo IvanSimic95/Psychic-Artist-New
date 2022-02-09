@@ -5,21 +5,21 @@
 
       <li class="navSection logo">
         <a class="rootLink item-home colorize" href="/">
-             <img src="/assets/img/logo-1.svg"> 
-             <img src="/assets/img/logo-2.svg"> 
+             <img src="/assets/img/logo-1.svg" alt="Psychic Artist Logo #1"> 
+             <img src="/assets/img/logo-2.svg" alt="Psychic Artist Logo #2"> 
         </a>
       </li>
 
       <li class="navSection primary">
         <a href="/" class="rootLink"><i class="fas fa-home"></i> Home</a>
 
-        <a class="rootLink item-products hasDropdown colorize" data-dropdown="products">
+        <a href="#!" class="rootLink item-products hasDropdown colorize" data-dropdown="products">
         <i class="fas fa-shopping-basket"></i> Products
         </a>
-        <a class="rootLink item-developers hasDropdown colorize" data-dropdown="support">
+        <a href="#!" class="rootLink item-developers hasDropdown colorize" data-dropdown="support">
         <i class="fas fa-life-ring"></i> Support
         </a>
-        <a class="rootLink item-company hasDropdown colorize" data-dropdown="company">
+        <a href="#!" class="rootLink item-company hasDropdown colorize" data-dropdown="company">
         <i class="fa fa-gavel"></i> Legal
         </a>
       </li>
@@ -32,15 +32,15 @@
 
       </li>
 
-      <li class="navSection mobile">
-        <a class="rootLink item-mobileMenu colorize">
+      <li id="phoneRootLink" class="navSection mobile">
+        <a id="togglePhoneLink" class="rootLink item-mobileMenu colorize">
           <h2>Menu</h2>
         </a>
         <div class="popup">
           <div class="popupContainer">
             <a class="popupCloseButton">Close</a>
             <div class="mobileProducts">
-              <h4>Products</h4>
+              <p clas="h4">Products</p>
               <div class="mobileProductsList">
                 <ul>
                   <li><a class="linkContainer item-payments" href="/shop/soulmate">

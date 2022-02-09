@@ -1,5 +1,7 @@
 {
     "require": {
+        "firephp/firephp-core": "^0.5.3",
+        "mrclay/minify": "~3.0.0",
         "pusher/pusher-php-server": "^7.0"
     }
 }

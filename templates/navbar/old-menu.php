@@ -20,9 +20,9 @@
                         </div>
                     </div>
                 </li>
-                <!--<li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="/support" role="button"><i class="far fa-life-ring"></i> Support</a></li>-->
+                <!--<li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="/support" role="button"><i class="fas fa-life-ring"></i> Support</a></li>-->
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/support/" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="support">
-                        <i class="far fa-life-ring"></i> Support</a>
+                        <i class="fas fa-life-ring"></i> Support</a>
                     <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="support" style="width:250px;">
                         <div class="bg-white dark__bg-1000 rounded-3 py-2">
                             <a class="dropdown-item link-600 fw-medium" href="/contact">Contact Us</a>

@@ -68,7 +68,7 @@
     <div class="position-relative">
         <label class="fs-1 fw-bold">Delivery Priority </label> 
         <div class="product-badge product-available mt-n1 dropdown-toggle" data-bs-toggle="collapse" href="#deliveryCollapse" role="button" aria-expanded="false" aria-controls="deliveryCollapse">
-            <i class="far fa-question-circle"></i> Delivery Options
+            <i class="fas fa-question-circle"></i> Delivery Options
         </div>
     </div>
 

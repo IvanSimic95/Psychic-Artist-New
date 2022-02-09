@@ -8,64 +8,64 @@
         <div class="feedback-info sticky-top">
             <div class="card shadow-none m3" style="border: 1px solid #dee2e6 !important;">
                 <div class="card-body">
-           <h2 class=" display-6 fw-bold mb-0 text-center" ><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i></h2>
-                    <h5 class="text-mute text-center h5 mt-3 mb-4">Average rating: <b><?php echo $avg; ?></b> of <b><?php echo $count; ?></b> Reviews</h5>
+           <p class="h2 display-6 fw-bold mb-0 text-center" ><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i><i style="font-size:36px;" class="fa fa-star"></i></p>
+                    <p class="text-mute text-center h5 mt-3 mb-4">Average rating: <b><?php echo $avg; ?></b> of <b><?php echo $count; ?></b> Reviews</p>
                     
 
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="mb-0 fw-bold d-flex align-items-center">5<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></h6>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">5<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countfive; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
-                            <div class="progress-bar light-success-bg" role="progressbar" style="width: <?php echo $bar5; ?>%" aria-valuenow="<?php echo $bar5; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar light-success-bg" role="progressbar" style="width: <?php echo $bar5; ?>%" aria-valuenow="<?php echo $bar5; ?>" aria-valuemin="0" aria-valuemax="100" title="5 star reviews"></div>
                         </div>
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="mb-0 fw-bold d-flex align-items-center">4<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></h6>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">4<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countfour; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
                             <div class="progress-bar bg-info-light" role="progressbar" style="width: <?php echo $bar4; ?>%"
-                                aria-valuenow="<?php echo $bar4; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                aria-valuenow="<?php echo $bar4; ?>" aria-valuemin="0" aria-valuemax="100" title="4 star reviews"></div>
                         </div>
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="mb-0 fw-bold d-flex align-items-center">3<i
-                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></h6>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">3<i
+                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countthree; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
                             <div class="progress-bar bg-lightyellow" role="progressbar" style="width: <?php echo $bar3; ?>%"
-                                aria-valuenow="<?php echo $bar3; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                aria-valuenow="<?php echo $bar3; ?>" aria-valuemin="0" aria-valuemax="100" title="3 star reviews"></div>
                         </div>
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="mb-0 fw-bold d-flex align-items-center">2<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></h6>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">2<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $counttwo; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
                             <div class="progress-bar light-danger-bg " role="progressbar" style="width: <?php echo $bar2; ?>%"
-                                aria-valuenow="<?php echo $bar2; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                aria-valuenow="<?php echo $bar2; ?>" aria-valuemin="0" aria-valuemax="100" title="2 star reviews"></div>
                         </div>
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <h6 class="mb-0 fw-bold d-flex align-items-center">1<i
-                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i></h6>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">1<i
+                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countone; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
                             <div class="progress-bar bg-careys-pink" role="progressbar" style="width: <?php echo $bar1; ?>%"
-                                aria-valuenow="<?php echo $bar1; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                aria-valuenow="<?php echo $bar1; ?>" aria-valuemin="0" aria-valuemax="100" title="1 star reviews"></div>
                         </div>
                     </div>
 <!--
                     <div class="customer-like mt-5">
-                        <h6 class="mb-0 fw-bold ">What Customers Like</h6>
+                        <p class="h6 mb-0 fw-bold ">What Customers Like</p>
                         <ul class="list-group mt-3">
                             <li class="list-group-item d-flex">
                                 <div class="number border-end pe-2 fw-bold">
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                     <div class="customer-like mt-5">
-                        <h6 class="mb-0 fw-bold ">What Need Improvement</h6>
+                        <p class="h6 mb-0 fw-bold ">What Need Improvement</p>
                         <ul class="list-group mt-3">
                             <li class="list-group-item d-flex">
                                 <div class="number border-end pe-2 fw-bold">
@@ -175,11 +175,11 @@
          }
 echo '
 <div class="card mb-3 shadow-none item" style="border: 1px solid #dee2e6 !important;">
-                <div class="card-body p-4">
+                <div class="card-body p-3">
                     <div class="d-flex mb-3 pb-1 border-bottom flex-wrap">
                         <img src="/assets/img/placeholder.png" data-src="https://avatars.dicebear.com/api/adventurer/' . $row["review_name"]. '.svg" class="lazyload review-avatar avatar rounded" alt="' . $row["review_name"]. 'Avatar">
                         <div class="flex-fill ms-1 text-truncate">
-                            <h6 class="mb-0 fs-1 fw-semibold"><span>' . $row["review_name"]. '</span></h6>
+                            <p class="h6 mb-0 fs-1 fw-semibold"><span>' . $row["review_name"]. '</span></p>
                             ' .$ratingStars. '
                         </div>
                         <div class="d-flex align-items-center">
@@ -229,7 +229,7 @@ echo '
                         <img src="/assets/img/placeholder.png" data-src="/assets/img/users/1.svg"
                             class="lazyload review-avatar avatar rounded" alt="Ivan Test Avatar">
                         <div class="flex-fill ms-1 text-truncate">
-                            <h6 class="mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></h6>
+                            <p class="h6 mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></p>
                             <span class="text-muted">3 hours ago</span>
                         </div>
                         <div class="d-flex align-items-center">
@@ -254,7 +254,7 @@ echo '
                         <img src="/assets/img/placeholder.png" data-src="/assets/img/users/1.svg"
                             class="lazyload review-avatar avatar rounded" alt="Ivan Test Avatar">
                         <div class="flex-fill ms-1 text-truncate">
-                            <h6 class="mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></h6>
+                            <p class="h6 mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></p>
                             <span class="text-muted">3 hours ago</span>
                         </div>
                         <div class="d-flex align-items-center">
@@ -279,7 +279,7 @@ echo '
                         <img src="/assets/img/placeholder.png" data-src="/assets/img/users/1.svg"
                             class="lazyload review-avatar avatar rounded" alt="Ivan Test Avatar">
                         <div class="flex-fill ms-1 text-truncate">
-                            <h6 class="mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></h6>
+                            <p class="h6 mb-0 fs-1 fw-semibold"><span>Joan Dyer</span></p>
                             <span class="text-muted">3 hours ago</span>
                         </div>
                         <div class="d-flex align-items-center">

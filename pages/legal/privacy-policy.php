@@ -21,7 +21,7 @@ $sdescription = "A privacy policy is a statement or legal document that disclose
           </div>
           <div class="row g-0">
        
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="card mb-3">
                 <div class="card-header bg-light">
                   <h5 class="mb-0">Privacy Policy</h5>
@@ -143,7 +143,7 @@ $sdescription = "A privacy policy is a statement or legal document that disclose
                   </div>
               </div>
             </div>
-            <div class="col-lg-4 pe-lg-2 d-none d-sm-none d-md-none d-lg-block">
+            <div class="col-lg-4 pe-lg-2 d-none">
               <div class="sticky-sidebar">
                 <div class="card sticky-top">
                   
@@ -178,11 +178,3 @@ $sdescription = "A privacy policy is a statement or legal document that disclose
           </div>
     </section>
 </div>
-
-
-<?php
-$customJS = "<script>
-var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-  target: '#terms-sidebar'
-})
-  </script>"; ?>

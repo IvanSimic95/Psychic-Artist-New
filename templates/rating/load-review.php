@@ -44,7 +44,7 @@ $nextpage = $page + 1;
 
         echo '
         <div class="card mb-3 shadow-none item" style="border: 1px solid #dee2e6 !important;">
-                        <div class="card-body p-4">
+                        <div class="card-body p-3">
                             <div class="d-flex mb-3 pb-1 border-bottom flex-wrap">
                                 <img src="https://avatars.dicebear.com/api/adventurer/' . $row["review_name"]. '.svg" class="review-avatar avatar rounded" alt="' . $row["review_name"]. 'Avatar">
                                 <div class="flex-fill ms-1 text-truncate">
