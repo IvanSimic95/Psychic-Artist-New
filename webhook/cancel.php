@@ -8,6 +8,10 @@ $order_price = $json_data->price;
 $order_buygoods = $json_data->bgorderid;
 $cookie_id = $json_data->cookie;
 $mOrderID = $json_data->morderid;
+$cName = $json_data->cName;
+$cPhone = $json_data->cPhone;
+$productImage = $json_data->productImage;
+$productFullTitle = $json_data->productFullTitle;
 
 if($order_email) {
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
@@ -19,6 +23,4 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-}
 ?>

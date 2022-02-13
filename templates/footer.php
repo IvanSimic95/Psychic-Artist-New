@@ -3,7 +3,7 @@
 <?php // include $_SERVER['DOCUMENT_ROOT'].'/templates/chat.php'; ?>
 <?php // include $_SERVER['DOCUMENT_ROOT'].'/templates/bublbes.php'; ?>
 </main>
-<?php  //  include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
+
 <footer class="footer bg-dark pt-1">
 
       <section class="pt-4 pb-4 light">

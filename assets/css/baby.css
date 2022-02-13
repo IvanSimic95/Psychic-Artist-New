@@ -313,7 +313,7 @@
   .fill-control-description {
     font-size: 1.4rem!important;
       font-weight: bold;
-      background: -webkit-linear-gradient(90deg , #e70029 0%, #FC9D44 78%);
+      background: -webkit-linear-gradient(90deg , #e70029 0%, #7303c0 78%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: center;
@@ -324,15 +324,15 @@
     .gradient{
       font-size: 26px!important;
         font-weight: bold;
-        background: -webkit-linear-gradient(90deg , #e70029 0%, #FC9D44 78%);
+        background: -webkit-linear-gradient(90deg , #e70029 0%, #7303c0 78%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
         margin-bottom:15px;
     }
 .nothanks{
-border: 1px solid #FC9D44;
-color:#FC9D44;
+border: 1px solid #7303c0;
+color:#7303c0;
 text-align:center;
 padding:10px 25px 10px 25px;
 
@@ -341,8 +341,8 @@ padding:10px 25px 10px 25px;
 display:none;
 }
 .nothanks:hover{
-    border: 1px solid #FC9D44;
-    background-color:#FC9D44;
+    border: 1px solid #7303c0;
+    background-color:#7303c0;
     color:#fff;
     text-align:center;
     padding:10px 25px 10px 25px;

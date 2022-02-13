@@ -16,26 +16,40 @@ transition: 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 
 .product-badge-bestselling{
-background-color:  #fe696a;
+background-color:  #ec38bc;
 color:  #6f6f6f;
 top: 20px;
 }
+.accordion-button{
+background-color:white!important;
+border-color:white!important;
+        }
 
-
+@media only screen and (max-width: 600px) {
+.rounded-3, .card, .card-header, .card-body{
+border-radius:0!important;
+}
+}
+body{
+    position: relative;  
+}
+.more-info-paragraph{
+font-size:18px;
+    }
 .product-badge-toprated{
-background-color:  #fea569;
+background-color:  #7303c0;
 color:  #6f6f6f;
 top: 65px;
 }
 
 .product-badge-trending{
-background-color:  #00b580;
+background-color:  #3e005a;
 color:  #6f6f6f;
 top: 110px;
 }
 
 .product-badge-new{
-background-color:  #00b2ff;
+background-color:  #03001e;
 color:  #6f6f6f;
 top: 155px;
 }
@@ -119,10 +133,10 @@ font-weight:bold;
 }
 .progress-bar{
     background-color:transparent;
-    background: linear-gradient(90deg, #FF4969 0%, #FC9D44 78%);
+    background: linear-gradient(90deg, #ec38bc 0%, #7303c0 50%, #03001e 100%)
 }
 .under-title-reviews .fa-comments{
-    color: #FF4969;
+    color: #ec38bc;
     font-size: 16px;
 }
 .name-confirm-btn-scale{
@@ -137,7 +151,7 @@ font-weight:bold;
 }
 .product-stats .svg-inline--fa.fa-w-18,
 .product-stats .svg-inline--fa.fa-w-20{
-    color: #FF4969;
+    color: #ec38bc;
     font-size: 16px;
 }
 .product-stats span{

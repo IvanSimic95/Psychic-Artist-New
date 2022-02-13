@@ -28,6 +28,23 @@ isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .=
 
 $_SESSION['funnel_page'] = "personal-reading";
 
+switch ($order_product) {
+    case "1":
+    $order_product = "soulmate";
+    break;
+    
+    case "2":
+    $product = "twinflame";
+    break;
+    
+    case "3":
+    $product = "futurespouse";
+    break;
+    
+    case "4":
+    $product = "past";
+    break;
+}
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
 
@@ -89,7 +106,7 @@ die();
 if($user_name ) {
     
     $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
-                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
+                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '$order_product', '$order_priority', '29.99', '', '$userGender', '$userGenderAcc', '$partnerGender')";
 
     if ($conn->query($sql) === TRUE) {
     $logArray['9'] = "Success"; 

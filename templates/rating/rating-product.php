@@ -99,7 +99,7 @@ function time_ago($timestamp)
 
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <p class="h6 mb-0 fw-bold d-flex align-items-center">5<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">5<i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countfive; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
@@ -108,7 +108,7 @@ function time_ago($timestamp)
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <p class="h6 mb-0 fw-bold d-flex align-items-center">4<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">4<i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countfour; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
@@ -119,7 +119,7 @@ function time_ago($timestamp)
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <p class="h6 mb-0 fw-bold d-flex align-items-center">3<i
-                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
+                                    class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countthree; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
@@ -129,7 +129,7 @@ function time_ago($timestamp)
                     </div>
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
-                            <p class="h6 mb-0 fw-bold d-flex align-items-center">2<i class="fa fa-star text-warning ms-1 small-11 pb-1"></i><i class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
+                            <p class="h6 mb-0 fw-bold d-flex align-items-center">2<i class="fa fa-star ms-1 small-11 pb-1"></i><i class="fa fa-star ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $counttwo; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
@@ -140,7 +140,7 @@ function time_ago($timestamp)
                     <div class="progress-count mt-2">
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <p class="h6 mb-0 fw-bold d-flex align-items-center">1<i
-                                    class="fa fa-star text-warning ms-1 small-11 pb-1"></i></p>
+                                    class="fa fa-star ms-1 small-11 pb-1"></i></p>
                             <span class="small text-muted"><?php echo $countone; ?></span>
                         </div>
                         <div class="progress" style="height: 10px;">
@@ -270,11 +270,11 @@ echo '
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
                             <span class="text-muted">' .$time. '</span>
-                              <!--  <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i> -->
+                              <!--  <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i> -->
                             </span>
                         </div>
                     </div>
@@ -319,11 +319,11 @@ echo '
                         </div>
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
                             </span>
                         </div>
                     </div>
@@ -344,11 +344,11 @@ echo '
                         </div>
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
                             </span>
                         </div>
                     </div>
@@ -369,11 +369,11 @@ echo '
                         </div>
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
-                                <i class="fa fa-star text-warning fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
+                                <i class="fa fa-star fs--1"></i>
                             </span>
                         </div>
                     </div>

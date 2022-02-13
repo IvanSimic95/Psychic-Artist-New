@@ -61,3 +61,66 @@ Stack trace:
 [09-Feb-2022 12:02:46 UTC] PHP Fatal error:  Cannot redeclare time_ago() (previously declared in C:\laragon\www\PA\templates\config.php:31) in C:\laragon\www\PA\templates\config.php on line 31
 [09-Feb-2022 12:05:12 UTC] PHP Fatal error:  Cannot redeclare formLog() (previously declared in C:\laragon\www\PA\templates\config.php:98) in C:\laragon\www\PA\templates\config.php on line 98
 [09-Feb-2022 12:05:13 UTC] PHP Fatal error:  Cannot redeclare formLog() (previously declared in C:\laragon\www\PA\templates\config.php:98) in C:\laragon\www\PA\templates\config.php on line 98
+[11-Feb-2022 21:18:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\PA\templates\config.php:203
+Stack trace:
+#0 C:\laragon\www\PA\templates\config.php(203): mysqli->__construct('localhost', 'root', '', 'pa')
+#1 C:\laragon\www\PA\index.php(4): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\config.php on line 203
+[12-Feb-2022 01:57:07 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 01:57:09 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 01:57:48 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 02:00:54 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 02:25:14 UTC] PHP Parse error:  Unclosed '{' on line 14 in C:\laragon\www\PA\templates\dashboard\orders.php on line 38
+[12-Feb-2022 02:25:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in C:\laragon\www\PA\templates\dashboard\orders.php:14
+Stack trace:
+#0 C:\laragon\www\PA\templates\dashboard\user.php(39): include()
+#1 C:\laragon\www\PA\pages\dashboard.php(17): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\dashboard\orders.php on line 14
+[12-Feb-2022 02:25:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in C:\laragon\www\PA\templates\dashboard\orders.php:14
+Stack trace:
+#0 C:\laragon\www\PA\templates\dashboard\user.php(39): include()
+#1 C:\laragon\www\PA\pages\dashboard.php(17): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\dashboard\orders.php on line 14
+[12-Feb-2022 02:27:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in C:\laragon\www\PA\templates\dashboard\orders.php:19
+Stack trace:
+#0 C:\laragon\www\PA\templates\dashboard\user.php(39): include()
+#1 C:\laragon\www\PA\pages\dashboard.php(17): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\dashboard\orders.php on line 19
+[12-Feb-2022 02:27:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in C:\laragon\www\PA\templates\dashboard\orders.php:19
+Stack trace:
+#0 C:\laragon\www\PA\templates\dashboard\user.php(39): include()
+#1 C:\laragon\www\PA\pages\dashboard.php(17): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\dashboard\orders.php on line 19
+[12-Feb-2022 04:02:59 UTC] PHP Parse error:  syntax error, unexpected variable "$product" in C:\laragon\www\PA\templates\dashboard\orders.php on line 22
+[12-Feb-2022 04:13:18 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 04:13:20 UTC] PHP Fatal error:  Uncaught TypeError: Cannot increment array in C:\laragon\www\PA\index.php:29
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PA\index.php on line 29
+[12-Feb-2022 21:44:07 UTC] PHP Parse error:  Invalid body indentation level (expecting an indentation level of at least 4) in C:\laragon\www\PA\templates\dashboard\orders.php on line 106
+[12-Feb-2022 21:44:10 UTC] PHP Parse error:  Invalid body indentation level (expecting an indentation level of at least 4) in C:\laragon\www\PA\templates\dashboard\orders.php on line 106
+[12-Feb-2022 22:16:13 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "><tr class='my-2 my-xl-0 mx-2 ...", expecting "," or ";" in C:\laragon\www\PA\templates\dashboard\orders.php on line 87

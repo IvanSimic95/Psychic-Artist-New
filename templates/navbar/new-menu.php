@@ -27,7 +27,7 @@
       <li class="navSection secondary">
         
         <a class="rootLink item-dashboard colorize" data-adroll-segment="submit_two" href="/dashboard">
-          Sign in
+          <?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?>
         </a>
 
       </li>
@@ -111,7 +111,7 @@
                 <li><a class="item-blog" href="/legal/refund-policy">Refund Policy</a></li>
               </ul>
             </div>
-            <a class="mobileSignIn" data-adroll-segment="submit_two" href="/dashboard">Sign in</a>
+            <a class="mobileSignIn" data-adroll-segment="submit_two" href="/dashboard"><?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?></a>
           </div>
         </div>
       </li>
