@@ -17,14 +17,14 @@
 background: #f9fafd;
 }
 #phone-navbar .nav-link{
-color: #ec38bc;
+color: #7303c0;
 text-align:center;
 background-color:#f6f6f6;
 font-size:14px;
 }
 #phone-navbar .nav-link.active{
 color: #fff;
-background-color:#ec38bc;
+background-color:#7303c0;
 border-top-right-radius:0.375rem;
     border-top-left-radius:0.375rem;
     border-bottom-right-radius:0;
