@@ -436,7 +436,7 @@ $customJS = <<<EOT
 <script defer="defer" src="/assets/js/product.js"></script>
 <script>  
 var width = $(window).width();
-alert(width);
+
 if(width < 750) {
     $(document).scroll(function() {
         var y = $(this).scrollTop();
