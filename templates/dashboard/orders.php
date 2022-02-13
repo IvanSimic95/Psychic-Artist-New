@@ -1,5 +1,5 @@
 <?php
-$order_email = $userEmail;
+$order_email = $_SESSION['email'];
 $sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_id DESC";
 $result = $conn->query($sql);
 ?>

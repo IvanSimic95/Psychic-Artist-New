@@ -20,7 +20,7 @@ background: #f9fafd;
 #phone-navbar .nav-link{
 color: #7303c0;
 text-align:center;
-background-color:#f6f6f6;
+background-color:#f6f9fc;
 font-size:14px;
 }
 #phone-navbar .nav-link.active{
@@ -41,7 +41,11 @@ margin:0 auto;
 #phone-navbar .nav-link .menu-title{
 display:block;
 }
-
+@media only screen and (min-width: 900px) {
+  #phone-navbar{
+display:none!important;
+}
+}
 /* 
 @media only screen and (max-width: 350px) {
 #phone-navbar .nav-link .menu-title{

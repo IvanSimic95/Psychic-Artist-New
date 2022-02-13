@@ -14,7 +14,7 @@
                     <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
 
                     <div class="avatar avatar-4xl">
-                    <img class="rounded-soft" src="/assets/img/team/avatar.png" alt="Default Avatar" />
+                    <img class="" src="/assets/img/team/avatar.png" alt="Default Avatar" style="background: white;border-radius: 500px!important;border: 4px solid white;">
                     </div>
 
                       <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="/shop">Get started!</a></p>
@@ -22,15 +22,16 @@
                   </div>
                   <div class="col-md-7 d-flex align-items-stretch">
                     <div class="py-md-4 p-4 p-md-5 flex-grow-1 d-flex align-items-stretch flex-column">
-                      <div class="row flex-between-center">
+                    
                         <div class="col-auto">
                           <h3>Account Login</h3>
-                        </div>
+                          <p class="login-error mt-3 mb-0"><?php echo $error; ?></p>
+                     
                       </div>
-                      <form class="mt-4 mb-4 mt-md-6">
+                      <form class="mt-3 mb-3 mt-md-3"  action="" method="POST">
                         <div class="mb-3 position-relative p-0 pt-md-3 pb-md-3">
                           <label class="form-label" for="card-email">Email address</label>
-                          <input class="form-control" id="card-email" type="email">
+                          <input class="form-control" id="card-email" name="email" type="email">
                         </div>
                      
                         <div class="row flex-between-center">
@@ -40,7 +41,7 @@
                               <label class="form-check-label mb-0" for="card-checkbox">Remember me</label>
                             </div>
                           </div>
-                          <div class="col-auto"><a class="fs--1" href="#forgot">Forgot Password?</a></div>
+                          <div class="col-auto d-none"><a class="fs--1" href="#forgot">Forgot Password?</a></div>
                         </div>
                         <div class="mb-3">
                           <button class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-4 mt-4 fw-bold fs-1" style="display:block!important;" type="submit" name="submit">Log in</button>

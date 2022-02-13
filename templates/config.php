@@ -92,6 +92,8 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
   if(isset($_GET['logout'])){
   $_SESSION = array();
   session_destroy();
+  header("Location: /dashboard");
+  die();
   }
 
 //Save to order log function
@@ -176,13 +178,13 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 
 
 //SESSION DATA FOR TESTING ONLY, REMOVE LATER
-$_SESSION['id'] = "1";
-$_SESSION['name'] = "Ivan Simic";
-$_SESSION['fname'] = "Ivan";
-$_SESSION['email'] = "ivan.simic2903@gmail.com";
-$_SESSION['orders'] = "14";
-$_SESSION['weekly'] = "1643100349";
-$_SESSION['loggedIn'] = "yes";
+//$_SESSION['id'] = "1";
+//$_SESSION['name'] = "Ivan Simic";
+//$_SESSION['fname'] = "Ivan";
+//$_SESSION['email'] = "ivan.simic2903@gmail.com";
+//$_SESSION['orders'] = "14";
+//$_SESSION['weekly'] = "1643100349";
+//$_SESSION['loggedIn'] = "yes";
 //SESSION DATA FOR TESTING ONLY, REMOVE LATER
 
 
@@ -225,7 +227,9 @@ if(isset($splitURL[1])){//If variable is set proceed
            if($splitURL[2]=="order"){
             $path="dashboard/order";
             $template = $_SERVER['DOCUMENT_ROOT'].'/pages/'.$path.'.php';
-            $viewOrder = $splitURL[3];
+              if(isset($splitURL[3])){
+              $viewOrder = $splitURL[3];
+              }
            }
         }
     }

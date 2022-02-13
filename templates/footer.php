@@ -72,6 +72,7 @@
     <script defer="defer" src="/min/g=js2"></script>
     <script defer="defer" src="/min/g=fa-js"></script>
 
+
     <!-- ===============================================-->
     <!--   Custom Page JavaScripts & CSS -->
     <!-- ===============================================-->
@@ -92,6 +93,15 @@ async function registerSW() {
     }
   }
 }
+$(document).ready(function($) {
+    var preloader = $('.preloader');
+    preloader.addClass('loader-activate');
+});
+$(window).on('load', function(){
+    $('.preloader').fadeOut();
+    $('.preloader').removeClass('loader-activate');
+    $('.preloader').addClass('loader-deactivate');
+});
       </script>
     
 <?php #include $_SERVER['DOCUMENT_ROOT'].'/templates/rating/rating-home.php'; ?>

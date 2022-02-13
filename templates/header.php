@@ -59,5 +59,9 @@
   </head>
 
 <body>
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; ?>     
+
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; ?>   
+
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/preloader.php'; ?>
+
 <main class="main position-relative" id="top">

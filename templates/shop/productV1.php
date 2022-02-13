@@ -55,7 +55,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/schema.php';
             <div class="card-body rounded-3" style="padding:0!important;">
                 <div class="row row ms-auto w-100">
                     <!-- Content-->
-                    <div class="col-lg-6 mb-2 mb-lg-0 p-0 p-md-2 p-lg-4">
+                    <div class="col-lg-6 mb-2 mb-lg-0 p-0 p-md-2 p-lg-2">
                         
                             <!-- Product Gallery -->
                         <div class="product-badge-bestselling">
@@ -77,8 +77,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/schema.php';
                         <i class="fas fa-bell-plus"></i>
                         <span class="caption"> New!</span>
                         </div>
-                           
-                            <img alt="Product Image" class="rounded-3" src="<?php echo $pimage; ?>" style="width:100%;">
+                        
+                       
+                        <ul id="lightSlider">
+<?php 
+$g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$codename));
+
+foreach ($g as $key=>$item){
+    echo ' <li data-thumb="/assets/img/products/'.$codename.'/'.$item.'"> <img src="/assets/img/products/'.$codename.'/'.$item.'" /> </li>';
+}
+?>
+
+                    </ul>
                             <!-- END Product Gallery -->
                         
                     </div>
@@ -424,16 +434,43 @@ $i = 0;
         </div>
        
     </div>
-        <!--  BUYER PROTECTION END -->
+        <!--  BUYER PROTECTION END
+
+
+
+
+            <div class="card card-body">
+                <div class="media align-items-center align-items-md-start flex-column flex-md-row"> <a href="#" class="text-teal mr-md-3 align-self-md-center marginon-top" data-abc="true"> <i class="fa fa-question-circle-o fa-4x"></i> </a>
+                    <div class="media-body text-center text-md-left">
+                        <h6 class="media-title font-weight-semibold">Can't find what you're looking for?</h6> 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.
+                    </div> <a href="#" class="btn align-self-md-center ml-md-3 mt-md-0 ticket-button" data-abc="true"><i class="fa fa-envelope-o mr-2"></i> Submit a ticket</a>
+                </div>
+            </div>
+ -->
+
         
     </section>
 </div>
 <?php  include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
 <?php
 $customJSPreload = '<link rel="preload" href="/assets/js/product.js" as="script">';
-$customCSS = '<link href="/assets/css/product.css" rel="stylesheet">';
+$customCSS = '<link href="/assets/css/product.css" rel="stylesheet">
+<link href="/assets/css/lightslider.css" rel="stylesheet">';
 $customJS = <<<EOT
 <script defer="defer" src="/assets/js/product.js"></script>
+<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+
+<script>
+$('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: true,
+        slideMargin: 0,
+        thumbItem: 9,
+      controls:true,
+     
+    });
+</script>
 <script>  
 var width = $(window).width();
 
@@ -459,6 +496,7 @@ $('.nav-link').click(function(){
   
 </script>
 <script>
+
 $(document).ready(function(){
 const instance0 =  new TypeIt(".type-it-zero", {
 strings: ["<span class='fw-bold'>$subtitle</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. Thousands of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your $shorttitle"],

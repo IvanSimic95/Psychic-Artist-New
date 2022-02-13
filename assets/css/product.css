@@ -14,12 +14,24 @@ z-index: 2;
 height:40px;
 transition: 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
-
+.ticket-button {
+    background-color: #ff7043;
+    color: #fff
+}
+.lslide img {
+height:auto;
+width:100%;
+}
+.ticket-button:hover {
+    background-color: #ff7043;
+    color: #fff
+}
 .product-badge-bestselling{
 background-color:  #ec38bc;
 color:  #6f6f6f;
 top: 20px;
 }
+
 .accordion-button{
 background-color:white!important;
 border-color:white!important;
