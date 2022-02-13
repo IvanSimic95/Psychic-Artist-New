@@ -87,6 +87,20 @@ if($user_name ) {
 
     $lastRowInsert = mysqli_insert_id($conn);
     unset($_SESSION['user_cookie_id']);
+
+
+    
+    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
+    
+    $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
+
+    if ($conn->query($sql) === TRUE) {
+       // echo "Order Status updated to Paid succesfully!";
+      } else {
+      //  echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+
+
     $conn->close();
     formLog($logArray);
 ?>
@@ -117,7 +131,7 @@ if($user_name ) {
 
 
 <script>
-window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6490&product_codename=futurebabyoffer&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $baseRedirect; ?>";
+window.location.href = "<?php echo $finalLink; ?>";
 </script>
 
 

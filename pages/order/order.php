@@ -27,7 +27,7 @@ isset($_GET['cookie_id']) ? $cookie_id = $_GET['cookie_id'] : $errorDisplay .= "
 isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
 
 $_SESSION['funnel_page'] = "personal-reading";
-
+$order_product_id = $order_product;
 switch ($order_product) {
     case "1":
     $order_product = "soulmate";
@@ -117,8 +117,19 @@ if($user_name ) {
     unset($_SESSION['user_cookie_id']);
     $lastRowInsert = mysqli_insert_id($conn);
 
-    $conn->close();
+    
     formLog($logArray);
+
+    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product_id.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
+    
+    $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
+
+    if ($conn->query($sql) === TRUE) {
+       // echo "Order Status updated to Paid succesfully!";
+      } else {
+      //  echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+$conn->close();
 ?>
 
 
@@ -165,7 +176,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var prio = getUrlParameter('priority');
 var product = getUrlParameter('product');
 
- window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $baseRedirect; ?>";
+ window.location.href = "<?php echo $finalLink; ?>";
 </script>
 
 

@@ -16,6 +16,7 @@
   
 switch ($page) {          
 case 'overview':
+$title = "User Dashboard"; 
 $insertPage = "main";
 $pageTitle1 = "Account Overview";
 $customCSS = '
@@ -41,6 +42,7 @@ EOT;
 break;
 
 case 'orders':
+$title = "Your Orders"; 
 $insertPage = "orders";
 $pageTitle1 = "Your Orders";
 $customCSS = '
@@ -72,8 +74,9 @@ EOT;
 break;
 
 case 'order':
+$title = "User Dashboard"; 
     $insertPage = "order";
-    $pageTitle1 = "Your Order";
+    $pageTitle1 = "Order #".$viewOrder;
     break;
 
             case 'profile':

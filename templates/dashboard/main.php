@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 </div>
 </div>
 <hr>
-<p class="h4">MY RECENT ORDERS</p>
+<p class="h4">RECENT ORDERS </p>
 
             <?php
             while($row = $result->fetch_assoc()) {
@@ -162,3 +162,5 @@ echo $orders;
 
 
             ?>
+
+<a href="/dashboard/orders" class="btn btn-dark btn-shadow w-100 m-0">View All Orders</a>

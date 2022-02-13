@@ -16,11 +16,34 @@ $productFullTitle = $json_data->productFullTitle;
 if($order_email) {
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
+    $sql = "UPDATE `orders` SET `order_status`='paid',`bg_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
     if ($conn->query($sql) === TRUE) {
       echo "Order Status updated to Paid succesfully!";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+
+
+    $sql = "SELECT * FROM orders WHERE order_id = '".$mOrderID."'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc()
+
+    $test_email = $row['order_email']
+    if($test_email="" OR $test_email=NULL){
+
+
+    $sql = "UPDATE `orders` SET `order_email`='$order_email' WHERE order_id='$mOrderID'" ;
+    if ($conn->query($sql) === TRUE) {
+       // echo "Order Status updated to Paid succesfully!";
+      } else {
+      //  echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+
+
+      $conn->close();
+
+
     }
 ?>

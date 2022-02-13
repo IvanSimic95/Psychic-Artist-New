@@ -1,5 +1,5 @@
 <?php
-$title = "User Dashboard"; 
+
 
 if(isset($_SESSION['email'])){//if logged in already retrieve the email
 $order_email = $_SESSION['email'];

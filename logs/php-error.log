@@ -202,3 +202,43 @@ Stack trace:
 [13-Feb-2022 09:53:00 UTC] PHP Parse error:  syntax error, unexpected token "else" in C:\laragon\www\PA\templates\dashboard\overview.php on line 25
 [13-Feb-2022 10:49:57 UTC] PHP Parse error:  syntax error, unexpected variable "$codename", expecting "," or ";" in C:\laragon\www\PA\templates\shop\productV1.php on line 87
 [13-Feb-2022 10:50:03 UTC] PHP Parse error:  syntax error, unexpected variable "$codename", expecting "," or ";" in C:\laragon\www\PA\templates\shop\productV1.php on line 87
+[13-Feb-2022 12:59:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'reading' doesn't have a default value in C:\laragon\www\PA\pages\order\order.php:111
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order.php(111): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order.php on line 111
+[13-Feb-2022 12:59:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'reading' doesn't have a default value in C:\laragon\www\PA\pages\order\order.php:111
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order.php(111): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order.php on line 111
+[13-Feb-2022 13:21:14 UTC] PHP Fatal error:  Uncaught TypeError: preg_grep(): Argument #2 ($array) must be of type array, bool given in C:\laragon\www\PA\templates\shop\productV1.php:84
+Stack trace:
+#0 C:\laragon\www\PA\templates\shop\productV1.php(84): preg_grep('~\\.(jpeg|jpg|pn...', false)
+#1 C:\laragon\www\PA\pages\shop\twin-flame.php(3): require_once('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 84
+[13-Feb-2022 13:21:19 UTC] PHP Fatal error:  Uncaught TypeError: preg_grep(): Argument #2 ($array) must be of type array, bool given in C:\laragon\www\PA\templates\shop\productV1.php:84
+Stack trace:
+#0 C:\laragon\www\PA\templates\shop\productV1.php(84): preg_grep('~\\.(jpeg|jpg|pn...', false)
+#1 C:\laragon\www\PA\pages\shop\twin-flame.php(3): require_once('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 84
+[13-Feb-2022 13:21:23 UTC] PHP Fatal error:  Uncaught TypeError: preg_grep(): Argument #2 ($array) must be of type array, bool given in C:\laragon\www\PA\templates\shop\productV1.php:84
+Stack trace:
+#0 C:\laragon\www\PA\templates\shop\productV1.php(84): preg_grep('~\\.(jpeg|jpg|pn...', false)
+#1 C:\laragon\www\PA\pages\shop\twin-flame.php(3): require_once('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 84
+[13-Feb-2022 13:21:25 UTC] PHP Fatal error:  Uncaught TypeError: preg_grep(): Argument #2 ($array) must be of type array, bool given in C:\laragon\www\PA\templates\shop\productV1.php:84
+Stack trace:
+#0 C:\laragon\www\PA\templates\shop\productV1.php(84): preg_grep('~\\.(jpeg|jpg|pn...', false)
+#1 C:\laragon\www\PA\pages\shop\twin-flame.php(3): require_once('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PA\templates\shop\productV1.php on line 84

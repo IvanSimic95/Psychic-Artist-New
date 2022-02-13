@@ -31,10 +31,18 @@ if($result->num_rows == 0) {
         include $_SERVER['DOCUMENT_ROOT'].'/templates/error/view-order.php'; 
     }else{
     
-
+if($status == "completed"){
 ?>
 <img class="img-thumbnail d-block mx-auto mb-2 mt-2" src="<?php echo $drawing; ?>" alt="Drawing" />
 <p><?php echo $generalOrderHeader."<br><br>"; echo nl2br($reading); echo "<br><br>".$generalOrderFooter;?></p>
         <?php
-        }}
+        }else{
+            ?>
+<p class="h3 text-center mt-5 mb-4">Order Status: <?php echo $status; ?></p>
+<p class="h6 text-center mb-6">Once order status is completed you will be able to see your order reading and/or drawing!</p>
+
+    <?php
+        }
+    }
+    }
         ?>
