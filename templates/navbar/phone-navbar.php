@@ -10,6 +10,7 @@
     border-top-left-radius:0.375rem;
     border-bottom-right-radius:0;
     border-bottom-left-radius:0;
+    display:none;
 }
 
 .phone-navbar
@@ -40,6 +41,7 @@ margin:0 auto;
 #phone-navbar .nav-link .menu-title{
 display:block;
 }
+
 /* 
 @media only screen and (max-width: 350px) {
 #phone-navbar .nav-link .menu-title{

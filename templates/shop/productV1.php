@@ -435,6 +435,19 @@ $customCSS = '<link href="/assets/css/product.css" rel="stylesheet">';
 $customJS = <<<EOT
 <script defer="defer" src="/assets/js/product.js"></script>
 <script>  
+var width = $(window).width();
+if(width < 750) {
+    $(document).scroll(function() {
+        var y = $(this).scrollTop();
+        if (y > 500) {
+            $('#phone-navbar').slideDown();
+        
+        } else {
+            $('#phone-navbar').slideUp();
+    
+        }
+      });
+  }
 $('.nav-link').click(function(){    
     var divId = $(this).attr('href');
      $('html, body').animate({
@@ -442,16 +455,7 @@ $('.nav-link').click(function(){
     }, 100);
   });
 
-  $(document).scroll(function() {
-    var y = $(this).scrollTop();
-    if (y > 500) {
-        $('#phone-navbar').slideDown();
-    
-    } else {
-        $('#phone-navbar').slideUp();
-
-    }
-  });
+  
 </script>
 <script>
 $(document).ready(function(){
