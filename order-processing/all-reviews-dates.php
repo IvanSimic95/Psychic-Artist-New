@@ -22,7 +22,7 @@ $sql = "SELECT * FROM reviews ORDER BY review_date DESC";
 $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()) {
-$timestamp = rand( strtotime("Feb 01 2022"), strtotime("Feb 22 2022") );
+$timestamp = rand( strtotime("Feb 01 2022"), strtotime("Feb 23 2022") );
 $random_Date = date('Y-m-d H:i:s', $timestamp );
 $id = $row['review_id'];
 $text = $row['review_text'];
@@ -30,6 +30,6 @@ $text = $row['review_text'];
 $newtext = str_replace("Melissa","Psychic Artist",$text);
 
 $sql2 = "UPDATE `reviews` SET `review_date`='$random_Date',`review_text`='$newtext' WHERE review_id='$id'" ;
-//$result2 = $conn->query($sql2); //UNCOMMENT THIS TO MAKE IT WORK! 
+$result2 = $conn->query($sql2); //UNCOMMENT THIS TO MAKE IT WORK! 
 }
 ?>
