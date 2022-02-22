@@ -1,12 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
-
 echo "Starting abbandoned-carts.php...<br><br>";
-    
-
-
-
-
 
 // 1. Check and select paid orders.
 

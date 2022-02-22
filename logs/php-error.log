@@ -71,3 +71,18 @@
 [22-Feb-2022 15:50:48 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
 [22-Feb-2022 15:50:48 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
 [22-Feb-2022 15:50:48 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:20 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:24 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:24 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:25:24 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:27:06 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:27:06 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:27:06 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:31:09 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:31:09 UTC] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27
+[22-Feb-2022 16:31:09 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 27

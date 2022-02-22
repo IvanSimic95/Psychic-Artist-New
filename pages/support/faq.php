@@ -34,9 +34,38 @@ $count = $result->num_rows;
             <div class="card-body">
 
             <?php
+            
             if($result->num_rows != 0) {
+
+            $FAQschema = "";
+            $countFAQ = $result->num_rows;
+            $countLoop = "1";
+
                 while($row = $result->fetch_assoc()) {
                 echo '<h6 style="font-weight:bold;color: #2c7be5;"> <i class="fas fa-question-circle"></i> '.$row["question"].'</h6><p class="fs--1 mb-0"><i class="fas fa-info-circle"></i> '.$row["answer"].'</p><hr class="my-3">';
+                
+                if($countLoop == $countFAQ){//Last loop
+                  $FAQschema .= '
+                  {
+                  "@type": "Question",
+                  "name": "'.$row["question"].'",
+                  "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "'.$row["answer"].'"
+                  }
+                  }';
+                }else{
+                $FAQschema .= '
+                  {
+                  "@type": "Question",
+                  "name": "'.$row["question"].'",
+                  "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "'.$row["answer"].'"
+                  }
+                  }, ';
+                }
+                  $countLoop++;
                 }
                 } else {
                     echo "No FAQ";
@@ -44,6 +73,15 @@ $count = $result->num_rows;
                   $conn->close();
                 ?>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  <?php echo $FAQschema; ?>
+  ]
+}
+</script>
               
               </div>
             <div class="card-footer d-flex align-items-center bg-light">

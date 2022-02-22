@@ -230,7 +230,7 @@ echo "Starting complete-orders.php...<br><br>";
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
 							$ext = "";
-							$sPath = "order-processing/images/";
+							$sPath = "/order-processing/images/";
 							$randomImageName = rand(554547,751547);
 
 						// Old Paths
@@ -252,9 +252,16 @@ echo "Starting complete-orders.php...<br><br>";
 							//echo $newImagename.' | ';
 
 						// Set new image path and name
+
+						if (file_exists($oldImageServerPath)) {
 							$newImageNameHash = copy($oldImageServerPath, $newImageServerPath);
-							$firephp->fb($oldImageServerPath  ,FirePHP::LOG);
-							$firephp->fb($newImageServerPath  ,FirePHP::LOG);
+						} else {
+							$oldImageServerPath = $rootDir."/".$oldImageShortPath;
+							$newImageNameHash = copy($oldImageServerPath, $newImageServerPath);
+						}
+
+
+							$newImageNameHash = copy($oldImageServerPath, $newImageServerPath);
 						// Set image data for upload via CURL
 							$imgURL = $newImageFullPath;
                             $filename = $rootDir.'/email/drawing/'.$newImagename;
