@@ -1,4 +1,6 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
+
 $data = file_get_contents('php://input');
 $json_data = json_decode($data);
 
