@@ -18,6 +18,7 @@ $result = $conn->query($sql);
             <?php
             while($row = $result->fetch_assoc()) {
             $product = strtolower($row["order_product"]);
+            $productCodename = $product;
             $product = ucwords($product);
             switch ($product) {
               case "Husband":
@@ -82,77 +83,44 @@ $result = $conn->query($sql);
 
                     
                 }
-                    if($row["order_status"]=="shipped"){$status="completed";}else{$status = $row["order_status"];}
-                   // echo "<tr id='" . $row["order_id"] . "' class='my-2 my-xl-0 mx-2 mx-md-2 mx-xl-0 p-2' style='border: 1px solid #36304a;border-radius: 8px;'><td class='column-title custom-gradient-one'>Order #" . $row["order_id"] . "</td><td class='column1'>#" . $row["order_id"] . "</td><td class='column2'><div class='badge badge-product'><div class='phone-table-title'>Order Product:</div>" . $product . "</div></td><td class='column3'><div class='badge badge-price'><div class='phone-table-title'>Order Price:</div>$" . $row["order_price"]. "</div></td><td class='column4'><div class='sbadge sbadge-" . $status . "'><div class='phone-table-title'>Order Status:</div>" . $status . " <i class='fas fa-check'></i><i class='fas fa-stream'></i><i class='fas fa-redo'></i><i class='fas fa-ban'></i></div></td><td class='column5'><button data-toggle='modal' data-target='#order-".$row["order_id"]."' class='btn btn-dark btn-shadow w-100 m-0'>View Order #" . $row["order_id"] . "</button></td></tr>";
-            
-            
+                    $status = $row["order_status"];
                     $id = $row["order_id"];
                     $price = $row["order_price"];
                     $orderDate = $row["order_date"];
+                    $link = $row["link"];
 
-                    switch ($status){
-                        case "pending":
-                         $progress = '
-                         <li id="step-1" class="text-muted green"> <span class="fas fa-gift"></span> </li>
-                         <li id="step-2" class="text-muted"> <span class="fas fa-check"></span> </li>
-                         <li id="step-3" class="text-muted"> <span class="fas fa-box"></span> </li>
-                         <li id="step-4" class="text-muted"> <span class="fas fa-truck"></span> </li>
-                         ';
-                        break;
-                        case "paid":
-                            $progress = '
-                            <li id="step-1" class="text-muted green"> <span class="fas fa-gift"></span> </li>
-                            <li id="step-2" class="text-muted green"> <span class="fas fa-check"></span> </li>
-                            <li id="step-3" class="text-muted"> <span class="fas fa-box"></span> </li>
-                            <li id="step-4" class="text-muted"> <span class="fas fa-truck"></span> </li>
-                            ';
-                        break;
-                        case "processing":
-                            $progress = '
-                            <li id="step-1" class="text-muted green"> <span class="fas fa-gift"></span> </li>
-                            <li id="step-2" class="text-muted green"> <span class="fas fa-check"></span> </li>
-                            <li id="step-3" class="text-muted green"> <span class="fas fa-box"></span> </li>
-                            <li id="step-4" class="text-muted"> <span class="fas fa-truck"></span> </li>
-                            ';
-                        break;
-                        case "completed":
-                        $progress = '
-                        <li id="step-1" class="text-muted green"> <span class="fas fa-gift"></span> </li>
-                        <li id="step-2" class="text-muted green"> <span class="fas fa-check"></span> </li>
-                        <li id="step-3" class="text-muted green"> <span class="fas fa-box"></span> </li>
-                        <li id="step-4" class="text-muted green"> <span class="fas fa-truck"></span> </li>
-                        ';
-                        break;
+                    include $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php';
+                    
+                    if($status=="pending"){
+                        $orderBTN = '<a target="_blank" href="'.$link.'" class="btn btn-dark text-uppercase w-100 mt-2">Finish Purchase</a>';
+                    }elseif($status=="canceled"){
+                        $orderBTN = '';
+                    }else{
+                        $orderBTN = '<a href="/dashboard/order/'.$id.'" class="btn btn-dark text-uppercase w-100 mt-2">Order Details</a>';
                     }
-             
+
+                    $time = time_ago($orderDate);
+                     
 $orders = <<<EOT
 <div class="order my-3 bg-light rounded-3">
 <div class="row">
-    <div class="col-lg-4">
-        <div class="d-flex flex-column justify-content-between order-summary ">
-            <div class="d-flex align-items-center">
-                <div class="text-uppercase fw-bold">Order #$id</div>
-                
-            </div>
-            <div class="">$product</div>
-            <div class="">$orderDate</div>
-            <div class="rating d-flex align-items-center pt-1"> 
-            <img src="https://www.freepnglogos.com/uploads/like-png/like-png-hand-thumb-sign-vector-graphic-pixabay-39.png" alt="">
-            <span class="px-2">Rating:</span> 
-            <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> </div>            
+    <div class="col-lg-4 p-0">
+        <div class="d-flex flex-column justify-content-between order-summary py-1 px-1 text-center">
+            <div class="text-uppercase fw-bold mb-2 text-grad-1">Order #$id</div>
+            <img class="img-thumbnail d-block mx-auto mb-1 mt-1" src="https://pa.test/assets/img/products/$productCodename/11.jpg" alt="$product Product Image" />
+            
+                   
         </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-8 p-0">
+    <div class="d-flex flex-column justify-content-between order-summary p-2 text-center orders-list">
+    <div class="product fw-semi-bold mb-2">$product</div>
+        
+        $statusProgress
         <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
-            <div class="status">Status : $status</div>
-            <a href="/dashboard/order/$id" class="btn btn-dark text-uppercase">Order Details</a>
+            $orderBTN
         </div>
-        <div class="progressbar-track">
-            <ul class="progressbar">
-                $progress
-            </ul>
-            <div id="tracker"></div>
-        </div>
+    </div>
     </div>
 </div>
 </div>                  
@@ -162,5 +130,4 @@ echo $orders;
 
 
             ?>
-
 <a href="/dashboard/orders" class="btn btn-dark btn-shadow w-100 m-0">View All Orders</a>

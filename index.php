@@ -23,9 +23,4 @@ echo $buffer;
 
 
 include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; 
-// Start loop
-for($i = 1; $i <=1000; $i++)
-{
-    $a++;
-}
 ?>

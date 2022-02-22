@@ -1,92 +1,7 @@
-<?php
-
-function time_ago($timestamp)  
- {  
-      $time_ago = strtotime($timestamp);  
-      $current_time = time();  
-      $time_difference = $current_time - $time_ago;  
-      $seconds = $time_difference;  
-      $minutes      = round($seconds / 60 );           // value 60 is seconds  
-      $hours           = round($seconds / 3600);           //value 3600 is 60 minutes * 60 sec  
-      $days          = round($seconds / 86400);          //86400 = 24 * 60 * 60;  
-      $weeks          = round($seconds / 604800);          // 7*24*60*60;  
-      $months          = round($seconds / 2629440);     //((365+365+365+365+366)/5/12)*24*60*60  
-      $years          = round($seconds / 31553280);     //(365+365+365+365+366)/5 * 24 * 60 * 60  
-      if($seconds <= 60)  
-      {  
-     return "Just Now";  
-   }  
-      else if($minutes <=60)  
-      {  
-     if($minutes==1)  
-           {  
-       return "one minute ago";  
-     }  
-     else  
-           {  
-       return "$minutes minutes ago";  
-     }  
-   }  
-      else if($hours <=24)  
-      {  
-     if($hours==1)  
-           {  
-       return "an hour ago";  
-     }  
-           else  
-           {  
-       return "$hours hrs ago";  
-     }  
-   }  
-      else if($days <= 7)  
-      {  
-     if($days==1)  
-           {  
-       return "yesterday";  
-     }  
-           else  
-           {  
-       return "$days days ago";  
-     }  
-   }  
-      else if($weeks <= 4.3) //4.3 == 52/12  
-      {  
-     if($weeks==1)  
-           {  
-       return "a week ago";  
-     }  
-           else  
-           {  
-       return "$weeks weeks ago";  
-     }  
-   }  
-       else if($months <=12)  
-      {  
-     if($months==1)  
-           {  
-       return "a month ago";  
-     }  
-           else  
-           {  
-       return "$months months ago";  
-     }  
-   }  
-      else  
-      {  
-     if($years==1)  
-           {  
-       return "one year ago";  
-     }  
-           else  
-           {  
-       return "$years years ago";  
-     }  
-   }  
- }  ?>
 <div class="row clearfix g-3">
     <!-- New ROw Start -->
 
-    <div class="col-lg-4 col-md-12">
+    <div class="col-lg-4 col-md-12 position-relative">
 
 
 
@@ -236,6 +151,8 @@ function time_ago($timestamp)
     <div class="col-lg-8 col-md-12">
         <!-- New Column Start -->
         <div class="contents">
+
+        
 <?php
     $sql = "SELECT * FROM reviews WHERE review_moderated = 'approved' AND product_id = '".$productID."' ORDER BY review_date DESC LIMIT 10";
 	$sql2 = "SELECT * FROM reviews WHERE review_moderated = 'approved' AND product_id = '".$productID."' ORDER BY review_date DESC";
@@ -269,7 +186,7 @@ echo '
                         </div>
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
-                            <span class="text-muted">' .$time. '</span>
+                            <span class="text-muted" style="text-transform:capitalize;"><i class="fa fa-clock-rotate-left"></i> ' .$time. '</span>
                               <!--  <i class="fa fa-star fs--1"></i>
                                 <i class="fa fa-star fs--1"></i>
                                 <i class="fa fa-star fs--1"></i>

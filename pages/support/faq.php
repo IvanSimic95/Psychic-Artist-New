@@ -1,5 +1,6 @@
 <?php
-$title = "Frequently Asked Questions";
+$title = "FAQ - Support | Psychic Artist";
+$sdescription = "FAQ Description";
 
 //SQL Query for fetching FAQ from Database
 $sql = "SELECT * FROM faq ORDER BY id DESC";

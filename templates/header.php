@@ -46,13 +46,17 @@
     <link rel="preload" href="/min/g=js2" as="script">
     <link rel="preload" href="/min/g=fa-js" as="script">
     <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=window.scroll" as="script">
+
+
+    <link rel="preload" href="https://tag.crowdpower.io/js/app.js" as="script">
+    <link rel="preload" href="https://apps.elfsight.com/p/platform.js" as="script">
     
     <!--CUSTOMJSPRELOAD-->
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link href="/min/g=css?v=1.2" rel="stylesheet">
+    <link href="/min/g=css" rel="stylesheet">
     <link href="/assets/css/custom.css" rel="stylesheet">
 
     <!--CUSTOMCSS-->
@@ -60,8 +64,10 @@
 
 <body>
 
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/preloader.php'; ?>
+
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; ?>   
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/preloader.php'; ?>
+
 
 <main class="main position-relative" id="top">

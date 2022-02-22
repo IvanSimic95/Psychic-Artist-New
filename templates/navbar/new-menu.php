@@ -25,10 +25,15 @@
       </li>
 
       <li class="navSection secondary">
-        
+     
         <a class="rootLink item-dashboard colorize" data-adroll-segment="submit_two" href="/dashboard">
           <?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?>
         </a>
+
+        <div class="elfsight-app-fe5dc4a0-5507-4595-937a-f52d5fe95464"></div>
+       
+
+
 
       </li>
 
@@ -39,6 +44,8 @@
         <div class="popup">
           <div class="popupContainer">
             <a class="popupCloseButton">Close</a>
+
+            <div class="elfsight-app-191fd8af-110b-4296-9c99-3062f4d5515e"></div>
             <div class="mobileProducts">
               <h4>Products</h4>
               <div class="mobileProductsList">
@@ -57,13 +64,7 @@
                         <path fill="#159570" class="hover-fillDark" d="M33.653 21.413c1.43 5.336-1.735 10.82-7.068 12.25-5.332 1.43-10.814-1.736-12.242-7.072-1.43-5.334 1.735-10.82 7.068-12.25 5.334-1.43 10.815 1.738 12.244 7.074z"></path>
                       </svg>Twin Flame Drawing
                     </a></li>
-                  <li><a class="linkContainer item-connect" href="/shop/future-spouse">
-                      <svg viewBox="0 0 48 48">
-                        <path fill="#68D4F8" class="hover-fillLight" d="M48 24c0 13.255-10.745 24-24 24S0 37.255 0 24 10.745 0 24 0c1.363 0 2.698.12 4 .338V15h5v5h14.662c.218 1.302.338 2.637.338 4z"></path>
-                        <path fill="#FFF" d="M16.99 29.966L17 17l-5.55-.006a1.02 1.02 0 0 0-.725.3L2.65 25.446a1.55 1.55 0 0 0-.44 1.28c1.22 9.944 9.1 17.825 19.042 19.047.472.058.945-.104 1.28-.44l8.172-8.076c.192-.193.3-.453.3-.725L31 31l-12.985-.01a1.023 1.023 0 0 1-1.024-1.024z"></path>
-                        <path fill="#217AB7" class="hover-fillDark" d="M47.697 20.195L37.194 30.702a1.03 1.03 0 0 1-.726.3h-5.462V18.03c0-.567-.46-1.025-1.025-1.025H16.994V11.52c0-.274.108-.534.3-.726L27.783.3C38 1.916 46.07 9.98 47.698 20.194z"></path>
-                      </svg>Future Spouse Drawing
-                    </a></li>
+                  
                 </ul>
                 <ul>
                   <!--
@@ -81,7 +82,16 @@
                         <path fill="#FFF" d="M24 1.834v31.794l-16.584 3.98A1.043 1.043 0 0 1 6.24 36.13L23.067 2.41c.195-.39.572-.58.947-.576H24z"></path>
                       </svg>Atlas
                     </a></li>
--->
+
+
+-->                 
+<li><a class="linkContainer item-connect" href="/shop/future-spouse">
+                      <svg viewBox="0 0 48 48">
+                        <path fill="#68D4F8" class="hover-fillLight" d="M48 24c0 13.255-10.745 24-24 24S0 37.255 0 24 10.745 0 24 0c1.363 0 2.698.12 4 .338V15h5v5h14.662c.218 1.302.338 2.637.338 4z"></path>
+                        <path fill="#FFF" d="M16.99 29.966L17 17l-5.55-.006a1.02 1.02 0 0 0-.725.3L2.65 25.446a1.55 1.55 0 0 0-.44 1.28c1.22 9.944 9.1 17.825 19.042 19.047.472.058.945-.104 1.28-.44l8.172-8.076c.192-.193.3-.453.3-.725L31 31l-12.985-.01a1.023 1.023 0 0 1-1.024-1.024z"></path>
+                        <path fill="#217AB7" class="hover-fillDark" d="M47.697 20.195L37.194 30.702a1.03 1.03 0 0 1-.726.3h-5.462V18.03c0-.567-.46-1.025-1.025-1.025H16.994V11.52c0-.274.108-.534.3-.726L27.783.3C38 1.916 46.07 9.98 47.698 20.194z"></path>
+                      </svg>Future Spouse Drawing
+                    </a></li>
 
                   <li><a class="linkContainer item-radar" href="/shop/past-life">
                       <svg viewBox="0 0 48 48">

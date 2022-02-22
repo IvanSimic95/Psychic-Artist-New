@@ -9,6 +9,9 @@ $row = $result->fetch_array(MYSQLI_NUM);
 
 
 $title = $row[1];
+$titleProduct = $title;
+$title = $title." | Psychic Artist";
+
 $shorttitle = $row[2];
 $codename = $row[3];
 $subtitle = $row[4];
@@ -84,21 +87,53 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/schema.php';
 $g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$codename));
 
 foreach ($g as $key=>$item){
-    echo ' <li data-thumb="/assets/img/products/'.$codename.'/'.$item.'"> <img src="/assets/img/products/'.$codename.'/'.$item.'" /> </li>';
+    echo ' <li data-thumb="/assets/img/products/'.$codename.'/thumbs/'.$item.'"> <img src="/assets/img/products/'.$codename.'/'.$item.'" /> </li>';
 }
 ?>
 
-                    </ul>
-                            <!-- END Product Gallery -->
+                    </ul> 
+                    <div class="d-none d-lg-block mt-4">
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats clearfix">
+                                <span style="float:left;">
+                                <i class="fas fa-star align-middle mb-0 mt-n1 mr-2"></i> Rating: </span>
+                                <p class="h4 mb-0">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <?php if ($avgrating < 4.51) { ?>
+                                  <span class="fa fa-star-half"></span>
+                                  <?php }else{ ?>
+                                  <span class="fa fa-star"></span>
+                                  <?php }?>
+                                </p>
+                                </div>
+
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">
+                                    <span style="float:left;">
+                                    <i class="fas fa-shopping-cart align-middle mb-0 mt-n1 mr-2"></i> Sales: </span>
+                                    <div class="h4 mb-0" data-countup='{"endValue":<?php echo $sales; ?>, "separator":" "}'>0</div>
+                                </div>
+
+                               
+
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-reviews clearfix">
+                                    <span style="float:left;">
+                                    <i class="fas fa-comments align-middle mb-0 mt-n1 mr-2"></i> Reviews: </span>
+                                    <div class="h4 mb-0" data-countup='{"endValue":<?php echo $reviews; ?>, "separator":" "}'>0</div>
+                                </div>
+
+                                  </div>
+                   
                         
-                    </div>
+                    </div> 
                     <!-- Right Part-->
                     <div class="col-lg-6 border-start rounded-3 px-3 px-md-4 px-lg-4 py-0 py-md-2 position-relative">
 
                     <div class="d-flex flex-column justify-content-start flex-fill product-details-column py-2">
                              
 
-                                <h1 class="mb-2 product-title text-grad-1 mt-2 text-truncate"><?php echo $title; ?></h1>
+                                <h1 class="mb-2 product-title text-grad-1 mt-2 text-truncate"><?php echo $titleProduct; ?></h1>
                                 <div class="under-title">
                                 <span class="under-title-stock"><i class="fas fa-check-circle"></i> In Stock</span>
                                 
@@ -123,41 +158,44 @@ else { ?>
                                 
                                 </div>
                                 <hr>
-                                <h2 class="d-flex flex-row flex-wrap align-items-center position-relative">
+                                <div class="d-flex flex-row flex-wrap align-items-center position-relative fs-4">
                                     <span class="badge me-0 new_prce">$<?php echo $price; ?></span>
                                     <span class="me-1 fs-1 text-600 old_price"><del class="me-1">$<?php echo $price * 10; ?></del></span>
                                     <div class="price-side">
                                      You save: <span class="saveda text-success">$<?php echo round($price * 9); ?> </span><span class="saved-percent">(90%)</span><span class="product-loop-down-arrow-wrap d-inline-block"></span> </div>
-                                </h2>
+</div>
                                 <hr>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/form.php'; ?>
+                                <?php 
+                                $r = rand(1,2);
+                                if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
+                                if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
+                                
+                                ?>
 
                        
                                 <hr>
+                                <?php if($countdownRandom == "yes"){ ?>
+                                <div><div class="elfsight-app-83415bf8-04e8-4c86-aa6e-1640cd17ee70"></div></div>
+                                <?php } ?>
 
-                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats">
-                                
+                                <div class="d-block d-lg-none">
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats clearfix">
                                 <span style="float:left;">
                                 <i class="fas fa-star align-middle mb-0 mt-n1 mr-2"></i> Rating: </span>
                                 <p class="h4 mb-0">
-                               
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
                                   <?php if ($avgrating < 4.51) { ?>
                                   <span class="fa fa-star-half"></span>
-                                  <?php
-}
-else { ?>
+                                  <?php }else{ ?>
                                   <span class="fa fa-star"></span>
-                                  <?php
-}?>
-
-                                    </p>
+                                  <?php }?>
+                                </p>
                                 </div>
 
-                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales">
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">
                                     <span style="float:left;">
                                     <i class="fas fa-shopping-cart align-middle mb-0 mt-n1 mr-2"></i> Sales: </span>
                                     <div class="h4 mb-0" data-countup='{"endValue":<?php echo $sales; ?>, "separator":" "}'>0</div>
@@ -165,13 +203,13 @@ else { ?>
 
                                
 
-                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-reviews">
+                                <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-reviews clearfix">
                                     <span style="float:left;">
                                     <i class="fas fa-comments align-middle mb-0 mt-n1 mr-2"></i> Reviews: </span>
                                     <div class="h4 mb-0" data-countup='{"endValue":<?php echo $reviews; ?>, "separator":" "}'>0</div>
                                 </div>
 
-
+                                  </div>
                    
 
 
@@ -196,7 +234,7 @@ else { ?>
             </div>
             <div class="card-body px-3 px-md-4 px-lg-4 py-3">
             
-            <div class="row justify-content-center mb-30-none">
+            <div class="row justify-content-center mt-4">
                 <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4">
                     <div class="info-item">
                         <div class="info-icon"><img src="/assets/img/icons/ball.gif" alt="Ribbon"></div>
@@ -451,69 +489,15 @@ $i = 0;
         
     </section>
 </div>
-<?php  include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php'; ?>
-<?php
-$customJSPreload = '<link rel="preload" href="/assets/js/product.js" as="script">';
-$customCSS = '<link href="/assets/css/product.css" rel="stylesheet">
-<link href="/assets/css/lightslider.css" rel="stylesheet">';
-$customJS = <<<EOT
-<script defer="defer" src="/assets/js/product.js"></script>
-<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+<?php  
 
-<script>
-$('#lightSlider').lightSlider({
-        gallery: true,
-        item: 1,
-        loop: true,
-        slideMargin: 0,
-        thumbItem: 6,
-      controls:true,
-     
-    });
-</script>
-<script>  
-var width = $(window).width();
+include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php';
 
-if(width < 750) {
-    $(document).scroll(function() {
-        var y = $(this).scrollTop();
-        if (y > 500) {
-            $('#phone-navbar').slideDown();
-        
-        } else {
-            $('#phone-navbar').slideUp();
-    
-        }
-      });
-  }
-$('.nav-link').click(function(){    
-    var divId = $(this).attr('href');
-     $('html, body').animate({
-      scrollTop: $(divId).offset().top + 0
-    }, 100);
-  });
+$customJSPreload .= '
+<link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">
+';
 
-  
-</script>
-<script>
-
-$(document).ready(function(){
-const instance0 =  new TypeIt(".type-it-zero", {
-strings: ["<span class='fw-bold'>$subtitle</span><br>", "Psychic Artist (通灵艺术家) is a master of astrology famous in China for being able to draw anyone's soulmate. Thousands of people have found love thanks to Artist's gift.<br>", "Answer just a few simple questions and Psychic Artist will draw you a picture of your $shorttitle"],
-waitUntilVisible: true,
-lifeLike: true,
-loop: false,
-html: true,
-breakLines: true,
-speed: 5, 
-afterComplete: function (instance) {
-instance.destroy();
-$("#start-form-btn").slideToggle();
-}
-})
-
-instance0.go();
-});
-</script>
-EOT;
+$customJS .= '
+<script src="/assets/js/infinite-ajax-scroll.min.js"></script>
+';
 ?>

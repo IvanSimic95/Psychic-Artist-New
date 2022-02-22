@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/temmplates/config.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 
 echo "Starting start-orders.php...<br><br>";
     
@@ -28,6 +28,8 @@ echo "Starting start-orders.php...<br><br>";
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
 
+			$cart = $row["abandoned_cart"];
+
 			$message = str_replace("%ORDERID%",   $orderId, $message);
 			$message = str_replace("%PRIORITY%",  $orderPriority, $message);
 			$message = str_replace("%EMAILLINK%", $emailLink , $message);
@@ -37,72 +39,51 @@ echo "Starting start-orders.php...<br><br>";
 			echo $orderProduct." | ";
 			echo $orderPriority." | ";
 
-
-            //Send CURL for message -> TalkJS
-			$ch = curl_init();
-			$data = [[
-				"text" => $OrderProcessingMessage,
-				"type" => "SystemMessage"
-			],
-			[
-				"sender"  => "administrator",
-				"text" => $message,
-				"type" => "UserMessage"
-			]];
+			$CreatedAt = time();
 			
-			$data1 = json_encode($data);
+			//CODE TO SEND EMMAIL NOTIFYING ABOUT SWITCHING ORDER STATUS TO PROCESSING
 
-			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $orderId . '/messages');
+			
+			if($cart=="active"){
+			//CODE TO STOP ABANDONED CART PROCESS
+			$ch = curl_init();
+			$data = [
+			"user_id" => $orderId,
+			"action" => "Cart Recovered",
+			"email" => $orderEmail,
+			"created_at" => $CreatedAt
+			];
+			$jData = json_encode($data);
+			print_r($jData);
+			curl_setopt($ch, CURLOPT_URL, 'https://beacon.crowdpower.io/events');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
-
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
 			$headers = array();
 			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
+			$headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
 			$result = curl_exec($ch);
-			if (curl_errno($ch)) {
-			    echo 'Error:' . curl_error($ch);
+
 			}
-			curl_close($ch);
+            
 
-
-		 //	Update Order Status Processing
+		 	//	Update Order Status Processing
 			$sqlupdate = "UPDATE `orders` SET `order_status`='processing' WHERE order_id='$orderId'";
 			if ($conn->query($sqlupdate) === TRUE) {
-      		echo "Updated";
+      		echo "Status changed to Processing!";
 
-			// curl implementation
-$ch = curl_init();
-$data = [
-"custom" => ["status" => "Processing"]
-];
-$data1 = json_encode($data);
-print_r($data1);
-curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/'.$orderId);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
-
-$headers = array();
-$headers[] = 'Content-Type: application/json';
-$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
-//Change chat order status
+			//Save data to orders log
+			$TimeNow = date('y-m-d H:i:s', time());
+    		$sql2 = "INSERT INTO orders_log (order_id, type, time, notice) VALUES ('$orderId', 'status', '$TimeNow', 'Order Status updated to Processing!')";
+   			if ($conn->query($sql2) === TRUE) {
+   			}
+		
 
       		} else {
 			echo "Error";
 			}
+			echo "<br>";
 		}
 	}
 	echo "<br><hr>";

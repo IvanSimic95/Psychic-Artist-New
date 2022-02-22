@@ -61,7 +61,6 @@
   $superCount = count($superSplitURL);
   if($superCount === 2) $superSplitURL['2'] = "overview";
   if($superCount === 3) $page = $superSplitURL['2'];
-  $firephp->fb($superCount,FirePHP::LOG);
 
           if($superSplitURL['0']=="dashboard"){
             $page = "overview";
@@ -84,7 +83,7 @@
         $page = "overview";
     }
     
-    $firephp->fb($page,FirePHP::LOG);
+
 
 ?>
 <div id="sidebar-menu" class="text-white">
@@ -126,3 +125,8 @@
                             </div>
                         </a> </li>
 </ul>
+                            </div>
+      
+                            </div>
+
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/single-order-sidebar.php'; ?>

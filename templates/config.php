@@ -7,7 +7,15 @@ $customJS = $customCSS = "";
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
 #file_put_contents($_SERVER['DOCUMENT_ROOT'].'/templates/vars.php', '<?php return ' . var_export($v, true) . ';');  //Code for saving variables to vars.php
-
+if(isset($_GET['logout'])){
+  $_SESSION = array();
+  session_destroy();
+  unset($_COOKIE['loggedIn']);
+  unset($_COOKIE['orderID']);
+  unset($_COOKIE['userEmail']);
+  header("Location: /dashboard?loggedOut=success");
+  die();
+  }
 //Define Main Variables
 $webTitle = $v['web-title'];
 $webDescription = $v['web-description'];
@@ -28,6 +36,35 @@ $title = $webTitle;
 $sdescription = $webDescription;
 $pimage = $webLogo;
 
+//START Order Messages
+$processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\nPsychic Artist";
+
+
+//Complete Soulmate, Twin Flame & Future Spouse Text added Before and After Order Text
+$generalOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
+$generalOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
+
+//Complete Future Baby Text added Before and After Order Text
+$babyOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
+$babyOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
+
+//Complete Reading Text added Before and After Order Text
+$readingOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
+$readingOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
+
+//Complete Past Life Text added Before and After Order Text
+$pastOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
+$pastOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
+
+
+//Order Processing & Order Complete Notifications
+$OrderProcessingMessage = "Your Order status is now set to *Processing*!";
+
+$OrderCompleteMessage = "Your Order status is now set to *Complete*!";
+$ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conversation!";
+//END Order Messages
+
+
 
 //Check if server is localhost or guru and save DB info
 $domain = $_SERVER['SERVER_NAME'];
@@ -36,11 +73,13 @@ if($domain == "pa.test"){
 	$username = "root";
 	$password = "";
 	$db = "pa";
+  $base_url = "https://pa.test";
 }else{
 	$servername = "localhost";
 	$username = "psychic_newpanel";
 	$password = "Jepang123Iva";
 	$db = "psychic_newpanel";
+  $base_url = "https://psychic-artist.com";
 }
 
 
@@ -62,16 +101,20 @@ if($domain == "pa.test"){
 
 
 //Error Reporting - None
-#error_reporting(0); //Disable Error Reporting
-#ini_set('display_errors', FALSE); //Hide all errors on frontend
+//error_reporting(0); //Disable Error Reporting
+//ini_set('display_errors', FALSE); //Hide all errors on frontend
 
 //Error Reporting - All
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+#error_reporting(E_ALL);
+#ini_set('display_errors', FALSE);
 
 //Error Log Path
-ini_set("log_errors", TRUE); //Log errors to file
-ini_set("error_log", $_SERVER['DOCUMENT_ROOT']."/logs/php-error.log");//Path to php error log
+//ini_set("log_errors", TRUE); //Log errors to file
+//ini_set("error_log", $_SERVER['DOCUMENT_ROOT']."/logs/php-error.log");//Path to php error log
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 //Check if session is set, if not set a new one
 if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
@@ -89,12 +132,7 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
   $_SESSION['funnel_page'] = "main";
   }
   
-  if(isset($_GET['logout'])){
-  $_SESSION = array();
-  session_destroy();
-  header("Location: /dashboard");
-  die();
-  }
+
 
 //Save to order log function
 function formLog($array) {
@@ -120,6 +158,19 @@ function formErrorLog($array) {
   }
 }
 
+//Save to order log function
+function SuperLog($array, $logname) {
+  $dataToLog = $array;
+  $data = PHP_EOL;
+  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/".$logname.".log";
+  $success = file_put_contents($pathToFile, $data, FILE_APPEND);
+  if ($success === TRUE){
+ 
+  }else{
+   
+  }
+}
+
 //Function to check if user is from US
 $formDate = "";
     $langs = array();
@@ -139,8 +190,14 @@ $formDate = "";
     }
     if (array_key_first($langs)=="en-US")$formDate = "US";
 
-
-
+$rcountdown = rand(1,10);
+if($rcountdown <= 3){
+  $countdownRandom = "no";
+  }
+if($rcountdown > 3){
+  $countdownRandom = "yes";
+  }
+    
 
 
 //Disable notifications in menu
@@ -148,30 +205,30 @@ $notificationsOn = "no";
 
 
 //START Order Messages
-$processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\n*Melissa*";
+$processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\nPsychic Artist";
 
 
 //Complete Soulmate, Twin Flame & Future Spouse Text added Before and After Order Text
 $generalOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
-$generalOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\n*Melissa*";
+$generalOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
 
 //Complete Future Baby Text added Before and After Order Text
 $babyOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
-$babyOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\n*Melissa*";
+$babyOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
 
 //Complete Reading Text added Before and After Order Text
 $readingOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
-$readingOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\n*Melissa*";
+$readingOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
 
 //Complete Past Life Text added Before and After Order Text
 $pastOrderHeader = "Dear %FIRSTNAME%\n\nFirst of all, thank you so much for giving me the opportunity to create a meaningful connection with you! As we continue, please make yourself comfortable and feel wholeheartedly everything I’ve seen while connecting with your aura and energy. I hope that sharing this with you will kindle a light of joy in your heart, and let you know that beautiful things are on the way.\n\n";
-$pastOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\n*Melissa*";
+$pastOrderFooter = "\n\n It was such a pleasure doing your reading, my dear. I hope that you enjoy it as much as I enjoyed connecting with your beautiful soul energy!\n\nWith Love,\nPsychic Artist";
 
 
 //Order Processing & Order Complete Notifications
-$OrderProcessingMessage = "Your Order status is now set to *Processing*!";
+$OrderProcessingMessage = "Your Order status is now set to Processing!";
 
-$OrderCompleteMessage = "Your Order status is now set to *Complete*!";
+$OrderCompleteMessage = "Your Order status is now set to Complete!";
 $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conversation!";
 //END Order Messages
 
@@ -186,7 +243,9 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 //$_SESSION['weekly'] = "1643100349";
 //$_SESSION['loggedIn'] = "yes";
 //SESSION DATA FOR TESTING ONLY, REMOVE LATER
-
+if(!isset($customTrigger)){
+  $customTrigger="";
+}
 
 //Check if user logged in, if yes save variables
 if(isset($_SESSION['id'])){
@@ -204,6 +263,90 @@ $userOrders = "0";
 $userWeekly = "0";
 } 
 
+
+function time_ago($timestamp)  
+ {  
+      $time_ago = strtotime($timestamp);  
+      $current_time = time();  
+      $time_difference = $current_time - $time_ago;  
+      $seconds = $time_difference;  
+      $minutes      = round($seconds / 60 );           // value 60 is seconds  
+      $hours           = round($seconds / 3600);           //value 3600 is 60 minutes * 60 sec  
+      $days          = round($seconds / 86400);          //86400 = 24 * 60 * 60;  
+      $weeks          = round($seconds / 604800);          // 7*24*60*60;  
+      $months          = round($seconds / 2629440);     //((365+365+365+365+366)/5/12)*24*60*60  
+      $years          = round($seconds / 31553280);     //(365+365+365+365+366)/5 * 24 * 60 * 60  
+      if($seconds <= 60)  
+      {  
+     return "Just Now";  
+   }  
+      else if($minutes <=60)  
+      {  
+     if($minutes==1)  
+           {  
+       return "one minute ago";  
+     }  
+     else  
+           {  
+       return "$minutes minutes ago";  
+     }  
+   }  
+      else if($hours <=24)  
+      {  
+     if($hours==1)  
+           {  
+       return "an hour ago";  
+     }  
+           else  
+           {  
+       return "$hours hrs ago";  
+     }  
+   }  
+      else if($days <= 7)  
+      {  
+     if($days==1)  
+           {  
+       return "yesterday";  
+     }  
+           else  
+           {  
+       return "$days days ago";  
+     }  
+   }  
+      else if($weeks <= 4.3) //4.3 == 52/12  
+      {  
+     if($weeks==1)  
+           {  
+       return "a week ago";  
+     }  
+           else  
+           {  
+       return "$weeks weeks ago";  
+     }  
+   }  
+       else if($months <=12)  
+      {  
+     if($months==1)  
+           {  
+       return "a month ago";  
+     }  
+           else  
+           {  
+       return "$months months ago";  
+     }  
+   }  
+      else  
+      {  
+     if($years==1)  
+           {  
+       return "one year ago";  
+     }  
+           else  
+           {  
+       return "$years years ago";  
+     }  
+   }  
+ } 
 
 //START FUNCTION FOR INDEX.PHP
 if (isset($_SERVER['PATH_INFO'])) {//Check URL Path to figure out what template to use
@@ -240,14 +383,6 @@ if(isset($splitURL[1])){//If variable is set proceed
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-// A user-defined error handler function
-function myError($errno, $errstr, $errfile, $errline) {
-global $ERROR;
-$GLOBALS['ERROR'] = "<b>PHP Error:</b> <i>[$errno]</i> <b>$errstr</b><br> Error on line <b>$errline</b> in <b>$errfile</b><br>";}
-	  
-// Set user-defined error handler function
-set_error_handler("myError");
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
 $conn->query('set character_set_client=utf8');
@@ -264,4 +399,5 @@ if ($conn->connect_error) {
 
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/js-trigger.php';
 ?>

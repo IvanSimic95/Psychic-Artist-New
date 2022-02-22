@@ -1,3 +1,12 @@
+<?php if(isset($_GET['loggedin'])){ 
+//CrowdPowerLogin($userId, $userEmail, $userName);
+?>
+      <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+      <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+      <p class="mb-0 flex-1">You have logged in to your account!</p>
+      <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        <?php } ?>
 <div class="row gx-0 gy-2 g-xl-4 h-100">
     <div class="col-12 col-sm-12 col-xl-4 text-center py-2">
       <div class="py-2 px-0 light topbar-gradient rounded-3">
@@ -9,16 +18,15 @@
           
 
 
-          </div>
-    </div>
+  
   </div>
   <?php 
   
 switch ($page) {          
 case 'overview':
-$title = "User Dashboard"; 
+$title = "Dashboard | Psychic Artist"; 
 $insertPage = "main";
-$pageTitle1 = "Account Overview";
+$pageTitle1 = "Dashboard > Account Overview";
 $customCSS = '
 <!--=====================================CUSTOM CSS================================================-->
 <link rel="stylesheet" type="text/css" href="/assets/css/overview.css">
@@ -26,25 +34,13 @@ $customCSS = '
 ';
 $customJS = <<<EOT
 <script src="/vendors/select2/select2.min.js"></script>
-<script>
-$(document).ready(function() {
-
-  $('#orders tr').click(function() {
-      var OrderID = $(this).attr("id");
-      var path = "/dashboard/order/"
-      var href = path.concat(OrderID);
-      window.location = href;
-  });
-
-});
-</script>
 EOT;
 break;
 
 case 'orders':
-$title = "Your Orders"; 
+$title = "Dashboard - Orders | Psychic Artist"; 
 $insertPage = "orders";
-$pageTitle1 = "Your Orders";
+$pageTitle1 = "Dashboard > Orders";
 $customCSS = '
 <!--=====================================CUSTOM CSS================================================-->
 <link rel="stylesheet" type="text/css" href="/vendors/animate/animate.css">
@@ -58,35 +54,24 @@ $customCSS = '
 ';
 $customJS = <<<EOT
 <script src="/vendors/select2/select2.min.js"></script>
-<script>
-$(document).ready(function() {
-
-  $('#orders tr').click(function() {
-      var OrderID = $(this).attr("id");
-      var path = "/dashboard/order/"
-      var href = path.concat(OrderID);
-      window.location = href;
-  });
-
-});
-</script>
 EOT;
 break;
 
 case 'order':
-$title = "User Dashboard"; 
+$title = "Order #".$viewOrder." - Dashboard | Psychic Artist";
     $insertPage = "order";
-    $pageTitle1 = "Order #".$viewOrder;
+    $pageTitle1 = "Order #".$viewOrder."";
     break;
 
             case 'profile':
+            $title = "Dashboard - Profile | Psychic Artist"; 
             $insertPage = "profile";
-            $pageTitle1 = "Edit Your Profile";
+            $pageTitle1 = "Dashboard > Profile";
             break;
               
             default:
             $insertPage = "main";
-            $pageTitle1 = "Account Overview";
+            $pageTitle1 = "Dashboard";
             break;
           }
          
@@ -97,6 +82,8 @@ $title = "User Dashboard";
   <div class="col-12 col-sm-12 col-xl-8 py-2">
       <div class="p-0 flex-grow-1 d-flex flex-column">
 
+     
+
       <div class="card mb-3 p-0">
             <div class="card-header bg-light  px-3 px-md-4 px-lg-4 py-3 topbar-gradient">
                 <div class="d-flex flex-between-center">
@@ -104,14 +91,10 @@ $title = "User Dashboard";
                 </div>
             </div>
             <div class="card-body px-3 px-md-4 px-lg-4 py-3">
-            <?php  include $include;  ?>
+            <?php include $include; ?>
             </div>
 
 
          
       </div>
   </div>
-
-<?php
-
-?>

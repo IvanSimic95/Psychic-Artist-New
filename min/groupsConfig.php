@@ -14,10 +14,9 @@
 return array(
 //    'testJs' => array('//minify/quick-test.js'),
 //    'testCss' => array('//minify/quick-test.css'),
-'js' => array('//assets/js/theme.js', '//assets/js/type-it.js', '//assets/js/progressbar.js', '//assets/js/new-menu.js', '//assets/js/config.js'),
+'js' => array('//assets/js/theme.js', '//assets/js/type-it.js', '//assets/js/progressbar.js', '//assets/js/config.js'),
 
 'js2' => array(
-'//assets/js/verimail.jquery.min.js',
 '//vendors/popper/popper.min.js', 
 '//vendors/bootstrap/bootstrap.min.js', 
 '//vendors/anchorjs/anchor.min.js', 
@@ -28,8 +27,7 @@ return array(
 '//vendors/countup/countUp.umd.js',
 '//assets/js/lazyload.js',
 '//assets/js/jquery.mask.js',
-'//assets/js/jquery.star-rating-svg.js',
-'//assets/js/infinite-ajax-scroll.min.js'),
+'//assets/js/jquery.star-rating-svg.js'),
 
 'fa-js' => array(
     '//assets/js/brands.min.js', 

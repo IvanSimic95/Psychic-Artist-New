@@ -22,6 +22,7 @@ color: #7303c0;
 text-align:center;
 background-color:#f6f9fc;
 font-size:14px;
+font-weight:bold;
 }
 #phone-navbar .nav-link.active{
 color: #fff;
@@ -46,13 +47,20 @@ display:block;
 display:none!important;
 }
 }
-/* 
-@media only screen and (max-width: 350px) {
+
+@media only screen and (max-width: 250px) {
 #phone-navbar .nav-link .menu-title{
 display:none;
 }
+#phone-navbar ul{
+height:100%;
 }
-*/
+#phone-navbar .nav-link{
+  height: 100%;
+    padding-top: 15px;
+}
+}
+
 
 </style>
 

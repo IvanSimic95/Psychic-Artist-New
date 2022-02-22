@@ -1314,7 +1314,7 @@ a {
 .globalNav .popupCloseButton {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 10px;
   width: 51px;
   height: 51px;
   font-size: 0;

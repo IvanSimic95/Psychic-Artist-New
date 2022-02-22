@@ -10,19 +10,6 @@
         <div class="row flex-center pt-8 pt-lg-1 pb-lg-9 pb-xl-0">
                 <div class="col-md-11 col-lg-8 col-xl-6 pb-7 pb-xl-9 text-center text-xl-start order-2 order-lg-1">
                     <h2 class="text-white fw-bold py-2 product-title"><?php echo $v['p1-title']; ?></h1>
-            <!--<div class="d-flex py-2">
-                    
-            <span class="badge bg-light text-dark pricing-badge">         
-            <span style=" background: -webkit-linear-gradient(#d130eb,#4a30eb);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" class="h3 me-2 pricing-badge">
-            $<?php echo $v['p1-price']; ?>
-            </span></span>
-
-            <span class="align-middle" style="margin-left: auto!important; margin-top:5px;">
-            <span class="my-rating1 align-middle"></span>
-            <span class="align-middle ms-1 lead text-white opacity-75" style="font-size: 18px!important;">(<?php echo $v['p1-reviews']; ?>)</span>
-            </span>
-            
-                    </div>-->
                     <p class="lead text-white opacity-75 text-justify"><?php echo $v['p1-short-description']; ?></p>
                     <div class="d-grid gap-2">
                         <a href="<?php echo $v['p1-url']; ?>" class="open-product btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">

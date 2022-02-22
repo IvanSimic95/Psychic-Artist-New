@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 
 $logArray = array();
-$errorDisplay = "";
+$errorDisplay = $getcountdown = $getformused = "";
 $logArray['1'] = date("d-m-Y H:i:s");
 $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
@@ -26,23 +26,30 @@ isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $errorDisplay .
 isset($_GET['cookie_id']) ? $cookie_id = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
 isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
 
+isset($_GET['countdown']) ? $getcountdown = $_GET['countdown'] : $errorDisplay .= " Missing Countdown Variable /";
+isset($_GET['formused']) ? $getformused = $_GET['formused'] : $errorDisplay .= " Missing Formused ID /";
+
 $_SESSION['funnel_page'] = "personal-reading";
 $order_product_id = $order_product;
 switch ($order_product) {
     case "1":
     $order_product = "soulmate";
+    $order_product_nice = "Soulmate Drawing & Reading";
     break;
     
     case "2":
     $product = "twinflame";
+    $order_product_nice = "Twin Flame Drawing & Reading";
     break;
     
     case "3":
     $product = "futurespouse";
+    $order_product_nice = "Future Spouse Drawing & Reading";
     break;
     
     case "4":
     $product = "past";
+    $order_product_nice = "Past Life Drawing & Reading";
     break;
 }
 $order_date = date('Y-m-d H:i:s');
@@ -62,6 +69,22 @@ $_SESSION['orderFName'] = $fName;
 $_SESSION['orderLName'] = $lName;
 
 $_SESSION['orderAge'] = $user_age;
+
+switch($order_priority){
+    case "12":
+    $order_price = "44.99";
+    break;
+    
+    case "24":
+    $order_price = "39.99";
+    break;
+    
+    case "48":
+    $order_price = "29.99";
+    break;
+}
+
+
 
 //Find User Gender
 function findGender($name) {
@@ -86,6 +109,7 @@ $order_date = date('Y-m-d H:i:s');
 
 $baseRedirect = base64_encode("https://".$domain."/offer/personal-reading");
 
+$signedUpAt = time();
 empty($errorDisplay) ?  $testError = FALSE :  $testError = TRUE;
 if($testError == TRUE){
 $errorID  = md5($errorDisplay.$order_date);
@@ -105,8 +129,8 @@ die();
 
 if($user_name ) {
     
-    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
-                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '$order_product', '$order_priority', '29.99', '', '$userGender', '$userGenderAcc', '$partnerGender')";
+    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown)
+                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown')";
 
     if ($conn->query($sql) === TRUE) {
     $logArray['9'] = "Success"; 
@@ -114,14 +138,45 @@ if($user_name ) {
     $logArray['9'] = "Error: " . $sql . "<br>" . $conn->error;; 
     }
 
+
+
     unset($_SESSION['user_cookie_id']);
     $lastRowInsert = mysqli_insert_id($conn);
+
+    //Save data to orders log
+    $sql2 = "INSERT INTO orders_log (order_id, time, notice) VALUES ('$lastRowInsert', '$order_date', 'Order Created!')";
+    if ($conn->query($sql2) === TRUE) {
+    }
+
+    
+    
 
     
     formLog($logArray);
 
     $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product_id.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
     
+
+    $ch = curl_init();
+    $data = [
+    "user_id" => $lastRowInsert,
+    "name" => $user_name,
+    "email" => $user_email,
+    "signed_up_at" => $signedUpAt,
+    "custom_attributes" => ["lastbglink" => $finalLink, "lastorderid" => $lastRowInsert, "lastOrderproduct" => $order_product_nice, "lastOrderprice" => $order_price]
+    ];
+    $jData = json_encode($data);
+    print_r($jData);
+    curl_setopt($ch, CURLOPT_URL, 'https://beacon.crowdpower.io/customers');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
+    $headers = array();
+    $headers[] = 'Content-Type: application/json';
+    $headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $result = curl_exec($ch);
+
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
 
     if ($conn->query($sql) === TRUE) {

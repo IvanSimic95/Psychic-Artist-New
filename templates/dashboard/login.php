@@ -1,3 +1,11 @@
+<?php if(isset($_GET['loggedOut'])){ ?>
+      <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+      <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+      <p class="mb-0 flex-1">You have logged out of your account!</p>
+      <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        <?php } ?>
+
 <div class="card mb-3">
             <div class="card-body p-0">
                 <div class="row g-0 h-100">
@@ -25,10 +33,10 @@
                     
                         <div class="col-auto">
                           <h3>Account Login</h3>
-                          <p class="login-error mt-3 mb-0"><?php echo $error; ?></p>
+                          <p class="login-error mt-3 mb-0"><?php echo $LoginError; ?></p>
                      
                       </div>
-                      <form class="mt-3 mb-3 mt-md-3"  action="" method="POST">
+                      <form class="mt-3 mb-3 mt-md-3"  action="/dashboard?login=yes" method="POST">
                         <div class="mb-3 position-relative p-0 pt-md-3 pb-md-3">
                           <label class="form-label" for="card-email">Email address</label>
                           <input class="form-control" id="card-email" name="email" type="email">
@@ -37,7 +45,7 @@
                         <div class="row flex-between-center">
                           <div class="col-auto">
                             <div class="form-check mb-0">
-                              <input class="form-check-input" type="checkbox" id="card-checkbox" checked="checked">
+                              <input class="form-check-input" type="checkbox" id="card-checkbox" checked="checked" name="remember">
                               <label class="form-check-label mb-0" for="card-checkbox">Remember me</label>
                             </div>
                           </div>

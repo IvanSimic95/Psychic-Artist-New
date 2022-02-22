@@ -4,21 +4,10 @@ $sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_i
 $result = $conn->query($sql);
 ?>
 
-<table id="orders">
-    <thead>
-        <tr class="table100-head topbar-gradient">
-	        <th class="column1"># ID</th>
-	    	<th class="column2">Product</th>
-	    	<th class="column3">Price</th>
-	    	<th class="column4">Status</th>
-	    	<th class="column5">View Order</th>
-	    </tr>
-    </thead>
-	
-    <tbody>
-            <?php
+<?php
             while($row = $result->fetch_assoc()) {
             $product = strtolower($row["order_product"]);
+            $productCodename = $product;
             $product = ucwords($product);
             switch ($product) {
               case "Husband":
@@ -83,21 +72,52 @@ $result = $conn->query($sql);
 
                     
                 }
-                    if($row["order_status"]=="shipped"){$status="completed";}else{$status = $row["order_status"];}
-                    echo "<tr id='" . $row["order_id"] . "' class='my-2 my-xl-0 mx-2 mx-md-2 mx-xl-0 p-2' style='border: 1px solid #36304a;border-radius: 8px;'><td class='column-title custom-gradient-one'>Order #" . $row["order_id"] . "</td><td class='column1'>#" . $row["order_id"] . "</td><td class='column2'><div class='badge badge-product'><div class='phone-table-title'>Order Product:</div>" . $product . "</div></td><td class='column3'><div class='badge badge-price'><div class='phone-table-title'>Order Price:</div>$" . $row["order_price"]. "</div></td><td class='column4'><div class='sbadge sbadge-" . $status . "'><div class='phone-table-title'>Order Status:</div>" . $status . " <i class='fas fa-check'></i><i class='fas fa-stream'></i><i class='fas fa-redo'></i><i class='fas fa-ban'></i></div></td><td class='column5'><button data-toggle='modal' data-target='#order-".$row["order_id"]."' class='btn btn-dark btn-shadow w-100 m-0'>View Order #" . $row["order_id"] . "</button></td></tr>";
-            
-            
                     $id = $row["order_id"];
+                    $price = $row["order_price"];
+                    $orderDate = $row["order_date"];
+                    $link = $row["link"];
+                    $status = $row["order_status"];
 
+                 
+                    
+                    include $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php';
+                    
+                    if($status=="pending"){
+                        $orderBTN = '<a target="_blank" href="'.$link.'" class="btn btn-dark text-uppercase w-100 mt-2">Finish Purchase</a>';
+                    }elseif($status=="canceled"){
+                        $orderBTN = '';
+                    }else{
+                        $orderBTN = '<a href="/dashboard/order/'.$id.'" class="btn btn-dark text-uppercase w-100 mt-2">Order Details</a>';
+                    }
 
-                    $orderModals = <<<EOT
-                   
-                    EOT;
-                    echo $orderModals;
+                    $time = time_ago($orderDate);
+                     
+$orders = <<<EOT
+                    <div class="order my-3 bg-light rounded-3">
+                    <div class="row">
+                        <div class="col-lg-4 p-0">
+                            <div class="d-flex flex-column justify-content-between order-summary py-1 px-1 text-center">
+                                <div class="text-uppercase fw-bold mb-2 text-grad-1">Order #$id</div>
+                                <img class="img-thumbnail d-block mx-auto mb-1 mt-1" src="https://pa.test/assets/img/products/$productCodename/11.jpg" alt="$product Product Image" />
+                                
+                                       
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-0">
+                        <div class="d-flex flex-column justify-content-between order-summary p-2 text-center orders-list">
+                        <div class="product fw-semi-bold mb-2">$product</div>
+                            
+                            $statusProgress
+                            <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
+                                $orderBTN
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>                  
+EOT;
+echo $orders;
             }
 
 
             ?>
-
-	    	</tbody>
-</table>

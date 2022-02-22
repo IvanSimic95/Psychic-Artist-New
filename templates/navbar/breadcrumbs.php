@@ -28,14 +28,13 @@ if (array_key_last($crumbs) > 1){ //Start If path has multiple pages/links
     if(is_array($dir)){
     foreach($dir as $index => &$item)
     {
-        if(is_dir($dirPath. '/' . $item)){ unset($dir[$index]); } }$dir = array_values($dir);
+        if(is_dir($d. '/' . $item)){ unset($dir[$index]); } }$dir = array_values($dir);
     //End find all files function
     $keySlash = str_replace("-"," ",$key);
     echo '
     <li class="breadcrumb-item active">
     <div class="btn-group">
     <button class="btn btn-link breadcrumb-dropdown dropdown-toggle icon dropdown-item-'.$key.'" type="button" id="'.$key.'MenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> '.$keySlash.'</button>
-    </button>
 
     <div class="dropdown-menu breadcrumbs-dropdown-menu py-0 rounded-3" aria-labelledby="'.$key.'MenuButton">';
 
@@ -171,6 +170,4 @@ echo '
 
 }
 ?>
-</div>
-</nav>
 <?php } ?>
