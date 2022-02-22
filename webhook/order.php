@@ -17,7 +17,6 @@ $productFullTitle = $json_data->productFullTitle;
 $signedUpAt = time();
 
 if($order_email) {
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "UPDATE `orders` SET `order_status`='paid',`bg_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
