@@ -96,7 +96,7 @@ if($user_name ) {
     unset($_SESSION['user_cookie_id']);
 
 
-    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$countReadings.'xreadings&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
+    $finalLink = 'https://www.buygoods.com/secure/upsell?account_id=6490&product_codename='.$countReadings.'xreadings&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
     
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
 
