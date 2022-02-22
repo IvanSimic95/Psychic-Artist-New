@@ -1,8 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "pa";
+//Check if server is localhost or guru and save DB info
+$domain = $_SERVER['SERVER_NAME'];
+if($domain == "pa.test"){
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$db = "pa";
+  $base_url = "https://pa.test";
+}else{
+	$servername = "localhost";
+	$username = "psychic_newpanel";
+	$password = "Jepang123Iva";
+	$db = "psychic_newpanel";
+  $base_url = "https://psychic-artist.com";
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
@@ -32,4 +43,4 @@ $newtext = str_replace("Melissa","Psychic Artist",$text);
 $sql2 = "UPDATE `reviews` SET `review_date`='$random_Date',`review_text`='$newtext' WHERE review_id='$id'" ;
 $result2 = $conn->query($sql2); //UNCOMMENT THIS TO MAKE IT WORK! 
 }
-?>
+?> 
