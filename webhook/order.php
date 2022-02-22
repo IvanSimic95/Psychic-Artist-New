@@ -53,9 +53,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM orders WHERE order_id = '".$mOrderID."'";
     $result = $conn->query($sql);
-    $row = $result->fetch_assoc()
+    $row = $result->fetch_assoc();
 
-    $test_email = $row['order_email']
+    $test_email = $row['order_email'];
     if($test_email="" OR $test_email=NULL){
 
 
@@ -71,4 +71,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
     }
+
+  }
 ?>
