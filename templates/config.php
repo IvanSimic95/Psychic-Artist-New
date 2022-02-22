@@ -8,14 +8,19 @@ $customJS = $customCSS = "";
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
 #file_put_contents($_SERVER['DOCUMENT_ROOT'].'/templates/vars.php', '<?php return ' . var_export($v, true) . ';');  //Code for saving variables to vars.php
 if(isset($_GET['logout'])){
+  session_start();
   $_SESSION = array();
   session_destroy();
-  unset($_COOKIE['loggedIn']);
-  unset($_COOKIE['orderID']);
-  unset($_COOKIE['userEmail']);
-  header("Location: /dashboard?loggedOut=success");
+
+  setcookie("loggedIn", "", time()-3600);
+  setcookie("orderID", "", time()-3600);
+  setcookie("userEmail", "", time()-3600);
+
+  header("Location: /home?loggedOut=success");
   die();
   }
+
+
 //Define Main Variables
 $webTitle = $v['web-title'];
 $webDescription = $v['web-description'];
@@ -109,8 +114,8 @@ if($domain == "pa.test"){
 #ini_set('display_errors', FALSE);
 
 //Error Log Path
-//ini_set("log_errors", TRUE); //Log errors to file
-//ini_set("error_log", $_SERVER['DOCUMENT_ROOT']."/logs/php-error.log");//Path to php error log
+ini_set("log_errors", TRUE); //Log errors to file
+ini_set("error_log", $_SERVER['DOCUMENT_ROOT']."/logs/php-error.log");//Path to php error log
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

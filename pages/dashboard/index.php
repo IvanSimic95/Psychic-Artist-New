@@ -13,8 +13,8 @@ $order_email = $_SESSION['email'];
 }else{
 
 // set parameters and execute
-if(isset($_POST['check_email'])) {
-$order_email = $_POST['check_email'];
+if(isset($_GET['check_email'])) {
+$order_email = $_GET['check_email'];
 }
     
 if(isset($_POST['email'])) {
@@ -70,7 +70,7 @@ setcookie($cookie_name3, $cookie_value3, time() + (86400 * 30), "/");
 }
 
 if(isset($_GET['login'])) {
-$redirect = '<script>window.location.replace("https://psychic-artist.com/dashboard?loggedin=success");</script>';
+$redirect = '<script>window.location.replace("/dashboard?loggedin=success");</script>';
 echo $redirect;
 }
 }

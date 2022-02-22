@@ -90,7 +90,7 @@ if($user_name ) {
 
 
     
-    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
+    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename=futurebabyoffer&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
     
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
 

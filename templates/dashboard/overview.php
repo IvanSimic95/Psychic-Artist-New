@@ -16,7 +16,7 @@
           <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/menu.php'; ?>
 
           
-
+ 
 
   
   </div>
@@ -27,6 +27,7 @@ case 'overview':
 $title = "Dashboard | Psychic Artist"; 
 $insertPage = "main";
 $pageTitle1 = "Dashboard > Account Overview";
+$sdescription = "Access your user account and your orders";
 $customCSS = '
 <!--=====================================CUSTOM CSS================================================-->
 <link rel="stylesheet" type="text/css" href="/assets/css/overview.css">
@@ -41,6 +42,7 @@ case 'orders':
 $title = "Dashboard - Orders | Psychic Artist"; 
 $insertPage = "orders";
 $pageTitle1 = "Dashboard > Orders";
+$sdescription = "A full list of all your orders in one place";
 $customCSS = '
 <!--=====================================CUSTOM CSS================================================-->
 <link rel="stylesheet" type="text/css" href="/vendors/animate/animate.css">
@@ -57,21 +59,24 @@ $customJS = <<<EOT
 EOT;
 break;
 
-case 'order':
-$title = "Order #".$viewOrder." - Dashboard | Psychic Artist";
+    case 'order':
+    $title = "Order #".$viewOrder." - Dashboard | Psychic Artist";
     $insertPage = "order";
     $pageTitle1 = "Order #".$viewOrder."";
+    $sdescription = "Take a look at your order details!";
     break;
 
             case 'profile':
             $title = "Dashboard - Profile | Psychic Artist"; 
             $insertPage = "profile";
             $pageTitle1 = "Dashboard > Profile";
+            $sdescription = "Manage & Edit your user profile";
             break;
               
             default:
             $insertPage = "main";
             $pageTitle1 = "Dashboard";
+            $sdescription = "Access your user account and your orders";
             break;
           }
          

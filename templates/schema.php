@@ -5,7 +5,7 @@
   "name": "<?php echo $title; ?>",
   "image": "https://psychic-artist.com<?php echo $image; ?>",
   "sku": "0446310786",
-  "description": "<?php echo $description; ?>",
+  "description": "<?php echo $sdescription; ?>",
   "mpn": "925872",
   "brand": {
         "@type": "Brand",

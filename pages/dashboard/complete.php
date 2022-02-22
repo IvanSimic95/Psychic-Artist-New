@@ -1,11 +1,14 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/templates/noskip.php';
 
-$title = "Future Baby Portrait | Last Chance!"; 
-$title2 = "LAST CHANCE TO GRAB IT!";
-$sdescription = "Customize your order";
-$description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab your future baby portrait with huge discount & express delivery!";
+$title = "Order complete! | Psychic Artist"; 
+$sdescription = "You can now proceed to your user dashboard by clicking the button below!";
 ?>
+<style>
+.breadcrumbs-nav{
+display:none!important;
+}
+</style>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
         <div class="container p-0 p-xl-4">
@@ -17,8 +20,9 @@ $description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab yo
                 <div class="card-header bg-light" style="text-align:center;">
                 <h3 class="gradient  mb-0">Order complete! </h3>
                 </div>
-                  <div class="card-body col-12 offset-0 col-xl-10 offset-xl-1" style="text-align:center;">
-                You will receive login & order details in your email!
+                  <div class="card-body col-12 offset-0 col-xl-10 offset-xl-1 mt-4" style="text-align:center; min-height:35vh;">
+                You can now proceed to your user dashboard by clicking the button below!
+                <a href="/dashboard?login=yes&check_email=<?php echo $_SESSION['orderEmail']; ?>" class="btn btn-dark text-uppercase w-100 mt-6">Sign in!</a>
                  
                   </div>
               </div>

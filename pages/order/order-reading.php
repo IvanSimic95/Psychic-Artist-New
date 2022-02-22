@@ -24,11 +24,12 @@ $user_name = $_SESSION['orderName'];
 $user_email = $_SESSION['orderEmail'];
 $user_age = $_SESSION['orderAge'];
 
+$countReadings = "0";
 // set parameters and execute
-if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
-if(isset($_GET['love'])) {$love = $_GET['love'];}else{$love = "";}
-if(isset($_GET['career'])) {$career = $_GET['career'];}else{$career = "";}
-if(isset($_GET['health'])) {$health = $_GET['health'];}else{$health = "";}
+if(isset($_GET['general'])) {$general = $_GET['general']; $countReadings=$countReadings + 1;}else{$general = "";}
+if(isset($_GET['love'])) {$love = $_GET['love']; $countReadings=$countReadings + 1;}else{$love = "";}
+if(isset($_GET['career'])) {$career = $_GET['career']; $countReadings=$countReadings + 1;}else{$career = "";}
+if(isset($_GET['health'])) {$health = $_GET['health']; $countReadings=$countReadings + 1;}else{$health = "";}
 
 $order_product = $general . " " .  $love . " " . $career . " " . $health;
 $order_priority = "24";
@@ -95,7 +96,7 @@ if($user_name ) {
     unset($_SESSION['user_cookie_id']);
 
 
-    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
+    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$countReadings.'xreadings&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
     
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
 
@@ -136,36 +137,7 @@ if($user_name ) {
 
 
 <script>
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-    return false;
-};
-var nr_total = 0;
-if (getUrlParameter('general')) {
-  nr_total++;
-}
-if (getUrlParameter('love')) {
-  nr_total++;
-}
-if (getUrlParameter('career')) {
-  nr_total++;
-}
-if (getUrlParameter('health')) {
-  nr_total++;
-}
-
- window.location.href = "<?php echo $finalLink; ?>";
+window.location.href = "<?php echo $finalLink; ?>";
 </script>
 
 

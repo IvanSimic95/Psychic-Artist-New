@@ -274,7 +274,7 @@ else { ?>
         <div class="card mb-3 p-0 section" id="description">
         <div class="card-header bg-light py-3 px-4 topbar-gradient text-white">
                 <div class="d-flex flex-between-center">
-                    <h3 class="mb-0 fw-semibold fs-1 text-white "> <?php echo $title; ?> </h3>
+                    <h3 class="mb-0 fw-semibold fs-1 text-white "> <?php echo $titleProduct; ?> </h3>
                 </div>
         </div>
         <div class="card-body px-3 px-md-4 px-lg-4 py-3">
