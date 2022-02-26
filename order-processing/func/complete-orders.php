@@ -9,11 +9,16 @@ echo "Starting complete-orders.php...<br><br>";
 	} else {
 		echo "Processing Orders: ".$sqlResoult->num_rows."<br><br>";
 		while($row = $sqlResoult->fetch_assoc()) {
+
+		$logArray = array();
+		$logArray['1'] = date("d-m-Y H:i:s");
+
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 			$ex = explode(" ",$orderName);
 			$fName = $ex["0"];
 			$orderID = $row["order_id"];
+			$userID = $row["user_id"];
 			$orderEmail = $row["order_email"];
 			$orderAge = $row["user_age"];
 			$orderPrio = $row["order_priority"];
@@ -32,14 +37,17 @@ echo "Starting complete-orders.php...<br><br>";
 			$image_send = 0;
 			$randomDelay = rand(0,4);
 
-			echo "".$orderID." | ";
-			
+			$logArray[] = $orderID;
+			$logArray[] = $orderProduct."-".$orderPrio;
+			$logArray[] = $hours;
 
 			if ($hours >= ($orderPrio - $randomDelay )) {
 			echo "Active | ";
 			$trigger = 1;
+			$logArray[] = "Active";
 			}else {
 			echo "Waiting | ";
+			$logArray[] = "Waiting";
 			}
 			
 			echo ""  . $hours . " hours | ";
@@ -81,11 +89,12 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
+							$logArray[] = "Image ID: ".$rowImages["id"];
 						}
 					}
 
 
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'General' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND gender = '$orderSex' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 							 $email_text = "";
@@ -93,12 +102,13 @@ echo "Starting complete-orders.php...<br><br>";
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
 						    $message = $theader.$email_text.$tfooter;
+							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
 					
 				//START IF PRODUCT = FUTURE BABY
-			    }elseif ($orderProduct == "baby")  { 
-				$image_send = 1;
+			    }elseif ($orderProduct == "future-baby")  { 
+				$image_send = "1";
 				$prod_type = "baby";
 				$img_folder_name = "baby";
 				$babyGender = "female";
@@ -122,6 +132,7 @@ echo "Starting complete-orders.php...<br><br>";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages["name"];
+					$logArray[] = "Image ID: ".$rowImages["id"];
 					}
 				}
 				$sql_text = "SELECT * FROM orders_text WHERE product = '$prod_type' AND gender = '$babyGender' order by RAND() limit 1";
@@ -132,6 +143,7 @@ echo "Starting complete-orders.php...<br><br>";
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
+						$logArray[] = "Text ID: ".$rowText["id"];
 					}
 				}
 				//END IF PRODUCT = FUTURE BABY
@@ -152,6 +164,7 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
+							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
 				}
@@ -162,6 +175,7 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
+							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
 				}
@@ -172,6 +186,7 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
+							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
 				}
@@ -182,6 +197,7 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
+							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
 				}
@@ -202,6 +218,7 @@ echo "Starting complete-orders.php...<br><br>";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 						$image_name = $rowImages["name"];
+						$logArray[] = "Image ID: ".$rowImages["id"];
 						 //echo $image_name . " </br>";
 					}
 				}
@@ -214,6 +231,7 @@ echo "Starting complete-orders.php...<br><br>";
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
+						$logArray[] = "Text ID: ".$rowText["id"];
 					}
 				}
 			}
@@ -269,7 +287,8 @@ echo "Starting complete-orders.php...<br><br>";
 							//Add image and text to order
 							$sqlupdate = "UPDATE `orders` SET `drawing`='$imgURL', `reading`='$message' WHERE order_id='$orderID'";
 							if ($conn->query($sqlupdate) === TRUE) {
-							echo "Drawing & Reading Added! (".$newImagename.")  | ";
+							echo "Drawing & Reading Added!  | ";
+							$logArray[] = "Drawing & Reading Added!";
 							}
 
 
@@ -280,7 +299,9 @@ echo "Starting complete-orders.php...<br><br>";
 							//Add text to order
 							$sqlupdate = "UPDATE `orders` SET `reading`='$message' WHERE order_id='$orderID'";
 							if ($conn->query($sqlupdate) === TRUE) {
-							echo "Reading Added! (No Drawing)  | ";
+							echo "Reading Added! | ";
+
+							$logArray[] = "Reading Added! (No Drawing)";
 							}
 								//
 								//Use $OrderCompleteMessage for email notification
@@ -291,19 +312,27 @@ echo "Starting complete-orders.php...<br><br>";
 					// Set order to shipped
 					$sqlupdate = "UPDATE `orders` SET `order_status`='completed' WHERE order_id='$orderID'";
 					if ($conn->query($sqlupdate) === TRUE) {
-		     		echo "Status changed to Completed!";
-
+		     		echo " Status changed to Completed!";
+					 $logArray[] = "Status changed to Completed!";
 		    		} else {
-					echo "Error";
+					echo " Error Updating Status";
+					$logArray[] = "Error Updating Status";
 					
 					}
 
 
 					//Save data to orders log
 					$TimeNow = date('y-m-d H:i:s', time());
-    				$sql2 = "INSERT INTO orders_log (order_id, type, time, notice) VALUES ('$orderID', 'status', '$TimeNow', 'Order Status updated to Completed!')";
+    				$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderID', 'status', '$TimeNow', 'Order Status updated to Completed!')";
    					if ($conn->query($sql2) === TRUE) {
+					$logArray[] = "Orders Log Added";
+					echo " Orders Log Added";
    					}
+
+			SuperLog($logArray, "complete-orders");
+			unset($logArray);
+
+					   
 
 			}echo "<br>";
 

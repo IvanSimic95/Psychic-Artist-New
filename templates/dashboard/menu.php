@@ -83,9 +83,24 @@
         $page = "overview";
     }
     
-
-
 ?>
+
+<div class="container-fluid py-0 px-0 px-md-3 py-md-3" data-layout="container">
+    <section class="py-0 overflow-hidden light" id="banner">
+        <div class="container p-0 pt-2 p-md-3 pt-md-3">
+
+        <?php if(isset($_GET['loggedin'])){ ?>
+                  <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+                  <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+                  <p class="mb-0 flex-1">You have logged in to your account!</p>
+                  <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            <?php } ?>
+
+            <div class="row gx-0 gy-2 g-xl-2 h-100">
+            <div class="col-12 col-sm-12 col-xl-4 text-center py-2 order-2 order-md-1">
+            <div class="py-2 px-0 light topbar-gradient rounded-3"> 
+            <div class="elfsight-app-f9baa5f9-4e55-4c19-bae9-2445b696abcf"></div>
 <div id="sidebar-menu" class="text-white">
 <ul>
 
@@ -130,3 +145,14 @@
                             </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/single-order-sidebar.php'; ?>
+
+</div>
+              <div class="col-12 col-sm-12 col-xl-8 py-2 order-1 order-md-2">
+                  <div class="p-0 flex-grow-1 d-flex flex-column">
+                  <div class="card mb-3 p-0">
+                        <div class="card-header bg-light p-4 py-3 topbar-gradient">
+                            <div class="d-flex flex-between-center">
+                                <h3 class="mb-0 fw-semibold fs-1" style="color:#fff;"><?php echo $pageTitle1; ?></h3>
+                            </div>
+                        </div>
+                        <div class="card-body px-1 px-md-2 px-lg-3 py-2">

@@ -2,7 +2,8 @@
 include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
-$customJS = $customCSS = "";
+date_default_timezone_set('Europe/Zagreb');
+$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
@@ -19,13 +20,9 @@ if(isset($_GET['logout'])){
   header("Location: /home?loggedOut=success");
   die();
   }
+  
 
 
-//Define Main Variables
-$webTitle = $v['web-title'];
-$webDescription = $v['web-description'];
-$webLogo = $v['web-logo'];
-$webVersion = $v['web-version'];
 
 $firephp = FirePHP::getInstance(true);
 
@@ -37,9 +34,9 @@ $firephp = FirePHP::getInstance(true);
 //$firephp->fb('Error message',FirePHP::ERROR);
 
 
-$title = $webTitle;
-$sdescription = $webDescription;
-$pimage = $webLogo;
+
+
+
 
 //START Order Messages
 $processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\nPsychic Artist";
@@ -87,6 +84,59 @@ if($domain == "pa.test"){
   $base_url = "https://psychic-artist.com";
 }
 
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+$conn->query('set character_set_client=utf8');
+$conn->query('set character_set_connection=utf8');
+$conn->query('set character_set_results=utf8');
+$conn->query('set character_set_server=utf8');
+$conn->set_charset('utf8mb4');
+
+
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+  }
+
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+$s = "select * from settings"; 
+$sth = $conn->prepare($s);
+$sth->execute();
+$data = $sth->get_result(); // get result first
+$r = $data->fetch_all(MYSQLI_ASSOC); // then fetch all
+
+
+//Define Main Variables
+$webTitle = $r[0]['value'];
+$webDescription = $r[1]['value'];
+$webLogo = $r[2]['value'];
+$webVersion = $r[3]['value'];
+
+$title = $webTitle;
+$sdescription = $webDescription;
+$pimage = $webLogo;
+
+
+
+
+
+//BREADCRUMBS CHECK & DISABLE
+$bCurrent = $_SERVER['REQUEST_URI'];
+$splitBread = explode('/',$bCurrent);
+$breadC = unserialize($r[4]['value']);
+
+$bSearch0 = $splitBread[0]; 
+$bSearch1 = $splitBread[1]; 
+
+if (in_array($bSearch0, $breadC)){$bCheck0 = 1;$bCheck0 = 0; }
+if (in_array($bSearch1, $breadC)){$bCheck1 = 1;} else {$bCheck1 = 0; }
+if($bCheck0 > 0 OR $bCheck1 > 0)$breadcrumbsDisable = 1;
+
+if(isset($errorPage))$breadcrumbsDisable = 1;
 
 if($domain == "pa.test"){
   // testing
@@ -128,8 +178,8 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
   
   //Check if user cookie ID is set, if not set a new one
   $randomNumber = rand(155654654,955654654);
-  if(!isset($_SESSION['user_cookie_id'])) {
-  $_SESSION['user_cookie_id'] = $randomNumber;
+  if(!isset($_SESSION['cookie'])) {
+  $_SESSION['cookie'] = $randomNumber;
   }
   
   //Check if funnel page is set, if not set a new one
@@ -166,14 +216,10 @@ function formErrorLog($array) {
 //Save to order log function
 function SuperLog($array, $logname) {
   $dataToLog = $array;
-  $data = PHP_EOL;
+  $data = implode(" | ", $dataToLog);
+  $data .= PHP_EOL;
   $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/".$logname.".log";
   $success = file_put_contents($pathToFile, $data, FILE_APPEND);
-  if ($success === TRUE){
- 
-  }else{
-   
-  }
 }
 
 //Function to check if user is from US
@@ -260,6 +306,7 @@ $userFName = $_SESSION['fname'];
 $userEmail = $_SESSION['email'];
 $userOrders = $_SESSION['orders'];
 $userWeekly = $_SESSION['weekly'];
+
 }else{ //If not logged in make those variables empty
 $userId = "";
 $userName = "";
@@ -384,25 +431,35 @@ if(isset($splitURL[1])){//If variable is set proceed
 }
 //END FUNCTION FOR INDEX.PHP ADDON FOR VIEW ORDERS
 
-
-/////////////////////////////////////////////////////////////////////////////
-////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-$conn->query('set character_set_client=utf8');
-$conn->query('set character_set_connection=utf8');
-$conn->query('set character_set_results=utf8');
-$conn->query('set character_set_server=utf8');
-$conn->set_charset('utf8mb4');
-
-
-// Check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
+//START FUNCTION FOR INDEX.PHP ADDON FOR SUCCESS PAGE
+if(isset($splitURL[1])){//If variable is set proceed
+  if($splitURL[1]=="order"){
+      if(isset($splitURL[2])){
+         if($splitURL[2]=="success"){
+          $path="/order/success";
+          $template = $_SERVER['DOCUMENT_ROOT'].'/pages/'.$path.'.php';
+            if(isset($splitURL[3])){
+            $SuccessProduct = $splitURL[3];
+            }
+         }
+      }
   }
+}
+//END FUNCTION FOR INDEX.PHP ADDON FOR SUCCESS PAGE
 
-/////////////////////////////////////////////////////////////////////////////
-////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//START FUNCTION FOR INDEX.PHP ADDON FOR ORDER PAGE
+if(isset($splitURL[1])){//If variable is set proceed
+  if($splitURL[1]=="order"){
+      if(isset($splitURL[2])){
+         if($splitURL[2]=="order"){
+          $title = "Order Error";
+         }
+      }
+  }
+}
+//END FUNCTION FOR INDEX.PHP ADDON FOR SUCCESS PAGE
+
+
+
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/js-trigger.php';
 ?>

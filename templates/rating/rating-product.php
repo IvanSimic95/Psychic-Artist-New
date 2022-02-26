@@ -187,11 +187,6 @@ echo '
                         <div class="d-flex align-items-center">
                             <span class="mb-1 me-1 ">
                             <span class="text-muted" style="text-transform:capitalize;"><i class="fa fa-clock-rotate-left"></i> ' .$time. '</span>
-                              <!--  <i class="fa fa-star fs--1"></i>
-                                <i class="fa fa-star fs--1"></i>
-                                <i class="fa fa-star fs--1"></i>
-                                <i class="fa fa-star fs--1"></i>
-                                <i class="fa fa-star fs--1"></i> -->
                             </span>
                         </div>
                     </div>

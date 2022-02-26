@@ -90,12 +90,12 @@ break;
      
 
       <div class="card mb-3 p-0">
-            <div class="card-header bg-light  px-3 px-md-4 px-lg-4 py-3 topbar-gradient">
+            <div class="card-header bg-light px-1 px-md-2 px-lg-3 py-3 py-1 topbar-gradient">
                 <div class="d-flex flex-between-center">
                     <h3 class="mb-0 fw-semibold fs-1" style="color:#fff;"><?php echo $pageTitle1; ?></h3>
                 </div>
             </div>
-            <div class="card-body px-3 px-md-4 px-lg-4 py-3">
+            <div class="card-body px-1 px-md-2 px-lg-3 py-0">
             <?php include $include; ?>
             </div>
 

@@ -42,32 +42,27 @@ $nextpage = $page + 1;
          }
 
 
-        echo '
-        <div class="card mb-3 shadow-none item" style="border: 1px solid #dee2e6 !important;">
-                        <div class="card-body p-3">
-                            <div class="d-flex mb-3 pb-1 border-bottom flex-wrap">
-                                <img src="https://avatars.dicebear.com/api/adventurer/' . $row["review_name"]. '.svg" class="review-avatar avatar rounded" alt="' . $row["review_name"]. 'Avatar">
-                                <div class="flex-fill ms-1 text-truncate">
-                                    <h6 class="mb-0 fs-1 fw-semibold"><span>' . $row["review_name"]. '</span></h6>
-                                    <span class="text-muted">' .$time. '</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="mb-1 me-1 ">
-                                    ' . $ratingStars. '
-                                      <!--  <i class="fa fa-star text-warning fs--1"></i>
-                                        <i class="fa fa-star text-warning fs--1"></i>
-                                        <i class="fa fa-star text-warning fs--1"></i>
-                                        <i class="fa fa-star text-warning fs--1"></i>
-                                        <i class="fa fa-star text-warning fs--1"></i> -->
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="timeline-item-post">
-                                <p>' . $row["review_text"]. '</p>
-                            </div>
-                        </div>
-                    </div>
-        ';
+         echo '
+         <div class="card mb-3 shadow-none item  text-start" style="border: 1px solid #dee2e6 !important;">
+                         <div class="card-body p-3">
+                             <div class="d-flex mb-3 pb-1 border-bottom flex-wrap">
+                                 <img src="https://avatars.dicebear.com/api/adventurer/' . $row["review_name"]. '.svg" class="review-avatar avatar rounded" alt="' . $row["review_name"]. 'Avatar">
+                                 <div class="flex-fill ms-1 text-truncate">
+                                     <p class="h6 mb-0 fs-1 fw-semibold"><span>' . $row["review_name"]. '</span></p>
+                                     ' .$ratingStars. '
+                                 </div>
+                                 <div class="d-flex align-items-center">
+                                     <span class="mb-1 me-1 ">
+                                     <span class="text-muted" style="text-transform:capitalize;"><i class="fa fa-clock-rotate-left"></i> ' .$time. '</span>
+                                     </span>
+                                 </div>
+                             </div>
+                             <div class="timeline-item-post">
+                                 <p>' . $row["review_text"]. '</p>
+                             </div>
+                         </div>
+                     </div>
+         ';
 		
 		}
 

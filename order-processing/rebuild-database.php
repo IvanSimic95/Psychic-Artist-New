@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-$cleanDB = mysqli_query($conn,'TRUNCATE TABLE orders_image;');
+//$cleanDB = mysqli_query($conn,'TRUNCATE TABLE orders_image;');
 
 $d = $_SERVER['DOCUMENT_ROOT'].'order-processing/images/general'; 
 $g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($d));

@@ -1,37 +1,77 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
+$sPage = $_SESSION['funnel_page'];
 
+
+//START - Logging Variables //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $logArray = array();
-$errorDisplay = $getcountdown = $getformused = "";
+$createUser = $errorDisplay = $cookie = $getcountdown = $getformused = $user_name = $user_email = $user_dob = $order_product = $ttt = "";
+$logArray['0'] = "ORDER-CREATION";
 $logArray['1'] = date("d-m-Y H:i:s");
 $logArray['2'] = $_SERVER['REMOTE_ADDR'];
+$logArray['3'] = $_SERVER['REQUEST_URI'];
+//END - Logging Variables ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+//START - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 isset($_GET['userName'])    ? $user_name=$_GET['userName']     : $errorDisplay .= " Missing User Name /";
 isset($_GET['userEmail'])   ? $user_email=$_GET['userEmail']    : $errorDisplay .= " Missing User Email /";
 
 isset($_GET['userDob']) OR isset($_GET['userDobUS']) ? $dob = "Yes"   : $errorDisplay .= " Missing User Date of Birth (Both US and EU Fields) /";
 if(isset($_GET['userDob']))$user_dob = $_GET['userDob'];
-if(isset($_GET['userDobUS']))$user_dob = $_GET['userDobUS'];
 
-
-$today = date("d-m-Y");
-$diff = date_diff(date_create($user_dob), date_create($today));
-$user_age = $diff->format('%Y');
+if(isset($_GET['userDobUS'])){
+$originalDate = $_GET['userDobUS'];
+$user_dob = date("d-m-Y", strtotime($originalDate));
+}
 
 isset($_GET['product'])  ? $order_product = $_GET['product']   : $errorDisplay .= " Missing Product ID /";
 isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $errorDisplay .= " Missing Order Priority /";
 
-isset($_GET['cookie_id']) ? $cookie_id = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
+isset($_GET['cookie_id']) ? $cookie = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
 isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
 
 isset($_GET['countdown']) ? $getcountdown = $_GET['countdown'] : $errorDisplay .= " Missing Countdown Variable /";
-isset($_GET['formused']) ? $getformused = $_GET['formused'] : $errorDisplay .= " Missing Formused ID /";
+isset($_GET['formused']) ? $getformused = $_GET['formused'] : $errorDisplay .= " Missing FormUsed ID /";
 
-$_SESSION['funnel_page'] = "personal-reading";
-$order_product_id = $order_product;
-switch ($order_product) {
+isset($_GET['form_submit']) ? $getButtonText = $_GET['form_submit'] : $errorDisplay .= " Missing Button Text /";
+
+$order_date = date('Y-m-d H:i:s');
+$partnerGender = "male";
+
+$today = date("d-m-Y");
+$diff = date_diff(date_create($user_dob), date_create($today));
+$user_age = $diff->format('%Y');
+//END - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+empty($errorDisplay) ?  $testError = FALSE : $testError = TRUE;
+if($testError == TRUE){ //IF there was error recoreded fetching main variables show error page
+    $title = "Error: Can't create your Order";
+    $titlePage = "Can't create your Order";
+    $sdescription = $errorDisplay;
+    $logArray['0'] = "ORDER-ERROR";
+    $errorID  = md5($errorDisplay.$order_date);
+    $logArray['4'] = $errorID;
+    $logArray['5'] = $errorDisplay;
+    $logArray['6'] = $user_name." - ".$user_email." - ".$user_dob." - ".$order_product;
+    include $_SERVER['DOCUMENT_ROOT'].'/templates/error/error-log.php';
+    SuperLog($logArray, "error");
+}else{ //IF there was NO error recoreded fetching main variables save to DB and redirect to payment page
+    $_SESSION['funnel_page'] = "success";
+    $title = "Redirecting you to payment page...";
+
+    $titlePage = "Redirecting you...";
+    $sdescription = "You are being redirected to the Payment Processor.";
+    $logArray['0'] = "ORDER-CREATION";
+    $logArray['4'] = $cookie;
+    $logArray['4'] = $user_name;
+    $logArray['5'] = $user_email;
+    $logArray['6'] = $user_dob;
+    $logArray['8'] = $order_priority;
+
+    $order_product_id = $order_product;
+    $product_codename = $order_product;
+    switch ($order_product) {
     case "1":
     $order_product = "soulmate";
     $order_product_nice = "Soulmate Drawing & Reading";
@@ -51,26 +91,17 @@ switch ($order_product) {
     $product = "past";
     $order_product_nice = "Past Life Drawing & Reading";
     break;
-}
-$order_date = date('Y-m-d H:i:s');
-$partnerGender = "male";
+    }
+    $logArray['7'] = $order_product;
 
-//Full name -> First and Last Name
-$parser = new TheIconic\NameParser\Parser();
-$name = $parser->parse($user_name);
+    //Full name -> First and Last Name
+    $parser = new TheIconic\NameParser\Parser();
+    $name = $parser->parse($user_name);
 
-$fName = $name->getFirstname();
-$lName = $name->getLastname();
+    $fName = $name->getFirstname();
+    $lName = $name->getLastname();
 
-$_SESSION['orderName'] = $user_name;
-$_SESSION['orderEmail'] = $user_email;
-
-$_SESSION['orderFName'] = $fName;
-$_SESSION['orderLName'] = $lName;
-
-$_SESSION['orderAge'] = $user_age;
-
-switch($order_priority){
+    switch($order_priority){
     case "12":
     $order_price = "44.99";
     break;
@@ -82,91 +113,111 @@ switch($order_priority){
     case "48":
     $order_price = "29.99";
     break;
-}
+    }
 
-
-
-//Find User Gender
-function findGender($name) {
-$apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
-$getGender = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&name=' . urlencode($name)));
-$data = [[
+    //Find User Gender
+    function findGender($name) {
+    $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
+    $getGender = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&name=' . urlencode($name)));
+    $data = [[
         "gender" => $getGender->gender,
         "accuracy"  => $getGender->accuracy
         ]];
-return $data;
-}
-
-    
-$findGenderFunc = findGender($fName);
-$userGender = $findGenderFunc['0']['gender'];
-$userGenderAcc = $findGenderFunc['0']['accuracy'];
-
-if($userGender=="male"){$partnerGender = "female";}
-if($userGender=="female"){$partnerGender = "male";}
-
-$order_date = date('Y-m-d H:i:s');
-
-$baseRedirect = base64_encode("https://".$domain."/offer/personal-reading");
-
-$signedUpAt = time();
-empty($errorDisplay) ?  $testError = FALSE :  $testError = TRUE;
-if($testError == TRUE){
-$errorID  = md5($errorDisplay.$order_date);
-$logArray['3'] = $errorID;
-$logArray['4'] = $errorDisplay;
-include $_SERVER['DOCUMENT_ROOT'].'/templates/error/order.php';
-formErrorLog($logArray);
-die();
-}else{
-  $logArray['4'] = $cookie_id;
-  $logArray['4'] = $user_name;
-  $logArray['5'] = $user_email;
-  $logArray['6'] = $user_dob;
-  $logArray['7'] = $order_product;
-  $logArray['8'] = $order_priority;
-}
-
-if($user_name ) {
-    
-    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown)
-                        VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown')";
-
-    if ($conn->query($sql) === TRUE) {
-    $logArray['9'] = "Success"; 
-    } else {
-    $logArray['9'] = "Error: " . $sql . "<br>" . $conn->error;; 
+    return $data;
     }
 
+    
+    $findGenderFunc = findGender($fName);
+    $userGender = $findGenderFunc['0']['gender'];
+    $userGenderAcc = $findGenderFunc['0']['accuracy'];
+
+    if($userGender=="male"){$partnerGender = "female";}
+    if($userGender=="female"){$partnerGender = "male";}
+
+    $order_date = date('Y-m-d H:i:s');
+
+    //$baseRedirect = base64_encode("https://".$domain."/offer/personal-reading");
+    $baseRedirect = base64_encode("https://".$domain."/order/success/main");
 
 
-    unset($_SESSION['user_cookie_id']);
+    $signedUpAt = time();
+
+    $sql5 = "SELECT * FROM users WHERE email = '".$user_email."'";
+    $result5 = $conn->query($sql5);
+    if ($result5){
+        $row5 = mysqli_num_rows($result5);
+            if ($row5 > 0){
+                $createUser = 0;
+                $row2 = $result5->fetch_assoc();
+                $userID = $row2['id'];
+                $logArray['9'] = "Existed: ".$userID;
+            }else{
+                $createUser = 1;
+            }
+    }
+
+    if($createUser == 1){
+        $sql65 = "INSERT INTO users (first_name, last_name, full_name, email, age, dob, gender, partner_gender)
+        VALUES ('$fName', '$lName', '$user_name', '$user_email', '$user_age', '$user_dob', '$userGender','$partnerGender')";
+
+        
+        if ($conn->query($sql65) === TRUE) {
+            $userID = mysqli_insert_id($conn);
+            $logArray['9'] = "Created: ".$userID;
+        } else {
+            $logArray['9'] = "Error: " . $sql65->error . "<br>" . $conn->error;; 
+        }
+        
+
+    }
+    
+    $sql = "INSERT INTO orders (cookie_id, user_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown, button)
+            VALUES ('$cookie', '$userID', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$product_codename', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown', '$getButtonText')";
+
+    if ($conn->query($sql) === TRUE) {
+    $logArray['10'] = "Success"; 
+    } else {
+    $logArray['10'] = "Error: " . $sql . "<br>" . $conn->error;; 
+    }
+
     $lastRowInsert = mysqli_insert_id($conn);
 
     //Save data to orders log
-    $sql2 = "INSERT INTO orders_log (order_id, time, notice) VALUES ('$lastRowInsert', '$order_date', 'Order Created!')";
+    $sql2 = "INSERT INTO orders_log (user_id, order_id, time, notice) VALUES ('$userID', '$lastRowInsert', '$order_date', 'Order Created!')";
     if ($conn->query($sql2) === TRUE) {
+        $logArray['11'] = "Success"; 
+    }else {
+        $logArray['11'] = "Error: " . $sql2->error . "<br>" . $conn->error;
     }
 
+    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&screen=checkout_clean&product_codename='.$order_product_id.$order_priority.'&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
     
-    
+    $_SESSION['userID']    = $userID;
+    $_SESSION['userEmail'] = $user_email;
 
-    
-    formLog($logArray);
+    $_SESSION['userName']  = $user_name;
+    $_SESSION['userFName'] = $fName;
+    $_SESSION['userLName'] = $lName;
 
-    $finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&product_codename='.$order_product_id.$order_priority.'&subid='.$cookie_id.'&subid2='.$lastRowInsert.'&redirect='.$baseRedirect;
-    
+    $_SESSION['userDOB']   = $user_dob;
+    $_SESSION['userAge']   = $user_age;
+
+    $_SESSION['orderID']   = $lastRowInsert;
+
+    $_SESSION['userGender']= $userGender;
+    $_SESSION['userPGender']=$partnerGender;
+
+
 
     $ch = curl_init();
     $data = [
-    "user_id" => $lastRowInsert,
+    "user_id" => $userID,
     "name" => $user_name,
     "email" => $user_email,
     "signed_up_at" => $signedUpAt,
     "custom_attributes" => ["lastbglink" => $finalLink, "lastorderid" => $lastRowInsert, "lastOrderproduct" => $order_product_nice, "lastOrderprice" => $order_price]
     ];
     $jData = json_encode($data);
-    print_r($jData);
     curl_setopt($ch, CURLOPT_URL, 'https://beacon.crowdpower.io/customers');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
@@ -178,65 +229,50 @@ if($user_name ) {
     $result = curl_exec($ch);
 
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
-
     if ($conn->query($sql) === TRUE) {
-       // echo "Order Status updated to Paid succesfully!";
-      } else {
-      //  echo "Error: " . $sql . "<br>" . $conn->error;
-      }
-$conn->close();
-?>
-
-
-<div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
-    <section class="py-0 light" id="banner">
-        <div class="container">
-
-
-            <div class="card mb-3">
-                <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(/assets/img/icons/spot-illustrations/corner-4.png);"></div>
-                    <div class="card-body position-relative">
-                    <div class="row">
-                    <div class="col-lg-12">
-                    <div class="table-responsive scrollbar">
-                    <h1>You will be redirected to the Payment Processor. Please dont close this page</h1>
-  </div>
-</div>
-                    </div>
-              </div>
-            </div>
-
-
-        </div>
-    </section>
-</div>
-
-
-<script>
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
+        $logArray['12'] = "Success"; 
+    } else {
+        $logArray['12'] = "Error: " . $sql . "<br>" . $conn->error;
     }
-    return false;
-};
-var prio = getUrlParameter('priority');
-var product = getUrlParameter('product');
+    
+    $conn->close();
 
- window.location.href = "<?php echo $finalLink; ?>";
-</script>
+    
 
 
-<?php
-}else{
-header('Location: /');
+    SuperLog($logArray, "order");
+
 }
 ?>
+
+   <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+        <div class="row flex-center min-vh-80 py-6 text-center">
+          <div class="col-sm-12 col-md-12 col-lg-10 col-xxl-8 min-vh-90">
+            <div class="card py-6">
+            <div class="card-body p-4 p-sm-5">
+                <div class="fw-bold display-6"><?php echo $titlePage; ?></div>
+                <p class="lead mt-4 text-800 font-sans-serif fw-semi-bold w-md-75 w-xl-100 mx-auto"><?php echo $sdescription; ?></p>
+
+               
+                <div class="loadericon"></div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main><!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+    setTimeout(function(){
+        window.location.href = "<?php echo $finalLink; ?>";
+    }, 1000);
+});
+</script>

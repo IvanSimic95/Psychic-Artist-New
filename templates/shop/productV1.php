@@ -167,6 +167,7 @@ else { ?>
                                 <hr>
                                 <?php 
                                 $r = rand(1,2);
+                                if(isset($_SESSION['loggedIn'])) $r = 2;
                                 if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
                                 if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
                                 
@@ -174,7 +175,11 @@ else { ?>
 
                        
                                 <hr>
-                                <?php if($countdownRandom == "yes"){ ?>
+                                
+                                <?php 
+                                if(isset($_SESSION['loggedIn'])) $countdownRandom = "no";
+                                if($countdownRandom == "yes"){ 
+                                ?>
                                 <div><div class="elfsight-app-83415bf8-04e8-4c86-aa6e-1640cd17ee70"></div></div>
                                 <?php } ?>
 

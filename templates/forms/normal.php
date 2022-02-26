@@ -3,7 +3,7 @@
 
 
         <div class="form-floating form-floating-icon mb-2">
-        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required="" value="<?php echo $userName; ?>">
+        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required="" value="<?php echo $_SESSION['name']; ?>">
         <span class="icon-inside"><i class="fas fa-user"></i> </span>
         <label for="userName">First & Last Name</label>
         </div>
@@ -14,21 +14,21 @@
 
         <div class="form-floating mb-2 form-floating-icon mb-3">
         <?php if($formDate == "US"){ ?>
-        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required />
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required value="<?php echo $_SESSION['dobUS']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDobUS">Date of Birth</label>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required />
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php echo $_SESSION['dob']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDob">Date of Birth</label>
         <?php } ?>
         </div>
 
 
-<hr class="mb-3">
+  <hr class="mb-3">
 
         <div class="form-floating form-floating-icon">
-        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required="" value="<?php echo $userEmail; ?>">
+        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required="" value="<?php echo $_SESSION['email']; ?>">
         <span class="icon-inside"><i class="fas fa-envelope"></i> </span>
         <label for="userEmail">E-mail Address</label>
         </div>
@@ -122,7 +122,7 @@
 
 
     <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
-    <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+    <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
     <input class="formused" type="hidden" name="formused" value="normal">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">

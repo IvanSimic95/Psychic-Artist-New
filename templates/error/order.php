@@ -14,11 +14,6 @@ $buffer=str_replace("%LOGO%",$webLogo,$buffer);
 $buffer=str_replace("%PIMAGE%",$pimage,$buffer);
 echo $buffer;
 ?>
-<style>
-.breadcrumbs-nav{
-display:none!important;
-}
-</style>
 
     <!-- ===============================================-->
     <!--    Main Content-->

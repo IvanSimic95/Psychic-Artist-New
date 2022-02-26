@@ -1,10 +1,19 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/templates/noskip.php';
+#include $_SERVER['DOCUMENT_ROOT'].'/templates/noskip.php';
+isset($_SESSION['userFName']) ? $fName = $_SESSION['userFName'] : $fName = "there";
 
 $title = "Future Baby Portrait | Last Chance!"; 
 $title2 = "LAST CHANCE TO GRAB IT!";
 $sdescription = "Customize your order";
-$description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab your future baby portrait with huge discount & express delivery!";
+$description = "<b>Hey ".$fName."!</b><br><span class='text-center'> Here's a last chance to grab your future baby portrait with huge discount & express delivery!</span>";
+
+$productID = "6";
+
+include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
+
+
+$reviews = $count;
+$avgrating = $avg;
 ?>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
@@ -25,14 +34,10 @@ $description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab yo
                
 
                   <div class="progress mt-3 col-12 offset-0 col-xl-10 offset-xl-1 mb-3" style="height: 40px; max-width:100%;margin:0 auto;">
-                            <div class="progress-bar bg-warning progress-bar-striped fw-bold fs-1 progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Step 2">Step 3 of 3</div>
+                            <div class="progress-bar bg-warning progress-bar-striped fw-bold fs-1 progress-bar-animated" role="progressbar" style="background-color: #cf2bbd !important;width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Step 2">Step 3 of 3</div>
                         </div>
 
-                        <div class="alert alert-info border-2 d-flex align-items-center col-12 offset-0 col-xl-10 offset-xl-1" role="alert">
-                    <div class="bg-info me-3 icon-item"><span class="fas fa-info-circle text-white fs-3"></span></div>
-                    <p class="mb-0 flex-1" style="font-weight:600;"><?php echo $description; ?></p>
-                    
-                  </div>
+                       
                 </div>
               </div>
             </div>
@@ -40,18 +45,23 @@ $description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab yo
           <div class="row g-0">
        
             <div class="col-12 offset-0 col-xl-8 offset-xl-2">
+            <div class="alert alert-info border-2 d-flex align-items-center col-12 offset-0" role="alert">
+                    <div class="bg-info me-3 icon-item"><span class="fas fa-info-circle text-white fs-3"></span></div>
+                    <p class="mb-0 flex-1" style="font-weight:600;"><?php echo $description; ?></p>
+                    
+                  </div>
               <div class="card mb-3">
                 <div class="card-header bg-light" style="text-align:center;">
                 <h3 class="gradient  mb-0">Future Baby Portrait </h3>
                 </div>
-                  <div class="card-body col-12 offset-0 col-xl-10 offset-xl-1" style="text-align:center;">
-                  <img class="img-fluid rounded img-thumbnail" src="/assets/img/psychic.jpg" alt="upsell">
+                  <div class="card-body col-12 offset-0" style="text-align:center;">
+                  <img class="img-fluid rounded img-thumbnail" src="/assets/img/psychic.jpg" alt="upsell" style="border: none!important;padding: 0!important;">
 
                   <form class="readings" action="/order/order-baby" method="get" style="text-align:left;">
  
  
-        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
-        <input class="cookie" type="hidden" name="landingpage" value="PersonalUpsell#1">
+        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
+        <input class="cookie" type="hidden" name="landingpage" value="Baby1">
 
       <div class="meta_part">
 
@@ -66,10 +76,12 @@ $description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab yo
       </div>
      
       <a href="/order/order-baby?skip=yes">
-      <div class="nothanks w-100 rounded-3">No, Thanks!</div>
+      <div class="nothanks w-100 rounded-3 mb-4">No, Thanks!</div>
       </a>
 
       </form>
+
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/rating/rating-upsell.php'; ?>
                  
                   </div>
               </div>
@@ -85,6 +97,19 @@ $description = "Hey ".$_SESSION['orderFName']."! Here's a last chance to grab yo
 <?php
 $customCSSPreload = '<link rel="preload" href="/assets/css/baby.css" as="style">';
 $customCSS = '<link href="/assets/css/baby.css" rel="stylesheet">';
-//$customJS = <<<EOT
-//EOT;
+$customJS = <<<EOT
+<script src="/assets/js/infinite-ajax-scroll.min.js"></script>
+<script>
+$(document).ready(function(){
+ let ias = new InfiniteAjaxScroll('.contents', {
+            item: '.item',
+            next: '.next',
+            pagination: '.pagination',
+            trigger: '.load-more',
+            logger: false
+ });
+
+});
+    </script>
+EOT;
 ?>

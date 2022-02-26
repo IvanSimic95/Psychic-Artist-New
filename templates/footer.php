@@ -55,7 +55,7 @@
                 <p class="mb-0 text-white opacity-85">© 2022 Psychic Artist All Rights Reserved</p>
               </div>
               <div class="col-12 col-md-6 text-end d-none	d-sm-none d-md-block">
-                <p class="mb-0 text-white opacity-85">v<?php echo $v['web-version']; ?></p>
+                <p class="mb-0 text-white opacity-85">v<?php echo $webVersion; ?></p>
               </div>
             </div>
           </div>

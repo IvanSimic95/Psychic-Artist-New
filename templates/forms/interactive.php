@@ -146,7 +146,7 @@
 
     </div>
     <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
-    <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+    <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="formused" type="hidden" name="formused" value="interactive">

@@ -10,6 +10,7 @@ if (!file_exists($template)) {
 }else{
     include $_SERVER['DOCUMENT_ROOT'].'/pages/'.$path.'.php'; 
 }
+include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; 
 $buffer=ob_get_contents();
 ob_end_clean();
 
@@ -20,7 +21,4 @@ $buffer=str_replace("%DESCRIPTION%",$sdescription,$buffer);
 $buffer=str_replace("%LOGO%",$webLogo,$buffer);
 $buffer=str_replace("%PIMAGE%",$pimage,$buffer);
 echo $buffer;
-
-
-include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; 
 ?>

@@ -16,8 +16,9 @@ switch ($status) {
         <!-- Progress-->
         <div class="steps rounded-3 bg-white">
         <div class="steps-header">
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress position-relative">
+        <div class="position-absolute fs-1 fw-bold" style="left: calc(50% - 15px);top: 0px;font-size: 1rem !important;color: #ec38bc;">10%</div>
+        <div class="progress-bar progress-bar-animated progress-bar-striped progress-bar-pink" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         </div>
         <div class="steps-body">
@@ -35,8 +36,9 @@ switch ($status) {
         <!-- Progress-->
         <div class="steps rounded-3 bg-white">
         <div class="steps-header">
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress position-relative">
+        <div class="position-absolute fs-1 fw-bold" style="left: calc(50% - 15px);top: 0px;font-size: 1rem !important;color: #ec38bc;">25%</div>
+        <div class="progress-bar progress-bar-animated progress-bar-striped progress-bar-pink" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         </div>
         <div class="steps-body">
@@ -54,8 +56,9 @@ switch ($status) {
         <!-- Progress-->
         <div class="steps rounded-3 bg-white">
         <div class="steps-header">
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress position-relative">
+        <div class="position-absolute fs-1 fw-bold" style="left: calc(50% - 15px);top: 0px;font-size: 1rem !important;color: #fff;">60%</div>
+        <div class="progress-bar progress-bar-animated progress-bar-striped progress-bar-pink" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         </div>
         <div class="steps-body">
@@ -73,8 +76,9 @@ switch ($status) {
         <!-- Progress-->
         <div class="steps rounded-3 bg-white">
         <div class="steps-header">
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress position-relative">
+        <div class="position-absolute fs-1 fw-bold" style="left: calc(50% - 15px);top: 0px;font-size: 1rem !important;color: #fff;">100%</div>
+        <div class="progress-bar progress-bar-animated progress-bar-striped progress-bar-pink" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         </div>
         <div class="steps-body">

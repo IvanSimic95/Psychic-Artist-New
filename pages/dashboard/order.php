@@ -1,69 +1,122 @@
 <?php
-$title = "User Dashboard"; 
-
-if(isset($_SESSION['email'])){//if logged in already retrieve the email
-$order_email = $_SESSION['email'];
-}else{
-
-// set parameters and execute
-if(isset($_GET['check_email'])) {
-$order_email = $_GET['check_email'];
+if(!isset($_SESSION['loggedIn'])){
+header("Location: /dashboard");
+die();
 }
-    
-if(isset($_POST['email'])) {
-$order_email = $_POST['email'];
-}
+$title = "Order #".$viewOrder." - Dashboard | Psychic Artist";
+$insertPage = "order";
+$pageTitle1 = "Order #".$viewOrder."";
+$sdescription = "Take a look at your order details!";
+$include = $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/order.php';
 
-}
+include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/menu.php'; 
 
-$sql = "SELECT * FROM orders WHERE order_email = '$order_email'";
-
+$title = "Order #".$viewOrder; 
+$sql = "SELECT * FROM orders WHERE order_id = '$viewOrder'";
 $result = $conn->query($sql);
 
-if( ($result->num_rows == 0 || $order_email == "") ) {
+if($result->num_rows == 0) {
+    $errorDisplay = "Unknown order or you don't have access to it!";
+    include $_SERVER['DOCUMENT_ROOT'].'/templates/error/view-order.php'; 
+    }else{
 
-if($order_email==""){$error = "";}else{$error = "<div class='alert alert-danger  mb-0' role='alert'>Email is not valid, account not found!</div>";}
-
-} else {
-$row = mysqli_fetch_assoc($result);
-
-$_SESSION['id'] = $row['order_id'];
-$_SESSION['name'] = $row['user_name'];
-$_SESSION['fname'] = $row['first_name'];
-$_SESSION['lname'] = $row['last_name'];
-$_SESSION['email'] = $row['order_email'];
-$_SESSION['orders'] = $result->num_rows;
-$_SESSION['weekly'] = "1643100349";
-$_SESSION['loggedIn'] = "yes";
-}
+        $row = mysqli_fetch_assoc($result);        
+    $id = $row['order_id'];
+    $status = $row['order_status'];
+    $orderTIme = $row['order_date'];
+    $price = $row['order_price'];
+    
+    $fName = $row['first_name'];
+    $lName = $row['last_name'];
+    $age = $row['user_age'];
+    $email = $row['order_email'];
+    
+    $drawing = $row['drawing'];
+    $reading = $row['reading'];
 ?>
-<style>
-.breadcrumbs-nav{
-display:none!important;
-}
-</style>
-
-<div class="container-fluid py-0 px-0 px-md-3 py-md-3" data-layout="container">
-    <section class="py-0 overflow-hidden light" id="banner">
-        <div class="container p-0">
-
-    <?php 
-
-
-    if(isset($_SESSION['loggedIn'])){ 
-        if($_SESSION['loggedIn']=="yes"){ //Check if user is logged in
-
-        include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/overview.php';
-        }
-    }else{ //Not logged in
-    include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/login.php'; 
-    }
-     
-    
-    
-    
+  <div class="row ">
+    <div class="col-12 order-2 order-md-1">
+                  
+<?php
+    if($_SESSION['email'] != $email){
+        $errorDisplay = "Unknown order or you don't have access to it!";
+        include $_SERVER['DOCUMENT_ROOT'].'/templates/error/view-order.php'; 
+    }else{
+        include $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php'; 
+        echo $statusProgress;
     ?>
+    </div>
+    <div class="col-12 order-1 order-md-2">
+<?php
+
+if($status == "completed"){
+?>
+<img class="img-thumbnail d-block mx-auto mb-2 mt-2" src="<?php echo $drawing; ?>" alt="Drawing" />
+<p class="p-3 mb-3 mt-2"><?php echo nl2br($reading);?></p>
+        <?php
+        }else{
+            ?>
+<p class="h3 text-center mt-4 mb-3">Order Status: <span style="text-transform:capitalize;"><?php echo $status; ?></span></p>
+<p class="h6 text-center mb-2">Once order status is completed you will be able to see your order reading and/or drawing!</p>
+
+<span title="Drawing is not ready yet, processing!" class="placeholder-glow placeholder img-thumbnail d-block mx-auto mb-2 rounded-3" style="height:600px;"></span>
+<p class="card-title placeholder-glow"><span class="placeholder col-6"></span></p>
+<p class="card-text placeholder-glow">
+<span class="d-block placeholder mb-2 col-10"></span>
+<span class="d-block placeholder mb-2 col-9"></span>
+<span class="d-block placeholder mb-2 col-12"></span>
+<span class="d-block placeholder mb-2 col-11"></span>
+<span class="d-block placeholder mb-2 col-9"></span>
+<span class="d-block placeholder mb-2 col-8"></span>
+<span class="d-block placeholder mb-2 col-9"></span>
+<span class="d-block placeholder mb-2 col-8"></span>
+<span class="d-block placeholder mb-2 col-12"></span>
+<span class="d-block placeholder mb-2 col-8"></span>
+<span class="d-block placeholder mb-2 col-9"></span>
+<span class="d-block placeholder mb-2 col-10"></span>
+<span class="d-block placeholder mb-2 col-9"></span>
+<span class="d-block placeholder mb-2 col-11"></span>
+<span class="d-block placeholder mb-2 col-12"></span>
+<span class="d-block placeholder mb-2 col-8"></span>
+</p>
+   
+
+<?php }}}?>
+            </div>
+
+
+         
+      </div>
+  </div>
             
         </div>
     </section>
 </div>
+</div></div>
+<?php
+
+      
+
+
+$customCSS .= <<<EOT
+<style>
+.steps {
+    margin: -1rem!important;
+    margin-top: 0!important;
+    margin-bottom: 1rem!important;
+}
+.steps-header {
+    padding: 0.5rem;
+    border-bottom: 1px solid #e7e7e7;
+    height: 45px;
+}
+.steps-body {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100px;
+}
+</style>
+EOT;
+
+?>

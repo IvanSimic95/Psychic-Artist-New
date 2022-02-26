@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Zagreb');
 //Check if server is localhost or guru and save DB info
 $domain = $_SERVER['SERVER_NAME'];
 if($domain == "pa.test"){
@@ -29,17 +30,19 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM reviews ORDER BY review_date DESC LIMIT 5";
+
+
+$sql = "SELECT * FROM reviews ORDER BY review_date ASC LIMIT 10";
 $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()) {
-$timestamp = rand( strtotime("Feb 01 2022"), strtotime("Feb 23 2022") );
+$today = date('Y-m-d H:i:s', time());
+$before =date("Y-m-d H:i:s", strtotime("-7 day"));
+
+$timestamp = rand( strtotime($before), strtotime($today) );
 $random_Date = date('Y-m-d H:i:s', $timestamp );
+
 $id = $row['review_id'];
-$text = $row['review_text'];
-
-$newtext = str_replace("Melissa","Psychic Artist",$text);
-
 $sql2 = "UPDATE `reviews` SET `review_date`='$random_Date' WHERE review_id='$id'" ;
 $result2 = $conn->query($sql2); //UNCOMMENT THIS TO MAKE IT WORK! 
 }

@@ -32,7 +32,9 @@
 }
 .loader-deactivate{ 
     visibility: hidden;
+
 }
+
 
 @keyframes rotate {
     0% {

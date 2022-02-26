@@ -4,11 +4,6 @@ $title = "Error 404 - Order Not Found";
 $sdescription = "The Order you're looking for is not found.";
 $errorPage = "404";
 ?>
-<style>
-.breadcrumbs-nav{
-display:none!important;
-}
-</style>
 
 <div class="container-fluid py-0 px-0 px-md-3 py-md-3" data-layout="container">
     <section class="py-0 overflow-hidden light" id="banner">

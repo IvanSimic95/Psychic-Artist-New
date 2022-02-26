@@ -9,6 +9,7 @@ $currentURL = $_SERVER['REQUEST_URI'];
 
 
 
+
 //If user was last on Main Product Page
 if($sPage == "main") {
     if($currentURL == "/shop/soulmate" OR $currentURL == "/shop/soulmate/" OR $currentURL=="/shop/twin-flame" OR $currentURL=="/shop/twin-flame/" OR $currentURL=="/shop/future-spouse" OR $currentURL=="/shop/future-spouse/"){ 
@@ -21,7 +22,7 @@ if($sPage == "main") {
 }
 
 //If user was last on Upsell #1 Page
-if($sPage == "readings") {
+if($sPage == "personal-reading") {
     if($currentURL == "/offer/personal-reading" OR $currentURL == "/offer/personal-reading/"){ 
     //Correct Funnel Page
     }else{ 
@@ -43,13 +44,16 @@ if($sPage == "future-baby") {
 
 //If user was last on thank you Page
 if($sPage == "funnel-complete") {
-    if($currentURL == "/dashboard/complete" OR $currentURL == "/dashboard/complete/"){ 
+    if($currentURL == "/order/complete" OR $currentURL == "/order/complete/"){ 
     //Correct Funnel Page
     }else{ 
-    header('Location: /dashboard/complete');
+    header('Location: /order/complete');
     die();
     }
 }
 
+}else{ 
+header('Location: /shop/soulmate');
+die();
 }
 ?>
