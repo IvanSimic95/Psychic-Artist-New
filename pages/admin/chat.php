@@ -125,7 +125,7 @@ Talk.ready.then(function() {
           var spinner = "<img src='https://i.imgur.com/pKopwXp.gif' alt='loading...' />";
         
           // specify the server/url you want to load data from
-          var url = "https://pa.test/templates/ajax/info.php?id=";
+          var url = "https://$domain/templates/ajax/info.php?id=";
           var convoID = event.conversation.id;
         
           var loadLink = url + convoID

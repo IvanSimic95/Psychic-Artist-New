@@ -2,7 +2,7 @@
 if(isset($_GET['skip'])){ 
     if($_GET['skip']=="yes"){ 
         $_SESSION['funnel_page'] = "funnel-complete";
-        header('Location: /dashboard/complete');
+        header('Location: /order/complete');
         die();
     }
 }
