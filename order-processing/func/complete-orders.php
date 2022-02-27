@@ -75,12 +75,19 @@ echo "Starting complete-orders.php...<br><br>";
 
 					if ($orderProduct == "soulmate") {
 						$prod_type = "1";
+						$replaceWith = "Soulmate";
 					
 					}elseif($orderProduct == "husband"){
-						$prod_type = "2";
+					$prod_type = "2";
+						if($orderSex=="male"){
+							$replaceWith = "Future Husband";
+						}else{
+							$replaceWith = "Future Wife";
+						}
 					
 					}elseif($orderProduct =="twinflame"){
 						$prod_type = "3";
+						$replaceWith = "Twin Flame";
 					
 					}
 
@@ -119,6 +126,8 @@ echo "Starting complete-orders.php...<br><br>";
 						}
 					}
 					
+
+				$message = str_replace('$SOULMATE$',$replaceWith,$message);
 				//START IF PRODUCT = FUTURE BABY
 			    }elseif ($orderProduct == "future-baby")  { 
 				$image_send = "1";

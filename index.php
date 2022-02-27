@@ -14,7 +14,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php';
 $buffer=ob_get_contents();
 ob_end_clean();
 
+
+$buffer=str_replace("<!--CHATPOPUP-->",$ChatPopup,$buffer);
 $buffer=str_replace("<!--FBMETATAGS-->",$FBmeta,$buffer);
+$buffer=str_replace("<!--TALKJSSTART-->",$TalkJS,$buffer);
 $buffer=str_replace("<!--CUSTOMJSPRELOAD-->",$customJSPreload,$buffer);
 $buffer=str_replace("<!--CUSTOMCSS-->",$customCSS,$buffer);
 $buffer=str_replace("%TITLE%",$title,$buffer);

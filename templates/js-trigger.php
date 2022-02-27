@@ -16,7 +16,7 @@ $customTrigger = <<<EOT
 <script>
 $(window).on('load', function(){
 window.cp('identify', {
-user_id: '$userId',
+user_id: '$userID',
 email: '$userEmail', 
 name: '$userName', 
 });

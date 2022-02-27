@@ -52,7 +52,7 @@ function traverseArray($array)
                     <div class="col-lg-12">
                     <div class="table-responsive scrollbar">
   <table class="table table-hover table-striped overflow-hidden">
-    <thead>
+    <!--<thead>
       <tr>
         <th scope="col">Date</th>
         <th scope="col">IP</th>
@@ -62,7 +62,7 @@ function traverseArray($array)
         <th scope="col">Product</th>
         <th scope="col">Priority</th>
       </tr>
-    </thead>
+    </thead>-->
     <tbody>
 
     <?php traverseArray($a); ?>

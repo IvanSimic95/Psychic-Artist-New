@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 date_default_timezone_set('Europe/Zagreb');
-$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = "";
+$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = $TalkJS = $ChatPopup = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
@@ -299,14 +299,84 @@ if(!isset($customTrigger)){
 
 //Check if user logged in, if yes save variables
 if(isset($_SESSION['id'])){
-$userId = $_SESSION['id'];
+$userID = $_SESSION['userID'];
 $userName = $_SESSION['name'];
 $userFName = $_SESSION['fname'];
 $userEmail = $_SESSION['email'];
 $userOrders = $_SESSION['orders'];
 
+$ChatPopup = <<<EOT
+<a href="/dashboard/support">
+<div id="chat-popup" class="py-2 px-0 light topbar-gradient rounded-3 chat-hide"> 
+            <div id="sidebar-menu" class="text-white">
+                    <ul>
+                        <li> <a href="/dashboard/support" class="text-decoration-none d-flex align-items-start">
+                            <div class="fa fa-comment-question pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                                <div class="link position-relative">
+                                Live Chat   
+                                <span style="" id="notifier-badge-popup" class="position-absolute badge rounded-pill bg-danger">1</span>
+                                </div>
+                                <div class="link-desc">You have unread messages!</div>
+                            </div>
+                        </a> </li>   
+</ul>
+</div>
+</div>
+</a>
+EOT;
+
+$signature = hash_hmac('sha256', strval("PA".$userID), 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
+
+$TalkJS = <<<EOT
+
+<script>
+
+(function(t,a,l,k,j,s){
+  s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
+  ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
+  .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
+  Talk.ready.then(function() {
+var me = new Talk.User({
+  id: 'PA$userID',
+  role: 'PAcustomer',
+  name: '$userFName',
+  email: '$userEmail',
+  photoUrl: 'https://avatars.dicebear.com/api/adventurer/$userEmail.svg',
+  custom: { email: '$userEmail' }
+});
+
+window.talkSession = new Talk.Session({
+appId: 't2X08S4H',
+me: me,
+signature: "$signature"
+});
+
+
+window.talkSession.unreads.on('change', function (unreadConversations) {
+  var amountOfUnreads = unreadConversations.length;
+  $('#notifier-badge')
+    .text(amountOfUnreads)
+    .toggle(amountOfUnreads > 0);
+
+    $('#notifier-badge-popup')
+    .text(amountOfUnreads)
+    .toggle(amountOfUnreads > 0);
+
+  if (amountOfUnreads > 0) {
+    document.title = '(' + amountOfUnreads + ') Psychic Artist';
+    $('#chat-popup').removeClass('chat-hide');
+  } else {
+    document.title = 'Psychic Artist';
+    $('#chat-popup').addClass('chat-hide');
+  }
+});
+});
+</script>
+EOT;
+
 }else{ //If not logged in make those variables empty
-$userId = "";
+$userID = "";
 $userName = "";
 $userEmail = "";
 $userOrders = "0";

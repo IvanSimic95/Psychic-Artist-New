@@ -22,7 +22,7 @@ $customJS = <<<EOT
 <script src="/vendors/select2/select2.min.js"></script>
 EOT;
 
-
+$DBsaved = "";
 $order_email = $_SESSION['email'];
 $dashboardRedirect = $errorDisplay = $showError = $showErrorText = "";
 if(isset($_POST['form_submit'])){
@@ -111,10 +111,20 @@ if(isset($_POST['form_submit'])){
 }
 
 include $_SERVER['DOCUMENT_ROOT'].'/templates/dashboard/menu.php'; ?>
-
+<?php if($DBsaved==1){ ?>
+<div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+  <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+  <p class="mb-0 flex-1">Your Changes have been Saved!</p>
+  <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php } ?>
 
 <form id="completeOrder" class="form-order needs-validation display-block text-start mt-3" name="completeOrder" action="" method="POST">
 <div class="row g-2">
+
+
+
+
   <div class="col-sm-12 col-md-6">
     <div class="form-floating form-floating-icon mb-1">
     <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required="" value="<?php echo $_SESSION['name']; ?>">

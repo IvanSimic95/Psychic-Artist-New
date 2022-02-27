@@ -1,5 +1,5 @@
 <?php if(isset($_GET['loggedin'])){ 
-//CrowdPowerLogin($userId, $userEmail, $userName);
+//CrowdPowerLogin($userID, $userEmail, $userName);
 ?>
       <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
       <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>

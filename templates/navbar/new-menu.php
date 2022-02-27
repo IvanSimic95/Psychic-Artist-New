@@ -27,7 +27,7 @@
       <li class="navSection secondary">
      
         <a class="rootLink item-dashboard colorize" data-adroll-segment="submit_two" href="/dashboard">
-          <?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?>
+          <?php if(isset($_SESSION['loggedIn'])){echo $_SESSION['fname'];}else{echo "Sign In";} ?>
         </a>
 
         <div class="elfsight-app-fe5dc4a0-5507-4595-937a-f52d5fe95464"></div>

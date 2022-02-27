@@ -1883,6 +1883,136 @@ background-image: linear-gradient(90deg, #ec38bc 0%, #7303c0 50%, #03001e 100%);
     
   }
 
+  #notifier-badge{
+    width: 25px; 
+    text-align: center; 
+    padding: 3px; 
+    margin: 0;
+    left: 40% !important;
+    top: 3px !important;
+    transform-origin: bottom;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: bounce-7;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    display:none;
+}
+
+@keyframes bounce-7 {
+    0%   { transform: scale(1,1)      translateY(0); }
+    4%  { transform: scale(1.1,.9)   translateY(0); }
+    12%  { transform: scale(.9,1.1)   translateY(-10px); }
+    20%  { transform: scale(1.05,.95) translateY(0); }
+    25%  { transform: scale(1,1)      translateY(-7px); }
+    30%  { transform: scale(1,1)      translateY(0); }
+    40% { transform: scale(1,1)      translateY(0); }
+    100% {  }
+}
+
+#chat-popup{
+  
+  position: fixed;
+  margin: 0 auto;
+  z-index:999999;
+  box-shadow: 0 0 10px #222;
+  top: -webkit-calc(100% - 110px);
+  -webkit-transition: all 2s;
+  /*this adds GPU acceleration*/
+  transform: translate3d(0,0,0); 
+  -webkit-transform: translate3d(0,0,0);
+  left:40px;
+  
+}
+
+.chat-hide{
+  top: -100px!important;
+}
+
+#chat-popup:hover{
+  box-shadow: 0 0 15px 5px #ec38bc;
+}
+
+#notifier-badge-popup{
+  width: 25px; 
+  text-align: center; 
+  padding: 3px; 
+  margin: 0;
+  left: 50% !important;
+  top: 5px !important;
+  transform-origin: bottom;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-7;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@media screen and (max-width: 450px){
+  #chat-popup{
+    width:95%;
+    border-radius:0!important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #notifier-badge-popup{
+    left: 45% !important;
+    top: 2px!important;
+  }
+}
+
+#sidebar-menu {
+  padding: 0;
+  border-radius: 10px
+}
+#sidebar-menu a{
+  color:#fff;
+}
+
+#sidebar-menu .h4 {
+  font-weight: 500;
+  padding-left: 15px
+}
+
+#sidebar-menu ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0rem
+}
+
+#sidebar-menu ul li {
+  padding: 10px 0;
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-left: 5px solid transparent;
+  text-align:left;
+}
+
+#sidebar-menu ul li.active {
+  border-left: 5px solid #fff;
+  background-color: #22222280
+}
+
+#sidebar-menu ul li a {
+  display: block
+}
+
+#sidebar-menu ul li a .fas,
+#sidebar-menu ul li a .far {
+  color: #ddd
+}
+
+#sidebar-menu ul li a .link {
+  color: #fff;
+  font-weight: 500
+}
+
+#sidebar-menu ul li a .link-desc {
+  font-size: 0.8rem;
+  color: #ddd
+}
+
+
   .breadcrumbs-nav{
   display:block;
   }

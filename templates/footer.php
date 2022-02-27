@@ -61,8 +61,9 @@
           </div>
         </div><!-- end of .container-->
       </section>
-               
-          </footer>     
+  </footer>     
+
+    <!--CHATPOPUP-->
           
     <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/fb.php'; ?>
     <!-- ===============================================-->
@@ -87,13 +88,13 @@
     <!--   CrowdPower Script -->
     <!-- ===============================================-->
     <cp-root></cp-root>
-    <script>
-    window.cp=window.cp||function(){(cp.q=cp.q||[]).push(arguments)};
-    window.cp('init', 'pk_2782ef32aba51e64d37df414a584e1ac15b1208be90e64395948c6a3f079255c');
-    </script>
     <script src="https://tag.crowdpower.io/js/app.js"></script>
     
 
+    <!-- ===============================================-->
+    <!--    TalkJS Start When Logged in   -->
+    <!-- ===============================================-->
+    <!--TALKJSSTART-->
 
     <!-- ===============================================-->
     <!--   Custom Page JavaScripts & CSS -->
@@ -103,6 +104,9 @@
     <!-- ===============================================-->
     <!--   General Custom JS Scripts & Functions -->
     <!-- ===============================================-->
+
+ 
+
     <script>
     
     $(document).ready(function($) {
@@ -110,7 +114,6 @@
       preloader.addClass('loader-activate');
     });
       $(window).on('load', function(){
-        window.cp('push');
       $('.preloader').fadeOut();
       $('.preloader').removeClass('loader-activate');
       $('.preloader').addClass('loader-deactivate');

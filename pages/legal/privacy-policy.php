@@ -1,6 +1,6 @@
 <?php
-$title = "Privacy Policy - Legal | Psychic Artist";
-$sdescription = "A privacy policy is a statement or legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.";
+$title = "Privacy Policy | Psychic Artist";
+$sdescription = "A privacy policy is a legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.";
 ?>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
@@ -10,10 +10,10 @@ $sdescription = "A privacy policy is a statement or legal document that disclose
 <div class="card mb-3">
             <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(/assets/img/icons/spot-illustrations/corner-4.png);"></div>
             <!--/.bg-holder-->
-            <div class="card-body position-relative">
+            <div class="card-body position-relative p-3 p-md-4">
               <div class="row">
                 <div class="col-lg-12">
-                  <h3><?php echo $title; ?></h3>
+                  <h3>Privacy Policy</h3>
                   <p class="mb-0"><?php echo $sdescription; ?></p>
                 </div>
               </div>

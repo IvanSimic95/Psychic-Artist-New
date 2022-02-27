@@ -47,6 +47,8 @@ $row = mysqli_fetch_assoc($result3);
 $countTotal = $row['total'];
 
 
+
+
 if($result->num_rows == 0) {
 if($order_email==""){
 $LoginError = "<div class='alert alert-danger  mb-0' role='alert'>Email not provided!</div>";

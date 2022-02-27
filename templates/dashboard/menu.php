@@ -132,6 +132,16 @@
                                 <div class="link-desc">Change your profile details</div>
                             </div>
                         </a> </li>
+                        <li <?php if($page=="support"){ ?>class="active" <?php } ?>> <a href="/dashboard/support" class="text-decoration-none d-flex align-items-start">
+                            <div class="fa fa-comment-question pt-2 me-3"></div>
+                            <div class="d-flex flex-column">
+                            <div class="link position-relative">
+                                Support   
+                                <span id="notifier-badge" class="position-absolute badge rounded-pill bg-danger">0</span>
+                                </div>
+                                <div class="link-desc">Need help with something?</div>
+                            </div>
+                        </a> </li>
                     <li> <a href="/dashboard?logout=yes" class="text-decoration-none d-flex align-items-start">
                             <div class="fa fa-right-from-bracket pt-2 me-3"></div>
                             <div class="d-flex flex-column">

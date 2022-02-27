@@ -1,98 +1,90 @@
-[26-Feb-2022 23:47:58 Europe/Zagreb] PHP Parse error:  Unmatched '}' in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 175
-[26-Feb-2022 23:48:01 Europe/Zagreb] PHP Parse error:  Unmatched '}' in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 175
-[26-Feb-2022 23:48:36 Europe/Zagreb] PHP Warning:  Undefined variable $errorPage in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 2
-[26-Feb-2022 23:50:16 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "or" in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 3
-[27-Feb-2022 00:01:32 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 00:01:32 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 00:01:32 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 00:02:42 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 00:02:46 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 01:02:02 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\forms\normal.php on line 21
-[27-Feb-2022 01:02:05 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\forms\normal.php on line 21
-[27-Feb-2022 03:06:08 Europe/Zagreb] PHP Warning:  Undefined variable $bg_email in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 358
-[27-Feb-2022 03:06:09 Europe/Zagreb] PHP Warning:  Undefined variable $bg_email in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 358
-[27-Feb-2022 03:08:14 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 05:18:58 Europe/Zagreb] PHP Warning:  Undefined variable $orderID in C:\laragon\www\PA\order-processing\func\start-orders.php on line 103
-[27-Feb-2022 05:18:58 Europe/Zagreb] PHP Warning:  Undefined variable $orderPrio in C:\laragon\www\PA\order-processing\func\start-orders.php on line 106
-[27-Feb-2022 05:18:58 Europe/Zagreb] PHP Warning:  Undefined variable $hours in C:\laragon\www\PA\order-processing\func\start-orders.php on line 109
-[27-Feb-2022 05:20:09 Europe/Zagreb] PHP Warning:  Undefined variable $orderId in C:\laragon\www\PA\order-processing\func\start-orders.php on line 81
-[27-Feb-2022 05:20:09 Europe/Zagreb] PHP Warning:  Undefined variable $orderId in C:\laragon\www\PA\order-processing\func\start-orders.php on line 91
-[27-Feb-2022 05:30:01 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 79
-[27-Feb-2022 05:30:05 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 79
-[27-Feb-2022 05:30:20 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in C:\laragon\www\PA\templates\dashboard\login-function.php:76
-Stack trace:
-#0 C:\laragon\www\PA\pages\dashboard\index.php(2): include()
-#1 C:\laragon\www\PA\pages\dashboard.php(2): include('C:\\laragon\\www\\...')
-#2 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
-#3 {main}
-  thrown in C:\laragon\www\PA\templates\dashboard\login-function.php on line 76
-[27-Feb-2022 05:32:30 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 05:34:44 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 05:34:49 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
-[27-Feb-2022 05:53:37 Europe/Zagreb] PHP Warning:  Undefined variable $product in C:\laragon\www\PA\templates\forms\normal.php on line 165
-[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  Undefined variable $codename_drawing_ in C:\laragon\www\PA\templates\shop\productV1.php on line 37
-[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 103
-[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 103
-[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
-[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
-[27-Feb-2022 07:19:11 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
-[27-Feb-2022 07:19:11 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
-[27-Feb-2022 07:21:14 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
-[27-Feb-2022 07:22:19 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
-[27-Feb-2022 07:22:30 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
-[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/public/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/public/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
-[27-Feb-2022 07:47:36 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\shop\productV1.php on line 189
-[27-Feb-2022 07:47:44 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\shop\productV1.php on line 189
-[27-Feb-2022 07:48:01 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 127
-[27-Feb-2022 07:48:07 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 127
-[27-Feb-2022 07:49:59 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 121
-[27-Feb-2022 07:49:59 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 136
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 80
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 80
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\dashboard\login-function.php on line 81
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\dashboard\login-function.php on line 83
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 85
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 85
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 86
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 86
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 80
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 80
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\dashboard\login-function.php on line 81
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\dashboard\login-function.php on line 83
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 85
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 85
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Undefined variable $rowU in C:\laragon\www\PA\templates\dashboard\login-function.php on line 86
+[27-Feb-2022 17:04:15 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\dashboard\login-function.php on line 86
+[27-Feb-2022 17:09:03 Europe/Zagreb] PHP Warning:  Undefined variable $SOULMATE in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 130
+[27-Feb-2022 17:22:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:27 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:30 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:30 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:30 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:22:33 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:23:01 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:23:01 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:23:01 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:24:57 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:24:57 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:24:57 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 17:32:44 Europe/Zagreb] PHP Warning:  Undefined array key "order_id" in C:\laragon\www\PA\pages\dashboard\profile.php on line 101
+[27-Feb-2022 17:32:44 Europe/Zagreb] PHP Warning:  Undefined variable $countPending in C:\laragon\www\PA\pages\dashboard\profile.php on line 110
+[27-Feb-2022 17:32:44 Europe/Zagreb] PHP Warning:  Undefined variable $countProcessing in C:\laragon\www\PA\pages\dashboard\profile.php on line 111
+[27-Feb-2022 17:32:44 Europe/Zagreb] PHP Warning:  Undefined variable $countCompleted in C:\laragon\www\PA\pages\dashboard\profile.php on line 112
+[27-Feb-2022 17:32:44 Europe/Zagreb] PHP Warning:  Undefined variable $countTotal in C:\laragon\www\PA\pages\dashboard\profile.php on line 113
+[27-Feb-2022 18:55:02 Europe/Zagreb] PHP Parse error:  Invalid body indentation level (expecting an indentation level of at least 1) in C:\laragon\www\PA\pages\admin\chat.php on line 47
+[27-Feb-2022 18:55:04 Europe/Zagreb] PHP Parse error:  Invalid body indentation level (expecting an indentation level of at least 1) in C:\laragon\www\PA\pages\admin\chat.php on line 47
+[27-Feb-2022 18:55:16 Europe/Zagreb] PHP Parse error:  Invalid body indentation level (expecting an indentation level of at least 1) in C:\laragon\www\PA\pages\admin\chat.php on line 47
+[27-Feb-2022 19:31:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/templates/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 19:31:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/templates/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 19:31:34 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 20:04:33 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 86
+[27-Feb-2022 20:04:33 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 87
+[27-Feb-2022 20:04:33 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 88
+[27-Feb-2022 20:04:53 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 86
+[27-Feb-2022 20:04:53 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 87
+[27-Feb-2022 20:04:53 Europe/Zagreb] PHP Warning:  Undefined variable $showError in C:\laragon\www\PA\templates\ajax\info.php on line 88
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 10
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 13
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 17
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 18
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 19
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 20
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\ajax\info.php on line 21
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 22
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 23
+[27-Feb-2022 20:17:55 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 24
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 10
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 13
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 17
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 18
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 19
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 20
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\ajax\info.php on line 21
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 22
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 23
+[27-Feb-2022 20:17:57 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 24
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 10
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 13
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 17
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 18
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 19
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 20
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\ajax\info.php on line 21
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 22
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 23
+[27-Feb-2022 20:17:59 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 24
+[27-Feb-2022 20:20:48 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\templates\ajax\info.php on line 23
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 14
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 15
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 16
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 17
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PA\templates\ajax\info.php on line 18
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 19
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 20
+[27-Feb-2022 20:21:08 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\templates\ajax\info.php on line 21
+[27-Feb-2022 20:38:29 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "=" in C:\laragon\www\PA\pages\admin\chat.php on line 36
+[27-Feb-2022 20:38:37 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "=" in C:\laragon\www\PA\pages\admin\chat.php on line 36
