@@ -106,22 +106,6 @@ $result2 = $conn->query($sql2);
 
 $row = mysqli_fetch_assoc($result);
 
-$sql0 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'pending'";
-$result0 = $conn->query($sql0);
-$countPending = $result0->num_rows;
-
-$sql1 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'processing'";
-$result1 = $conn->query($sql1);
-$countProcessing = $result1->num_rows;
-
-$sql2 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'completed'";
-$result2 = $conn->query($sql2);
-$countCompleted = $result2->num_rows;
-
-$sql3 = "SELECT SUM(order_price) AS total FROM orders WHERE (`order_email` = '$order_email' AND `order_status`='paid') OR (`order_email` = '$order_email' AND `order_status`='processing')  OR (`order_email` = '$order_email' AND `order_status`='completed');";
-$result3 = $conn->query($sql3);
-$row = mysqli_fetch_assoc($result3);
-$countTotal = $row['total'];
 
 $_SESSION['id'] = $row['id'];
 $_SESSION['name'] = $row['full_name'];
@@ -135,10 +119,23 @@ $_SESSION['partnerGender'] = $row['partner_gender'];
 $_SESSION['orders'] = $result2->num_rows;
 $_SESSION['loggedIn'] = "yes";
 
+$order_email = $_SESSION['email'];
+
+$sql0 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'pending'";
+$result0 = $conn->query($sql0);
+$countPending = $result0->num_rows;
+
+$sql1 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'processing'";
+$result1 = $conn->query($sql1);
+$countProcessing = $result1->num_rows;
+
+$sql2 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'completed'";
+$result2 = $conn->query($sql2);
+$countCompleted = $result2->num_rows;
+
 $_SESSION['peOrders'] =$countPending;
 $_SESSION['pOrders'] = $countProcessing;
 $_SESSION['cOrders'] = $countCompleted;
-$_SESSION['cSpent']  = $countTotal;
 
 }elseif(isset($_SESSION['userEmail'])){
 $dashboardRedirect = 1;
