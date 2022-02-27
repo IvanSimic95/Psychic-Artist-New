@@ -10,3 +10,5 @@
 [27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
 [27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
 [27-Feb-2022 00:02:51 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 01:02:02 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\forms\normal.php on line 21
+[27-Feb-2022 01:02:05 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\forms\normal.php on line 21

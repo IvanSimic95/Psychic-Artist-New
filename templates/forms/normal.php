@@ -18,7 +18,7 @@
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDobUS">Date of Birth</label>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php echo if(isset($_SESSION['dob']))$_SESSION['dob']; ?>"/>
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDob">Date of Birth</label>
         <?php } ?>
