@@ -5,21 +5,21 @@ $DBsaved = 0;
 $title = "Order complete! | Psychic Artist"; 
 $sdescription = "You can now proceed to your user dashboard by clicking the button below!";
 $galert = "Your Orders have been Created!";
-if(isset($_GET['form_submit'])){
-  isset($_GET['userID']) ? $nuserID = $_GET['userID'] : $errorDisplay .= "<li>Missing User ID </li>";
-  isset($_GET['userName'])  ? $newName  = $_GET['userName'] : $errorDisplay .= "<li>Missing User Name </li>";
-  isset($_GET['userEmail']) ? $newEmail = $_GET['userEmail'] : $errorDisplay .= "<li>Missing User Email </li>";
+if(isset($_POST['form_submit'])){
+  isset($_POST['userID']) ? $nuserID = $_POST['userID'] : $errorDisplay .= "<li>Missing User ID </li>";
+  isset($_POST['userName'])  ? $newName  = $_POST['userName'] : $errorDisplay .= "<li>Missing User Name </li>";
+  isset($_POST['userEmail']) ? $newEmail = $_POST['userEmail'] : $errorDisplay .= "<li>Missing User Email </li>";
   
-  isset($_GET['userDob']) OR isset($_GET['userDobUS']) ? $dob = "Yes"   : $errorDisplay .= "<li>Missing User Date of Birth (Both US and EU Fields) </li>";
-  if(isset($_GET['userDob']))$new_user_dob = $_GET['userDob'];
+  isset($_POST['userDob']) OR isset($_POST['userDobUS']) ? $dob = "Yes"   : $errorDisplay .= "<li>Missing User Date of Birth (Both US and EU Fields) </li>";
+  if(isset($_POST['userDob']))$new_user_dob = $_POST['userDob'];
   
-  if(isset($_GET['userDobUS'])){
-  $originalDate = $_GET['userDobUS'];
+  if(isset($_POST['userDobUS'])){
+  $originalDate = $_POST['userDobUS'];
   $new_user_dob = date("d-m-Y", strtotime($originalDate));
   }
   
-  isset($_GET['gender'])  ? $newGender  = $_GET['gender']  : $errorDisplay .= "<li>Missing User Gender </li>";
-  isset($_GET['pgender']) ? $newPGender = $_GET['pgender'] : $errorDisplay .= "<li>Missing Partner Gender </li>";
+  isset($_POST['gender'])  ? $newGender  = $_POST['gender']  : $errorDisplay .= "<li>Missing User Gender </li>";
+  isset($_POST['pgender']) ? $newPGender = $_POST['pgender'] : $errorDisplay .= "<li>Missing Partner Gender </li>";
   
   empty($errorDisplay) ?  $testError = FALSE : $testError = TRUE;
   if($testError == TRUE){
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 </div>
                   <div class="card-body col-12 offset-0 col-xl-10 offset-xl-1 mt-0" style="text-align:center; min-height:25vh;">
      
-      <?php if(!isset($_GET['form_submit'])){ ?>
+      <?php if(!isset($_POST['form_submit'])){ ?>
       <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">
       <p class="mb-0 flex-1">Please check your account information!</p>
       </div>
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 <?php if($DBsaved == 0){ ?>
-<form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?updateInfo=Yes" method="get">
+<form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?updateInfo=Yes" method="post">
 <div class="row g-2">
   <div class="col-sm-12 col-md-6">
     <div class="form-floating form-floating-icon mb-2">
