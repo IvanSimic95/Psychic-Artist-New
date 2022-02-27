@@ -60,6 +60,12 @@
     <link href="/assets/css/custom.css" rel="stylesheet">
 
     <!--CUSTOMCSS-->
+
+  
+    <!-- ===============================================-->
+    <!--    FB Pixel Code & Events   -->
+    <!-- ===============================================-->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/fb.php'; ?>
   </head>
 
 <body>

@@ -121,7 +121,7 @@ $sdescription = $webDescription;
 $pimage = $webLogo;
 
 
-
+$pixelActive = 1;
 
 
 //BREADCRUMBS CHECK & DISABLE
