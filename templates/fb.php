@@ -9,7 +9,19 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
+<?php if(isset($_SESSION['loggedIn'])){ ?>
+fbq('init', '1113620569489141', {
+em: '<?php echo $_SESSION['email']; ?>',        
+fn: '<?php echo $_SESSION['fname']; ?>',    
+ln: '<?php echo $_SESSION['lname']; ?>',
+bd: '<?php echo $_SESSION['FBdob']; ?>',
+ge: '<?php echo $_SESSION['FBgender']; ?>',
+external_id: '<?php echo $_SESSION['userID']; ?>'
+});
+<?php }else{ ?>
 fbq('init', '1113620569489141');
+<?php } ?>
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"

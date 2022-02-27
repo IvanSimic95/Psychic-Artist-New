@@ -81,9 +81,26 @@ $rowU = mysqli_fetch_assoc($result4);
 $_SESSION['dob'] = $rowU['dob'];
 $_SESSION['dobUS'] = date("m/d/Y", strtotime($_SESSION['dob']));
 
+$_SESSION['FBdob'] = date("Ymd", strtotime($_SESSION['dob']));
+
 $_SESSION['gender'] = $rowU['gender'];
 $_SESSION['partnerGender'] = $rowU['partner_gender'];
 
+$gender = $_SESSION['gender'];
+switch ($gender) {
+
+    case "male":
+    $_SESSION['FBgender'] = "m";
+    break;
+
+    case "female":
+    $_SESSION['FBgender'] = "f";
+    break;
+
+    default:
+    $_SESSION['FBgender'] = "f";
+    break;
+}
 
 if(isset($_GET['login'])) {
 $redirect = '<script>window.location.replace("/dashboard?loggedin=success");</script>';

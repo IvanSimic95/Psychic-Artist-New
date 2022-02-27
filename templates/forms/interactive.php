@@ -36,32 +36,32 @@
     <div class="mb-2 mt-2 userNameWrapper">
        
         <div class="form-floating form-floating-icon mb-2">
-        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required value="<?php echo $userName; ?>"/>
+        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required value="<?php if(isset($_SESSION['name']))echo $_SESSION['name']; ?>"/>
         <span class="icon-inside"><i class="fas fa-user"></i></span>
         <label for="userName">Your Full Name</label>
         </div>
         <div class="form-floating form-floating-icon mb-2">
-        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required value="<?php echo $userEmail; ?>"/>
+        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required value="<?php if(isset($_SESSION['email']))echo $_SESSION['email']; ?>"/>
         <span class="icon-inside"><i class="fas fa-envelope"></i></span>
         <label for="userEmail">Your E-mail</label>
         </div>
         <div id="error" class="mb-2"></div>
         <div id="errorEmail" class="mb-2"></div>
     </div>
-    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" disabled> Confirm!</button>
+    <button type="button" id="name-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" <?php if(!isset($_SESSION['email'])){ ?>disabled<?php } ?>> Confirm!</button>
 
     <div class="mb-2 mt-2 userDobWrapper">
         <?php if($formDate == "US"){ ?>
-        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required />
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
         <div id="errorDobUS" class="mb-2"></div>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required />
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
         <div id="errorDob" class="mb-2"></div>
         <?php } ?>
         
 
     </div>
-    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" disabled> Confirm!</button>
+    <button type="button" id="dob-confirm-btn" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" <?php if(!isset($_SESSION['dob'])){ ?>disabled<?php } ?>> Confirm!</button>
 
 
     <div class="mb-2 mt-2 userDeliveryWrapper">
@@ -169,6 +169,29 @@ $customJS = <<<EOT
 <script>
 
 $(document).ready(function(){
+    fbq('track', 'ViewContent', {
+        content_name: '$shorttitle Drawing', 
+        content_ids: ['$retailer'],
+        content_type: 'product',
+        value: $price,
+        currency: 'USD' 
+     });       
+    
+    var button = document.getElementById('start-form-btn');
+    button.addEventListener(
+      'click', 
+      function() {
+         fbq('track', 'AddToCart', {
+           content_name: '$shorttitle Drawing', 
+           content_ids: ['$retailer'],
+           content_type: 'product',
+           value: $price,
+           currency: 'USD' 
+        });          
+      },
+    false
+    );
+
 var width = $(window).width();
 
 if(width < 750) {

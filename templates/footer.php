@@ -62,7 +62,9 @@
         </div><!-- end of .container-->
       </section>
                
-          </footer>              
+          </footer>     
+          
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/fb.php'; ?>
     <!-- ===============================================-->
     <!--   Footer JavaScripts-->
     <!-- ===============================================-->

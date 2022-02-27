@@ -118,15 +118,27 @@
 <ol>
 </ol>
 </div>
+<?php if($btncolor == "green") { ?>
+<style>
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.active, .btn-primary.show {
+  color: #fff!important;
+  background-color: #00d27a!important;
+  border-color: #00d27a!important;
+  background-image: none!important;
+  box-shadow: 0 0.5rem 1.125rem -0.5rem #00d27a!important;
+}
+</style>
 
+<?php } ?>
 
 
     <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
     <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
     <input class="formused" type="hidden" name="formused" value="normal">
+    <input class="btncolor" type="hidden" name="btncolor" value="<?php echo $btncolor; ?>">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">
-    <div class="mb-2 mt-3"> <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
+    <div class="mb-2 mt-3"> <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-2" value="Place an Order!"></div>
 
 
 
@@ -157,7 +169,7 @@ var econtainer = $(".error-container");
 $(document).ready(function(){
   fbq('track', 'ViewContent', {
     content_name: '$shorttitle Drawing', 
-    content_ids: ['$productID'],
+    content_ids: ['$retailer'],
     content_type: 'product',
     value: $price,
     currency: 'USD' 
@@ -167,9 +179,9 @@ var button = document.getElementById('PlaceOrder');
 button.addEventListener(
   'click', 
   function() {
-     fbq('track', 'AddToCart', {
+     fbq('track', 'InitiateCheckout', {
        content_name: '$shorttitle Drawing', 
-       content_ids: ['$productID'],
+       content_ids: ['$retailer'],
        content_type: 'product',
        value: $price,
        currency: 'USD' 

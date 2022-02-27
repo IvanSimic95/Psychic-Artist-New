@@ -1,4 +1,5 @@
 <?php
+$pixelActive = 0;
 //START - Logging Variables //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $logArray = array();
 $errorDisplay = $cookie = $getcountdown = $getformused = $user_name = $user_email = $user_dob = $order_product = $ttt = "";
@@ -139,26 +140,6 @@ if($SuccessProduct  == "main") {
     }
 
     $logArray['9'] = "No";
-
-        //Check if order_email field is empty, if it is add BG email there
-        $sql = "SELECT * FROM orders WHERE order_id = '".$orderID."'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-
-        $test_email = $row['order_email'];
-        if($test_email=="" OR $test_email==NULL){
-
-
-            $sql3 = "UPDATE `orders` SET `order_email`='$order_email' WHERE order_id='$orderID'" ;
-            if ($conn->query($sql3) === TRUE) {
-                $logArray['9'] = "Success";
-            } else {
-                $logArray['9'] = "Error: ".$sql3->error."<br>" . $conn->error;
-            }
-
-        }
-
- 
    
     $conn->close();
     SuperLog($logArray, "order");

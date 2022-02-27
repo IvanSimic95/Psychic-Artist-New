@@ -184,6 +184,11 @@ else { ?>
                                 <?php 
                                 $r = rand(1,2);
                                 if(isset($_SESSION['loggedIn'])) $r = 2;
+
+                                $rcolor = rand(1,2);
+                                if($rcolor == 1)$btncolor = "green";
+                                if($rcolor == 2)$btncolor = "normal";
+
                                 if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
                                 if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
                                 

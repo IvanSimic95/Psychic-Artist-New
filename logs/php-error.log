@@ -43,3 +43,56 @@ Stack trace:
 [27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
 [27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
 [27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:56:20 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:16 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:57:34 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:58:58 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:00:27 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:09 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:03:18 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:33 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 103
+[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:36 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 103
+[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:54 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:55 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
+[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:18:56 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "endswitch", expecting "case" or "default" or "}" in C:\laragon\www\PA\templates\dashboard\login-function.php on line 104
+[27-Feb-2022 07:19:11 Europe/Zagreb] PHP Warning:  Undefined array key "FBdob" in C:\laragon\www\PA\templates\fb.php on line 18
+[27-Feb-2022 07:19:11 Europe/Zagreb] PHP Warning:  Undefined array key "FBgender" in C:\laragon\www\PA\templates\fb.php on line 19
+[27-Feb-2022 07:21:14 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
+[27-Feb-2022 07:22:19 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
+[27-Feb-2022 07:22:30 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\pages\order\success.php on line 149
+[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/public/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/public/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:44:55 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 07:47:36 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\shop\productV1.php on line 189
+[27-Feb-2022 07:47:44 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "if" in C:\laragon\www\PA\templates\shop\productV1.php on line 189
+[27-Feb-2022 07:48:01 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 127
+[27-Feb-2022 07:48:07 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 127
+[27-Feb-2022 07:49:59 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 121
+[27-Feb-2022 07:49:59 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\templates\forms\normal.php on line 136

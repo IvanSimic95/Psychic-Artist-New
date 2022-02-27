@@ -113,7 +113,7 @@ $r = $data->fetch_all(MYSQLI_ASSOC); // then fetch all
 //Define Main Variables
 $webTitle = $r[0]['value'];
 $webDescription = $r[1]['value'];
-$webLogo = $r[2]['value'];
+$webLogo = "https://".$domain.$r[2]['value'];
 $webVersion = $r[3]['value'];
 
 $title = $webTitle;
