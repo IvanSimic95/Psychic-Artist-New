@@ -329,6 +329,85 @@ echo "Starting complete-orders.php...<br><br>";
 					echo " Orders Log Added";
    					}
 
+
+			$orderDate = $row["order_date"];
+			$orderName = $row["user_name"];
+			$fName = $row["first_name"];
+			$lName = $row["last_name"];
+			$orderID = $row["order_id"];
+			$userID = $row["user_id"];
+			$orderEmail = $row["order_email"];
+			$orderAge = $row["user_age"];
+			$orderPrio = $row["order_priority"];
+			$orderProduct = $row["order_product"];
+			$orderSex = $row["pick_sex"];
+			$userSex = $row["user_sex"];
+			$date1 = $orderDate;
+			$date2 =  date("Y-m-d H:i:s");
+			$start = new \DateTime($date1);
+			$end = new \DateTime($date2);
+			$interval = new \DateInterval('PT1H');
+			$periods = new \DatePeriod($start, $interval, $end);
+			$hours = iterator_count($periods);
+
+			$price = $row["order_price"];
+			$bg_email = $row["bg_email"];
+
+			//Send data to zapier so it can submit FB conversion and send an email to user
+			$ch = curl_init();
+
+			if($orderEmail == $bg_email){ //User mail matches BG Mail
+			$data = [
+			"fname" => $fName,
+			"lname" => $lName,
+			"orderID" => $orderID,
+			"userID" => $userID,
+			"email" => $orderEmail,
+			"priority" => $orderPrio,
+			"product" => $orderProduct,
+			"hours" => $hours,
+			"gender" => $userSex,
+			"Pgender" => $orderSex,
+			"price" => $price
+			];
+
+			$jData = json_encode($data);
+			curl_setopt($ch, CURLOPT_URL, 'https://hooks.zapier.com/hooks/catch/4722157/bihdogp/');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
+			$headers = array();
+			$headers[] = 'Content-Type: application/json';
+			$headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			$result = curl_exec($ch);
+			$logArray[] =  "Data send to zapier";
+			echo "Data send to zapier";
+
+
+			}else{//User mail DOESN'T match BG Mail, send 2 emails
+					$data = [
+					"fname" => $fName,
+					"lname" => $lName,
+					"orderID" => $orderID,
+					"userID" => $userID,
+					"email" => $orderEmail,
+					"bgemail" => $bg_email,
+					"priority" => $orderPrio,
+					"product" => $orderProduct,
+					"hours" => $hours,
+					"gender" => $userSex,
+					"Pgender" => $orderSex,
+					"price" => $price
+					];
+
+
+			}
+
+			
+		
+
+
 			SuperLog($logArray, "complete-orders");
 			unset($logArray);
 
