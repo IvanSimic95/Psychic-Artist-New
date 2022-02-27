@@ -3,7 +3,7 @@
 
 
         <div class="form-floating form-floating-icon mb-2">
-        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required="" value="<?php echo $_SESSION['name']; ?>">
+        <input class="form-control" id="userName" type="text" name="userName" placeholder="Your Full Name" required="" value="<?php if(isset($_SESSION['name']))echo $_SESSION['name']; ?>">
         <span class="icon-inside"><i class="fas fa-user"></i> </span>
         <label for="userName">First & Last Name</label>
         </div>
@@ -14,11 +14,11 @@
 
         <div class="form-floating mb-2 form-floating-icon mb-3">
         <?php if($formDate == "US"){ ?>
-        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required value="<?php echo $_SESSION['dobUS']; ?>"/>
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDobUS">Date of Birth</label>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php echo $_SESSION['dob']; ?>"/>
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php echo if(isset($_SESSION['dob']))$_SESSION['dob']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDob">Date of Birth</label>
         <?php } ?>
@@ -28,7 +28,7 @@
   <hr class="mb-3">
 
         <div class="form-floating form-floating-icon">
-        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required="" value="<?php echo $_SESSION['email']; ?>">
+        <input class="form-control" id="userEmail" type="email" name="userEmail" placeholder="email@gmail.com" required="" value="<?php if(isset($_SESSION['email']))echo $_SESSION['email']; ?>">
         <span class="icon-inside"><i class="fas fa-envelope"></i> </span>
         <label for="userEmail">E-mail Address</label>
         </div>
