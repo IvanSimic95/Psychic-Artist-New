@@ -352,6 +352,7 @@ echo "Starting complete-orders.php...<br><br>";
 
 			$price = $row["order_price"];
 			$bg_email = $row["bg_email"];
+			$product_nice = $row["product_nice"];
 
 			//Send data to zapier so it can submit FB conversion and send an email to user
 			$ch = curl_init();
@@ -365,6 +366,7 @@ echo "Starting complete-orders.php...<br><br>";
 			"email" => $orderEmail,
 			"priority" => $orderPrio,
 			"product" => $orderProduct,
+			"product_nice" => $product_nice,
 			"hours" => $hours,
 			"gender" => $userSex,
 			"Pgender" => $orderSex,
@@ -395,6 +397,7 @@ echo "Starting complete-orders.php...<br><br>";
 					"bgemail" => $bg_email,
 					"priority" => $orderPrio,
 					"product" => $orderProduct,
+					"product_nice" => $product_nice,
 					"hours" => $hours,
 					"gender" => $userSex,
 					"Pgender" => $orderSex,
