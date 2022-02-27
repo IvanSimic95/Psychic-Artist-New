@@ -16,7 +16,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 $logArray['3'] = $_SERVER['REQUEST_URI'];
 //END - Logging Variables ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-$sPage == "personal-reading" ? $ttt = "All Good!" : $errorDisplay .= " Incorrect Session Funnel Page - ".$sPage." /";
+//$sPage == "personal-reading" ? $ttt = "All Good!" : $errorDisplay .= " Incorrect Session Funnel Page - ".$sPage." /";
 
 //START - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 isset($_SESSION['userID'])    ? $userID = $_SESSION['userID']        : $errorDisplay .= " Missing Session User ID /";
@@ -33,6 +33,8 @@ $orderID = $_SESSION['orderID'];
 
 $userGender = $_SESSION['userGender'];
 $partnerGender = $_SESSION['userPGender'];
+
+$userGenderAcc = "100";
 
 $countReadings = "0";
 
@@ -117,7 +119,7 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
             }else{
                 $createUser = 1;
             }
-    }
+    } 
 
     if($createUser == 1){
         $sql65 = "INSERT INTO users (first_name, last_name, full_name, email, age, dob, gender, partner_gender)
@@ -132,8 +134,9 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
 
     }
     
-    $sql = "INSERT INTO orders (cookie_id, user_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, product_codename, product_nice, order_priority, order_price, buygoods_order_id, user_sex, pick_sex, landing_page, form, button)
-            VALUES ('$cookie', '$userID', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', $product_codename, '$order_product_nice', '$order_priority', '$order_price', '', '$userGender', '$partnerGender', '$landing', '$getformused', '$getButtonText')";
+    
+    $sql = "INSERT INTO orders (cookie_id, user_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, product_codename, product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown, button)
+            VALUES ('$cookie', '$userID', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$product_codename', '$order_product_nice', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown', '$getButtonText')";
 
     if ($conn->query($sql) === TRUE) {
     $logArray['10'] = "Success"; 
@@ -151,8 +154,10 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
         $logArray['11'] = "Error: " . $sql2->error . "<br>" . $conn->error;
     }
 
-    $finalLink = 'https://buygoods.com/secure/upsell?account_id=6490&screen=checkout_clean&product_codename='.$countReadings.'xreadings&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
+    $clean_order_product=str_replace(" ","-",$order_product);
 
+    $finalLink = 'https://buygoods.com/secure/upsell?account_id=6490&screen=checkout_clean&product_codename='.$countReadings.'xreadings&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$clean_order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
+echo $finalLink;
     $_SESSION['orderID']   = $lastRowInsert;
  
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
