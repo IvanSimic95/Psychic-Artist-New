@@ -1,32 +1,5 @@
 <?php
 $errorDisplay = "";
-$cookie_name = "loggedIn";
-$cookie_name2 = "userID";
-$cookie_name3 = "userEmail";
-
-if(isset($_COOKIE[$cookie_name])) {
-    if(isset($_COOKIE[$cookie_name3])) {
-    $order_email = $_COOKIE[$cookie_name3];
-    $cookie = "1";
-        if(isset($_COOKIE[$cookie_name2])) {
-            $userID = $_COOKIE[$cookie_name2];
-        }else{
-            $sqlU = "SELECT * FROM `orders` WHERE `order_email` = $order_email";
-            $resultU = $conn->query($sqlU);
-          
-            if($resultU->num_rows == 0) {
-                $errorDisplay .= " User ID Not Found in DB";
-            }else{
-                $row = $resultU->fetch_assoc();
-                $userID = $row["user_id"];
-            }
-
-            
-        }
-    }  
-}else{
-
-
 
 if(isset($_SESSION['email'])){//if logged in already retrieve the email
 $order_email = $_SESSION['email'];
@@ -48,7 +21,7 @@ if(isset($_POST['remember'])) {
 }else{
     $cookie = "1";
 }
-}  
+
 
 $LoginError = "";
 
@@ -72,8 +45,6 @@ $sql3 = "SELECT SUM(order_price) AS total FROM orders WHERE (`order_email` = '$o
 $result3 = $conn->query($sql3);
 $row = mysqli_fetch_assoc($result3);
 $countTotal = $row['total'];
-
-
 
 
 if($result->num_rows == 0) {
@@ -113,19 +84,6 @@ $_SESSION['dobUS'] = date("m/d/Y", strtotime($_SESSION['dob']));
 $_SESSION['gender'] = $rowU['gender'];
 $_SESSION['partnerGender'] = $rowU['partner_gender'];
 
-if($cookie == 1) {
-$cookie_name = "loggedIn";
-$cookie_value = "yes";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-$cookie_name2 = "userID";
-$cookie_value2 = $_SESSION['id'];
-setcookie($cookie_name2, $cookie_value2, time() + (86400 * 30), "/");
-
-$cookie_name3 = "userEmail";
-$cookie_value3 = $_SESSION['email'];
-setcookie($cookie_name3, $cookie_value3, time() + (86400 * 30), "/");
-}
 
 if(isset($_GET['login'])) {
 $redirect = '<script>window.location.replace("/dashboard?loggedin=success");</script>';

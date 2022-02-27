@@ -32,6 +32,19 @@ echo "Starting complete-orders.php...<br><br>";
 			$interval = new \DateInterval('PT1H');
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
+
+			if($userSex == "nonbinary"){
+				$userSex = "female";
+			}
+
+			if($orderSex == "any"){
+				$orderSex = "male";
+			}
+
+			if($orderSex == "nonbinary"){
+				$orderSex = "male";
+			}
+
 			
 			$trigger = 1;
 			$image_send = 0;
@@ -356,8 +369,6 @@ echo "Starting complete-orders.php...<br><br>";
 
 			//Send data to zapier so it can submit FB conversion and send an email to user
 			$ch = curl_init();
-
-			if($orderEmail == $bg_email){ //User mail matches BG Mail
 			$data = [
 			"fname" => $fName,
 			"lname" => $lName,
@@ -383,29 +394,9 @@ echo "Starting complete-orders.php...<br><br>";
 			$headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			$result = curl_exec($ch);
-			$logArray[] =  "Data send to zapier";
+			$logArray[] =  "Data sent to zapier";
 			echo "Data send to zapier";
 
-
-			}else{//User mail DOESN'T match BG Mail, send 2 emails
-					$data = [
-					"fname" => $fName,
-					"lname" => $lName,
-					"orderID" => $orderID,
-					"userID" => $userID,
-					"email" => $orderEmail,
-					"bgemail" => $bg_email,
-					"priority" => $orderPrio,
-					"product" => $orderProduct,
-					"product_nice" => $product_nice,
-					"hours" => $hours,
-					"gender" => $userSex,
-					"Pgender" => $orderSex,
-					"price" => $price
-					];
-
-
-			}
 
 			
 		
