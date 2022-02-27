@@ -23,6 +23,22 @@ $url = $row[9];
 $button = $row[10];
 $sales = $row[11];
 
+$retailer = $codename."_".$productID;;
+
+$FBmeta = <<<EOT
+<meta property="og:title" content="$shorttitle Drawing & Reading">
+<meta property="og:description" content="$subtitle">
+<meta property="og:url" content="https://psychic-artist.com$url">
+<meta property="og:image" content="https://psychic-artist.com/asets/img/email/$codename.jpg">
+<meta property="product:brand" content="Facebook">
+<meta property="product:availability" content="in stock">
+<meta property="product:condition" content="new">
+<meta property="product:price:amount" content="$price">
+<meta property="product:price:currency" content="USD">
+<meta property="product:retailer_item_id" content="$retailer">
+<meta property="product:item_group_id" content="drawings_readings">
+EOT;
+
 $sql2 = "SELECT * FROM orders WHERE order_product = '" . $codename . "'";
 $result2 = $conn->query($sql2);
 $countsales = $result2->num_rows; //Count orders with this product
@@ -497,6 +513,8 @@ $i = 0;
 <?php  
 
 include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php';
+
+
 
 $customJSPreload .= '
 <link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">

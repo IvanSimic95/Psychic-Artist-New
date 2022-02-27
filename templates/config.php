@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 date_default_timezone_set('Europe/Zagreb');
-$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = "";
+$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';

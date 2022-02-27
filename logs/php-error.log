@@ -32,3 +32,14 @@ Stack trace:
 [27-Feb-2022 05:32:30 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
 [27-Feb-2022 05:34:44 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
 [27-Feb-2022 05:34:49 Europe/Zagreb] PHP Warning:  Undefined variable $userID in C:\laragon\www\PA\pages\dashboard\profile.php on line 182
+[27-Feb-2022 05:53:37 Europe/Zagreb] PHP Warning:  Undefined variable $product in C:\laragon\www\PA\templates\forms\normal.php on line 165
+[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 05:59:31 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  Undefined variable $codename_drawing_ in C:\laragon\www\PA\templates\shop\productV1.php on line 37
+[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:09:52 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): The system cannot find the file specifi (code: 2) in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(C:/laragon/www/PA//pages/assets/): Failed to open directory: No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32
+[27-Feb-2022 06:10:33 Europe/Zagreb] PHP Warning:  scandir(): (errno 2): No such file or directory in C:\laragon\www\PA\templates\navbar\breadcrumbs.php on line 32

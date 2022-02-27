@@ -63,9 +63,13 @@
 
   
     <!-- ===============================================-->
-    <!--    FB Pixel Code & Events   -->
+    <!--    FB Pixel Code & Meta tags   -->
     <!-- ===============================================-->
+<!--FBMETATAGS-->
     <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/fb.php'; ?>
+    
+    
+    
   </head>
 
 <body>

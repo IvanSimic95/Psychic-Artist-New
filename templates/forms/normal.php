@@ -126,7 +126,7 @@
     <input class="formused" type="hidden" name="formused" value="normal">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">
-    <div class="mb-2 mt-3"> <input type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
+    <div class="mb-2 mt-3"> <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an order"></div>
 
 
 
@@ -155,6 +155,28 @@ $customJS = <<<EOT
 var econtainer = $(".error-container");
 
 $(document).ready(function(){
+  fbq('track', 'ViewContent', {
+    content_name: '$shorttitle Drawing', 
+    content_ids: ['$productID'],
+    content_type: 'product',
+    value: $price,
+    currency: 'USD' 
+ });       
+
+var button = document.getElementById('PlaceOrder');
+button.addEventListener(
+  'click', 
+  function() {
+     fbq('track', 'AddToCart', {
+       content_name: '$shorttitle Drawing', 
+       content_ids: ['$productID'],
+       content_type: 'product',
+       value: $price,
+       currency: 'USD' 
+    });          
+  },
+false
+);
 $('#userDobUS').mask('00/00/0000');
 $('#userDob').mask('00-00-0000');
 
