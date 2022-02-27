@@ -16,7 +16,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 $logArray['3'] = $_SERVER['REQUEST_URI'];
 //END - Logging Variables ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//$sPage == "future-baby" ? $ttt = "All Good!" : $errorDisplay .= " Incorrect Session Funnel Page - ".$sPage." /";
+$sPage == "future-baby" ? $ttt = "All Good!" : $errorDisplay .= " Incorrect Session Funnel Page - ".$sPage." /";
 
 //START - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 isset($_SESSION['userID'])    ? $userID = $_SESSION['userID']        : $errorDisplay .= " Missing Session User ID /";
