@@ -104,7 +104,7 @@ if(isset($_POST['form_submit'])){
         $_SESSION['partnerGender'] = $row['partner_gender'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['orders'] = $result2->num_rows;
-        $_SESSION['weekly'] = "1643100349";
+
         $_SESSION['loggedIn'] = "yes";
         $userID = $_SESSION['id'];
     }

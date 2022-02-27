@@ -94,7 +94,6 @@ $_SESSION['fname'] = $row['first_name'];
 $_SESSION['lname'] = $row['last_name'];
 $_SESSION['email'] = $row['order_email'];
 $_SESSION['orders'] = $result->num_rows;
-$_SESSION['weekly'] = "1643100349";
 $_SESSION['loggedIn'] = "yes";
 
 $_SESSION['peOrders'] =$countPending;

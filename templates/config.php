@@ -291,7 +291,6 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 //$_SESSION['fname'] = "Ivan";
 //$_SESSION['email'] = "ivan.simic2903@gmail.com";
 //$_SESSION['orders'] = "14";
-//$_SESSION['weekly'] = "1643100349";
 //$_SESSION['loggedIn'] = "yes";
 //SESSION DATA FOR TESTING ONLY, REMOVE LATER
 if(!isset($customTrigger)){
@@ -305,14 +304,12 @@ $userName = $_SESSION['name'];
 $userFName = $_SESSION['fname'];
 $userEmail = $_SESSION['email'];
 $userOrders = $_SESSION['orders'];
-$userWeekly = $_SESSION['weekly'];
 
 }else{ //If not logged in make those variables empty
 $userId = "";
 $userName = "";
 $userEmail = "";
 $userOrders = "0";
-$userWeekly = "0";
 } 
 
 
