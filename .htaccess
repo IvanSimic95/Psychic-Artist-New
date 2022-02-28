@@ -20,6 +20,7 @@ RedirectPermanent /facebook-policy /legal/facebook-policy
 RedirectPermanent /soulmate /shop/soulmate
 RedirectPermanent /twin-flame /shop/twin-flame
 RedirectPermanent /future-spouse /shop/future-spouse
+RedirectPermanent /soulmate-drawing /shop/soulmate
 <IfModule mod_expires.c>
   ExpiresActive On
  # Images
