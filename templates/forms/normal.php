@@ -118,18 +118,7 @@
 <ol>
 </ol>
 </div>
-<?php if($btncolor == "green") { ?>
-<style>
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.active, .btn-primary.show {
-  color: #fff!important;
-  background-color: #00d27a!important;
-  border-color: #00d27a!important;
-  background-image: none!important;
-  box-shadow: 0 0.5rem 1.125rem -0.5rem #00d27a!important;
-}
-</style>
 
-<?php } ?>
 
 
     <input class="product" type="hidden" name="product" value="<?php echo $productID; ?>">
@@ -143,6 +132,20 @@
 
 
 </form>
+
+<?php if($btncolor == "green") { ?>
+<style>
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.active, .btn-primary.show {
+  color: #fff!important;
+  background-color: #00d27a!important;
+  border-color: #00d27a!important;
+  background-image: none!important;
+  box-shadow: 0 0.5rem 1.125rem -0.5rem #00d27a!important;
+}
+</style>
+
+<?php } ?>
+
 <?php
 if($formDate == "US"){
   $dobfield = "userDobUS";
@@ -153,13 +156,13 @@ if($formDate == "US"){
   $dobmsg = "Make sure to enter your Date in DD-MM-YYYY Format!";
   $validDob = "validDOB";
 } 
-$customJSPreload = '
+$customJSPreload .= '
 <link rel="preload" href="/assets/js/form-normal.js" as="script">
 <link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">
 ';
-$customCSS = '<link href="/assets/css/form-normal.css" rel="stylesheet">
+$customCSS .= '<link href="/assets/css/form-normal.css" rel="stylesheet">
 <link href="/assets/css/lightslider.css" rel="stylesheet">';
-$customJS = <<<EOT
+$customJS .= <<<EOT
 <script src="/assets/js/jquery.validate.min.js"></script>
 <script defer="defer" src="/assets/js/form-normal.js"></script>
 <script src='/assets/js/lightslider.js'></script>

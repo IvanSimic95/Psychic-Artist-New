@@ -53,28 +53,7 @@ EOT;
 <?php
 $signature = hash_hmac('sha256', strval("PAadmin"), 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
 $customJS .= <<<EOT
-<script>
 
-$("#updateUser").click(function(e) {
-  e.preventDefault();
-  var name = $("#userName").val(); 
-  $ajaxDOB
-  var email = $("#userEmail").val();
-  var gender = $("#SelectGender").val();
-  var pgender = $("#SelectPGender").val();
-  var userID = $("#userID").val();
-  var dataString = 'name='+name+$ajaxDOBB&email='+email+'&gender='+gender+'&pgender='+pgender+'&userID='+userID;
-  $.ajax({
-    type:'POST',
-    data:dataString,
-    url:'/templates/ajax/user-update.php',
-    success:function(data) {
-      alert(data);
-    }
-  });
-});
-
-</script>
 
 <script>
 $("#userName, #userDobUS, #userDob, #userEmail, #SelectGender, #SelectPGender").on("change keyup paste", function(){
