@@ -167,6 +167,7 @@ $customJS = <<<EOT
 <script src="/assets/js/verimail.jquery.min.js"></script>
 <script defer="defer" src="/assets/js/form-interactive.js"></script>
 <script src='/assets/js/lightslider.js'></script>
+<script src='/assets/js/jquery.validate.min.js'></script>
 <script>
 
 $(document).ready(function(){

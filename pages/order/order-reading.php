@@ -157,7 +157,7 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     $clean_order_product=str_replace(" ","-",$order_product);
 
     $finalLink = 'https://buygoods.com/secure/upsell?account_id=6490&screen=checkout_clean&product_codename='.$countReadings.'xreadings&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$clean_order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
-echo $finalLink;
+
     $_SESSION['orderID']   = $lastRowInsert;
  
     $sql = "UPDATE `orders` SET `link`='$finalLink' WHERE order_id='$lastRowInsert'" ;
