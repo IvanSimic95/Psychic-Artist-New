@@ -52,10 +52,10 @@
 
     <div class="mb-2 mt-2 userDobWrapper">
         <?php if($formDate == "US"){ ?>
-        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" inputmode="numeric" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
         <div id="errorDobUS" class="mb-2"></div>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
         <div id="errorDob" class="mb-2"></div>
         <?php } ?>
         

@@ -14,11 +14,11 @@
 
         <div class="form-floating mb-2 form-floating-icon mb-3">
         <?php if($formDate == "US"){ ?>
-        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
+        <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDobUS">Date of Birth</label>
         <?php }else{ ?>
-        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
+        <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
         <label for="userDob">Date of Birth</label>
         <?php } ?>

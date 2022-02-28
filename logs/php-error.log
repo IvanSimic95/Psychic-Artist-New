@@ -141,3 +141,12 @@ Stack trace:
 #1 C:\laragon\www\PA\index.php(11): include('C:\\laragon\\www\\...')
 #2 {main}
   thrown in C:\laragon\www\PA\pages\order\order-baby.php on line 115
+[28-Feb-2022 01:10:51 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 169
+[28-Feb-2022 01:10:51 Europe/Zagreb] PHP Warning:  Undefined variable $productID in C:\laragon\www\PA\pages\admin\form.php on line 183
+[28-Feb-2022 01:10:51 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 186
+[28-Feb-2022 01:11:42 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 169
+[28-Feb-2022 01:11:42 Europe/Zagreb] PHP Warning:  Undefined variable $productID in C:\laragon\www\PA\pages\admin\form.php on line 183
+[28-Feb-2022 01:11:42 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 186
+[28-Feb-2022 01:12:01 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 169
+[28-Feb-2022 01:12:01 Europe/Zagreb] PHP Warning:  Undefined variable $productID in C:\laragon\www\PA\pages\admin\form.php on line 183
+[28-Feb-2022 01:12:01 Europe/Zagreb] PHP Warning:  Undefined variable $btncolor in C:\laragon\www\PA\pages\admin\form.php on line 186
