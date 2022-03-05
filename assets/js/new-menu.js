@@ -85,16 +85,16 @@ function globalNavPopup(e) {
 
 
 
-  $(document).ready(function() {
-    $("#togglePhoneLink" ).click(function(){
-      $( "#phoneRootLink" ).toggleClass("globalPopupActive");
-    });
-
-    $(".popupCloseButton" ).click(function(){
-      $( "#phoneRootLink" ).toggleClass("globalPopupActive");
-    });
-    
+$(document).ready(function() {
+  $("#togglePhoneLink" ).click(function(){
+    $( "#phoneRootLink" ).toggleClass("globalPopupActive");
   });
+
+  $(".popupCloseButton" ).click(function(){
+    $( "#phoneRootLink" ).toggleClass("globalPopupActive");
+  });
+  
+});
 
 (function () {
   window.$ &&

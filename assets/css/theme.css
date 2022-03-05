@@ -26096,8 +26096,7 @@ html[dir=rtl] .img-dropdown {
 }
 
 .dropdown-menu-notification {
-  min-width: 16rem;
-  max-width: 5rem;
+
 }
 .dropdown-menu-notification .card-header,
 .dropdown-menu-notification .card-footer {

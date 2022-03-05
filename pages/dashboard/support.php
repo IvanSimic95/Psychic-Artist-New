@@ -206,7 +206,7 @@ $firstTime = 1;
                                 role: 'PAadmin',
                                 name: 'Psychic Artist',
                                 email: 'contact@psychic-artist.com',
-                                photoUrl: 'https://psychic-artist.com/assets/img/logo-1.png',
+                                photoUrl: 'https://$domain/assets/img/logo-1.png',
                                 welcomeMessage: 'Hey, how can I help you?'
                             });
                             
@@ -217,28 +217,30 @@ $firstTime = 1;
                             var chatbox = window.talkSession.createChatbox(conversation);
                             chatbox.mount(document.getElementById("talkjs-container"));
                         
-
+                        
                             
                         window.talkSession.unreads.on('change', function (unreadConversations) {
-                            var amountOfUnreads = unreadConversations.length;
+                          var amountOfUnreads = unreadConversations.length;
+                          var oldtitle = document.title;
+                          amountOfUnreads += document.title;
+                        
                             $('#notifier-badge')
                               .text(amountOfUnreads)
                               .toggle(amountOfUnreads > 0);
-
+                        
                               $('#notifier-badge-popup')
                               .text(amountOfUnreads)
                               .toggle(amountOfUnreads > 0);
                           
                             if (amountOfUnreads > 0) {
-                              document.title = '(' + amountOfUnreads + ') Psychic Artist';
+                              document.title = '(' + amountOfUnreads + ')';
                               $('#chat-popup').removeClass('chat-hide');
                             } else {
-                              document.title = 'Psychic Artist';
+                              document.title = oldtitle;
                               $('#chat-popup').addClass('chat-hide');
                             }
                           });
                         });
-
                         </script>
                         EOT;
 

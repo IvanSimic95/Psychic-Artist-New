@@ -9,8 +9,8 @@ $result = $conn->query($sql);
         <div class="bg-holder bg-card" style="background-image:url(/assets/img/icons/spot-illustrations/corner-6.png);"></div>
 
             <div class="card-body d-flex align-items-center p-2">
-                <div class="avatar avatar-4xl d-none d-sm-inline-block"><img class="rounded-circle"  src="https://avatars.dicebear.com/api/adventurer/<?php echo $_SESSION['email']; ?>.svg" alt="" /></div>
-                <div class="mx-1 mx-sm-4">
+                <div class="avatar avatar-4xl d-sm-inline-block"><img class="rounded-circle"  src="https://avatars.dicebear.com/api/adventurer/<?php echo $_SESSION['email']; ?>.svg" alt="" /></div>
+                <div class="mx-3 mx-sm-4">
                     <p class="h4">Hello <?php echo $_SESSION['fname']; ?></p>
                     <p class="h6">You are logged in as: <?php echo $_SESSION['email']; ?> </p>
                 </div>
@@ -63,139 +63,9 @@ $result = $conn->query($sql);
 
             <?php
             while($row = $result->fetch_assoc()) {
-            $product = strtolower($row["order_product"]);
-            $productCodename = $product;
-            $product = ucwords($product);
-            switch ($product) {
-              case "Husband":
-               $product = "Future Husband Drawing";
-               $productCodename = "futurespouse";
-                break;
-            case "Pastlife":
-                $product = "Past Life Drawing";
-                $productCodename = "pastlife";
-                break;
-            case "Baby":
-                $product = "Future Baby Drawing";
-                $productCodename = "futurebaby";
-                break;
-            case "Soulmate":
-                $product = "Soulmate Drawing";
-                $productCodename = "soulmate";
-                break;
-            case "Twinflame":
-                $product = "Twin Flame Drawing";
-                $productCodename = "twinflamme";
-                break;
-                case "Future-baby":
-                    $product = "Future Baby Drawing";
-                    $productCodename = "futurebaby";
-                    break;
-
-                    /*
-                    case "General":
-                    $product = "Personal Reading: General";
-                    break;
-
-                    case "General Love":
-                    $product = "Personal Reading: General & Love";
-                    break;
-
-                    case "General Love Career":
-                    $product = "Personal Reading: General, Love & Career";
-                    break;
-
-                    case "General Love Career Health":
-                    $product = "Personal Reading: General, Love, Career & Health";
-                    break;
-
-                    
-                    case "Love":
-                    $product = "Personal Reading: Love";
-                    break; 
-
-                    case "Love Career":
-                    $product = "Personal Reading: Love & Career";
-                    break;
-    
-                    case "Love Career Health":
-                    $product = "Personal Reading: Love, Career & Health";
-                    break;
-
-
-                    case "Career":
-                    $product = "Personal Reading: Career";
-                    break;
-
-                    case "Career Health":
-                    $product = "Personal Reading: Health & Career";
-                    break;
-        
-                    case "Health":
-                    $product = "Personal Reading: Health";
-                    break;
-*/
-case "General":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "General Love":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "General Love Career":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "General Love Career Health":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    
-    case "Love":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break; 
-
-    case "Love Career":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "Love Career Health":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-
-    case "Career":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "Career Health":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-    case "Health":
-    $product = "Personal Reading";
-    $productCodename = "personal";
-    break;
-
-                    
-                }
-                    $status = $row["order_status"];
-                    $id = $row["order_id"];
-                    $price = $row["order_price"];
-                    $orderDate = $row["order_date"];
-                    $link = $row["link"];
-
-                    include $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php';
+           
+                    include_once $_SERVER['DOCUMENT_ROOT'].'/templates/order-switch.php';
+                    include_once $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php';
                     
                     if($status=="pending"){
                         $orderBTN = '<a target="_blank" href="'.$link.'" class="btn btn-dark text-uppercase w-100 mt-2">Purchase - $'.$price.'</a>';

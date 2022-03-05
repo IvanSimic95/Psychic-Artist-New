@@ -25,9 +25,18 @@ $sdescription = "Help the customers!";
           </div>
 
 
+
+     
+
+
           </div>
 
     </div>
+    <div class="row g-2 mb-4">
+          <div class="col-12">
+          <div id="result-orders"></div>
+          </div>
+          </div>
   </section>
 </div>
 
@@ -64,15 +73,15 @@ $(document).ready(function(){
   $('#userDobUS').mask('00/00/0000');
   $('#userDob').mask('00-00-0000');
 });
-</script>
-<script>
+
+
 Talk.ready.then(function() {
     var me = new Talk.User({
       id: 'PAadmin',
       role: 'PAadmin',
       name: 'Psychic Artist',
       email: 'contact@psychic-artist.com',
-      photoUrl: 'https://psychic-artist.com/assets/img/logo-1.png',
+      photoUrl: 'https://$domain/assets/img/logo-1.png',
       welcomeMessage: 'Hey, how can I help you?'
     });
       
@@ -119,32 +128,60 @@ Talk.ready.then(function() {
 
 
 
+        // no need to specify document ready
+        $(function() {
+        
+          // optional: don't cache ajax to force the content to be fresh
+          $.ajaxSetup({
+            cache: false
+          });
+        
+          // specify loading spinner
+          var spinner = "<img src='https://i.imgur.com/pKopwXp.gif' alt='loading...' />";
+        
+          // specify the server/url you want to load data from
+          var urlO = "https://$domain/templates/ajax/info-orders.php?id=";
+          var convoIDO = event.conversation.id;
+        
+          var loadLinkO = urlO + convoIDO
+          
+          console.log(loadLinkO);
+
+
+          $("#result-orders").html(spinner).load(loadLinkO);
+          
+        
+        });
+
+
+
       }
     });
+    window.talkSession.unreads.on('change', function (unreadConversations) {
+      var amountOfUnreads = unreadConversations.length;
+      var oldtitle = document.title;
+      amountOfUnreads += document.title;
     
-window.talkSession.unreads.on('change', function (unreadConversations) {
-    var amountOfUnreads = unreadConversations.length;
-    $('#notifier-badge')
-      .text(amountOfUnreads)
-      .toggle(amountOfUnreads > 0);
-
-      $('#notifier-badge-popup')
-      .text(amountOfUnreads)
-      .toggle(amountOfUnreads > 0);
-  
-    if (amountOfUnreads > 0) {
-      document.title = '(' + amountOfUnreads + ') Psychic Artist';
-      $('#chat-popup').removeClass('chat-hide');
-    } else {
-      document.title = 'Psychic Artist';
-      $('#chat-popup').addClass('chat-hide');
-    }
-  });
+        $('#notifier-badge')
+          .text(amountOfUnreads)
+          .toggle(amountOfUnreads > 0);
+    
+          $('#notifier-badge-popup')
+          .text(amountOfUnreads)
+          .toggle(amountOfUnreads > 0);
+      
+        if (amountOfUnreads > 0) {
+          document.title = '(' + amountOfUnreads + ')';
+          $('#chat-popup').removeClass('chat-hide');
+        } else {
+          document.title = oldtitle;
+          $('#chat-popup').addClass('chat-hide');
+        }
+      });
 
   
 });
 
-</script>
 </script>
 EOT;
  ?>

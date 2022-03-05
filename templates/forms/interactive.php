@@ -200,14 +200,16 @@ if(width < 750) {
         var y = $(this).scrollTop();
         if (y > 500) {
             $('#phone-navbar').slideDown();
+            $('.eapps-form-floating-button').slideUp();
         
         } else {
             $('#phone-navbar').slideUp();
+            $('.eapps-form-floating-button').slideDown();
     
         }
       });
   }
-$('.nav-link').click(function(){    
+$('#phone-navbar > .nav-link').click(function(){    
     var divId = $(this).attr('href');
      $('html, body').animate({
       scrollTop: $(divId).offset().top + 0

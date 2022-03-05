@@ -23,7 +23,6 @@ return array(
 '//vendors/is/is.min.js', 
 '//vendors/lodash/lodash.min.js', 
 '//vendors/list.js/list.min.js', 
-'//vendors/overlayscrollbars/OverlayScrollbars.min.js',
 '//vendors/countup/countUp.umd.js',
 '//assets/js/lazyload.js',
 '//assets/js/jquery.mask.js',
@@ -39,7 +38,7 @@ return array(
 '//assets/css/theme.min.css', 
 '//assets/css/animate.css', 
 '//vendors/overlayscrollbars/OverlayScrollbars.min.css', 
-'//assets/css/new-menu.css',
+'//assets/css/menuv3.css',
 '//assets/css/lazyload.css',
 '//assets/css/review.css')
 );

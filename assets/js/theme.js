@@ -2385,93 +2385,8 @@ var progressAnimationToggle = function progressAnimationToggle() {
     });
   });
 };
-/*-----------------------------------------------
-|  Quantity
------------------------------------------------*/
 
 
-var quantityInit = function quantityInit() {
-  var Selector = {
-    DATA_QUANTITY_BTN: '[data-quantity] [data-type]',
-    DATA_QUANTITY: '[data-quantity]',
-    DATA_QUANTITY_INPUT: '[data-quantity] input[type="number"]'
-  };
-  var Events = {
-    CLICK: 'click'
-  };
-  var Attributes = {
-    MIN: 'min'
-  };
-  var DataKey = {
-    TYPE: 'type'
-  };
-  var quantities = document.querySelectorAll(Selector.DATA_QUANTITY_BTN);
-  quantities.forEach(function (quantity) {
-    quantity.addEventListener(Events.CLICK, function (e) {
-      var el = e.currentTarget;
-      var type = utils.getData(el, DataKey.TYPE);
-      var numberInput = el.closest(Selector.DATA_QUANTITY).querySelector(Selector.DATA_QUANTITY_INPUT);
-      var min = numberInput.getAttribute(Attributes.MIN);
-      var value = parseInt(numberInput.value, 10);
-
-      if (type === 'plus') {
-        value += 1;
-      } else {
-        value = value > min ? value -= 1 : value;
-      }
-
-      numberInput.value = value;
-    });
-  });
-};
-/* -------------------------------------------------------------------------- */
-
-/*                               Ratings                               */
-
-/* -------------------------------------------------------------------------- */
-
-
-var ratingInit = function ratingInit() {
-  var raters = document.querySelectorAll('[data-rater]');
-  raters.forEach(function (rater) {
-    var options = _objectSpread({
-      reverse: utils.getItemFromStore('isRTL'),
-      starSize: 32,
-      step: 0.5,
-      element: rater,
-      rateCallback: function rateCallback(rating, done) {
-        this.setRating(rating);
-        done();
-      }
-    }, utils.getData(rater, 'rater'));
-
-    return window.raterJs(options);
-  });
-};
-/* -------------------------------------------------------------------------- */
-
-/*                                Scroll To Top                               */
-
-/* -------------------------------------------------------------------------- */
-
-
-var scrollToTop = function scrollToTop() {
-  document.querySelectorAll('[data-anchor] > a, [data-scroll-to]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var _utils$getData2;
-
-      e.preventDefault();
-      var el = e.target;
-      var id = utils.getData(el, 'scroll-to') || el.getAttribute('href');
-      window.scroll({
-        top: (_utils$getData2 = utils.getData(el, 'offset-top')) !== null && _utils$getData2 !== void 0 ? _utils$getData2 : utils.getOffset(document.querySelector(id)).top - 100,
-        left: 0,
-        behavior: 'smooth'
-      });
-      window.location.hash = id;
-    });
-  });
-};
 /* -------------------------------------------------------------------------- */
 
 /*                                 Scrollbars                                 */
@@ -2490,74 +2405,6 @@ var scrollbarInit = function scrollbarInit() {
   });
 };
 
-var searchInit = function searchInit() {
-  var Selectors = {
-    SEARCH_DISMISS: '[data-bs-dismiss="search"]',
-    DROPDOWN_TOGGLE: '[data-bs-toggle="dropdown"]',
-    DROPDOWN_MENU: '.dropdown-menu',
-    SEARCH_BOX: '.search-box',
-    SEARCH_INPUT: '.search-input',
-    SEARCH_TOGGLE: '[data-bs-toggle="search"]'
-  };
-  var ClassName = {
-    SHOW: 'show'
-  };
-  var Attribute = {
-    ARIA_EXPANDED: 'aria-expanded'
-  };
-  var Events = {
-    CLICK: 'click',
-    FOCUS: 'focus',
-    SHOW_BS_DROPDOWN: 'show.bs.dropdown',
-    SEARCH_CLOSE: 'search.close'
-  };
-
-  var hideSearchSuggestion = function hideSearchSuggestion(searchArea) {
-    var el = searchArea.querySelector(Selectors.SEARCH_TOGGLE);
-    var dropdownMenu = searchArea.querySelector(Selectors.DROPDOWN_MENU);
-    el.setAttribute(Attribute.ARIA_EXPANDED, 'false');
-    el.classList.remove(ClassName.SHOW);
-    dropdownMenu.classList.remove(ClassName.SHOW);
-  };
-
-  var searchAreas = document.querySelectorAll(Selectors.SEARCH_BOX);
-
-  var hideAllSearchAreas = function hideAllSearchAreas() {
-    searchAreas.forEach(hideSearchSuggestion);
-  };
-
-  searchAreas.forEach(function (searchArea) {
-    var input = searchArea.querySelector(Selectors.SEARCH_INPUT);
-    var btnDropdownClose = searchArea.querySelector(Selectors.SEARCH_DISMISS);
-    var dropdownMenu = searchArea.querySelector(Selectors.DROPDOWN_MENU);
-
-    if (input) {
-      input.addEventListener(Events.FOCUS, function () {
-        hideAllSearchAreas();
-        var el = searchArea.querySelector(Selectors.SEARCH_TOGGLE);
-        el.setAttribute(Attribute.ARIA_EXPANDED, 'true');
-        el.classList.add(ClassName.SHOW);
-        dropdownMenu.classList.add(ClassName.SHOW);
-      });
-    }
-
-    document.addEventListener(Events.CLICK, function (_ref11) {
-      var target = _ref11.target;
-      !searchArea.contains(target) && hideSearchSuggestion(searchArea);
-    });
-    btnDropdownClose && btnDropdownClose.addEventListener(Events.CLICK, function (e) {
-      hideSearchSuggestion(searchArea);
-      input.value = '';
-      var event = new CustomEvent(Events.SEARCH_CLOSE);
-      e.currentTarget.dispatchEvent(event);
-    });
-  });
-  document.querySelectorAll(Selectors.DROPDOWN_TOGGLE).forEach(function (dropdown) {
-    dropdown.addEventListener(Events.SHOW_BS_DROPDOWN, function () {
-      hideAllSearchAreas();
-    });
-  });
-};
 /*-----------------------------------------------
 |  Swiper
 -----------------------------------------------*/
@@ -9217,12 +9064,9 @@ docReady(barChartInit);
 docReady(leafletActiveUserInit);
 docReady(countupInit);
 docReady(typedTextInit);
-docReady(scrollToTop);
 docReady(tinymceInit);
-docReady(quantityInit);
 docReady(listInit);
 docReady(swiperInit);
-docReady(ratingInit);
 docReady(kanbanInit);
 docReady(themeControl);
 docReady(dropdownOnHover);

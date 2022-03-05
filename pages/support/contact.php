@@ -36,6 +36,13 @@ $count = $result->num_rows;
               <div class="card-body py-4 px-3">
                 <div class="tab-content">
                   <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-tab1" id="bootstrap-wizard-tab1">
+                  
+
+                      <div class="elfsight-app-c96edf1d-ddee-4ee6-8816-19f06ec91f55"></div>
+                      <div class="elfsight-app-c9c7f664-482f-423a-8905-3187f30dd69e"></div>
+
+
+                  <!--
                   <form name="contact_form" action="" method="post">
 
             <div class="form-group mb-3"><input class="form-control" type="text" name="name" placeholder="Name"></div>
@@ -43,6 +50,8 @@ $count = $result->num_rows;
             <div class="form-group mb-3"><textarea class="form-control" style="height: 250px;" rows="24" name="message" placeholder="Message"></textarea></div>
             <div class="form-group mb-3"><button class="btn btn-primary w-100" type="submit">send </button></div>
                     </form>
+        -->
+
                   </div>
                 </div>
               </div>
@@ -112,7 +121,11 @@ $count = $result->num_rows;
 <?php
 $customJS = <<<EOT
 <script src="/vendors/lottie/lottie.min.js"></script>
-<script>
+
+function fff(){
+  alert(1);
+  return false;
+}   
 
 $(document).ready(function(){
 

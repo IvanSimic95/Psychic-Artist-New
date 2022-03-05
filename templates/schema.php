@@ -28,20 +28,6 @@
       "@type": "Organization",
       "name": "Psychic Artist"
     }
-  },
-
-  "review": {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-          "@type": "Person",
-          "name": "Fred Benson"
-        }
-    }
-// Add more reviews from comments
+  }
 }
 </script>

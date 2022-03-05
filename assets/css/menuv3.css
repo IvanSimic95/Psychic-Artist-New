@@ -786,7 +786,9 @@ a {
   position: static;
   flex-grow: 1;
 }
-
+#eapps-form-2{
+    display:none;
+}
 .globalNav.compact .navSection.secondary {
   position: static;
 }
@@ -804,6 +806,21 @@ a {
   font-weight: 600;
   margin: 0;
   padding: 0 10px;
+}
+
+.globalNav .prootLink {
+  display: inline-block;
+  height: 32px;
+  width:32px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0!important;
 }
 
 @media (min-width: 1200px) {
@@ -1272,12 +1289,13 @@ a {
 .globalNav .popup {
   position: absolute;
   left: 10px;
-  top: 5px;
+  top: -10px;
   right: 10px;
   display: flex;
   justify-content: flex-end;
   pointer-events: none;
   perspective: 2000px;
+  text-align:start;
 }
 
 .globalNav .popupContainer {
@@ -1311,9 +1329,9 @@ a {
 .globalNav .popupCloseButton {
   position: absolute;
   right: 0;
-  top: 10px;
-  width: 51px;
-  height: 51px;
+  top: 0px;
+  width: 55px;
+  height: 55px;
   font-size: 0;
   cursor: pointer;
 }
@@ -1321,7 +1339,7 @@ a {
 .globalNav .popupCloseButton:after, .globalNav .popupCloseButton:before {
   content: "";
   position: absolute;
-  background: #6772e5;
+  background: #fff;
   border-radius: 1px;
   left: 14px;
   right: 14px;

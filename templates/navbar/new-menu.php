@@ -23,14 +23,26 @@
         <i class="fa fa-gavel"></i> Legal
         </a>
       </li>
+        <li class="navSection nav-item dropdown secondary">
+        <a class="nav-link pe-0" id="navbarDropdownUser" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <p class="fs-1 d-inline-block align-middle m-0"><?php echo $_SESSION['fname']; ?></p>
+                  <div class="avatar avatar-xl d-inline-block align-middle"><img class="rounded-circle" src="https://avatars.dicebear.com/api/adventurer/<?php echo $_SESSION['email']; ?>.svg" alt=""></div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser" data-bs-popper="none">
+                  <div class="bg-white dark__bg-1000 rounded-2 py-2">
+                    <a class="dropdown-item fw-bold text-warning" href="#!"><span class="fas fa-crown me-1"></span><span>Go Pro</span></a>
 
-      <li class="navSection secondary">
-     
-        <a class="rootLink item-dashboard colorize" data-adroll-segment="submit_two" href="/dashboard">
-          <?php if(isset($_SESSION['loggedIn'])){echo $_SESSION['fname'];}else{echo "Sign In";} ?>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#!">Set status</a>
+                    <a class="dropdown-item" href="pages/user/profile.html">Profile &amp; account</a>
+                    <a class="dropdown-item" href="#!">Feedback</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="pages/user/settings.html">Settings</a>
+                    <a class="dropdown-item" href="pages/authentication/card/logout.html">Logout</a>
+            </div>
+          </div>
         </a>
-
-        <div class="elfsight-app-fe5dc4a0-5507-4595-937a-f52d5fe95464"></div>
        
 
 
@@ -45,9 +57,12 @@
           <div class="popupContainer">
             <a class="popupCloseButton">Close</a>
 
-            <div class="elfsight-app-191fd8af-110b-4296-9c99-3062f4d5515e"></div>
+            <!--<div class="elfsight-app-191fd8af-110b-4296-9c99-3062f4d5515e"></div>-->
+
+
             <div class="mobileProducts">
-              <h4>Products</h4>
+              <p class="sidebar-title">Products</p>
+              
               <div class="mobileProductsList">
                 <ul>
                   <li><a class="linkContainer item-payments" href="/shop/soulmate">
@@ -111,17 +126,33 @@
                     Home
                   </a>
                 </li>
-                <li><a class="item-workswith" href="/support/contact">Contact Us</a></li>
-                <li><a class="item-gallery" href="/support/order-status">Order Status</a></li>
+               
+               
                 <li><a class="item-documentation" href="/support/faq">FAQ</a></li>
+
+                <li><a class="item-gallery" href="/support/order-status">Order Status</a></li>
               </ul>
               <ul>
                 <li><a class="item-about" href="/legal/terms-of-service">Terms of Service</a></li>
                 <li><a class="item-jobs" href="/legal/privacy-policy">Privacy Policy</a></li>
                 <li><a class="item-blog" href="/legal/refund-policy">Refund Policy</a></li>
               </ul>
+            
             </div>
-            <a class="mobileSignIn" data-adroll-segment="submit_two" href="/dashboard"><?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?></a>
+
+
+<?php if(isset($_SESSION['id'])){ ?>
+
+  <div style="padding-left:0.75rem;padding-right:0.75rem;"><button id="contactpopup" class="my-2 btn btn-primary w-100 rounded-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#contact-popup" aria-controls="#contact-popup">Contact Us!</button></div>
+
+<?php }else{ ?>
+
+  <a class="mobileSignIn" data-adroll-segment="submit_two" href="/dashboard"><?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?></a>
+
+<?php } ?></a>
+           
+
+           
           </div>
         </div>
       </li>
@@ -255,7 +286,7 @@
               <h3 class="linkTitle linkIcon"><svg width="17" height="17">
                     <path fill="#6772E5" class="hover-fillDark" d="M8.5 17a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17zM6.987 6.078a.684.684 0 0 0-.968-.968L3.116 8.012a.684.684 0 0 0 0 .967l2.9 2.9a.684.684 0 0 0 .97-.967l-2.42-2.418 2.42-2.42zm6.996 1.95L11.08 5.123a.684.684 0 0 0-.966.968l2.418 2.42-2.418 2.417a.684.684 0 0 0 .967.967l2.904-2.902a.684.684 0 0 0 0-.966z"></path>
                   </svg>FaQ</h3>
-              <span class="linkSub">Freequently Asked Questions</span>
+              <span class="linkSub">Frequently Asked Questions</span>
             </a>
            
           </div>

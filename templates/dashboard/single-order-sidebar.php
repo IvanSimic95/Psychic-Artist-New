@@ -21,137 +21,14 @@ $result = $conn->query($sql);
     $age = $row['user_age'];
     $email = $row['order_email'];
 
-    $product = strtolower($row['order_product']);
-    $product = ucwords($product);
+    $productCodename = strtolower($row['order_product']);
+    $product = $row['product_nice'];
     
     $drawing = $row['drawing'];
     $reading = $row['reading'];
 
     $FTime = time_ago($orderTime);
 
-    switch ($product) {
-        case "Husband":
-         $product = "Future Husband Drawing";
-         $productCodename = "futurespouse";
-          break;
-      case "Pastlife":
-          $product = "Past Life Drawing";
-          $productCodename = "pastlife";
-          break;
-      case "Baby":
-          $product = "Future Baby Drawing";
-          $productCodename = "futurebaby";
-          break;
-      case "Soulmate":
-          $product = "Soulmate Drawing";
-          $productCodename = "soulmate";
-          break;
-      case "Twinflame":
-          $product = "Twin Flame Drawing";
-          $productCodename = "twinflamme";
-          break;
-          case "Future-baby":
-              $product = "Future Baby Drawing";
-              $productCodename = "futurebaby";
-              break;
-  
-              /*
-              case "General":
-              $product = "Personal Reading: General";
-              break;
-  
-              case "General Love":
-              $product = "Personal Reading: General & Love";
-              break;
-  
-              case "General Love Career":
-              $product = "Personal Reading: General, Love & Career";
-              break;
-  
-              case "General Love Career Health":
-              $product = "Personal Reading: General, Love, Career & Health";
-              break;
-  
-              
-              case "Love":
-              $product = "Personal Reading: Love";
-              break; 
-  
-              case "Love Career":
-              $product = "Personal Reading: Love & Career";
-              break;
-  
-              case "Love Career Health":
-              $product = "Personal Reading: Love, Career & Health";
-              break;
-  
-  
-              case "Career":
-              $product = "Personal Reading: Career";
-              break;
-  
-              case "Career Health":
-              $product = "Personal Reading: Health & Career";
-              break;
-  
-              case "Health":
-              $product = "Personal Reading: Health";
-              break;
-  */
-  case "General":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "General Love":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "General Love Career":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "General Love Career Health":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  
-  case "Love":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break; 
-  
-  case "Love Career":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "Love Career Health":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  
-  case "Career":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "Career Health":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-  case "Health":
-  $product = "Personal Reading";
-  $productCodename = "personal";
-  break;
-  
-              
-          }
     }
     ?>
 <div class="card mt-4 p-0">

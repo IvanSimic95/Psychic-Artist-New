@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 date_default_timezone_set('Europe/Zagreb');
-$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = $TalkJS = $ChatPopup = "";
+$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = $TalkJS = $ChatPopup = $loadAjaxChat = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
@@ -329,15 +329,9 @@ EOT;
 $signature = hash_hmac('sha256', strval("PA".$userID), 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
 
 $TalkJS = <<<EOT
-
 <script>
-
-(function(t,a,l,k,j,s){
-  s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
-  ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
-  .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
   Talk.ready.then(function() {
-var me = new Talk.User({
+  var me = new Talk.User({
   id: 'PA$userID',
   role: 'PAcustomer',
   name: '$userFName',
@@ -352,27 +346,84 @@ me: me,
 signature: "$signature"
 });
 
+$('#talkjs-container').hide;
+
 
 window.talkSession.unreads.on('change', function (unreadConversations) {
   var amountOfUnreads = unreadConversations.length;
-  $('#notifier-badge')
-    .text(amountOfUnreads)
-    .toggle(amountOfUnreads > 0);
+  var oldtitle = document.title;
+  amountOfUnreads += document.title;
 
-    $('#notifier-badge-popup')
-    .text(amountOfUnreads)
-    .toggle(amountOfUnreads > 0);
+    $('#notifier-badge')
+      .text(amountOfUnreads)
+      .toggle(amountOfUnreads > 0);
 
-  if (amountOfUnreads > 0) {
-    document.title = '(' + amountOfUnreads + ') Psychic Artist';
-    $('#chat-popup').removeClass('chat-hide');
-  } else {
-    document.title = 'Psychic Artist';
-    $('#chat-popup').addClass('chat-hide');
-  }
-});
+      $('#notifier-badge-popup')
+      .text(amountOfUnreads)
+      .toggle(amountOfUnreads > 0);
+  
+    if (amountOfUnreads > 0) {
+      document.title = '(' + amountOfUnreads + ')';
+      $('#chat-popup').removeClass('chat-hide');
+    } else {
+      document.title = oldtitle;
+      $('#chat-popup').addClass('chat-hide');
+    }
+  });
 });
 </script>
+EOT;
+
+
+$loadAjaxChat = <<<EOT
+$.ajaxSetup({
+  cache: Boolean
+});
+        // specify loading spinner
+        var spinner = "<img src='https://i.imgur.com/pKopwXp.gif' alt='loading...' />";
+        // specify the server/url you want to load data from
+
+        var loadLink = "https://$domain/templates/ajax/load-chat.php?id=$userID";
+        var windowHeight = '&height=';
+        windowHeight += $("#offcanvas-bddy-h").height()
+        $("#result").html(spinner).load(loadLink);
+EOT;
+
+$TalkJSpop = <<<EOT
+  var me = new Talk.User({
+  id: 'PA$userID',
+  role: 'PAcustomer',
+  name: '$userFName',
+  email: '$userEmail',
+  photoUrl: 'https://avatars.dicebear.com/api/adventurer/$userEmail.svg',
+  custom: { email: '$userEmail' }
+});
+window.talkSession = new Talk.Session({
+appId: 't2X08S4H',
+me: me,
+signature: "$signature"
+});
+window.talkSession.unreads.on('change', function (unreadConversations) {
+  var amountOfUnreads = unreadConversations.length;
+  var oldtitle = document.title;
+  amountOfUnreads += document.title;
+
+    $('#notifier-badge')
+      .text(amountOfUnreads)
+      .toggle(amountOfUnreads > 0);
+
+      $('#notifier-badge-popup')
+      .text(amountOfUnreads)
+      .toggle(amountOfUnreads > 0);
+  
+    if (amountOfUnreads > 0) {
+      document.title = '(' + amountOfUnreads + ')';
+      $('#chat-popup').removeClass('chat-hide');
+    } else {
+      document.title = oldtitle;
+      $('#chat-popup').addClass('chat-hide');
+    }
+  });
 EOT;
 
 }else{ //If not logged in make those variables empty

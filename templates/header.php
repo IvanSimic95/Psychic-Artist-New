@@ -23,7 +23,7 @@
     <meta property="og:title" content="%TITLE%" />
     <meta property="og:description" content="%DESCRIPTION%" />
     <meta property="og:image" content="%LOGO%" />
-    <meta name="theme-color" content="#ff4969"/>
+    <meta name="theme-color" content="#d130eb"/>
 
     <!-- ===============================================-->
     <!--    Favicons-->
@@ -70,24 +70,33 @@
     
  
     <!-- Hotjar Tracking Code for psychic-artist.com -->
+
+
+
+
 <script>
-    (function(h,o,t,j,a,r){
+(function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:2564466,hjsv:6};
         a=o.getElementsByTagName('head')[0];
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+(function(t,a,l,k,j,s){
+s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
+;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
+.push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
 </script>
-  </head>
+</head>
 
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/preloader.php'; ?>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/preloader.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/signedin-scripts.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; 
+?>   
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; ?>   
-
-
-
-<main class="main position-relative" id="top">
+<main class="main position-relative pb-4" id="top">

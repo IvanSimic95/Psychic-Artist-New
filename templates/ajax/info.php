@@ -7,6 +7,11 @@ if(isset($_GET['id'])){
     $userID = "19481";
 }
 
+if($domain == "pa.test"){
+  $userID = "19481";
+}
+
+
 $sql = "SELECT * FROM users WHERE id = '$userID'";
 $result = $conn->query($sql);
 
@@ -113,4 +118,3 @@ $("#userName, #userDobUS, #userDob, #userEmail, #SelectGender, #SelectPGender").
 <input id="userID" class="userID" type="hidden" name="userID" value="<?php echo $userID; ?>">
 <button id="SaveChanges" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-3 mt-1 fw-bold fs-1" style="display:block;" value="Save Changes!" disabled><i class="fa fa-square-check"></i> Save This!</button>
 </form>
-

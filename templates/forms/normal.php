@@ -345,7 +345,7 @@ if(width < 750) {
         }
       });
   }
-$('.nav-link').click(function(){    
+$('#phone-navbar > .nav-link').click(function(){    
     var divId = $(this).attr('href');
      $('html, body').animate({
       scrollTop: $(divId).offset().top + 0

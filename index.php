@@ -2,7 +2,7 @@
 ob_start();
 $customJSPreload = $customCSS = $FBmeta = "";
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
-include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; 
 
 //Do a check of file from URL, if it doesn't exist switch back to default
 if (!file_exists($template)) {
@@ -17,7 +17,7 @@ ob_end_clean();
 
 $buffer=str_replace("<!--CHATPOPUP-->",$ChatPopup,$buffer);
 $buffer=str_replace("<!--FBMETATAGS-->",$FBmeta,$buffer);
-$buffer=str_replace("<!--TALKJSSTART-->",$TalkJS,$buffer);
+//$buffer=str_replace("<!--TALKJSSTART-->",$TalkJS,$buffer);
 $buffer=str_replace("<!--CUSTOMJSPRELOAD-->",$customJSPreload,$buffer);
 $buffer=str_replace("<!--CUSTOMCSS-->",$customCSS,$buffer);
 $buffer=str_replace("%TITLE%",$title,$buffer);
