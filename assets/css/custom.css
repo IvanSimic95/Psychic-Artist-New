@@ -425,6 +425,7 @@ box-shadow:none!important;
     }
   }
 
+
   .close-btn {
     position: fixed;
     right: 20px;
@@ -2405,3 +2406,11 @@ width: 800px;
     .breadcrumbs-nav{
       display:none;
       }
+
+      @media screen and (max-width: 600px){
+        .nav-notifications{
+         display:none;
+        }
+        
+      }
+    
