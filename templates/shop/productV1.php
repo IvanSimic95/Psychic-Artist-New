@@ -270,7 +270,9 @@ else { ?>
             <div class="row justify-content-center mt-4">
                 <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4">
                     <div class="info-item">
-                        <div class="info-icon"><img src="/assets/img/icons/ball.gif" alt="Ribbon"></div>
+                        <div class="info-icon">
+                            
+                        <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/ball.gif" class="lazyload" alt="Ball GIF"></div>
                         <div class="info-contentt">
                             <p class="h4 text-center">Beautiful Hand-Drawn Sketch</p>
                             <p class="text-center">Your psychic artist will draw a highly detailed and hand-drawn image addressed to you only. It can be printed off for your own framing if you'd like!</p>
@@ -279,7 +281,9 @@ else { ?>
                     </div>
                 </div> <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4">
                     <div class="info-item">
-                        <div class="info-icon"><img src="/assets/img/icons/fortune.gif" alt="Ribbon"></div>
+                        <div class="info-icon">
+                        <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/fortune.gif" class="lazyload" alt="Fortune GIF">
+                        </div>
                         <div class="info-contentt">
                             <p class="h4 text-center">Experienced Psychic Artist</p>
                             <p class="text-center">Our psychics have been performing soulmate drawings & readings for years. This is a time-tested technique that has created excellent results for thousands of our clients.</p>
@@ -288,7 +292,8 @@ else { ?>
                     </div>
                 </div> <div class="col-xl-4 col-lg-4 col-md-12 col-12 mb-4">
                     <div class="info-item">
-                        <div class="info-icon"><img src="/assets/img/icons/tarot.png" alt="Ribbon"></div>
+                        <div class="info-icon">
+                        <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/tarot.png" class="lazyload" alt="Tarot Icon"></div>
                         <div class="info-contentt">
                             <p class="h4 text-center">Detailed Psychic Reading</p>
                             <p class="text-center">Using your name, birthday, and preferences our psychics use their deep understanding of tarot to provide an accurate depiction of your soulmate.</p>
@@ -317,7 +322,8 @@ else { ?>
         <div class="col-xl-8 col-lg-8 col-md-8 col-12 mb-4 d-flex flex-wrap align-content-around">
         <?php echo $description; ?>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4"><img class="d-block mx-auto" style="width:70%;" src="/assets/img/icons/drawing.jpg"></div> 
+        <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4">
+        <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/drawing.jpg" class="lazyload rounded-3 d-block mx-auto" alt="Drawing" style="width:70%;"></div>
         </div>
         </div>
         </div>
@@ -337,7 +343,8 @@ else { ?>
             </div>
             <div class="card-body px-3 px-md-4 px-lg-4 py-3">
             <div class="row justify-content-center mb-30-none">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4"><img class="img-fluid" src="/assets/img/icons/tarot-card.jpg"></div> 
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4">
+                    <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/tarot-card.jpg" class="lazyload img-fluid" alt="Tarot Card"></div>
                     <div class="col-xl-8 col-lg-8 col-md-8 col-12 mb-4 d-flex flex-wrap align-content-around">
                         <p class="h3">What is a Soulmate Drawing?</p>
                         <p class="mb-3 more-info-paragraph">Simply put, a soulmate sketch is a drawing of your soul's other half performed by a psychic. Your psychic will use your metaphysical attributes to connect with your soul mate and do their best to recreate that image for you.</p>
@@ -370,7 +377,8 @@ else { ?>
                         <p class="mb-3 more-info-paragraph">Our psychic abilities are channeled with the use of tarot to perform deep readings. This tarot spread is included with your soulmate drawings. These readings are incredibly deep and allow you to gain insight into yourself, your relationship, and the people involved. Our psychic readers are very experienced at what they do, meaning that <strong>each reading that comes through will be detailed and accurate.</strong></p>
                         <p class="mb-3 more-info-paragraph">This means that every soul will receive a different image of their soul mate since everyone in this world is unique.</p>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4"><img class="img-fluid" src="/assets/img/icons/tarot-card2.jpg"></div> 
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-12 mb-4">
+                    <img src="/assets/img/placeholder.png" data-src="/assets/img/icons/tarot-card2.jpg" class="lazyload img-fluid" alt="Tarot Card #2"></div>
                 </div>
             </div>  
         </div>
@@ -480,19 +488,19 @@ $i = 0;
         <div class="logos d-flex flex-wrap flex-row justify-content-around align-items-center">
 
         <a class="logofab" href="https://www.yahoo.com/lifestyle/wanna-know-soulmate-looks-psychic-152853147.html" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Artist goes viral for selling 'realistic' drawings of people's soulmates">
-        <img class="landing-cta-img" src="/assets/img/logos/new/yahoo.png" alt="Yahoo" />
+        <img src="/assets/img/placeholder.png" data-src="/assets/img/logos/new/yahoo.png" class="lazyload landing-cta-img"  alt="Yahoo" >
         </a>
 
         <a class="logofab" href="https://www.theverge.com/21291864/tiktok-etsy-psychic-soulmate-drawing-trend-meme" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="I paid an Psychic Artist to draw my Soulmate">
-        <img class="landing-cta-img" src="/assets/img/logos/new/the-verge-logo.png" alt="The Verge" />
-        </a>
+        <img src="/assets/img/placeholder.png" data-src="/assets/img/logos/new/the-verge-logo.png" class="lazyload landing-cta-img"  alt="The Verge" >
+    </a>
 
         <a class="logofab" href="https://www.foxnews.com/lifestyle/psychic-artist-on-etsy-trending-drawing-soul-mate" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Psychic Artist gains popularity for drawing pictures of your soulmate">
-        <img class="landing-cta-img" src="/assets/img/logos/new/fox-news.png" alt="Fox News" />
+        <img src="/assets/img/placeholder.png" data-src="/assets/img/logos/new/fox-news.png" class="lazyload landing-cta-img"  alt="Fox News" >
         </a>
 
         <a class="logofab" href="https://www.dailymail.co.uk/femail/article-8429195/Etsy-psychic-draw-soulmate-just-30.html" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Singles go wild over Psychic Artist who will draw your Soulmate">
-        <img class="landing-cta-img" src="/assets/img/logos/new/daily-mail.png" alt="Daily Mail" />
+        <img src="/assets/img/placeholder.png" data-src="/assets/img/logos/new/daily-mail.png" class="lazyload landing-cta-img"  alt="Daily Mail" >
         </a>
         </div>
 
