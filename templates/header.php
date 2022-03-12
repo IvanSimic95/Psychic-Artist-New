@@ -38,13 +38,13 @@
     <!-- ===============================================-->
     <!--    Preload and preconnect -->
     <!-- ===============================================-->
-    <link rel="preload" href="/min/g=css" as="style">
-    <link rel="preload" href="/assets/css/custom.css" as="style">
-    <link rel="preload" href="/assets/css/fonts.css" as="style">
+    <link rel="preload" href="/min/g=css?v=1203" as="style">
+    <link rel="preload" href="/assets/css/custom.css?v=1203" as="style">
+    <link rel="preload" href="/assets/css/fonts.css?v=1203" as="style">
 
-    <link rel="preload" href="/min/g=js" as="script">
-    <link rel="preload" href="/min/g=js2" as="script">
-    <link rel="preload" href="/min/g=fa-js" as="script">
+    <link rel="preload" href="/min/g=js?v=1203" as="script">
+    <link rel="preload" href="/min/g=js2?v=1203" as="script">
+    <link rel="preload" href="/min/g=fa-js?v=1203" as="script">
     <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=window.scroll" as="script">
 
 
@@ -55,9 +55,9 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link href="/min/g=css" rel="stylesheet">
-    <link href="/assets/css/custom.css" rel="stylesheet">
+    <link href="/assets/css/fonts.css?v=1203" rel="stylesheet">
+    <link href="/min/g=css?v=1203" rel="stylesheet">
+    <link href="/assets/css/custom.css?v=1203" rel="stylesheet">
 
     <!--CUSTOMCSS-->
 
