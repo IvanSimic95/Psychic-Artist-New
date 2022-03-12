@@ -89,10 +89,10 @@
     <!-- ===============================================-->
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script defer="defer" src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/min/g=js"></script>
-    <script defer="defer" src="/min/g=js2"></script>
-    <script defer="defer" src="/min/g=fa-js"></script>
-    <script defer="defer" src="/assets/js/menuv3.js"></script>
+    <script src="/min/g=js?v=1203"></script>
+    <script defer="defer" src="/min/g=js2?v=1203"></script>
+    <script defer="defer" src="/min/g=fa-js?v=1203"></script>
+    <script defer="defer" src="/assets/js/menuv3.js?v=1203"></script>
 
 
 
