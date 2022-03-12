@@ -35,60 +35,89 @@
 
 
         <hr class="mb-3">
-   
-<div class="error-container mb-3">
+
+        <div class="mb-2 mt-2 userDeliveryWrapper" style="display:block;">
+    <div class="position-relative">
+        <label class="fs-1 fw-semi-bold">Delivery Priority </label> 
+        <div class="product-badge product-available delivery-options mt-n1 dropdown-toggle" data-bs-toggle="collapse" href="#deliveryCollapse" role="button" aria-expanded="false" aria-controls="deliveryCollapse">
+            <i class="fas fa-question-circle"></i><span class="delivery-full-text">Delivery Options</span> <span class="delivery-partial-text">Options</span>
+        </div>
+    </div>
+        <div id="delivery-speed" class="delivery-speed-clicked">
+    <div class="btn-group d-flex delivery-speed-flex" style="width:100%;" role="group" aria-label="Delivery Speed">
+    
+    <div class="mb-111">
+    <input type="radio" class="btn-check" name="priority" id="prio12" value="12">
+    <label class="btn btn-outline-oran prio12" for="prio12"><span><i class="fas fa-bolt"></i> Express</span></label>
+    </div>
+
+    <div class="mb-111">
+    <input type="radio" class="btn-check" name="priority" id="prio24" value="24">
+    <label class="btn btn-outline-oran prio24" for="prio24"><span><i class="fas fa-stopwatch"></i> Fast</span></label>
+    </div>
+
+    <div class="mb-111">
+    <input type="radio" class="btn-check" name="priority" id="prio48" value="48" checked>
+    <label class="btn btn-outline-oran prio48" for="prio48"><span><i class="fas fa-clock"></i> Standard</span></label>
+    </div>
+    </div></div>
+</div>
+
+
+      
+            <div class="collapse multi-collapse mb-3 mb-sm-0 show" id="deliveryCollapse">
+                <div class="accordion mb-4" id="productPanels">
+                    <div class="accordion-item">
+                        <div class="accordion-header bg-light">
+                        <div class="d-flex flex-between-center">
+                        <h3 class="mb-0 fw-bold delivery-title"><i class="fas fa-shipping-fast" style="margin-right:15px;margin-left:20px;font-size:120%;"></i> <span class="title-text">Delivery Options</span> </h3>
+                        <a id="close-deliveryCollapse" class="btn btn-link btn-sm px-2" href="#!"><span class="fas fa-times" style="font-size: 200%!important;color: #000;"></span></a>
+                        </div>
+                           
+                        </div>
+                        <div class="accordion-collapse collapse show" id="shippingOptions" data-bs-parent="#productPanels">
+                            <div class="accordion-body fs-sm">
+                                <div id="helper-delivery-express" class="d-flex justify-content-start border-bottom pb-2 align-items-center" style="cursor:pointer;">
+                                    <div class="px-3"><i class="fas fa-bolt"></i></div>
+                                <div class="flex-grow-1">
+                                        <div class="fw-bold text-dark">Express <span class="delivery">Delivery</span></div>
+                                        <div class="fs-sm text-muted">8 - 12 <span class="hours">Hours</span><span class="h">H</span></div>
+                                    </div>
+                                    <div class="fw-bold badge bg-success">$14.99</div>
+                                </div>
+
+
+                                <div id="helper-delivery-fast" class="d-flex justify-content-start border-bottom py-2 align-items-center" style="cursor:pointer;">
+                                <div class="px-3"><i class="fas fa-stopwatch"></i></div>
+                                <div class="flex-grow-1">
+                                        <div class="fw-bold text-dark">Fast <span class="delivery">Delivery</span></div>
+                                        <div class="fs-sm text-muted">18 - 24 <span class="hours">Hours</span><span class="h">H</span></div>
+                                    </div>
+                                    <div class="fw-bold badge bg-success">$9.99</div>
+                                </div>
+
+
+                                <div id="helper-delivery-standard" class="d-flex justify-content-start pt-2 align-items-center" style="cursor:pointer;">
+                                <div class="px-3"><i class="fas fa-clock"></i></div>
+                                <div class="flex-grow-1">
+                                        <div class="fw-bold text-dark">Standard <span class="delivery">Delivery</span></div>
+                                        <div class="fs-sm text-muted">36 - 48 <span class="hours">Hours</span><span class="h">H</span></div>
+                                    </div>
+                                    <div class="fw-bold badge bg-success">$0.00</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-3">
+
+<div class="error-container">
 <ol>
 </ol>
 </div>
-
-    <div class="option">
-    <input type="radio" name="priority" id="prio12" value="12">
-    <label for="prio12" aria-label="12 Hour Delivery" class="d-flex justify-content-start align-items-center">
-    <span></span>
-    <div class="p-0 delivery-icon"><i class="fas fa-bolt"></i></div>
-    <div class="flex-grow-1">
-    <div class="fw-bold text-dark">Express <span class="delivery">Delivery</span></div>
-    <div class="fs-sm text-muted">8 - 12 <span class="hours">Hours</span><span class="h">H</span></div>
-    
-    </div>
-    <div class="fw-bold badge bg-dark">+ $14.99</div>
-    </label>
-    </div>
-  
-    <div class="option">
-    <input type="radio" name="priority" id="prio24" value="24">
-    <label for="prio24" aria-label="24 Hour Delivery" class="d-flex justify-content-start align-items-center">
-    <span></span>
-    <div class="p-0 delivery-icon"><i class="fas fa-stopwatch"></i></div>
-    <div class="flex-grow-1">
-    <div class="fw-bold text-dark">Fast <span class="delivery">Delivery</span></div>
-    <div class="fs-sm text-muted">18 - 24 <span class="hours">Hours</span><span class="h">H</span></div>
-   
-    </div>
-    <div class="fw-bold badge bg-dark">+ $9.99</div>
-    </label>
-    </div>
-
-    <div class="option">
-    <input type="radio" name="priority" id="prio48" value="48" checked="checked">
-    <label for="prio48" aria-label="48 Hour Delivery" class="d-flex justify-content-start align-items-center">
-    <span></span>
-    <div class="p-0 delivery-icon"><i class="fas fa-clock"></i></div>
-    <div class="flex-grow-1">
-    <div class="fw-bold text-dark">Standard <span class="delivery">Delivery</span></div>
-    <div class="fs-sm text-muted">36 - 48 <span class="hours">Hours</span><span class="h">H</span></div>
-    </div>
-    <div class="fw-bold badge bg-dark">+ $0.00</div>
-    
-    </label>
-    </div>
-
-    </div>
-      
-      
-            <hr class="mb-3">
-
-
 
 
 
@@ -98,11 +127,9 @@
     <input class="btncolor" type="hidden" name="btncolor" value="<?php echo $btncolor; ?>">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">
-    <input class="btntext" type="hidden" name="btntext" value="Place an Order!">
-    <div class="mb-2 mt-3"> 
-    <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-2" value="Place an Order!"></div>
+    <div class="mb-2 mt-3"> <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-2" value="Place an Order!"></div>
 
-       
+
 
 </form>
 
@@ -143,8 +170,6 @@ $customJS .= <<<EOT
 var econtainer = $(".error-container");
 
 $(document).ready(function(){
- 
-  
   fbq('track', 'ViewContent', {
     content_name: '$shorttitle Drawing', 
     content_ids: ['$retailer'],
@@ -268,26 +293,9 @@ if (pmonth < 1 || pmonth > 12){
    
 }, "$dobmsg");
 
-var formcounter = 0;
+
 
    $("#normalproduct").validate({
-     success: function() {
-     formcounter = formcounter +1;
-    if(formcounter < 1){
-      $("#email-f-input").addClass('d-none');
-      $("#delivery-speed").addClass('d-none');
-      console.log("count less than 1");
-    }else if(formcounter == 1){
-      $("#email-f-input").removeClass('d-none');
-      console.log("count is 1");
-    }else if(formcounter == 2){
-      $("#delivery-speed").removeClass('d-none');
-      console.log("count is 2");
-    }else if(formcounter == 3){
-      $("#submitbtnwrap").removeClass('d-none');
-      console.log("count is 3");
-    }
-    },
     submitHandler: function(form){
     form.submit();
     },
@@ -359,8 +367,6 @@ $(window).on("load", function() {
      
     });
   })
-
-
 </script>
 EOT;
 ?>

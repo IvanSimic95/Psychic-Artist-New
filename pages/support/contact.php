@@ -39,7 +39,6 @@ $count = $result->num_rows;
                   
 
                       <div class="elfsight-app-c96edf1d-ddee-4ee6-8816-19f06ec91f55"></div>
-                      <div class="elfsight-app-c9c7f664-482f-423a-8905-3187f30dd69e"></div>
 
 
                   <!--

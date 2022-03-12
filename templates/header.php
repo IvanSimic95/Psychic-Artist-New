@@ -99,4 +99,5 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/signedin-scripts.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/navbar.php'; 
 ?>   
 
-<main class="main position-relative pb-4" id="top">
+<main id="main-body" class="main position-relative" id="top">
+  

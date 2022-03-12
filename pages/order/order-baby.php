@@ -48,7 +48,7 @@ $order_product_id = "5";
 isset($_GET['cookie_id']) ? $cookie = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
 isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
 
-isset($_GET['form_submit']) ? $getButtonText = $_GET['form_submit'] : $errorDisplay .= " Missing Button Text /";
+isset($_GET['form_submit']) ? $getButtonText = $_GET['btntext'] : $getButtonText = "Place an order";
 
 $order_date = date('Y-m-d H:i:s');
 //END - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -343,6 +343,7 @@ echo "Starting complete-orders.php...<br><br>";
 					}
 
 
+
 					//Save data to orders log
 					$TimeNow = date('y-m-d H:i:s', time());
     				$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderID', 'status', '$TimeNow', 'Order Status updated to Completed!')";
@@ -350,6 +351,16 @@ echo "Starting complete-orders.php...<br><br>";
 					$logArray[] = "Orders Log Added";
 					echo " Orders Log Added";
    					}
+
+					   
+					$sql3 = "INSERT INTO notifications (user_id, order_id, unread, title, description, custom, time) VALUES ('$userID', '$orderID', '1', 'Order Completed!' , 'Your order is now Finished!', 'test', '$TimeNow')";
+					if ($conn->query($sql3) === TRUE) {
+						echo "Notification Success ";
+						$logArray[] = "Insert Notification Success";
+					} else {
+						echo "Notification Failed ";
+						$logArray[] = "Insert Notification Failed";
+					}
 
 
 			$orderDate = $row["order_date"];

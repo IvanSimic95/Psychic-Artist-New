@@ -62,6 +62,7 @@ $avgrating = $avg;
  
         <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
         <input class="cookie" type="hidden" name="landingpage" value="Baby1">
+        <input class="btntext" type="hidden" name="btntext" value="Place an Order">
 
       <div class="meta_part">
 

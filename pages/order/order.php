@@ -26,7 +26,7 @@ $user_dob = date("d-m-Y", strtotime($originalDate));
 }
 
 isset($_GET['product'])  ? $order_product = $_GET['product']   : $errorDisplay .= " Missing Product ID /";
-isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $errorDisplay .= " Missing Order Priority /";
+isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $order_priority = "48";
 
 isset($_GET['cookie_id']) ? $cookie = $_GET['cookie_id'] : $errorDisplay .= " Missing User Cookie ID /";
 isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
@@ -35,7 +35,7 @@ isset($_GET['countdown']) ? $getcountdown = $_GET['countdown'] : $errorDisplay .
 isset($_GET['formused']) ? $getformused = $_GET['formused'] : $errorDisplay .= " Missing FormUsed ID /";
 isset($_GET['btncolor']) ? $fbtncolor = $_GET['btncolor'] : $errorDisplay .= " Missing Button Color /";
 
-isset($_GET['form_submit']) ? $getButtonText = $_GET['form_submit'] : $errorDisplay .= " Missing Button Text /";
+isset($_GET['form_submit']) ? $getButtonText = $_GET['btntext'] : $getButtonText = "Place an order";
 
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";

@@ -80,7 +80,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 		 	//	Update Order Status Processing
 			$sqlupdate = "UPDATE `orders` SET `order_status`='processing' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
-      			echo "Status changed to Processing!";
+      			echo "Status changed to: Processing! ";
 				$logArray[] = "Update Status Success";
 			} else {
 				$logArray[] = "Updated Status Failed";
@@ -90,11 +90,21 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$TimeNow = date('y-m-d H:i:s', time());
     		$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderID', 'status', '$TimeNow', 'Order Status updated to Processing!')";
    			if ($conn->query($sql2) === TRUE) {
+				echo "Log Success ";
 				$logArray[] = "Insert Log Success";
    			} else {
+				echo "Insert Log Failed ";
 				$logArray[] = "Insert Log Failed";
 			}
 
+			$sql3 = "INSERT INTO notifications (user_id, order_id, unread, title, description, custom, time) VALUES ('$userID', '$orderID', '1', 'Status Updated' , 'Order Status updated to Processing!', 'test', '$TimeNow')";
+   			if ($conn->query($sql3) === TRUE) {
+				echo "Notification Success ";
+				$logArray[] = "Insert Notification Success";
+   			} else {
+				echo "Notification Failed ";
+				$logArray[] = "Insert Notification Failed";
+			}
 			
 			//Send data to zapier so it can submit FB conversion and send an email to user
 			$ch = curl_init();

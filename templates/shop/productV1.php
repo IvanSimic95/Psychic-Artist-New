@@ -67,8 +67,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/schema.php';
 
 ?>
 
+
 <div class="container product-container container-bg p-0 py-sm-2 py-md-3 py-xl-4 position-relative" style="height: 100%; overflow: auto;" data-layout="container" data-bs-spy="scroll" data-bs-target="#phone-navbar" data-bs-offset="50">
-    <section class="pb-6 pt-0 light" id="banner">
+    <section class="py-0 light" id="banner">
         <!-- PRODUCT START -->
         <div class="card mb-3 rounded-3 section" id="purchase-product">
             <div class="card-body rounded-3" style="padding:0!important;">
@@ -182,16 +183,22 @@ else { ?>
 </div>
                                 <hr>
                                 <?php 
-                                $r = rand(1,2);
+                                if(isset($_GET['f'])){
+                                $r = $_GET['f'];
+                                    if($r==1 OR $r==2 OR $r==3){
+                                        if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
+                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
+                                        if($r == 3) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/progressive.php';
+                                    }
+                                }else{
+                                $r = rand(1,3);
                                 if(isset($_SESSION['loggedIn'])) $r = 2;
-
-                                $rcolor = rand(1,2);
-                                if($rcolor == 1)$btncolor = "green";
-                                if($rcolor == 2)$btncolor = "normal";
-
-                                if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
-                                if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
-                                
+                                    if($r==1 OR $r==2 OR $r==3){
+                                        if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
+                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal.php';
+                                        if($r == 3) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/progressive.php';
+                                    }
+                                }
                                 ?>
 
                        
@@ -204,7 +211,7 @@ else { ?>
                                 <div><div class="elfsight-app-83415bf8-04e8-4c86-aa6e-1640cd17ee70"></div></div>
                                 <?php } ?>
 
-                                <div class="d-block d-lg-none">
+                                <div class="d-block d-lg-none pb-3">
                                 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats clearfix">
                                 <span style="float:left;">
                                 <i class="fas fa-star align-middle mb-0 mt-n1 mr-2"></i> Rating: </span>
@@ -249,7 +256,7 @@ else { ?>
                     <!-- END SIDEBAR -->
                 </div>
             </div>
-        </div>
+        
         <!-- PRODUCT END -->
   <!-- HIGHLIGHTS START -->
   <div class="card mb-3 p-0 section" id="highlights">
@@ -458,6 +465,42 @@ $i = 0;
         
     </div>
         <!-- FAQ END -->
+
+
+
+        <!--- NEWS ARTICLES -->
+        <div class="card mb-3 p-0 articles-card">
+            <div class="card-header bg-light py-3  px-4 topbar-gradient text-white">
+            <div class=""><h3 class=" d-inline-block mb-0 fw-semibold fs-1 text-white"> Psychic Artist in Media </h3></div>
+            </div>
+            
+        <div class="card-body px-3 px-md-4 px-lg-4 py-4">
+
+        <div class="logo-slider">
+        <div class="logos d-flex flex-wrap flex-row justify-content-around align-items-center">
+
+        <a class="logofab" href="https://www.yahoo.com/lifestyle/wanna-know-soulmate-looks-psychic-152853147.html" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Artist goes viral for selling 'realistic' drawings of people's soulmates">
+        <img class="landing-cta-img" src="/assets/img/logos/new/yahoo.png" alt="Yahoo" />
+        </a>
+
+        <a class="logofab" href="https://www.theverge.com/21291864/tiktok-etsy-psychic-soulmate-drawing-trend-meme" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="I paid an Psychic Artist to draw my Soulmate">
+        <img class="landing-cta-img" src="/assets/img/logos/new/the-verge-logo.png" alt="The Verge" />
+        </a>
+
+        <a class="logofab" href="https://www.foxnews.com/lifestyle/psychic-artist-on-etsy-trending-drawing-soul-mate" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Psychic Artist gains popularity for drawing pictures of your soulmate">
+        <img class="landing-cta-img" src="/assets/img/logos/new/fox-news.png" alt="Fox News" />
+        </a>
+
+        <a class="logofab" href="https://www.dailymail.co.uk/femail/article-8429195/Etsy-psychic-draw-soulmate-just-30.html" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Singles go wild over Psychic Artist who will draw your Soulmate">
+        <img class="landing-cta-img" src="/assets/img/logos/new/daily-mail.png" alt="Daily Mail" />
+        </a>
+        </div>
+
+            </div>
+
+            </div>
+            </div>
+
         
         
         <!-- BUYER PROTECTION START -->

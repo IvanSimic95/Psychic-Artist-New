@@ -43,19 +43,36 @@ if($result->num_rows == 0) {
         include $_SERVER['DOCUMENT_ROOT'].'/templates/error/view-order.php'; 
     }else{
         include $_SERVER['DOCUMENT_ROOT'].'/templates/progress.php'; 
-        echo $statusProgress;
+        
     ?>
     </div>
     <div class="col-12 order-1 order-md-2">
 <?php
 
 if($status == "completed"){
+    echo $statusProgress;
 ?>
+
+<?php if($drawing != "/assets/img/products/soulmate.png"){ ?>
 <img class="img-thumbnail d-block mx-auto mb-2 mt-2" src="<?php echo $drawing; ?>" alt="Drawing" />
+<?php } ?>
+
+
 <p class="p-3 mb-3 mt-2"><?php echo nl2br($reading);?></p>
-        <?php
-        }else{
-            ?>
+
+<?php }elseif($status == "canceled"){ ?>
+<p class="h3 text-center mt-4 mb-4">Order Status: <span style="text-transform:capitalize;"><?php echo $status; ?></span></p>
+<p class="h6 text-center mb-7">Order was canceled because we didn't find your payment, you can re-order on our shop page!</p>
+<div class="mb-7"><?php echo $statusProgress; ?> </div>
+
+   
+
+
+<?php
+
+}else{  
+    echo $statusProgress;
+    ?>
 <p class="h3 text-center mt-4 mb-3">Order Status: <span style="text-transform:capitalize;"><?php echo $status; ?></span></p>
 <p class="h6 text-center mb-2">Once order status is completed you will be able to see your order reading and/or drawing!</p>
 

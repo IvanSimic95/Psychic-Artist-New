@@ -91,6 +91,7 @@ $avgrating = $avg;
 
           <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['cookie']; ?>">
           <input class="landingpage" type="hidden" name="landingpage" value="Personal1">
+          <input class="btntext" type="hidden" name="btntext" value="Place an Order">
        
           <div class="gradient mt-3 mb-3 text-start fs-1">
             Psychics use natural intuition to conduct detailed psychic readings. This “sixth sense” provides us with a deeper view into the emotional, physical, and spiritual essence of those seeking readings.<br>
@@ -106,7 +107,7 @@ $avgrating = $avg;
                     Instead, be prepared for adversity, which by conquering or overcoming it, can help you rise up to becoming a better person.<br>
           </div>
 
-          <div class="fixed-bottom">
+          <div class="fixed-bottom mx-auto" style="max-width:800px;">
           <button class="btn btn-primary w-100 btn-add-to-cart fw-bold fs-1" style="display:block;" type="submit" name="form_submit" value="Place an order">
           <i class="fa fa-basket-shopping"></i> Purchase - <span class="updated-price">$19.99</span>
           </button>
@@ -115,7 +116,7 @@ $avgrating = $avg;
 
      
       <a href="/order/order-reading?skip=yes">
-      <div class="nothanks w-100 rounded-3 bg-white">No, Thanks!</div>
+      <div class="nothanks w-100 rounded-3 bg-white mt-1">No, Thanks!</div>
       </a>
 </div>
 

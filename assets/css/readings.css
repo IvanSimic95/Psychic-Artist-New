@@ -334,13 +334,13 @@ border: 1px solid #7303c0;
 color:#7303c0;
 text-align:center;
 padding:10px 25px 10px 25px;
-
+font-weight:600;
 }
 
 .nothanks:hover{
     border: 1px solid #7303c0;
     background-color:#7303c0;
-    color:#fff;
+    color:#222;
     text-align:center;
     padding:10px 25px 10px 25px;
     font-weight:600;

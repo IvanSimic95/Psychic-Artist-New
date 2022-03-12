@@ -1,5 +1,5 @@
 <?php
-$NotifDisplay = $NotifPop = $NotifDisplayRead = $NotifDisplayUnread = "";
+$NotifDisplay = $NotifPop = $NotifDisplayRead = $NotifDisplayUnread = $ReadAllShow = "";
 if(isset($_SESSION['userID'])){
 
 // Fetch User ID
@@ -7,12 +7,12 @@ $userID = $_SESSION['userID'];
 
 
 //Grab notifications from DB
-$sql = "SELECT * FROM notifications WHERE user_id = '$userID'";
+$sql = "SELECT * FROM notifications WHERE user_id = '$userID' ORDER BY id DESC";
 $result = $conn->query($sql);
 
 if($result->num_rows == 0) {
 $noNotif = "You don't have any Notifications!";
-$NotifCounter = "0";
+$NotifCounter = 0;
 $NotifEClass = "";
 }else{
 $noNotif = "";
@@ -34,25 +34,37 @@ $NotifID = $row['id'];
 $NotifEmail = $row2['email'];
 $NotifUser = $userID;
 $NotifOrder = $row['order_id'];
+$NotifURL = $row['url'];
 $NotifUndread = $row['unread'];
 $NotifTitle = $row['title'];
 $NotifDescription = $row['description'];
 $NotifCustom = $row['custom'];
 $NotifTime = $row['time'];
+$NotifTime = time_ago($NotifTime);
+
+if($NotifOrder == "custom"){
+  $LinkURL = $NotifURL;
+  $LinkTitle = $NotifTitle;
+}else{
+  $LinkURL = "/dashboard/order/".$NotifOrder;
+  $LinkTitle = "<b>Order #$NotifOrder:</b> ".$NotifTitle;
+}
 
 if($NotifUndread==1){
     $NotifCounter++;
 $NotifDisplayUnread .= <<<EOT
 <div class="list-group-item">
-<a class="notification notification-flush notification-unread" href="/dashboard/order/$NotifOrder">
-<div class="notification-avatar">
-<div class="avatar avatar-3xl me-1">
+<a class="notification notification-flush notification-unread px-3 py-2" href="$LinkURL?notifRead=yes&notifID=$NotifID">
+<div class="notification-avatar d-flex align-items-center">
+<div class="avatar avatar-3xl m-0">
 <img class="rounded-circle" src="/assets/img/logo-1.png" alt="">
 </div>
 </div>
-<div class="notification-body">
-<p class="mb-1"><b>Order #$NotifOrder:</b> $NotifTitle</p>
-<span class="notification-time"> $NotifTime</span>
+
+<div class="notification-body d-flex flex-row flex-wrap">
+<p class="mb-0 fw-bold w-50 fw-bold">$LinkTitle</p>
+<span class="notification-time w-50 text-end fw-semi-bold"><i class="fa fa-timer"></i> $NotifTime</span>
+<p class="mt-1 w-100 fw-semi-bold">$NotifDescription</p>
 </div>
 </a>
 </div>
@@ -63,94 +75,49 @@ EOT;
 }else{
 
 
-    $NotifDisplayRead .= <<<EOT
-    <div class="list-group-item">
-    <a class="notification notification-flush notification" href="/dashboard/order/$NotifOrder">
-    <div class="notification-avatar">
-    <div class="avatar avatar-3xl me-1">
-    <img class="rounded-circle" src="/assets/img/logo-1.png" alt="">
-    </div>
-    </div>
-    <div class="notification-body">
-    <p class="mb-1"><b>Order #$NotifOrder:</b> $NotifTitle</p>
-    <span class="notification-time"> $NotifTime</span>
-    </div>
-    </a>
-    </div>
-    
-    
-    EOT;
-
-
-}
-
-
-
-
-$NotifPop .= <<<EOT
-<div class="modal fade" id="NotifPop$NotifID" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg mt-6" role="document">
-    <div class="modal-content border-0">
-      <div class="position-absolute top-0 end-0 mt-3 me-3 z-index-1">
-        <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <div class="bg-light rounded-top-lg py-3 ps-4 pe-6">
-          <h4 class="mb-1" id="staticBackdropLabel">$NotifTitle</h4>
-        </div>
-        <div class="p-4">
-          <div class="row">
-            <div class="col-lg-9">
-              <div class="d-flex"><span class="fa-stack ms-n1 me-3"><i class="fas fa-circle fa-stack-2x text-200"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-tag" data-fa-transform="shrink-2"></i></span>
-                <div class="flex-1">
-                  <h5 class="mb-2 fs-0">Labels</h5>
-                  <div class="d-flex"><span class="badge me-1 py-2 badge-soft-success">New</span><span class="badge me-1 py-2 badge-soft-primary">Goal</span><span class="badge me-1 py-2 badge-soft-info">Enhancement</span>
-                    <div class="dropdown dropend">
-                      <button class="btn btn-sm btn-secondary px-2 fsp-75 bg-400 border-400 dropdown-toggle dropdown-caret-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-plus"></span></button>
-                      <div class="dropdown-menu">
-                        <h6 class="dropdown-header py-0 px-3 mb-0">Select Label</h6>
-                        <div class="dropdown-divider"></div>
-                        <div class="px-3">
-                          <button class="badge-soft-danger dropdown-item rounded-1 mb-2" type="button">New</button>
-                          <button class="badge-soft-primary dropdown-item rounded-1 mb-2" type="button">Goal</button>
-                          <button class="badge-soft-info dropdown-item rounded-1 mb-2" type="button">Enhancement</button>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <div class="px-3">
-                          <button class="btn btn-sm d-block w-100 btn-outline-secondary border-400">Create Label</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr class="my-4" />
-                </div>
-              </div>
-              <div class="d-flex"><span class="fa-stack ms-n1 me-3"><i class="fas fa-circle fa-stack-2x text-200"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-align-left" data-fa-transform="shrink-2"></i></span>
-                <div class="flex-1">
-                  <h5 class="mb-2 fs-0">Description</h5>
-                  <p class="text-word-break fs--1">The illustration must match to the contrast of the theme. The illustraion must described the concept of the design. To know more about the theme visit the page. </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+$NotifDisplayRead .= <<<EOT
+<div class="list-group-item">
+<a class="notification notification-flush notification px-3 py-2" href="$LinkURL">
+<div class="notification-avatar d-flex align-items-center">
+<div class="avatar avatar-3xl m-0">
+<img class="rounded-circle" src="/assets/img/logo-1.png" alt="">
+</div>
 </div>
 
-
+<div class="notification-body d-flex flex-row flex-wrap">
+<p class="mb-0 fw-bold w-50 fw-bold">$LinkTitle</p>
+<span class="notification-time w-50 text-end fw-semi-bold"><i class="fa fa-timer"></i> $NotifTime</span>
+<p class="mt-1 w-100 fw-semi-bold">$NotifDescription</p>
+</div>
+</a>
+</div>
 EOT;
-    }
+
+
 }
 
 
 
 
 
+}
 
 
+
+  if($NotifCounter == 0) {
+  $NotifEClass = "";
+  $ReadAllShow = "0";
+  $ReadAll = "#!";
+  $NewShow = "0";
+  }else{
+  $NotifEClass = "notification-indicator notification-indicator-danger notification-indicator-fill fa-icon-wait";
+  $ReadAllShow = "1";
+  $ReadAll = "?notifRead=yes&notifID=all";
+  $NewShow = "1";
+  }
+
+
+}
 
 }else{
 $noNotif = "There was a problem fetching your account user ID";
@@ -158,8 +125,8 @@ $noNotif = "There was a problem fetching your account user ID";
 }
 ?>
 
-<li class="nav-item dropdown nav-notifications btn btn-light p-2 px-lg-3">
-	<a class="nav-link p-0 <?php echo $NotifEClass; ?>" id="navbarDropdownNotification" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<li class="nav-item dropdown nav-notifications btn btn-light p-0">
+	<a class="nav-link p-2 px-lg-3 <?php echo $NotifEClass; ?>" id="navbarDropdownNotification" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-offset="0,25">
 	<span class="fas fa-bell" style="font-size: 32px;"></span>
     <?php if($NotifCounter != "0"){ ?>
     <span class="notification-indicator-number"><?php echo $NotifCounter; ?></span>
@@ -168,7 +135,7 @@ $noNotif = "There was a problem fetching your account user ID";
 	
 	
 	
-	<div class="dropdown-menu dropdown-menu-end dropdown-menu-card dropdown-menu-notification" aria-labelledby="navbarDropdownNotification" data-bs-popper="none">
+	<div class="dropdown-menu dropdown-menu-end dropdown-menu-card dropdown-menu-notification shadow-lg" aria-labelledby="navbarDropdownNotification" data-bs-popper="none">
 		<div class="card card-notification shadow-sm">
 		
 			<div class="" style="max-height:19rem">
@@ -184,12 +151,14 @@ $noNotif = "There was a problem fetching your account user ID";
 						<div class="os-content" style="padding: 0px; height: auto; width: 100%;">
 							<div class="list-group list-group-flush fw-normal fs--1">
 
-                            <div class="card-header">
+                            <div class="card-header topbar-gradient p-0">
 				<div class="row justify-content-between align-items-center">
 					<div class="col-auto">
-						<p class="fs-1 fw-bold card-header-title mb-0" style="color:#344050;">Notifications</p>
+						<p class="fs-1 fw-semi-bold card-header-title mb-0 px-4 py-3" style="color:#fff;">Notifications (<?php echo $NotifCounter; ?>)</p>
 					</div>
-					<div class="col-auto ps-0 ps-sm-3"><a class="card-link fw-normal" href="#">Mark all as read</a></div>
+          <?php if($ReadAllShow == 1){ ?>
+					<div class="col-auto ps-0 ps-sm-4"><a class="card-link fw-semi-bold btn btn-light" href="<?php echo $ReadAll; ?>">Mark all as read <i class="fa-solid fa-circle-check"></i></a></div>
+          <?php } ?>
 				</div>
 			</div>
 
@@ -203,8 +172,10 @@ $noNotif = "There was a problem fetching your account user ID";
 
                         <?php }else{ ?>
 
+                        <?php if($NewShow == 1){ ?>
                         <!--- NEW NOTIFICATIONS --->
                         <div class="list-group-title border-bottom">NEW</div>
+                        <?php } ?>
 							
 						<?php echo $NotifDisplayUnread; ?>
 

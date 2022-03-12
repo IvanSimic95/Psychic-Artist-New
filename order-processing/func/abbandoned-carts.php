@@ -21,7 +21,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$orderName = $row["user_name"];
 		    $ex = explode(" ",$orderName);
 			$customerName =  $ex["0"];
-			$orderId = $row["order_id"];
+			$orderID = $row["order_id"];
 			$userID = $row["user_id"];
 			$cart = $row["abandoned_cart"];
 			$orderProduct = $row["order_product"];
@@ -37,7 +37,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
 
-			$logArray[] =  $orderId;
+			$logArray[] =  $orderID;
 			$logArray[] =  $orderEmail;
 			$logArray[] =  $orderProduct."-".$orderPriority;
             $logArray[] =  $hours." Hours ago";
@@ -50,14 +50,14 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			}else{
 				
 			// Set order to canceled
-			$sqlupdate2 = "UPDATE `orders` SET `abandoned_cart`='active' WHERE order_id='$orderId'";
+			$sqlupdate2 = "UPDATE `orders` SET `abandoned_cart`='active' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate2) === TRUE) {
 			$logArray[] =  "Order Abandon Started";
 			}
 
 			//Save data to orders log
 			$TimeNow = date('y-m-d H:i:s', time());
-			$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderId', 'status', '$TimeNow', 'Cart Recovery Emails Started')";
+			$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderID', 'status', '$TimeNow', 'Cart Recovery Emails Started')";
 			if ($conn->query($sql2) === TRUE) {
 			$logArray[] =  "Log Emails Started";
 			}
@@ -87,17 +87,27 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			}
 			}elseif($hours > 2){
             // Set order to canceled
-			$sqlupdate = "UPDATE `orders` SET `order_status`='canceled' WHERE order_id='$orderId'";
+			$sqlupdate = "UPDATE `orders` SET `order_status`='canceled' WHERE order_id='$orderID'";
             if ($conn->query($sqlupdate) === TRUE) {
+			echo "Order Canceled ";
 			$logArray[] =  "Order Canceled";
             }
 
 			//Save data to orders log
 			$TimeNow = date('y-m-d H:i:s', time());
-			$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderId', 'status', '$TimeNow', 'Order Status changed to Canceled!')";
+			$sql2 = "INSERT INTO orders_log (user_id, order_id, type, time, notice) VALUES ('$userID', '$orderID', 'status', '$TimeNow', 'Order Status changed to Canceled!')";
 			if ($conn->query($sql2) === TRUE) {
 			$logArray[] =  "Log Updated";
 			}
+
+			$sql3 = "INSERT INTO notifications (user_id, order_id, unread, title, description, custom, time) VALUES ('$userID', '$orderID', '1', 'Order Canceled' , 'Order Status updated to Canceled due to lack of payment!', 'test', '$TimeNow')";
+			if ($conn->query($sql3) === TRUE) {
+			 	echo "Notification Success ";
+			 	$logArray[] = "Notification Success";
+			} else {
+			 	echo "Notification Failed ";
+			 	$logArray[] = "Notification Failed";
+			 }
 
 			//CODE TO STOP ABANDONED CART PROCESS
 			$ch = curl_init();

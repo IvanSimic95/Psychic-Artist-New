@@ -5,7 +5,6 @@
 </main>
 
 <footer class="footer bg-dark pt-4">
-<div class="elfsight-app-c9c7f664-482f-423a-8905-3187f30dd69e"></div>
       <section class="p-3 p-md-4 p-lg-5">
         <div class="container">
         
@@ -65,11 +64,11 @@
 
 <!--CHATPOPUP-->
 <div class="offcanvas offcanvas-end" id="contact-popup" tabindex="-1" aria-labelledby="offcanvasExampleLabel" style="z-index: 99999 !important;">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="contact-popupLabel">Contact Us</h5>
-    <button class="btn-close text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header topbar-gradient">
+    <h5 class="offcanvas-title text-white" id="contact-popupLabel">Contact Us</h5>
+    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body p-0" id="offcanvas-bddy-h">
+  <div class="offcanvas-body px-4 py-0" id="offcanvas-bddy-h">
     
   <?php if(isset($_SESSION['loggedIn'])){ ?>
   <!-- container element in which TalkJS will display a chat UI -->
@@ -133,7 +132,25 @@
   
 
 <script>
-    $(document).ready(function($) {
+   var width = $(window).width();
+      if(width < 750) {
+  $(document).scroll(function() {
+      var y = $(this).scrollTop();
+      if (y > 500) {
+          $('#phone-main-navbar').slideDown();
+      } else {
+          $('#phone-main-navbar').slideUp();
+      }
+    });
+}
+
+
+$(document).ready(function($) {
+     
+$("#eapps-form-2").hide();
+$("#offcanvas-bddy-h").hide();
+
+
 
 $("#contact-popup").on("hide.bs.offcanvas", function () { 
   $("#eapps-form-2").hide();
@@ -145,24 +162,27 @@ $("#contact-popup").on("show.bs.offcanvas", function () {
   $("#offcanvas-bddy-h").show();
 });
 
+var preloader = $('.preloader');
+preloader.addClass('loader-activate') 
+});
 
-
-$("#myModal").modal('show');
-      
-      var preloader = $('.preloader');
-      preloader.addClass('loader-activate') 
-    });
  // no need to specify document ready
       $(window).on('load', function(){
       $('.preloader').fadeOut();
       $('.preloader').removeClass('loader-activate');
       $('.preloader').addClass('loader-deactivate');
+      $(".eapps-form-floating-button-visible").removeClass("eapps-form-floating-button-visible");
       $("#contactpopup").click(function(){
+
       $( "#phoneRootLink" ).toggleClass("globalPopupActive");
-      
-      
       <?php echo $loadAjaxChat; ?>
       });
+
+      $("#contactpopuptopbar").click(function(){
+      $( "#phoneRootLink" ).removeClass("globalPopupActive");
+      <?php echo $loadAjaxChat; ?>
+      });
+      
     });
 </script>
 

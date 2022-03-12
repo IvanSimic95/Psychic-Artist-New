@@ -1,4 +1,4 @@
-<nav id="main-nav" class="globalNav noDropdownTransition">
+<nav id="main-nav" class="globalNav noDropdownTransition shadow-lg">
   <div class="container-lg">
     <ul class="navRoot">
 
@@ -233,8 +233,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/notifications.php';  ?>
 
 
-<li class="navSection nav-item nav-item-menu dropdown sub-menu btn btn-light w-100 p-2 px-lg-3">
-          <a class="nav-link p-0 " id="navbarDropdownUser" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<li class="navSection nav-item nav-item-menu dropdown sub-menu btn btn-light w-100 p-0">
+          <a class="nav-link p-2 px-lg-3 " id="navbarDropdownUser" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <span class="fas fa-circle-user" style="font-size: 32px;"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end py-0 border-0" aria-labelledby="navbarDropdownUser" data-bs-popper="none">
@@ -265,6 +265,8 @@
 
       <?php }else{ ?>
 
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/notifications-guest.php';  ?>
+
         <li class="navSection nav-item nav-item-menu btn btn-light text-uppercase p-2">
           <a class="nav-link p-0" href="/dashboard">
           <p class="fs-1 d-none d-sm-inline-block align-middle m-0">Sign In</p>
@@ -281,7 +283,7 @@
 
 
 
-      <li id="phoneRootLink" class="navSection mobile btn btn-light p-2 mx-2">
+      <li id="phoneRootLink" class="navSection mobile btn btn-light p-2 ml-2">
 <a id="togglePhoneLink" class="prootLink item-mobileMenu colorize p-0" style="font-size:22px;">
 <i class="fa fa-bars"></i>
 </a>
@@ -386,11 +388,12 @@
 
   <div style="padding-left:0.75rem;padding-right:0.75rem;"><a href="/dashboard?logout=yes" id="btn-logout" class="mb-3 btn btn-primary text-uppercase text-white w-100 rounded-3" type="button">Sign Out!</a></div>
 <?php }else{ ?>
-  <div style="padding-left:0.75rem;padding-right:0.75rem;"><button id="contactpopup" class="mt-3 btn btn-dark text-uppercase w-100 rounded-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#contact-popup" aria-controls="#contact-popup">Contact Us!</button></div>
-  <hr>
+  <div style="padding-left:0.75rem;padding-right:0.75rem;"><button id="contactpopup" class="mt-3 mb-3 btn btn-dark text-uppercase w-100 rounded-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#contact-popup" aria-controls="#contact-popup">Contact Us!</button></div>
+  <!--
+    <hr>
 
   <div style="padding-left:0.75rem;padding-right:0.75rem;"><a href="/dashboard" id="btn-login" class="mb-3 btn btn-primary text-uppercase text-white w-100 rounded-3" type="button"><?php if(isset($_SESSION['id'])){echo $userName;}else{echo "Sign In";} ?></a></div>
-
+-->
 <?php } ?></a>
            
 

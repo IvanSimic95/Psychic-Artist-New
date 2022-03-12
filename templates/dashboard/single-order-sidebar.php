@@ -23,12 +23,36 @@ $result = $conn->query($sql);
 
     $productCodename = strtolower($row['order_product']);
     $product = $row['product_nice'];
+    $productCodee = $row['product_codename'];
+
+    $displayPtooltip = $product;
     
     $drawing = $row['drawing'];
     $reading = $row['reading'];
 
     $FTime = time_ago($orderTime);
 
+      switch ($productCodee) {
+      case '1':
+      $displayPName = "Soulmate Drawing";
+      break;
+
+      case '2':
+      $displayPName = "Soulmate Drawing";
+      break;
+
+      case '3':
+      $displayPName = "Soulmate Drawing";
+      break;
+
+      case 'personal':
+      $displayPName = "Personal Reading";
+      break;
+      
+      default:
+      $displayPName = "Soulmate Drawing";
+      break;
+    }
     }
     ?>
 <div class="card mt-4 p-0">
@@ -42,7 +66,7 @@ $result = $conn->query($sql);
 
 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">
 <span style="float:left;">Product: </span>
-<span class="fw-semi-bold" style="float:right;text-transform:capitalize;"><?php echo $product; ?></span>
+<span class="fw-semi-bold" style="cursor:pointer; float:right;text-transform:capitalize;" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $displayPtooltip; ?>"><?php echo $displayPName; ?></span>
 </div>
 
 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">
@@ -52,7 +76,7 @@ $result = $conn->query($sql);
 
 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">
 <span style="float:left;">Date: </span>
-<span class="fw-semi-bold" style="float:right;text-transform:capitalize;"><?php echo $FTime; ?> <span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Created on <?php echo $orderTime; ?>"></span></span>
+<span class="fw-semi-bold" style="cursor: pointer; float:right;text-transform:capitalize;" data-bs-toggle="tooltip" data-bs-placement="top" title="Created on <?php echo $orderTime; ?>"><?php echo $FTime; ?> </span>
 </div>
 
 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats product-stats-sales clearfix">

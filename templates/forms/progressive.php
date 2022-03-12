@@ -24,7 +24,7 @@
         <?php } ?>
         </div>
 
-
+<div id="email-f-input" class="d-none">
   <hr class="mb-3">
 
         <div class="form-floating form-floating-icon">
@@ -35,12 +35,13 @@
 
 
         <hr class="mb-3">
-   
+        </div>
 <div class="error-container mb-3">
 <ol>
 </ol>
 </div>
 
+<div id="delivery-speed" class="d-none">
     <div class="option">
     <input type="radio" name="priority" id="prio12" value="12">
     <label for="prio12" aria-label="12 Hour Delivery" class="d-flex justify-content-start align-items-center">
@@ -84,8 +85,8 @@
     </div>
 
     </div>
-      
-      
+        </div>
+        <div id="submitbtnwrap" class="d-none">
             <hr class="mb-3">
 
 
@@ -102,7 +103,7 @@
     <div class="mb-2 mt-3"> 
     <input id="PlaceOrder" type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-2" value="Place an Order!"></div>
 
-       
+        </div>
 
 </form>
 

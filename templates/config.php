@@ -518,6 +518,54 @@ function time_ago($timestamp)
    }  
  } 
 
+ $RbaseUrl = "https://".$_SERVER['SERVER_NAME'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+ if(isset($_GET['b'])){
+  $btncolor = $_GET['b'];
+}else{
+  $rcolor = rand(1,2);
+  $btncolor = "normal";
+  if($rcolor == 1)$btncolor = "green";
+  if($rcolor == 2)$btncolor = "normal";
+}
+
+
+
+if(isset($_SESSION['userID'])){           //Check if user logged in
+if(isset($_GET['notifRead'])){            //Check if notifRead is in URL
+  if($_GET['notifRead']=="yes"){          //Check if notifRead is set to yes
+    if(isset($_GET['notifID'])){          //Check if notifID is set in URL
+      if($_GET['notifID']=="all"){        //Check if notifID is set to ALL
+
+        $nUserID = $_SESSION['userID'];
+        $sql = "UPDATE `notifications` SET `unread`='0' WHERE `user_id`='$nUserID'" ;
+        if ($conn->query($sql) === TRUE) {
+        //  $showError = 0;
+        header("Location: ".$RbaseUrl);
+        die();
+        } else {
+        // $showErrorText = "Error: " . $sql->error . "<br>" . $conn->error;
+        }
+
+        }else{                            //If notifID is not set to all fetch ID and update just that one notification
+
+        $notifID = $_GET['notifID'];
+        $sql = "UPDATE `notifications` SET `unread`='0' WHERE `id`='$notifID'" ;
+        if ($conn->query($sql) === TRUE) {
+          //  $showError = 0;
+        header("Location: ".$RbaseUrl);
+        die();
+        } else {
+          // $showErrorText = "Error: " . $sql->error . "<br>" . $conn->error;
+        }
+
+
+        }
+      }
+    }
+  }
+}
+
 //START FUNCTION FOR INDEX.PHP
 if (isset($_SERVER['PATH_INFO'])) {//Check URL Path to figure out what template to use
     //Check if URL Ends with "/"

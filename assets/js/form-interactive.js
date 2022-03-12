@@ -67,7 +67,7 @@ $(".product-badge-new").toggleClass("product-badge-hover");
     })
 
     const instance3 =  new TypeIt(".type-it-three", {
-      strings: ["<strong>Almost There</strong>, only 1 more step to go!", "<hr>#3 - <b>What Order Delivery Priority do you wish?</b>"],
+      strings: ["<strong>Almost There</strong>, only 1 more step to go!", "<hr>#3 - <b>What Order Delivery Speed do you Want?</b>"],
       waitUntilVisible: true,
       lifeLike: true,
       loop: false,

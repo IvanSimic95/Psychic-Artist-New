@@ -1440,6 +1440,8 @@ a {
   padding: 15px 10px;
   display: flex;
   flex-wrap: wrap;
+  border-left:none;
+  border-right:none;
 }
 
 .globalNav .mobileSecondaryNav > ul {
