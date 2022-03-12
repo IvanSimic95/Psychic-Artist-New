@@ -496,3 +496,21 @@ Stack trace:
 [12-Mar-2022 15:15:43 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PA\pages\order\order.php on line 276
 [12-Mar-2022 16:26:21 Europe/Zagreb] PHP Warning:  Undefined variable $shorttitle in C:\laragon\www\PA\templates\navbar\navbar.php on line 9
 [12-Mar-2022 16:26:50 Europe/Zagreb] PHP Warning:  Undefined variable $shorttitle in C:\laragon\www\PA\templates\header.php on line 108
+[12-Mar-2022 19:46:28 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 534
+[12-Mar-2022 19:47:44 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 534
+[12-Mar-2022 19:47:50 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 534
+[12-Mar-2022 19:48:53 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:54 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:55 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:56 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:56 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:57 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:57 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:48:57 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:51:36 Europe/Zagreb] PHP Warning:  Undefined array key "fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:51:36 Europe/Zagreb] PHP Warning:  Undefined array key "fbp" in C:\laragon\www\PA\templates\config.php on line 536
+[12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbp" in C:\laragon\www\PA\templates\config.php on line 536
+[12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbp" in C:\laragon\www\PA\templates\config.php on line 536
+[12-Mar-2022 19:51:43 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535

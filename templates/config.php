@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 debug_backtrace() || include $_SERVER['DOCUMENT_ROOT'].'/templates/error/403.php';
 
 date_default_timezone_set('Europe/Zagreb');
-$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = $TalkJS = $ChatPopup = $loadAjaxChat = "";
+$customJS = $customCSS = $SuccessProduct = $breadcrumbsDisable = $bCheck = $bCheck0 = $bCheck1 = $FBmeta = $TalkJS = $ChatPopup = $loadAjaxChat = $UserFBC = $UserFBP = "";
 
 //Variables used globally
 $v = include $_SERVER['DOCUMENT_ROOT'].'/templates/vars.php';
@@ -528,8 +528,20 @@ function time_ago($timestamp)
   if($rcolor == 1)$btncolor = "green";
   if($rcolor == 2)$btncolor = "normal";
 }
+$cFBC = "_fbc";
+$cFBP = "_fbp";
 
+if(isset($_COOKIE[$cFBC])){
+  $UserFBC = $_COOKIE[$cFBC];
+}else{
+  $UserFBC = "";
+}
 
+if(isset($_COOKIE[$cFBP])){
+  $UserFBP = $_COOKIE[$cFBP];
+}else{
+  $UserFBP = "";
+}
 
 if(isset($_SESSION['userID'])){           //Check if user logged in
 if(isset($_GET['notifRead'])){            //Check if notifRead is in URL

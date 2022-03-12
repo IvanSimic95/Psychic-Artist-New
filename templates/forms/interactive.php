@@ -125,6 +125,8 @@
     <input class="btncolor" type="hidden" name="btncolor" value="<?php echo $btncolor; ?>">
     <input class="countdown" type="hidden" name="countdown" value="<?php echo $countdownRandom; ?>">
     <input class="landingpage" type="hidden" name="landingpage" value="LP1">
+    <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
+    <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
     <input class="btntext" type="hidden" name="btntext" value="Place an Order">
     <div class="mb-1 mt-1"> <input type="submit" name="form_submit" class="btn btn-submit-form btn-primary btn-shadow w-100 btn-add-to-cart mb-1 mt-1 fw-bold fs-1" value="Place an Order"></div>
 

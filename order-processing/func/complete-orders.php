@@ -25,6 +25,8 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderProduct = $row["order_product"];
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
+			$FBP = $row["fbp"];
+			$FBC = $row["fbc"];
 			$date1 = $orderDate;
 			$date2 =  date("Y-m-d H:i:s");
 			$start = new \DateTime($date1);
@@ -46,7 +48,7 @@ echo "Starting complete-orders.php...<br><br>";
 			}
 
 			
-			$trigger = 0;
+			$trigger = 1;
 			$image_send = 0;
 			$randomDelay = rand(0,4);
 
@@ -401,7 +403,9 @@ echo "Starting complete-orders.php...<br><br>";
 			"hours" => $hours,
 			"gender" => $userSex,
 			"Pgender" => $orderSex,
-			"price" => $price
+			"price" => $price,
+			"fbp" => $FBP,
+			"fbc" => $FBC
 			];
 
 			$jData = json_encode($data);
