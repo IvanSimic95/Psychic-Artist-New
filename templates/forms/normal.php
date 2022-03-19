@@ -1,4 +1,3 @@
-<div id="form-progressbar" class=""></div>
 <form id="normalproduct" class="form-order needs-validation display-block" name="order_form" action="/order/order" method="get">
 
 
@@ -134,15 +133,13 @@ if($formDate == "US"){
   $validDob = "validDOB";
 } 
 $customJSPreload .= '
-<link rel="preload" href="/assets/js/form-normal.js" as="script">
-<link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">
+<link rel="preload" href="/min/g=normal?v=1204" as="script">
 ';
 $customCSS .= '<link href="/assets/css/form-normal.css" rel="stylesheet">
 <link href="/assets/css/lightslider.css" rel="stylesheet">';
 $customJS .= <<<EOT
-<script src="/assets/js/jquery.validate.min.js"></script>
-<script defer="defer" src="/assets/js/form-normal.js"></script>
-<script src='/assets/js/lightslider.js'></script>
+<script src="/min/g=normal?v=1204"></script>
+
 <script>
 var econtainer = $(".error-container");
 

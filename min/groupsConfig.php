@@ -14,24 +14,38 @@
 return array(
 //    'testJs' => array('//minify/quick-test.js'),
 //    'testCss' => array('//minify/quick-test.css'),
-'js' => array('//assets/js/theme.js', '//assets/js/type-it.js', '//assets/js/progressbar.js', '//assets/js/config.js'),
-
-'js2' => array(
+'js' => array(
+'//assets/js/config.js',
 '//vendors/popper/popper.min.js', 
 '//vendors/bootstrap/bootstrap.min.js', 
 '//vendors/anchorjs/anchor.min.js', 
-'//vendors/is/is.min.js', 
+'//vendors/is/is.min.js',
+'//assets/js/lightslider.js',
+'//assets/js/infinite-ajax-scroll.min.js'),
+
+'js2' => array(
 '//vendors/lodash/lodash.min.js', 
 '//vendors/list.js/list.min.js', 
 '//vendors/countup/countUp.umd.js',
 '//assets/js/lazyload.js',
-'//assets/js/jquery.mask.js',
-'//assets/js/jquery.star-rating-svg.js'),
+'//assets/js/jquery.mask.js'),
+
+'interactive' => array(
+'//assets/js/type-it.js', 
+'//assets/js/progressbar.js', 
+'//assets/js/form-interactive.js', 
+'//assets/js/verimail.jquery.min.js'),
+
+'normal' => array(
+'//assets/js/jquery.validate.min.js', 
+'//assets/js/progressbar.js', 
+'//assets/js/form-normal.js', 
+'//assets/js/verimail.jquery.min.js'),
 
 'fa-js' => array(
-    '//assets/js/brands.min.js', 
-    '//assets/js/solid.min.js', 
-    '//assets/js/fontawesome.min.js'),
+'//assets/js/brands.min.js', 
+'//assets/js/solid.min.js', 
+'//assets/js/fontawesome.min.js'),
 
 'css' => array(
 '//assets/css/theme-rtl.min.css', 

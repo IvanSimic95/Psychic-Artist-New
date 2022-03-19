@@ -550,33 +550,7 @@ var copyLink = function copyLink() {
     });
   });
 };
-/* -------------------------------------------------------------------------- */
 
-/*                                  Count Up                                  */
-
-/* -------------------------------------------------------------------------- */
-
-
-var countupInit = function countupInit() {
-  if (window.countUp) {
-    var countups = document.querySelectorAll('[data-countup]');
-    countups.forEach(function (node) {
-      var _utils$getData = utils.getData(node, 'countup'),
-          endValue = _utils$getData.endValue,
-          options = _objectWithoutProperties(_utils$getData, _excluded);
-
-      var countUp = new window.countUp.CountUp(node, endValue, _objectSpread({
-        duration: 5
-      }, options));
-
-      if (!countUp.error) {
-        countUp.start();
-      } else {
-        console.error(countUp.error);
-      }
-    });
-  }
-};
 /* -------------------------------------------------------------------------- */
 
 /*                                  Draggable                                 */

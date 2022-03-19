@@ -148,16 +148,14 @@
 <?php } ?>
 
 <?php
-$customJSPreload = '
-<link rel="preload" href="/assets/js/form-interactive.js" as="script">
-<link rel="preload" href="/assets/js/verimail.jquery.min.js" as="script">
+$customJSPreload .= '
+<link rel="preload" href="/min/g=interactive?v=1204" as="script">
 ';
-$customCSS = '<link href="/assets/css/form-interactive.css" rel="stylesheet">
+$customCSS .= '
+<link href="/assets/css/form-interactive.css" rel="stylesheet">
 <link href="/assets/css/lightslider.css" rel="stylesheet">';
-$customJS = <<<EOT
-<script src="/assets/js/verimail.jquery.min.js"></script>
-<script defer="defer" src="/assets/js/form-interactive.js"></script>
-<script src='/assets/js/lightslider.js'></script>
+$customJS .= <<<EOT
+<script src="/min/g=interactive?v=1204"></script>
 <script>
 
 $(document).ready(function(){

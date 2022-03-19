@@ -573,10 +573,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php';
 
 
 $customJSPreload .= '
-<link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">
+
 ';
 
 $customJS .= '
-<script src="/assets/js/infinite-ajax-scroll.min.js"></script>
+
 ';
 ?>

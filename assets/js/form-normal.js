@@ -163,16 +163,6 @@ $(document).ready(function(){
          });
  
 
-    var bar = new ProgressBar.Line("#form-progressbar", {
-            strokeWidth: 4,
-            easing: 'easeInOut',
-            duration: 1400,
-            color: 'rgba(255, 105, 180, 1)',
-            trailColor: 'none',
-            trailWidth: 10,
-            svgStyle: {width: '100%', height: '6px', position:'absolute', top:'0', left: '0'}
-    });
-
     $("#helper-delivery-express").click(function(){
           $("#prio12").prop("checked", true);
           jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$44.99').animate({'opacity': 1}, 200);});

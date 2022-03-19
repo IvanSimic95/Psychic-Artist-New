@@ -89,10 +89,10 @@
     <!-- ===============================================-->
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script defer="defer" src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/min/g=js?v=1203"></script>
-    <script defer="defer" src="/min/g=js2?v=1203"></script>
-    <script defer="defer" src="/min/g=fa-js?v=1203"></script>
-    <script defer="defer" src="/assets/js/menuv3.js?v=1203"></script>
+    <script src="/min/g=js?v=1204"></script>
+    <script defer="defer" src="/min/g=js2?v=1204"></script>
+    <script defer="defer" src="/min/g=fa-js?v=1204"></script>
+    <script defer="defer" src="/assets/js/menuv3.js?v=1204"></script>
 
 
 
@@ -105,11 +105,13 @@
     <!--<div class="elfsight-app-e5581c30-8361-43d6-9323-37dd59142295"></div>-->
 
     <!-- ===============================================-->
-    <!--   CrowdPower Script -->
-    <!-- ===============================================-->
+    <!--   CrowdPower Script
+   
     <cp-root></cp-root>
     <script src="https://tag.crowdpower.io/js/app.js"></script>
     
+     ===============================================-->
+
 
     <!-- ===============================================-->
     <!--    TalkJS Start When Logged in   -->
@@ -117,6 +119,7 @@
    
     <!--TALKJSSTART-->
     <?php echo $TalkJS; ?>
+
     <!-- ===============================================-->
     <!--   Custom Page JavaScripts & CSS -->
     <!-- ===============================================-->

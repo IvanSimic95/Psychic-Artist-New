@@ -38,26 +38,26 @@
     <!-- ===============================================-->
     <!--    Preload and preconnect -->
     <!-- ===============================================-->
-    <link rel="preload" href="/min/g=css?v=1203" as="style">
-    <link rel="preload" href="/assets/css/custom.css?v=1203" as="style">
-    <link rel="preload" href="/assets/css/fonts.css?v=1203" as="style">
+    <link rel="preload" href="/min/g=css?v=1204" as="style">
+    <link rel="preload" href="/assets/css/custom.css?v=1204" as="style">
+    <link rel="preload" href="/assets/css/fonts.css?v=1204" as="style">
 
-    <link rel="preload" href="/min/g=js?v=1203" as="script">
-    <link rel="preload" href="/min/g=js2?v=1203" as="script">
-    <link rel="preload" href="/min/g=fa-js?v=1203" as="script">
+    <link rel="preload" href="/min/g=js?v=1204" as="script">
+    <link rel="preload" href="/min/g=js2?v=1204" as="script">
+    <link rel="preload" href="/min/g=fa-js?v=1204" as="script">
     <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=window.scroll" as="script">
 
 
-    <link rel="preload" href="https://tag.crowdpower.io/js/app.js" as="script">
+    <!-- <link rel="preload" href="https://tag.crowdpower.io/js/app.js" as="script"> -->
     <link rel="preload" href="https://apps.elfsight.com/p/platform.js" as="script">
     
     <!--CUSTOMJSPRELOAD-->
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="/assets/css/fonts.css?v=1203" rel="stylesheet">
-    <link href="/min/g=css?v=1203" rel="stylesheet">
-    <link href="/assets/css/custom.css?v=1203" rel="stylesheet">
+    <link href="/assets/css/fonts.css?v=1204" rel="stylesheet">
+    <link href="/min/g=css?v=1204" rel="stylesheet">
+    <link href="/assets/css/custom.css?v=1204" rel="stylesheet">
 
     <!--CUSTOMCSS-->
 
@@ -69,10 +69,7 @@
     <!--FBMETATAGS-->
     
  
-    <!-- Hotjar Tracking Code for psychic-artist.com -->
-
-
-
+ <!-- Hotjar Tracking Code for psychic-artist.com
 
 <script>
 (function(h,o,t,j,a,r){
@@ -83,7 +80,10 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+ -->
 
+ <script>
 (function(t,a,l,k,j,s){
 s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
 ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
