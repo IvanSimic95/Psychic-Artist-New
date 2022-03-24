@@ -42,3 +42,4 @@ temp
 # Variable file
 /logs/*
 /public/*
+*.log
