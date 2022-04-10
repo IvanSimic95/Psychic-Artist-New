@@ -35,6 +35,14 @@ echo "Starting complete-orders.php...<br><br>";
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
 
+			$sql2 = "SELECT * FROM users WHERE id = '$userID'";
+			$result2 = $conn->query($sql2);
+			$row2 = mysqli_fetch_assoc($result2);
+
+			$userSex = $row2['gender'];
+			$orderSex = $row2['partner_gender'];
+
+
 			if($userSex == "nonbinary"){
 				$userSex = "female";
 			}
