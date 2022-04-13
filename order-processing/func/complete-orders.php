@@ -77,24 +77,24 @@ echo "Starting complete-orders.php...<br><br>";
 			echo ""  . $hours . " hours | ";
 
 
-			switch ($orderproduct) {
+			switch ($orderProduct) {
 				case "1":
-				$orderproduct = "soulmate";
+					$orderProduct = "soulmate";
 				$orderproduct_nice = "Soulmate Drawing & Reading";
 				break;
 				
 				case "2":
-				$product = "twinflame";
+					$orderProduct = "twinflame";
 				$orderproduct_nice = "Twin Flame Drawing & Reading";
 				break;
 				
 				case "3":
-				$product = "futurespouse";
+					$orderProduct = "futurespouse";
 				$orderproduct_nice = "Future Spouse Drawing & Reading";
 				break;
 				
 				case "4":
-				$product = "past";
+					$orderProduct = "past";
 				$orderproduct_nice = "Past Life Drawing & Reading";
 				break;
 				}
