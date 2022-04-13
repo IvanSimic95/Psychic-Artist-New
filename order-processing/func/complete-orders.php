@@ -74,6 +74,29 @@ echo "Starting complete-orders.php...<br><br>";
 			}
 			
 			echo ""  . $hours . " hours | ";
+
+
+			switch ($order_product) {
+				case "1":
+				$order_product = "soulmate";
+				$order_product_nice = "Soulmate Drawing & Reading";
+				break;
+				
+				case "2":
+				$product = "twinflame";
+				$order_product_nice = "Twin Flame Drawing & Reading";
+				break;
+				
+				case "3":
+				$product = "futurespouse";
+				$order_product_nice = "Future Spouse Drawing & Reading";
+				break;
+				
+				case "4":
+				$product = "past";
+				$order_product_nice = "Past Life Drawing & Reading";
+				break;
+				}
 			
 				if ($orderProduct == "soulmate" || $orderProduct == "husband" || $orderProduct =="twinflame") {
 				    $image_send = 1;
