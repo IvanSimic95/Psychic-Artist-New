@@ -23,6 +23,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderAge = $row["user_age"];
 			$orderPrio = $row["order_priority"];
 			$orderProduct = $row["order_product"];
+			$orderproduct = $orderProduct;
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
 			$FBP = $row["fbp"];
