@@ -62,6 +62,29 @@ $_SESSION['dobUS'] = date("m/d/Y", strtotime($new_user_dob));
 $_SESSION['gender'] = $newGender;
 $_SESSION['partnerGender'] = $newPGender;
 
+
+$_SESSION['FBdob'] = date("Ymd", strtotime($_SESSION['dob']));
+
+$_SESSION['gender'] = $rowU['gender'];
+$_SESSION['partnerGender'] = $rowU['partner_gender'];
+
+$gender = $_SESSION['gender'];
+switch ($gender) {
+
+    case "male":
+    $_SESSION['FBgender'] = "m";
+    break;
+
+    case "female":
+    $_SESSION['FBgender'] = "f";
+    break;
+
+    default:
+    $_SESSION['FBgender'] = "f";
+    break;
+}
+
+
 $galert = "Your Changes have been Saved!";
   }else{
   $dashboardRedirect = 0;
