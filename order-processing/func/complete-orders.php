@@ -98,6 +98,8 @@ echo "Starting complete-orders.php...<br><br>";
 				$orderproduct_nice = "Past Life Drawing & Reading";
 				break;
 				}
+
+				echo $orderProduct;
 			
 				if ($orderProduct == "soulmate" || $orderProduct == "husband" || $orderProduct =="twinflame") {
 				    $image_send = 1;
