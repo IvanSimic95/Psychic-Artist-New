@@ -101,7 +101,7 @@ echo "Starting complete-orders.php...<br><br>";
 
 				echo $orderProduct;
 			
-				if ($orderProduct == "soulmate" || $orderProduct == "husband" || $orderProduct =="twinflame") {
+				if ($orderProduct == "soulmate" || $orderProduct == "futurespouse" || $orderProduct =="twinflame") {
 				    $image_send = 1;
 					$prod_type = "";
 					$img_folder_name = "general";
@@ -113,7 +113,7 @@ echo "Starting complete-orders.php...<br><br>";
 						$prod_type = "1";
 						$replaceWith = "Soulmate";
 					
-					}elseif($orderProduct == "husband"){
+					}elseif($orderProduct == "futurespouse"){
 					$prod_type = "2";
 						if($orderSex=="male"){
 							$replaceWith = "Future Husband";
