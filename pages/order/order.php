@@ -75,7 +75,7 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
 
     $order_product_id = $order_product;
     $product_codename = $order_product;
-    switch ($order_product) {
+    switch ($order_product_id) {
     case "1":
     $order_product = "soulmate";
     $order_product_nice = "Soulmate Drawing & Reading";

@@ -23,7 +23,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderAge = $row["user_age"];
 			$orderPrio = $row["order_priority"];
 			$orderProduct = $row["order_product"];
-			$orderproduct = $orderProduct;
+			$orderproductCode = $row["product_codename"];
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
 			$FBP = $row["fbp"];
@@ -77,24 +77,24 @@ echo "Starting complete-orders.php...<br><br>";
 			echo ""  . $hours . " hours | ";
 
 
-			switch ($orderProduct) {
+				switch ($orderproductCode) {
 				case "1":
-					$orderProduct = "soulmate";
+				$orderProduct = "soulmate";
 				$orderproduct_nice = "Soulmate Drawing & Reading";
 				break;
 				
 				case "2":
-					$orderProduct = "twinflame";
+				$orderProduct = "twinflame";
 				$orderproduct_nice = "Twin Flame Drawing & Reading";
 				break;
 				
 				case "3":
-					$orderProduct = "futurespouse";
+				$orderProduct = "futurespouse";
 				$orderproduct_nice = "Future Spouse Drawing & Reading";
 				break;
 				
 				case "4":
-					$orderProduct = "past";
+				$orderProduct = "past";
 				$orderproduct_nice = "Past Life Drawing & Reading";
 				break;
 				}
