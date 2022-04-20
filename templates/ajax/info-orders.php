@@ -41,7 +41,7 @@ $result = $conn->query($sql);
                     <div class="col-12 col-lg-8 d-flex flex-column justify-content-between order-summary p-3 text-center orders-list">
                         
                         $statusProgress
-                        <div class="d-sm-flex align-items-sm-start justify-content-sm-between">$orderBTN</div>
+                        
                     </div>
                     </div>
                 </div>
@@ -50,7 +50,5 @@ $result = $conn->query($sql);
 echo $orders;
     }
 
-
-            ?>
 
             ?>
