@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA Profit</title>
+</head>
+
+<body>
+
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 $dateToday = date("d-m-Y");
@@ -8,7 +18,7 @@ echo "<hr>";
 
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v13.0/act_622351411485730/insights?__activeScenarioIDs=%5B%5D&__activeScenarios=%5B%5D&date_preset=today&fields=spend&level=account&transport=cors&access_token=EAASyjjPWIxQBABlW8CcEnGWPFK7lwOJabMmXPFWfYfWyyZBOKR5sAuVBbqWLaFf9RdaeG85MdrLhW3aiZCO3thUtRQFCWPj9ShJmMU5HvfZA5Gz6OKa1EHmZAeg6QYok5hP1orAJZB0SGo6Sp4VYACmC2pq24q5haOUIaUEzhAEip5HGzuGEVDTRZCA5nk5QkwXHTdFnjbIauJs342OuVo');
+curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v13.0/act_622351411485730/insights?__activeScenarioIDs=%5B%5D&__activeScenarios=%5B%5D&date_preset=today&fields=spend&level=account&transport=cors&access_token='.$FBToken);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec($ch);
 if (curl_errno($ch)) {echo 'Error:' . curl_error($ch);}
@@ -84,3 +94,6 @@ p{
     margin:0;
 }
     </style>
+
+</body>
+    </html>
