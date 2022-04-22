@@ -115,7 +115,7 @@ $webTitle = $r[0]['value'];
 $webDescription = $r[1]['value'];
 $webLogo = "https://".$domain.$r[2]['value'];
 $webVersion = $r[3]['value'];
-$FBToken = $r[4]['value'];
+$FBToken = $r[5]['value'];
 
 $title = $webTitle;
 $sdescription = $webDescription;
