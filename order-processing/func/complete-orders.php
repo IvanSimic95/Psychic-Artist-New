@@ -57,7 +57,7 @@ echo "Starting complete-orders.php...<br><br>";
 			}
 
 			
-			//$trigger = 1;
+			$trigger = 0;
 			$image_send = 0;
 			$randomDelay = rand(0,4);
 
