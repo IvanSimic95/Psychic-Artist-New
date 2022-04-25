@@ -21,7 +21,7 @@ echo "Starting start-orders.php...<br><br>";
 $logArray = array();
 $logArray['1'] = date("d-m-Y H:i:s");
 
-			
+			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 		    $fName = $row["first_name"];
 			$lName = $row["last_name"];
@@ -45,6 +45,20 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$message = str_replace("%ORDERID%",   $orderID, $message);
 			$message = str_replace("%PRIORITY%",  $orderPriority, $message);
 			$message = str_replace("%EMAILLINK%", $emailLink , $message);
+
+
+			$sql2 = "SELECT * FROM users WHERE id = '$userID'";
+			$result2 = $conn->query($sql2);
+			$row2 = mysqli_fetch_assoc($result2);
+
+			$affID 		= $row2['affid'];
+			$clickID 	= $row2['clickid'];
+
+			$fbCampaign = $row["fbCampaign"];
+			$fbAdset 	= $row["fbAdset"];
+			$fbAd 		= $row["fbAd"];
+
+		
 
 			$logArray[] = $orderID;
 			$logArray[] = $orderEmail;
@@ -105,7 +119,30 @@ $logArray['1'] = date("d-m-Y H:i:s");
 				echo "Notification Failed ";
 				$logArray[] = "Insert Notification Failed";
 			}
-			
+
+			//Insert into ads log
+			if($fbCampaign !=0 && $fbAdset !=0 && $fbAd !=0){
+				$sql4 = "INSERT INTO ads_log (campaign, adset, ad, time, order_id, price) VALUES ('$fbCampaign', '$fbAdset', '$fbAd', '$orderDate' , '$orderID', '$price')";
+   			if ($conn->query($sql4) === TRUE) {
+				echo "Ads Log Success ";
+				$logArray[] = "Ads Log Success";
+   			} else {
+				echo "Ads Log Failed ";
+				$logArray[] = "Ads Log Failed";
+			}
+
+			}
+
+
+			if($orderProduct == "soulmate" OR $orderProduct == "twinflame" OR $orderProduct == "futurespouse"){
+				if($affID!=0){
+				//Code to send to aff network
+				}
+			}
+
+
+
+
 			//Send data to zapier so it can submit FB conversion and send an email to user
 			$ch = curl_init();
 			$data = [

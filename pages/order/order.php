@@ -143,6 +143,9 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     //$baseRedirect = base64_encode("https://".$domain."/offer/personal-reading");
     $baseRedirect = base64_encode("https://".$domain."/order/success/main");
 
+    $fbCampaign = $_SESSION['fbCampaign'];
+    $fbAdset = $_SESSION['fbAdset'];
+    $fbAd = $_SESSION['fbAd'];
 
     $signedUpAt = time();
 
@@ -161,8 +164,8 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     }
 
     if($createUser == 1){
-        $sql65 = "INSERT INTO users (first_name, last_name, full_name, email, age, dob, gender, partner_gender)
-        VALUES ('$fName', '$lName', '$user_name', '$user_email', '$user_age', '$user_dob', '$userGender','$partnerGender')";
+        $sql65 = "INSERT INTO users (first_name, last_name, full_name, email, age, dob, gender, partner_gender, affid, clickid)
+        VALUES ('$fName', '$lName', '$user_name', '$user_email', '$user_age', '$user_dob', '$userGender','$partnerGender', '$affID', '$clickID')";
 
         
         if ($conn->query($sql65) === TRUE) {
@@ -175,8 +178,8 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
 
     }
     
-    $sql = "INSERT INTO orders (cookie_id, user_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, product_codename, product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown, button, btncolor, fbp, fbc)
-            VALUES ('$cookie', '$userID', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$product_codename', '$order_product_nice', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown', '$getButtonText', '$fbtncolor', '$uFBP', '$uFBC')";
+    $sql = "INSERT INTO orders (cookie_id, user_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, bg_email, order_product, product_codename, product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, landing_page, form, countdown, button, btncolor, fbp, fbc, affid, clickid, fbCampaign, fbAdset, fbAd)
+            VALUES ('$cookie', '$userID', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '$user_email', '', '$order_product', '$product_codename', '$order_product_nice', '$order_priority', '$order_price', '', '$userGender', '$userGenderAcc', '$partnerGender', '$landing', '$getformused', '$getcountdown', '$getButtonText', '$fbtncolor', '$uFBP', '$uFBC', '$affID', '$clickID', '$fbCampaign', '$fbAdset', '$fbAd')";
 
     if ($conn->query($sql) === TRUE) {
     $logArray['10'] = "Success"; 
