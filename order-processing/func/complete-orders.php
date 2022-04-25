@@ -12,7 +12,7 @@ echo "Starting complete-orders.php...<br><br>";
 
 		$logArray = array();
 		$logArray['1'] = date("d-m-Y H:i:s");
-
+		$imgError = 0;
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 			$ex = explode(" ",$orderName);
@@ -342,11 +342,22 @@ echo "Starting complete-orders.php...<br><br>";
 							$imgURL = $newImageFullPath;
                             $filename = $rootDir.'/email/drawing/'.$newImagename;
                       
+							$filename = $imgURL;
+							if (file_exists($filename)){
+    							$imgError = 0;
+							}else{
+    							$imgError = 1;
+							}
+
+							if($imgError == 0){
+
 							//Add image and text to order
 							$sqlupdate = "UPDATE `orders` SET `drawing`='$imgURL', `reading`='$message' WHERE order_id='$orderID'";
 							if ($conn->query($sqlupdate) === TRUE) {
 							echo "Drawing & Reading Added!  | ";
 							$logArray[] = "Drawing & Reading Added!";
+							}
+
 							}
 
 
@@ -366,6 +377,7 @@ echo "Starting complete-orders.php...<br><br>";
 						}
 
 
+						if($imgError == 0){
 
 					// Set order to shipped
 					$sqlupdate = "UPDATE `orders` SET `order_status`='completed' WHERE order_id='$orderID'";
@@ -377,6 +389,8 @@ echo "Starting complete-orders.php...<br><br>";
 					$logArray[] = "Error Updating Status";
 					
 					}
+
+				}
 
 
 
@@ -398,6 +412,7 @@ echo "Starting complete-orders.php...<br><br>";
 						$logArray[] = "Insert Notification Failed";
 					}
 
+					if($imgError == 0){
 
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
@@ -456,7 +471,7 @@ echo "Starting complete-orders.php...<br><br>";
 			echo "Data send to zapier";
 
 
-			
+		}
 		
 
 
