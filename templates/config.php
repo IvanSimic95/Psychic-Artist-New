@@ -592,6 +592,7 @@ $fbTrack = 1;
 
 $fbVariable = $_GET['utm_campaign'];
 $ex = explode("+",$fbVariable);
+echo $fbVariable;
 
 $fbCampaign = $ex["0"];
 $fbAdset = $ex["1"];
