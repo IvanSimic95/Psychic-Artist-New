@@ -544,6 +544,51 @@ if(isset($_COOKIE[$cFBP])){
   $UserFBP = "";
 }
 
+
+$cookie_aff = "affid";
+$cookie_clickid = "clickid";
+
+
+if(isset($_COOKIE[$cookie_aff])){
+
+  $affID = $_COOKIE[$cookie_aff];
+
+}else{
+
+  if(isset($_GET['affid'])){
+    $affIDSet = $_GET['affid'];
+    setcookie($cookie_aff, $affIDSet, time() + (86400 * 30), "/");
+  }else{
+    $affIDSet = "0";
+    setcookie($cookie_aff, $affIDSet, time() + (86400 * 30), "/");
+  }
+
+  $affID = $_COOKIE[$cookie_aff];
+
+}
+
+
+if(isset($_COOKIE[$cookie_clickid])){
+
+  $clickID = $_COOKIE[$cookie_clickid;
+
+}else{
+
+  if(isset($_GET['clickid'])){
+    $clickIDSet = $_GET['clickid'];
+    setcookie($cookie_clickid, $affIDSet, time() + (86400 * 30), "/");
+  }else{
+    $clickIDSet = "0";
+    setcookie($cookie_clickid, $affIDSet, time() + (86400 * 30), "/");
+  }
+
+  $clickID = $_COOKIE[$cookie_clickid];
+
+}
+
+
+
+
 if(isset($_SESSION['userID'])){           //Check if user logged in
 if(isset($_GET['notifRead'])){            //Check if notifRead is in URL
   if($_GET['notifRead']=="yes"){          //Check if notifRead is set to yes
