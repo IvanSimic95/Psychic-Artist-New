@@ -563,7 +563,7 @@ if(isset($_COOKIE[$cookie_aff])){
     setcookie($cookie_aff, $affIDSet, time() + (86400 * 30), "/");
   }
 
-  $affID = $_COOKIE[$cookie_aff];
+  $affID = $affIDSet;
 
 }
 
@@ -582,7 +582,7 @@ if(isset($_COOKIE[$cookie_clickid])){
     setcookie($cookie_clickid, $affIDSet, time() + (86400 * 30), "/");
   }
 
-  $clickID = $_COOKIE[$cookie_clickid];
+  $clickID = $clickIDSet;
 
 }
 
