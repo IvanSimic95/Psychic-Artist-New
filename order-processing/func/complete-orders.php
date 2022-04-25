@@ -344,9 +344,9 @@ echo "Starting complete-orders.php...<br><br>";
                       
 							$filename = $imgURL;
 							if (file_exists($filename)){
-    							$imgError = 0;
-							}else{
     							$imgError = 1;
+							}else{
+    							$imgError = 0;
 							}
 
 							if($imgError == 0){
