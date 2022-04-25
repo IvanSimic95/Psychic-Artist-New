@@ -121,7 +121,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			}
 
 			//Insert into ads log
-			if($fbCampaign !=0 && $fbAdset !=0 && $fbAd !=0){
+			if($fbCampaign !="" && $fbAdset !="" && $fbAd !=""){
 				$sql4 = "INSERT INTO ads_log (campaign, adset, ad, time, order_id, price) VALUES ('$fbCampaign', '$fbAdset', '$fbAd', '$orderDate' , '$orderID', '$price')";
    			if ($conn->query($sql4) === TRUE) {
 				echo "Ads Log Success ";
