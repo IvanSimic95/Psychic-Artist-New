@@ -570,7 +570,7 @@ if(isset($_COOKIE[$cookie_aff])){
 
 if(isset($_COOKIE[$cookie_clickid])){
 
-  $clickID = $_COOKIE[$cookie_clickid;
+  $clickID = $_COOKIE[$cookie_clickid];
 
 }else{
 
