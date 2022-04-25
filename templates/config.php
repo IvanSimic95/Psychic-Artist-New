@@ -576,10 +576,10 @@ if(isset($_COOKIE[$cookie_clickid])){
 
   if(isset($_GET['clickid'])){
     $clickIDSet = $_GET['clickid'];
-    setcookie($cookie_clickid, $affIDSet, time() + (86400 * 30), "/");
+    setcookie($cookie_clickid, $clickIDSet, time() + (86400 * 30), "/");
   }else{
     $clickIDSet = "0";
-    setcookie($cookie_clickid, $affIDSet, time() + (86400 * 30), "/");
+    setcookie($cookie_clickid, $clickIDSet, time() + (86400 * 30), "/");
   }
 
   $clickID = $clickIDSet;
