@@ -514,3 +514,5 @@ Stack trace:
 [12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbc" in C:\laragon\www\PA\templates\config.php on line 535
 [12-Mar-2022 19:51:37 Europe/Zagreb] PHP Warning:  Undefined array key "fbp" in C:\laragon\www\PA\templates\config.php on line 536
 [12-Mar-2022 19:51:43 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
+[27-Apr-2022 20:22:11 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[28-Apr-2022 04:03:37 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\admin\orders.php on line 10
