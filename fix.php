@@ -13,7 +13,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 	}
 
 
-	$sql = 'SELECT * from orders WHERE user_sex = "unknown" AND order_status= "processing" LIMIT 1';
+	$sql = 'SELECT * from orders WHERE user_sex = "unknown" AND order_status= "processing" LIMIT 50';
 	$sqlResoult = $conn->query($sql);
 	if($sqlResoult->num_rows == 0) {
 	   echo "No Orders with STATUS = PROCESSING found in database.<br><hr>";
