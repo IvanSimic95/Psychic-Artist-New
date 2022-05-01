@@ -68,5 +68,5 @@ $partnerGender = "male";
 			if ($conn->query($sqlupdate) === TRUE) {
 		    echo $orderID;
 
-		}
+		}}}
 ?>
