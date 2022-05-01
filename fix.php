@@ -5,7 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 
 
 	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	$conn = new mysqli($servername, $username, $password, $db);
 
 	// Check connection
 	if ($conn->connect_error) {
