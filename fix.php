@@ -48,16 +48,7 @@ $lName = $name->getLastname();
 
 $oStatus = "pending";
 
-  //Find User Gender
-  function findGender($name) {
-    $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
-    $getGender = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&name=' . urlencode($name)));
-    $data = [[
-        "gender" => $getGender->gender,
-        "accuracy"  => $getGender->accuracy
-        ]];
-    return $data;
-    }
+
     
 $findGenderFunc = findGender($fName);
 $userGender = $findGenderFunc['0']['gender'];
