@@ -191,7 +191,7 @@ else { ?>
                                         if($r == 3) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/progressive.php';
                                     }
                                 }else{
-                                $r = rand(1,3);
+                                $r = rand(2,2);
                                 if(isset($_SESSION['loggedIn'])) $r = 2;
                                     if($r==1 OR $r==2 OR $r==3){
                                         if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
