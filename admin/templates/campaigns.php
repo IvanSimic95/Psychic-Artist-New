@@ -22,7 +22,7 @@
                         while ($row = $result->fetch_assoc()) {
                         $id = $row["fbCampaign"];
                                 
-                                if($id == "website" OR $id == "{{campaign.id}}" OR $id == "" OR $id == "0"){
+                                if($id == "website" OR $id == "{{campaign.id}}" OR $id == "" OR $id == "0" OR $id == "domain_click"){
                                 }else{
 
                                           

@@ -8,13 +8,13 @@
                 } else {
                          //Find campaign name from FB
                          $ch = curl_init();
-                         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v13.0/23850420276030189/adsets?fields=name&access_token='.$FBToken);
+                         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v13.0/'.$campaign.'/adsets?fields=name&access_token='.$FBToken);
                          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                          $r = curl_exec($ch);
                          if (curl_errno($ch)) {echo 'Error:' . curl_error($ch);}
                          curl_close($ch);
                          $y = json_decode($r, true);
-                         
+
                         while ($row = $result->fetch_assoc()) {
                         $id = $row["fbAdset"];
                                
