@@ -1,6 +1,8 @@
 <?php
 $pagetitle = "Facebook Ads";
 $pagefile = "ads.php";
+
+
 $todaysDate = date("Y-m-d");
 $date = $todaysDate;
 
@@ -14,19 +16,6 @@ $startDate = $_GET['sdate'];
 if(isset($_GET['edate'])){
 $endDate = $_GET['edate'];
 }
-
-if(isset($_GET['c'])){
-    $campaign = $_GET['c'];
-    }
-    
-if(isset($_GET['cname'])){
-$campaignName = $_GET['cname'];
-}
-
-if(isset($_GET['a'])){
-$adset = $_GET['a'];
-}
-
 
 ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
@@ -48,9 +37,6 @@ $adset = $_GET['a'];
 <div class="input-group">
 <input type="text" name="sdate" class="form-control" id="sdate" value="<?php echo $startDate; ?>">
 <input type="text" name="edate" class="form-control" id="edate" placeholder="End Date" value="<?php echo $endDate; ?>">
-<input type="hidden" name="c" class="form-control" id="c" value="<?php echo $campaign; ?>">
-<input type="hidden" name="cname" class="form-control" id="c" value="<?php echo $campaignName; ?>">
-<input type="hidden" name="a" class="form-control" id="a" value="<?php echo $adset; ?>">
   <button class="btn btn-outline-secondary show-orders" type="submit">Save!</button>
 </div></form>
 </span>
@@ -58,7 +44,7 @@ $adset = $_GET['a'];
     </div>
 
     <div class="card-body p-0">
-    <table id="datatablesSimple" class="display table table-striped table-bordered" style="width:100%">
+    <table id="datatablesSimple" class="display table table-striped table-bordered p-0" style="width:100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -72,7 +58,7 @@ $adset = $_GET['a'];
 
                             <?php
                             
-                        include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/ads.php';
+                        include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/campaigns.php';
                         ?>
 
                         </tbody>

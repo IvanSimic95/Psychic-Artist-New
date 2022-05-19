@@ -36,7 +36,7 @@
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-user"></span></span><span class="nav-link-text ps-1">Customers</span></div>
                     </a>
 
-                    <a class="nav-link<?php if($pagefile == "ads.php"){ echo "active";} ?>" href="/admin/ads.php" role="button" aria-expanded="false">
+                    <a class="nav-link<?php if($pagefile == "ads.php"){ echo "active";} ?>" href="/admin/facebook.php" role="button" aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fa fa-facebook"></span></span><span class="nav-link-text ps-1">Facebook Ads</span></div>
                     </a>
 

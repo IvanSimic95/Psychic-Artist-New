@@ -15,11 +15,11 @@
         <?php if($formDate == "US"){ ?>
         <input class="form-control" id="userDobUS" name="userDobUS" placeholder="MM/DD/YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dobUS']))echo $_SESSION['dobUS']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
-        <label for="userDobUS">Date of Birth</label>
+        <label for="userDobUS">Date of Birth (MM/DD/YYYY)</label>
         <?php }else{ ?>
         <input class="form-control " id="userDob" name="userDob" placeholder="DD-MM-YYYY" inputmode="numeric" pattern="[0-9]*" type="text" required value="<?php if(isset($_SESSION['dob']))echo $_SESSION['dob']; ?>"/>
         <span class="icon-inside"><i class="fa fa-clock"></i> </span>
-        <label for="userDob">Date of Birth</label>
+        <label for="userDob">Date of Birth (DD-MM-YYYY)</label>
         <?php } ?>
         </div>
 
@@ -100,6 +100,12 @@
 
     <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
     <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
+
+    <input class="affid" type="hidden" name="affid" value="<?php echo $affid; ?>">
+    <input class="cid" type="hidden" name="cid" value="<?php echo $cid; ?>">
+    <input class="subid1" type="hidden" name="subid1" value="<?php echo $subid1; ?>">
+    <input class="subid2" type="hidden" name="subid2" value="<?php echo $subid2; ?>">
+    
 
     <input class="btntext" type="hidden" name="btntext" value="Place an Order!">
     <div class="mb-2 mt-3"> 

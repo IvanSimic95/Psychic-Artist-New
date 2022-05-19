@@ -516,3 +516,117 @@ Stack trace:
 [12-Mar-2022 19:51:43 Europe/Zagreb] PHP Warning:  Undefined array key "_fbc" in C:\laragon\www\PA\templates\config.php on line 535
 [27-Apr-2022 20:22:11 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
 [28-Apr-2022 04:03:37 Europe/Zagreb] PHP Warning:  Undefined variable $order_email in C:\laragon\www\PA\admin\orders.php on line 10
+[18-May-2022 23:28:06 Europe/Zagreb] PHP Warning:  Undefined variable $affid in C:\laragon\www\PA\templates\forms\normal.php on line 104
+[19-May-2022 00:17:19 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[19-May-2022 00:19:25 Europe/Zagreb] PHP Warning:  include_once(C:/laragon/www/PA//admin/scripts/campaigns.php): Failed to open stream: No such file or directory in C:\laragon\www\PA\admin\ads.php on line 61
+[19-May-2022 00:19:25 Europe/Zagreb] PHP Warning:  include_once(): Failed opening 'C:/laragon/www/PA//admin/scripts/campaigns.php' for inclusion (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\PA\admin\ads.php on line 61
+[19-May-2022 00:21:12 Europe/Zagreb] PHP Warning:  include_once(C:/laragon/www/PA//admin/scripts/campaigns.php): Failed to open stream: No such file or directory in C:\laragon\www\PA\admin\ads.php on line 61
+[19-May-2022 00:21:12 Europe/Zagreb] PHP Warning:  include_once(): Failed opening 'C:/laragon/www/PA//admin/scripts/campaigns.php' for inclusion (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\PA\admin\ads.php on line 61
+[19-May-2022 00:21:26 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'pa.campaigns' doesn't exist in C:\laragon\www\PA\admin\templates\campaigns.php:17
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\campaigns.php(17): mysqli->query('SELECT * FROM c...')
+#1 C:\laragon\www\PA\admin\ads.php(61): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 17
+[19-May-2022 02:41:42 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: array_search(): Argument #2 ($haystack) must be of type array, stdClass given in C:\laragon\www\PA\admin\templates\ads.php:23
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\ads.php(23): array_search('238504734138901...', Object(stdClass))
+#1 C:\laragon\www\PA\admin\ads.php(75): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\ads.php on line 23
+[19-May-2022 02:44:20 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on string in C:\laragon\www\PA\admin\templates\ads.php:9
+Stack trace:
+#0 C:\laragon\www\PA\admin\ads.php(75): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\ads.php on line 9
+[19-May-2022 02:45:04 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on string in C:\laragon\www\PA\admin\templates\ads.php:9
+Stack trace:
+#0 C:\laragon\www\PA\admin\ads.php(75): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\ads.php on line 9
+[19-May-2022 02:45:11 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on string in C:\laragon\www\PA\admin\templates\ads.php:9
+Stack trace:
+#0 C:\laragon\www\PA\admin\ads.php(75): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\ads.php on line 9
+[19-May-2022 02:49:06 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on string in C:\laragon\www\PA\admin\templates\adsets.php:9
+Stack trace:
+#0 C:\laragon\www\PA\admin\adsets.php(74): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\adsets.php on line 9
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "uid" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "uid" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "uid" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "uid" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:43:53 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:18 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "id" in C:\laragon\www\PA\templates\config.php on line 90
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Undefined array key "" in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 03:44:20 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 31
+[19-May-2022 05:43:06 Europe/Zagreb] PHP Parse error:  syntax error, unexpected token "echo" in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:43:17 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: Illegal offset type in C:\laragon\www\PA\admin\templates\campaigns.php:32
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(61): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:43:19 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: Illegal offset type in C:\laragon\www\PA\admin\templates\campaigns.php:32
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(61): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:43:42 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: Illegal offset type in C:\laragon\www\PA\admin\templates\campaigns.php:32
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(61): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:43:44 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: Illegal offset type in C:\laragon\www\PA\admin\templates\campaigns.php:32
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(61): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:43:49 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:43:49 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:43:49 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:43:49 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:43:51 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:43:51 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:43:52 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:43:52 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:44:37 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: Illegal offset type in C:\laragon\www\PA\admin\templates\campaigns.php:32
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(61): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 32
+[19-May-2022 05:44:45 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:44:45 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:44:45 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:44:45 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:44:46 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:44:46 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:44:46 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 53
+[19-May-2022 05:44:46 Europe/Zagreb] PHP Warning:  Array to string conversion in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[19-May-2022 05:47:27 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 51
+[19-May-2022 05:47:27 Europe/Zagreb] PHP Warning:  Undefined variable $key in C:\laragon\www\PA\admin\templates\campaigns.php on line 52
+[19-May-2022 05:47:27 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 51
+[19-May-2022 05:47:27 Europe/Zagreb] PHP Warning:  Undefined variable $key in C:\laragon\www\PA\admin\templates\campaigns.php on line 52
+[19-May-2022 05:48:38 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 57
+[19-May-2022 05:48:38 Europe/Zagreb] PHP Warning:  Undefined variable $name in C:\laragon\www\PA\admin\templates\campaigns.php on line 57
+[19-May-2022 05:49:20 Europe/Zagreb] PHP Warning:  Undefined array key 25 in C:\laragon\www\PA\admin\templates\campaigns.php on line 37
+[19-May-2022 05:49:20 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 37
+[19-May-2022 05:49:20 Europe/Zagreb] PHP Warning:  Undefined array key 25 in C:\laragon\www\PA\admin\templates\campaigns.php on line 37
+[19-May-2022 05:49:20 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PA\admin\templates\campaigns.php on line 37

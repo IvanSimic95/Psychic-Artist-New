@@ -24,6 +24,7 @@ if(isset($_GET['logout'])){
 
 
 
+
 $firephp = FirePHP::getInstance(true);
 
 //$firephp->fb('Hello World'); /* Defaults to FirePHP::LOG */
@@ -83,6 +84,7 @@ if($domain == "pa.test"){
 	$db = "psychic_newpanel";
   $base_url = "https://psychic-artist.com";
 }
+
 
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////FUNCTIONS - DO NOT EDIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -156,6 +158,8 @@ if($domain == "pa.test"){
 }
 
 
+
+
 //Error Reporting - None
 //error_reporting(0); //Disable Error Reporting
 //ini_set('display_errors', FALSE); //Hide all errors on frontend
@@ -186,6 +190,23 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
   //Check if funnel page is set, if not set a new one
   if(!isset($_SESSION['funnel_page'])) {
   $_SESSION['funnel_page'] = "main";
+  }
+  
+
+  if(isset($_GET['affid'])){
+    $_SESSION['affid'] = $_GET['affid'];
+  }
+
+  if(isset($_GET['cid'])){
+    $_SESSION['cid'] = $_GET['cid'];
+  }
+  
+  if(isset($_GET['subid1'])){
+    $_SESSION['subid1'] = $_GET['subid1'];
+  }
+  
+  if(isset($_GET['subid2'])){
+    $_SESSION['subid2'] = $_GET['subid2'];
   }
   
 

@@ -40,6 +40,12 @@ isset($_GET['form_submit']) ? $getButtonText = $_GET['btntext'] : $getButtonText
 isset($_GET['fbp']) ? $uFBP = $_GET['fbp'] : $uFBP = "";
 isset($_GET['fbc']) ? $uFBC = $_GET['fbc'] : $uFBC = "";
 
+isset($_GET['affid']) ? $affid = $_GET['affid'] : $affid = "";
+isset($_GET['cid']) ? $cid = $_GET['cid'] : $cid = "";
+
+isset($_GET['subid1']) ? $subid1 = $_GET['subid1'] : $subid1 = "";
+isset($_GET['subid2']) ? $subid2 = $_GET['subid2'] : $subid2 = "";
+
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
 

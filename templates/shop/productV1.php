@@ -25,6 +25,48 @@ $sales = $row[11];
 
 $retailer = $codename."_".$productID;;
 
+if(isset($_GET['affid'])){
+    $affID = $_GET['affid'];
+  }else{
+    $affID = "";
+  }
+  if(isset($_SESSION['affid'])){
+    $affID = $_SESSION['affid'];
+  }
+
+
+
+  if(isset($_GET['cid'])){
+    $cid = $_GET['cid'];
+  }else{
+    $cid = "";
+  }
+  if(isset($_SESSION['cid'])){
+    $cid = $_SESSION['cid'];
+  }
+
+
+
+  if(isset($_GET['subid1'])){
+    $subid1 = $_GET['subid1'];
+  }else{
+    $subid1 = "";
+  }
+  if(isset($_SESSION['subid1'])){
+    $subid1 = $_SESSION['subid1'];
+  }
+
+
+  
+  if(isset($_GET['subid2'])){
+    $subid2 = $_GET['subid2'];
+  }else{
+    $subid2 = "";
+  }
+  if(isset($_SESSION['subid2'])){
+    $subid2 = $_SESSION['subid2'];
+  }
+
 $FBmeta = <<<EOT
 <meta property="og:title" content="$shorttitle Drawing & Reading">
 <meta property="og:description" content="$subtitle">
