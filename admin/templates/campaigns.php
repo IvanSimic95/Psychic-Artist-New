@@ -38,7 +38,7 @@
 
                                             //Find campaign name from FB
                         $crequest = "https://graph.facebook.com/v13.0/".$id."/insights?time_ranges=[{since:'".$startDate."',until:'".$endDate."'}]&access_token=".$FBToken;
-                                        
+                                   echo $crequest;     
                           $ch = curl_init();
 
                           curl_setopt($ch, CURLOPT_URL, $crequest);

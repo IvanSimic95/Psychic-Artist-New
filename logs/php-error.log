@@ -719,3 +719,29 @@ Stack trace:
 #0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
 #1 {main}
   thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[25-May-2022 21:28:14 Europe/Zagreb] PHP Warning:  Undefined array key 0 in C:\laragon\www\PA\admin\templates\campaigns.php on line 51
+[25-May-2022 21:28:14 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: array_key_exists(): Argument #2 ($array) must be of type array, null given in C:\laragon\www\PA\admin\templates\campaigns.php:54
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 54
+[25-May-2022 21:28:33 Europe/Zagreb] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in C:\laragon\www\PA\admin\templates\campaigns.php:80
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 80
+[25-May-2022 21:28:35 Europe/Zagreb] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in C:\laragon\www\PA\admin\templates\campaigns.php:80
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 80
+[25-May-2022 21:28:39 Europe/Zagreb] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in C:\laragon\www\PA\admin\templates\campaigns.php:80
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 80
+[25-May-2022 21:28:42 Europe/Zagreb] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in C:\laragon\www\PA\admin\templates\campaigns.php:80
+Stack trace:
+#0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 80
