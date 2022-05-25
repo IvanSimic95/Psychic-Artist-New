@@ -46,7 +46,8 @@
                           if (curl_errno($ch)) {echo 'Error:' . curl_error($ch);}
                           curl_close($ch);
                           $y2 = json_decode($r, true);
-                          if (array_key_exists("0",$y2)){
+                          $y3 = $y2['data']
+                          if (array_key_exists("0",$y3)){
                           $s = $y2['data'][0];
                  
                         
