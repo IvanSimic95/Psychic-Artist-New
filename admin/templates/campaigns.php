@@ -37,8 +37,7 @@
                                 }else{
 
                                             //Find campaign name from FB
-                        $crequest = "https://graph.facebook.com/v13.0/".$id."/insights?time_ranges=[{since:'".$startDate."',until:'".$endDate."'}]&access_token=".$FBToken;
-                                   echo $crequest;     
+                        $crequest = "https://graph.facebook.com/v13.0/".$id."/insights?time_ranges=[{since:'".$startDate."',until:'".$endDate."'}]&access_token=".$FBToken;    
                           $ch = curl_init();
 
                           curl_setopt($ch, CURLOPT_URL, $crequest);
@@ -99,7 +98,11 @@
                                     
                                                 $dif = "+".$dif;
                                         }
+                                        if($sum > 0 && $countSales > 0){
                                         $persale = round($sum / $countSales,2);
+                                        }else{
+                                        $persale = 0;
+                                        }
                                         $totalsum += $sum;
                                         $totalcount += $countSales;
                                         $totalspend += $spend;
