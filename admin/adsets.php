@@ -33,17 +33,17 @@ $campaignName = $_GET['cname'];
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
 
 <div class="card mb-3">
-    <div class="card-header">
+    <div class="card-header bg-light">
         <div class="row flex-between-center">
             
 
-        <span style="float:left;">
+        <div class="col-lg-3 pe-lg-2">
                     <h4> <i class="fas fa-table me-1"></i>
-                    Campaigns</h4>
-</span>
+                    Adsets</h4>
+</div>
 
 
-                    <span style="float:right;"> 
+<div class="col-lg-9 pe-lg-2">
                     <form class="form-inline" action="" method="get">
 <div class="input-group">
 <input type="text" name="sdate" class="form-control" id="sdate" value="<?php echo $startDate; ?>">
@@ -52,19 +52,20 @@ $campaignName = $_GET['cname'];
 <input type="hidden" name="cname" class="form-control" id="c" value="<?php echo $campaignName; ?>">
   <button class="btn btn-outline-secondary show-orders" type="submit">Save!</button>
 </div></form>
-</span>
+</div>
         </div>
     </div>
 
     <div class="card-body p-0">
-    <table id="datatablesSimple" class="display table table-striped table-bordered" style="width:100%">
+    <table id="datatablesSimple" class="display table table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Sales Count</th>
-                                <th>Sales in $</th>
-                            
+                            <th>ID</th>
+                            <th>Name</th>
+                                <th>Sales</th>
+                                <th>Spend</th>
+                                <th>Profit</th>
+                                <th>Per Sale</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,14 +76,7 @@ $campaignName = $_GET['cname'];
                         ?>
 
                         </tbody>
-                        <tfoot>
-                            <tr>
-                            <th>ID</th>
-                                <th>Name</th>
-                                <th>Sales Count</th>
-                                <th>Sales in $</th>
-                            </tr>
-                        </tfoot>
+                    
                     </table>
     </div>
     <div class="card-footer small text-muted"><i class="fa fa-clock" style="margin-right:5px;"></i>From: <?php echo $startDate; ?> - <?php echo $endDate; ?></div>

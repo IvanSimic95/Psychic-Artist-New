@@ -16,11 +16,38 @@
                      curl_close($ch);
                      $y = json_decode($r, true);
 
+                     $totalsum = 0;
+                     $totalcount = 0;
+                     $totalspend = 0;
+                     $totalprofit = 0;
+                     $totalpersale = 0;
+                     $totalcounter = 0;
+
                         while ($row = $result->fetch_assoc()) {
                         $id = $row["fbAd"];
                                
                         if($id == "domain_click" OR $id == "website" OR $id == "{{ad.id" OR $id == "" OR $id == "0"){
                         }else{
+
+                                  //Find campaign name from FB
+                        $crequest = "https://graph.facebook.com/v13.0/".$id."/insights?time_ranges=[{since:'".$startDate."',until:'".$endDate."'}]&access_token=".$FBToken;
+             
+                        $ch = curl_init();
+
+                        curl_setopt($ch, CURLOPT_URL, $crequest);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                        $r = curl_exec($ch);
+                        if (curl_errno($ch)) {echo 'Error:' . curl_error($ch);}
+                        curl_close($ch);
+                        $y2 = json_decode($r, true);
+                        $s = $y2['data'][0];
+               
+                      
+                        if (array_key_exists("spend",$s)){
+                              $spend = round($s['spend']);
+                        }else{
+                              $spend = 0;
+                        }
 
                             $n = $y['data'];
                                       for ($i = 0; $i < count($n); $i++) {
@@ -51,17 +78,53 @@
                                         $sum = 0;
                                         }
 
+                                        
+                                        $dif = $sum - $spend;
+                                        if($dif < 0){
+                                                $difcolor = "red";
+                                        
+                                                
+                                        }else{
+                                                $difcolor = "lightgreen";
+                                      
+                                                $dif = "+".$dif;
+                                        }
+
+                                        $persale = round($sum / $countSales,2);
+
+                                        $totalsum += $sum;
+                                        $totalcount += $countSales;
+                                        $totalspend += $spend;
+                                        $totalprofit += $dif;
+                                        $totalpersale += $persale;
+                                        $totalcounter += 1;
+
                                         echo '<tr id="' . $id . '">
                                         <td>' . $id . '</td>
                                         <td>' . $name . '</td>
-                                        <td>' . $countSales. '</td>
-                                        <td>' . $sum. '</td>
+                                        <td>$' . $sum . ' (' .$countSales. '</b>)</td>
+                                        <td>$' . $spend. '</td>
+                                        <td style="color:'.$difcolor.'">' .$dif. '</td>
+                                        <td>$'.$persale.'</td>
                                         </tr>
                                         ';
                              
                                 }
                        
                         }
+                        $finaltotal = round($totalpersale / $totalcounter,2);
+                        echo '
+                        <tfoot>
+                        <tr>
+                        <th>Total:</th>
+                        <th></th>
+                        <th><b>$'.$totalsum.'</b> (<b>'.$totalcount.'</b>)</th>
+                        <th><b>$'.$totalspend.'</b></th>
+                        <th><b>'.$totalprofit.'</b></th>
+                        <th><b>$'.$finaltotal.'</b></th>
+                        </tr>
+                        </tfoot>';
+
                         $conn->close();
                 }
 ?>
