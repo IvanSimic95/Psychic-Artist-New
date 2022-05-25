@@ -1,7 +1,7 @@
 <?php
 
 
-        $sql = "SELECT * FROM orders WHERE (order_status = 'completed' AND fbCampaign = '$campaign') OR (order_status = 'processing' AND fbCampaign = '$campaign') GROUP BY fbAdset ORDER BY order_id DESC";
+        $sql = "SELECT * FROM orders WHERE (order_status = 'completed' AND fbCampaign = '$campaign' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate') OR (order_status = 'processing' AND fbCampaign = '$campaign' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate') GROUP BY fbAdset ORDER BY order_id DESC";
         $result = $conn->query($sql);
                 if ($result->num_rows == 0) {
                          echo "no results";
