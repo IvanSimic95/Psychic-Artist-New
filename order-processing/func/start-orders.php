@@ -36,7 +36,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
 
-			$affID = $row["affid"];
+			$dbaffID = $row["affid"];
 			$clickID = $row["clickid"];
 			$subid1 = $row["subid1"];
 			$subid2 = $row["subid2"];
@@ -181,13 +181,13 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			unset($logArray);
             echo " <br>"; 
 
-echo $affID;
-			if($affID > 0){
+echo $dbaffID;
+			if($dbaffID > 0){
 
 			//Send data to zapier so it can submit FB conversion and send an email to user
 			$ch = curl_init();
 			$data = [
-			"affid" => $affID,
+			"affid" => $dbaffID,
 			"subid1" => $subid1,
 			"subid2" => $subid2
 			];
