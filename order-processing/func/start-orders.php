@@ -56,9 +56,6 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$result2 = $conn->query($sql2);
 			$row2 = mysqli_fetch_assoc($result2);
 
-			$affID 		= $row2['affid'];
-			$dbclickID 	= $row2['clickid'];
-
 			$fbCampaign = $row["fbCampaign"];
 			$fbAdset 	= $row["fbAdset"];
 			$fbAd 		= $row["fbAd"];
