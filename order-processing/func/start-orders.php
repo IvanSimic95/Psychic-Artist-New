@@ -37,7 +37,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$message = $processingWelcome;
 
 			$dbaffID = $row["affid"];
-			$clickID = $row["clickid"];
+			$dbclickID = $row["clickid"];
 			$subid1 = $row["subid1"];
 			$subid2 = $row["subid2"];
 
@@ -57,7 +57,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$row2 = mysqli_fetch_assoc($result2);
 
 			$affID 		= $row2['affid'];
-			$clickID 	= $row2['clickid'];
+			$dbclickID 	= $row2['clickid'];
 
 			$fbCampaign = $row["fbCampaign"];
 			$fbAdset 	= $row["fbAdset"];
@@ -181,7 +181,6 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			unset($logArray);
             echo " <br>"; 
 
-echo $dbaffID;
 			if($dbaffID > 0){
 
 			//Send data to zapier so it can submit FB conversion and send an email to user
@@ -192,7 +191,7 @@ echo $dbaffID;
 			"subid2" => $subid2
 			];
 
-			$requestURL = "https://www.brcvhf7tf.com/?nid=1488&transaction_id=".$clickID;
+			$requestURL = "https://www.brcvhf7tf.com/?nid=1488&transaction_id=".$dbclickID;
 			echo $requestURL;
 			
 			$jData = json_encode($data);
