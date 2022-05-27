@@ -26,12 +26,12 @@ $sales = $row[11];
 $retailer = $codename."_".$productID;;
 
 if(isset($_GET['affid'])){
-    $affID = $_GET['affid'];
+    $affid = $_GET['affid'];
   }else{
-    $affID = "";
+    $affid = "";
   }
   if(isset($_SESSION['affid'])){
-    $affID = $_SESSION['affid'];
+    $affid = $_SESSION['affid'];
   }
 
 
