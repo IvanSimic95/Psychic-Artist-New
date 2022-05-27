@@ -100,7 +100,6 @@
             <div class="row gx-0 gy-2 g-xl-2 h-100">
             <div class="col-12 col-sm-12 col-xl-4 text-center py-2 order-2 order-md-1">
             <div class="py-2 px-0 light topbar-gradient rounded-3"> 
-            <div class="elfsight-app-f9baa5f9-4e55-4c19-bae9-2445b696abcf"></div>
 <div id="sidebar-menu" class="text-white">
 <ul>
 

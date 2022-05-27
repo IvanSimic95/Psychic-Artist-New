@@ -1,6 +1,6 @@
 <?php
 $order_email = $_SESSION['email'];
-$sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_id DESC";
+$sql = "SELECT * FROM orders WHERE (order_email = '$order_email' AND order_status='paid') OR (order_email = '$order_email' AND order_status='processing') OR (order_email = '$order_email' AND order_status='complete') ORDER BY order_id DESC";
 $result = $conn->query($sql);
 
  while($row = $result->fetch_assoc()) {

@@ -36,6 +36,11 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
 
+			$affID = $row["affid"];
+			$clickID = $row["clickid"];
+			$subid1 = $row["subid1"];
+			$subid2 = $row["subid2"];
+
 			$price = $row["order_price"];
 			$bg_email = $row["bg_email"];
 			$product_nice = $row["product_nice"];
@@ -175,6 +180,31 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			SuperLog($logArray, "start-orders");
 			unset($logArray);
             echo " <br>"; 
+
+
+			if($affID > 0){
+
+			//Send data to zapier so it can submit FB conversion and send an email to user
+			$ch = curl_init();
+			$data = [
+			"affid" => $affID,
+			"subid1" => $subid1,
+			"subid2" => $subid2
+			];
+
+			
+			$jData = json_encode($data);
+			curl_setopt($ch, CURLOPT_URL, 'https://www.brcvhf7tf.com/?nid=1488&transaction_id='.$clickID);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
+			$headers = array();
+			$headers[] = 'Content-Type: application/json';
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			$result = curl_exec($ch);
+			echo "Data sent to affiliate postback";
+            echo " <br>"; 
+			}
 		}
 	}
 	echo "<br><hr>";

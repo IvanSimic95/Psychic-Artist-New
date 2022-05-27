@@ -197,8 +197,8 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
     $_SESSION['affid'] = $_GET['affid'];
   }
 
-  if(isset($_GET['cid'])){
-    $_SESSION['cid'] = $_GET['cid'];
+  if(isset($_GET['click_id'])){
+    $_SESSION['click_id'] = $_GET['click_id'];
   }
   
   if(isset($_GET['subid1'])){
