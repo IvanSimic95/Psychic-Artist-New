@@ -181,7 +181,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			unset($logArray);
             echo " <br>"; 
 
-
+echo $affID;
 			if($affID > 0){
 
 			//Send data to zapier so it can submit FB conversion and send an email to user
