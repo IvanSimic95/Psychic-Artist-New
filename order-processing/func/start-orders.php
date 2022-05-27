@@ -192,9 +192,11 @@ echo $dbaffID;
 			"subid2" => $subid2
 			];
 
+			$requestURL = "https://www.brcvhf7tf.com/?nid=1488&transaction_id=".$clickID;
+			echo $requestURL;
 			
 			$jData = json_encode($data);
-			curl_setopt($ch, CURLOPT_URL, 'https://www.brcvhf7tf.com/?nid=1488&transaction_id='.$clickID);
+			curl_setopt($ch, CURLOPT_URL, $requestURL);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
