@@ -769,3 +769,15 @@ Stack trace:
 #2 {main}
   thrown in C:\laragon\www\PA\templates\visit.php on line 20
 [27-May-2022 23:00:01 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\templates\auth.php on line 2
+[28-May-2022 21:19:12 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:19:13 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:19:13 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:19:14 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:19:14 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:19:15 Europe/Zagreb] PHP Deprecated:  round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\laragon\www\PA\admin\index.php on line 34
+[28-May-2022 21:24:34 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'pa.orders.order_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\PA\admin\templates\campaigns.php:5
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\campaigns.php(5): mysqli->query('SELECT * FROM o...')
+#1 C:\laragon\www\PA\admin\facebook.php(60): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5
