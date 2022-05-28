@@ -1,7 +1,36 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 $pagetitle = "Admin Panel";
 $pagefile = "index.php";
 
+
+$today = date('Y-m-d');
+
+///////////////Get todays visits
+ $sql = "SELECT * FROM visits WHERE DATE(time) = '$today'";
+ $result = $conn->query($sql);
+ if ($result){
+  $todayVisit = mysqli_num_rows($result);
+ }else{
+  $todayVisit = 0;
+ }
+ /////////////////////////////
+
+
+//Get today Sales
+$sql = "SELECT * FROM orders WHERE DATE(order_date) = '$today'";
+$result = $conn->query($sql);
+if ($result){
+ $todayVisit = mysqli_num_rows($result);
+}else{
+ $todayVisit = 0;
+}
+
+
+$sql3 = "SELECT SUM(order_price) AS sum_quantity FROM orders WHERE (order_status = 'completed' AND fbCampaign = '$campaign' AND fbAdset = '$adset' AND fbAd = '$id' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate') OR (order_status = 'processing' AND fbCampaign = '$campaign' AND fbAdset = '$adset' AND fbAd = '$id' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate')";
+$r3 = $conn->query($sql3);
+$fetch3 = $r3->fetch_assoc();
+$sum = $fetch3['sum_quantity'];
 
 ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
@@ -25,7 +54,7 @@ $pagefile = "index.php";
                         <div class="d-flex py-3">
                           <div class="pe-3">
                             <p class="text-600 fs--1 fw-medium">Today's visit </p>
-                            <h4 class="text-800 mb-0">14,209</h4>
+                            <h4 class="text-800 mb-0"><?php echo $todayVisit; ?></h4>
                           </div>
                           <div class="ps-3">
                             <p class="text-600 fs--1">Today’s total sales </p>

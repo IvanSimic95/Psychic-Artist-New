@@ -745,3 +745,27 @@ Stack trace:
 #0 C:\laragon\www\PA\admin\facebook.php(60): include_once()
 #1 {main}
   thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 80
+[27-May-2022 22:51:36 Europe/Zagreb] PHP Warning:  Undefined variable $createEntrry in C:\laragon\www\PA\templates\visit.php on line 51
+[27-May-2022 22:51:39 Europe/Zagreb] PHP Warning:  Undefined variable $createEntrry in C:\laragon\www\PA\templates\visit.php on line 51
+[27-May-2022 22:51:40 Europe/Zagreb] PHP Warning:  Undefined variable $createEntrry in C:\laragon\www\PA\templates\visit.php on line 51
+[27-May-2022 22:51:41 Europe/Zagreb] PHP Warning:  Undefined variable $createEntrry in C:\laragon\www\PA\templates\visit.php on line 51
+[27-May-2022 22:51:42 Europe/Zagreb] PHP Warning:  Undefined variable $createEntrry in C:\laragon\www\PA\templates\visit.php on line 51
+[27-May-2022 22:54:47 Europe/Zagreb] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\laragon\www\PA\templates\visit.php:20
+Stack trace:
+#0 C:\laragon\www\PA\templates\visit.php(20): mysqli->query('SELECT * FROM v...')
+#1 C:\laragon\www\PA\index.php(14): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\visit.php on line 20
+[27-May-2022 22:54:58 Europe/Zagreb] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\laragon\www\PA\templates\visit.php:20
+Stack trace:
+#0 C:\laragon\www\PA\templates\visit.php(20): mysqli->query('SELECT * FROM v...')
+#1 C:\laragon\www\PA\index.php(14): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\visit.php on line 20
+[27-May-2022 22:55:21 Europe/Zagreb] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\laragon\www\PA\templates\visit.php:20
+Stack trace:
+#0 C:\laragon\www\PA\templates\visit.php(20): mysqli->query('SELECT * FROM v...')
+#1 C:\laragon\www\PA\index.php(17): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\templates\visit.php on line 20
+[27-May-2022 23:00:01 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\templates\auth.php on line 2

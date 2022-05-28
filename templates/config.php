@@ -609,6 +609,7 @@ if(isset($_COOKIE[$cookie_clickid])){
 
 
 if(isset($_GET['utm_campaign'])){
+  if($_GET['utm_campaign'] != "website"){
 $fbTrack = 1;
 
 $fbVariable = $_GET['utm_campaign'];
@@ -622,6 +623,8 @@ $fbAd = $ex["2"];
 $_SESSION['fbCampaign'] = $fbCampaign;
 $_SESSION['fbAdset'] = $fbAdset;
 $_SESSION['fbAd'] = $fbAd;
+ }
+
 }else{
 $fbTrack = 0;
 
@@ -640,6 +643,7 @@ $fbTrack = 0;
   if(!isset($_SESSION['fbAd'])){
     $_SESSION['fbAd'] = $fbAd;
   }
+
 
 }
 
