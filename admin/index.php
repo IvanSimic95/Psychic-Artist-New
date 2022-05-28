@@ -58,7 +58,7 @@ $sum = $fetch3['sum_quantity'];
                           </div>
                           <div class="ps-3">
                             <p class="text-600 fs--1">Today’s total sales </p>
-                            <h4 class="text-800 mb-0">$<?php echo $sum; </h4>
+                            <h4 class="text-800 mb-0">$<?php echo $sum; ?> </h4>
                           </div>
                         </div>
                       </div>
