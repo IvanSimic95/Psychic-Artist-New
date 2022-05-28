@@ -27,7 +27,7 @@ if ($result){
 }
 
 
-$sql3 = "SELECT SUM(order_price) AS sum_quantity FROM orders WHERE (order_status = 'completed' AND fbCampaign = '$campaign' AND fbAdset = '$adset' AND fbAd = '$id' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate') OR (order_status = 'processing' AND fbCampaign = '$campaign' AND fbAdset = '$adset' AND fbAd = '$id' AND DATE(order_date) >= '$startDate' AND DATE(order_date) <= '$endDate')";
+$sql3 = "SELECT SUM(order_price) AS sum_quantity FROM orders WHERE (order_status = 'completed' AND DATE(order_date) = '$today') OR (order_status = 'processing' AND DATE(order_date) = '$today')";
 $r3 = $conn->query($sql3);
 $fetch3 = $r3->fetch_assoc();
 $sum = $fetch3['sum_quantity'];
@@ -58,7 +58,7 @@ $sum = $fetch3['sum_quantity'];
                           </div>
                           <div class="ps-3">
                             <p class="text-600 fs--1">Today’s total sales </p>
-                            <h4 class="text-800 mb-0">$21,349.29 </h4>
+                            <h4 class="text-800 mb-0">$<?php echo $sum; </h4>
                           </div>
                         </div>
                       </div>
