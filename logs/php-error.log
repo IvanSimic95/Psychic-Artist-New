@@ -781,3 +781,102 @@ Stack trace:
 #1 C:\laragon\www\PA\admin\facebook.php(60): include_once('C:\\laragon\\www\\...')
 #2 {main}
   thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 15
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 79
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[28-May-2022 21:34:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[28-May-2022 21:35:01 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[28-May-2022 21:35:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 15
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 79
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[28-May-2022 21:35:02 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 15
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 79
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:23:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 15
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 79
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:23:48 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\laragon\www\PA\admin\login.php on line 16
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 15
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 79
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:01 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:42 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:43 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagetitle in C:\laragon\www\PA\admin\templates\head.php on line 16
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\head.php on line 80
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 22
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 31
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 35
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 39
+[29-May-2022 06:24:44 Europe/Zagreb] PHP Warning:  Undefined variable $pagefile in C:\laragon\www\PA\admin\templates\nav.php on line 48
+[29-May-2022 06:25:39 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'pa.orders.order_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\PA\admin\templates\campaigns.php:5
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\campaigns.php(5): mysqli->query('SELECT * FROM o...')
+#1 C:\laragon\www\PA\admin\facebook.php(59): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5
+[29-May-2022 06:26:09 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'pa.orders.order_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\PA\admin\templates\campaigns.php:5
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\campaigns.php(5): mysqli->query('SELECT * FROM o...')
+#1 C:\laragon\www\PA\admin\facebook.php(59): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5
+[29-May-2022 06:26:15 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'pa.orders.order_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\PA\admin\templates\campaigns.php:5
+Stack trace:
+#0 C:\laragon\www\PA\admin\templates\campaigns.php(5): mysqli->query('SELECT * FROM o...')
+#1 C:\laragon\www\PA\admin\facebook.php(59): include_once('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5

@@ -2,11 +2,8 @@
 $pagetitle = "Orders List";
 $pagefile = "orders.php";
 $orders = "";
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php';
 
-?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
-<?php
 $sql = "SELECT * FROM orders WHERE order_status='processing' OR order_status='paid' OR order_status='completed' ORDER BY order_id DESC LIMIT 100";
 $result = $conn->query($sql);
 

@@ -27,10 +27,7 @@ if(isset($_GET['a'])){
 $adset = $_GET['a'];
 }
 
-
-?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
 
 <div class="card mb-3">
     <div class="card-header bg-light">

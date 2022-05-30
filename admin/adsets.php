@@ -29,7 +29,6 @@ $campaignName = $_GET['cname'];
     
 
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
 
 <div class="card mb-3">

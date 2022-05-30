@@ -1,8 +1,7 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
 $pagetitle = "Admin Panel";
 $pagefile = "index.php";
-
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php';
 
 $today = date('Y-m-d');
 
@@ -48,8 +47,7 @@ $sql6 = "SELECT * FROM orders_log WHERE notice = 'Order Status updated to Comple
 $result6 = $conn->query($sql6);
 $countCompletedToday = mysqli_num_rows($result6);
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/head.php'; ?>
+
        
 <div class="row g-3 mb-3">
             <div class="col-xxl-6 col-xl-12">
