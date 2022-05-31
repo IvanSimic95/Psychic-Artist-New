@@ -1,5 +1,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; ?>
+
+<?php 
+if($pagefile != "login.php"){
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/templates/auth.php'; }?>
 
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
