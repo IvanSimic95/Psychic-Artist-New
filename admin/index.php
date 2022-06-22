@@ -46,6 +46,10 @@ $countPending = mysqli_num_rows($result5);
 $sql6 = "SELECT * FROM orders_log WHERE notice = 'Order Status updated to Completed!' AND DATE(time) = '$today'";
 $result6 = $conn->query($sql6);
 $countCompletedToday = mysqli_num_rows($result6);
+
+$sql7 = "SELECT * FROM orders WHERE order_status = 'processing' OR order_status = 'completed'";
+$result7 = $conn->query($sql7);
+$countOrdersTotal = mysqli_num_rows($result7);
 ?>
 
        
@@ -206,7 +210,7 @@ $countCompletedToday = mysqli_num_rows($result6);
                   <div class="row g-0">
                     <div class="col-6 col-md-4 border-200 border-bottom border-end pb-4">
                       <h6 class="pb-1 text-700">Orders </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">15,450 </p>
+                      <p class="font-sans-serif lh-1 mb-1 fs-2"><?php echo $countOrdersTotal; ?> </p>
                       <div class="d-flex align-items-center">
                         <h6 class="fs--1 text-500 mb-0">13,675 </h6>
                         <h6 class="fs--2 ps-3 mb-0 text-primary"><svg class="svg-inline--fa fa-caret-up fa-w-10 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <span class="me-1 fas fa-caret-up"></span> Font Awesome fontawesome.com -->21.8%</h6>

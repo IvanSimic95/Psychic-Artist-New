@@ -42,6 +42,12 @@ return array(
 '//assets/js/form-normal.js', 
 '//assets/js/verimail.jquery.min.js'),
 
+'normalnew' => array(
+    '//assets/js/jquery.validate.min.js', 
+    '//assets/js/progressbar.js', 
+    '//assets/js/form-normal-new.js', 
+    '//assets/js/verimail.jquery.min.js'),
+    
 'fa-js' => array(
 '//assets/js/brands.min.js', 
 '//assets/js/solid.min.js', 
