@@ -197,6 +197,7 @@ content: '<br> Readings left today';
                                     <i class="fas fa-shopping-cart align-middle mb-0 mt-n1 mr-2"></i> Readings left today: </span>
                                     <span id="readings-left" style="float:right;" class="mb-0" data-countup='{"endValue":9, "separator":" "}'>100</span>
                          </div>
+
                     
                         <div class="d-none d-lg-block mt-4">
                                 <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats clearfix">
@@ -580,5 +581,41 @@ $customJSPreload .= '
 
 $customJS .= '
 
+<script>
+$( document ).ready(function() {
+setTimeout(function(){ 
+$("#readings-left").html("8");
+}, 14000);
+
+setTimeout(function(){ 
+$("#readings-left").html("7");
+}, 39000);
+
+setTimeout(function(){ 
+$("#readings-left").html("6");
+}, 54000);
+
+setTimeout(function(){ 
+$("#readings-left").html("5");
+}, 74000);
+
+setTimeout(function(){ 
+    $("#readings-left").html("4");
+    }, 104000);
+    
+setTimeout(function(){ 
+$("#readings-left").html("3");
+}, 124000);
+
+setTimeout(function(){ 
+$("#readings-left").html("2");
+}, 154000);
+
+setTimeout(function(){ 
+    $("#readings-left").html("1");
+    }, 194000);
+});
+
+</script>
 ';
 ?>

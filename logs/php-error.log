@@ -880,3 +880,47 @@ Stack trace:
 #1 C:\laragon\www\PA\admin\facebook.php(59): include_once('C:\\laragon\\www\\...')
 #2 {main}
   thrown in C:\laragon\www\PA\admin\templates\campaigns.php on line 5
+[23-Jun-2022 16:29:09 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'affid' at row 1 in C:\laragon\www\PA\pages\order\order.php:190
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order.php(190): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order.php on line 190
+[23-Jun-2022 16:29:50 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PA\pages\order\order-new.php on line 275
+[23-Jun-2022 16:29:58 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'affid' at row 1 in C:\laragon\www\PA\pages\order\order.php:190
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order.php(190): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order.php on line 190
+[23-Jun-2022 16:30:09 Europe/Zagreb] PHP Warning:  Undefined variable $userGenderAcc in C:\laragon\www\PA\pages\order\order-new.php on line 175
+[23-Jun-2022 16:30:09 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'genderAcc' at row 1 in C:\laragon\www\PA\pages\order\order-new.php:177
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order-new.php(177): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order-new.php on line 177
+[23-Jun-2022 16:31:01 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'affid' at row 1 in C:\laragon\www\PA\pages\order\order-new.php:177
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order-new.php(177): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order-new.php on line 177
+[23-Jun-2022 16:31:22 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'affid' at row 1 in C:\laragon\www\PA\pages\order\order-new.php:177
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order-new.php(177): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order-new.php on line 177
+[23-Jun-2022 16:32:15 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'clickid' at row 1 in C:\laragon\www\PA\pages\order\order-new.php:177
+Stack trace:
+#0 C:\laragon\www\PA\pages\order\order-new.php(177): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PA\pages\order\order-new.php on line 177
+[23-Jun-2022 16:38:20 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PA\pages\order\order-new.php on line 280
+[23-Jun-2022 16:38:33 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PA\pages\order\order-new.php on line 280
+[01-Jul-2022 00:16:49 Europe/Zagreb] PHP Warning:  Undefined array key "subid1" in C:\laragon\www\PA\order-processing\func\start-orders.php on line 41
+[01-Jul-2022 00:16:49 Europe/Zagreb] PHP Warning:  Undefined array key "subid2" in C:\laragon\www\PA\order-processing\func\start-orders.php on line 42
+[01-Jul-2022 00:17:08 Europe/Zagreb] PHP Warning:  Undefined array key "name" in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 111
+[01-Jul-2022 00:17:08 Europe/Zagreb] PHP Warning:  Undefined array key "name" in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 122

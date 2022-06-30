@@ -1,4 +1,4 @@
-<form id="normalproduct" class="form-order needs-validation display-block" name="order_form" action="/order/order" method="get">
+<form id="normalproduct" class="form-order needs-validation display-block" name="order_form" action="/order/order-new" method="get">
 
 
         <div class="form-floating form-floating-icon mb-2">
@@ -35,7 +35,7 @@
         <hr class="mb-3">
 
         <div class="mb-2">
-        <select name="userGender" id="cars" form="carform" class="form-select form-control mb-2" id="userGender" type="text" name="userName" required="">
+        <select name="userGender" class="form-select form-control mb-2" id="userGender" type="text" name="userName" required="">
         <option disabled selected value="">Select Your Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="mb-2">
-        <select name="userGender" id="cars" form="carform" class="form-select form-control mb-2" id="userGender" type="text" name="userName" required="">
+        <select name="partnerGender" class="form-select form-control mb-2" id="userGender" type="text" name="userName" required="">
         <option disabled selected value="">Your Dating Preference</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -121,7 +121,7 @@ Readings are a one-time fee of $29.99. T<b>his small fee covers the psychics tim
 <img src="/assets/img/arrow-flash-small.webp">
 <div class="form-check mb-0" style="display:inline-block">
  
-  <input class="form-check-input" id="flexCheckDefault" type="checkbox" value="" />
+  <input class="form-check-input" id="flexCheckDefault" type="checkbox" value="yes" name="premium" />
   <label class="form-check-label" for="flexCheckDefault"></label></div>
   <div style="display:inline-block;font-size:120%;"><b>Premium Reading</b></div></div>
   <div style="display:block;">

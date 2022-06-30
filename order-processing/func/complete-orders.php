@@ -26,6 +26,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderproductCode = $row["product_codename"];
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
+			$premium = $row["premium"];
 			$FBP = $row["fbp"];
 			$FBC = $row["fbc"];
 			$date1 = $orderDate;
@@ -100,6 +101,41 @@ echo "Starting complete-orders.php...<br><br>";
 				}
 
 				echo $orderProduct;
+
+				if($premium == "yes"){
+
+					$sql_pick = "SELECT * FROM premium WHERE category = 'initials' order by RAND() limit 1";
+					$sql_pick_res = $conn->query($sql_pick);
+					if($sql_pick_res->num_rows > 0) {
+						while($rowImages = $sql_pick_res->fetch_assoc()) {
+							$initials = $rowImages["text"];
+							$logArray[] = "Initials: ".$initials;
+						}
+					}else{
+						$initials = "";
+					}
+
+					$sql_pick = "SELECT * FROM premium WHERE category = 'place' order by RAND() limit 1";
+					$sql_pick_res = $conn->query($sql_pick);
+					if($sql_pick_res->num_rows > 0) {
+						while($rowImages = $sql_pick_res->fetch_assoc()) {
+							$place = $rowImages["text"];
+							$logArray[] = "Place: ".$place;
+						}
+					}else{
+						$place = "";
+					}
+
+
+					$minMonth = rand(1,3);
+					$maxMonth = rand(4,7);
+					$meetTime = $minMonth." - ".$maxMonth;
+
+					$premiumText = "<br><br><b>Your soulmate's initials: ".$initials."<br> You will meet at ".$place." in about ".$meetTime." months</b>";
+
+				}else{
+					$premiumText = "";
+				}
 			
 				if ($orderProduct == "soulmate" || $orderProduct == "futurespouse" || $orderProduct =="twinflame") {
 				    $image_send = 1;
@@ -157,7 +193,7 @@ echo "Starting complete-orders.php...<br><br>";
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
-						    $message = $theader.$email_text.$tfooter;
+						    $message = $theader.$email_text.$premiumText.$tfooter;
 							$logArray[] = "Text ID: ".$rowText["id"];
 						}
 					}
